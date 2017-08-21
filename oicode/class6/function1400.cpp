@@ -1,33 +1,32 @@
 #include<iostream>
 #include<cstdio>
-#include<cstring>
-const int N=256;
-char c1[N],c2[N],c[N][N];
+#include<algorithm>
 using namespace std;
+int a[10];
+bool cmp(int a,int b){
+	if(a>=b)return false;
+	return true;
+}
 int main(){
-	gets(c1);strlwr(c1);
-	gets(c2);strlwr(c2);
-	int count=0;
-	for(int index=0,i=0;i<=strlen(c2);++i){
-		if(c2[i]!=' '){
-			c[index][count]=c2[i];
-			count+=1;
-		}
-		else{
-			count=0;
-			index+=1;
-		}
+	int n,i=0,count=0;
+	cin>>n;
+	int count2=0;
+	while(n>0){
+		a[i]=n%10;
+		n/=10;
+		++i;
+		//if(a[i]%10==0)count2+=1;
+		count+=1;
 	}
-	int res=-1;
-	int ans=0;
-	for (int i = 0; i <= count; ++i)
-	{
-		if(strcmp(c1,c[i])==0){res = i;break;}
+	for(int i=0;i<count;++i){
+		if(a[i]==0)count2+=1;
 	}
-	for (int i = 0; i <= count; ++i)
-	{
-		if(strcmp(c1,c[i])==0){ans+=1;}
+	sort(a,a+count,cmp);
+	cout<<a[count2];
+	for(int i=0;i<count2;i++){
+		cout<<0;
 	}
-	cout<<ans<<" "<<res;
-	return 0;
+	for(int i=count2+1;i<count;++i){
+		cout<<a[i];
+	}
 }
