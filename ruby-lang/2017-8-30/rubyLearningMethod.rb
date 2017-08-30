@@ -25,3 +25,27 @@ programmer(transfer) =>(to_i) =>"100"(receiver)
 
 所以有了object.respond_to?()这一方法
 =end
+
+=begin
+还有一种叫做：带块的方法
+详情就是：
+10.times do |i| puts i end
+这里的do .. end is called "带块的方法"
+10.times {|i| puts i }
+=end
+
+=begin
+object.functionName params do |__params__|
+  process
+end
+=end
+
+# In ruby, operators are not exists... they are all methods
+# code : 2 - 1
+# This code have the following comprehension : "2.:-(1)" object:2 is the receiver;param is 1;method name is "-"
+
+# according to the type of receiver , we can devided methods into three parts...
+# class method\objective method\functional method
+# method without erceiver can be called as functional method..
+
+
