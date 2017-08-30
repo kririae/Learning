@@ -25,8 +25,11 @@ redo : 重复当前循环
 =end
 
 lang = ["cpp","csharp","python","ruby","c"]
-lang.each do |lang|
-  puts lang
-  if lang == "ruby"
+lang.each do |name|
+  puts name
+  if name == "ruby"
     redo #这段代码是死循环
   end end
+
+# 注意redo的意思是重复当前条件，所以将无限循环下去
+
