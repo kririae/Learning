@@ -1,5 +1,0 @@
-H:\Projects\csharp\Algorithm\Algorithm\bin\Debug\Algorithm.exe.config
-H:\Projects\csharp\Algorithm\Algorithm\bin\Debug\Algorithm.exe
-H:\Projects\csharp\Algorithm\Algorithm\bin\Debug\Algorithm.pdb
-H:\Projects\csharp\Algorithm\Algorithm\obj\Debug\Algorithm.exe
-H:\Projects\csharp\Algorithm\Algorithm\obj\Debug\Algorithm.pdb
