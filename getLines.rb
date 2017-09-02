@@ -1,7 +1,7 @@
 # encoding = utf-8
 # author : kriaeth
 # get_line
-#path = "/home/kriaeth/Desktop/learning/"
+# for free time playing
 path, = ARGV
 postfix_list = [".rb",".py",".cpp",".h",",c",".cs",".php",".js",".html",".css",".hs",".kt",".java",".md",".txt",".go"]
 def get_line path,postfix
