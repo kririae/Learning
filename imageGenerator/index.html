@@ -1,6 +1,12 @@
-require "./lib/html_init"
-class Combine
-  @@style = %Q{
+
+<!doctype html>
+<html>
+<head>
+
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>imageSaving</title>
+
+      
 <style>
   body{
     margin: 0 auto;
@@ -23,9 +29,9 @@ class Combine
 	or add one to a specific element style below         */
     color: #ffffff; /* dark gray not black */
 /    color: #ffffff; /* black */
-/    color: #ffffff; /* medium gray  black */
-/    color: #ffffff; /* very light gray */
-/    color: #ffffff;
+/    color: #666666; /* medium gray  black */
+/    color: #E3E3E3; /* very light gray */
+/    color: #1D1F21;
 
     line-height: 1;
 /    max-width: 960px;
@@ -160,42 +166,44 @@ hr {
 }
 
 </style>
-  }
-  class <<self
-    def render context: nil, style: nil, title: "imageSaving", link: nil
-      %Q{
-<!doctype html>
-<html>
-<head>
-
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>#{title}</title>
-#{link}
-      #{style}
+  
 
 </head>
 <body class='index' >
-  #{context}
+  <h1>myWorks under 100lines</h1>
+
+<blockquote>
+<h2>This is my blog : <a href="http://touhou.studio">myBlog</a>  </h2>
+
+<h3>BiliBiliAutoDraw--The first works for bilibili&#39;s activity</h3>
+
+<p>本来不想写英文文档的说<br><br>
+This has some problems waiting to fixed<br>
+Before executing , please setup the python interpretor.<br><br>
+The algothrim of this program is waiting to be updated... <br>
+prior to starting,please change to argument of the method main<br><br>
+x,y is the photo&#39;s starting position.<br><br>
+This project support using existing photo to draw,please move the photo to the same path as main.py and execute it. </p>
+</blockquote>
+
+<h3>TouHou.works ranking--A program for the website touhou.works</h3>
+
+<blockquote>
+<p>A program for the Touhou-theme website <a href="https://touhou.works">touhou.works</a>&#39;s ranking list<br><br>
+This projects make a good use of python &quot;metaprogramming&quot;?     <br>
+By using the ruby method <code>def method_missing name,*args</code> <br>
+in order to use it in python . I create the class <code>Patch</code> with method <code>method_missing</code> in it by using the property method.</p>
+</blockquote>
+
+<h3>getLines--a bash for counting lines</h3>
+
+<blockquote>
+<p>这个脚本真的是我无聊的时候写着玩的...别当真...<br>
+This is only for playing , do not take it serious , linux only...<br>
+To get your lines..you just need to input your path you want to analyize...<br>
+using <code>&quot;find #{path} -name \&quot;*#{postfix}\&quot; |xargs cat|grep -v ^$|wc -l&quot;</code>.<br>
+is you want to add your language , please change the array &quot;postfix_list&quot;</p>
+</blockquote>
+
 </body>
 </html>
-}
-    end
-
-    def outPut md
-      context = MakeDown.render_html md
-      render context: context, style: @@style
-    end
-  end
-end
-file = File.open "./index.html", "w"
-path, = ARGV
-res = nil
-if File.exist? path
-  File.open path, "r" do |f|
-    res = f.readlines.join("")
-  end
-else
-  puts "#{path} file is not exist"
-end
-p res
-file.write Combine.outPut res
