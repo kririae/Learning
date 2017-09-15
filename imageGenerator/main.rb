@@ -1,3 +1,4 @@
+# coding: utf-8
 require "./lib/html_init"
 class Combine
   @@style = %Q{
@@ -59,7 +60,7 @@ h1 {
     margin-bottom: 10px;
     font-size:300%;
     padding: 0px;
-    font-variant:small-caps;
+    fvont-variant:small-caps;
     color: #2bbc8a;
 }
 
