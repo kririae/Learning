@@ -11,7 +11,7 @@ int based = 1, processing = 0;
 char input[stringMaxLength], output[stringMaxLength];
 char result[deepMaxn][stringMaxLength];
 int res[deepMaxn];
-bool not_exist(char *cache) {
+bool not_can_exist(char *cache) {
 	for(int i = 0; i < processing; ++i) 
 		if(strcmp(cache, result[i]) == 0) return false;
 	return true;
@@ -32,7 +32,7 @@ int main() {
 			strcpy(cache, result[based]);
 			// exchange
 			temp = cache[i], cache[i] = cache[i + 1], cache[i + 1] = temp;
-			if(not_exist(cache)){
+			if(not_can_exist(cache)){
 				strcpy(result[processing], cache);
 				++processing;
 				res[processing] = res[based] + 1; 
