@@ -1,3 +1,4 @@
+require 'benchmark'
 def summary from, to
   result = 0
   from.upto to do |i|
@@ -42,15 +43,23 @@ module K_math
   end
   module_function :steady_sort, :short_sort
 end
-a = [9, 8, 4, 3, 7, 0, 3, 2, 0, 10]
-
+a = nil
+File.open "/home/kriaeth/Desktop/input.in" do |f|
+  a = eval f.readline
+end
+=begin
 res = K_math.steady_sort a
 print "basic sort: "
 p res
 res = K_math.steady_sort a do |a, b| a > b end
 print "basic sort with block given: "
 p res
-res = K_math.short_sort a
-print "short sort: "
-p res
+=end
+Benchmark.bmbm 5 do |t|
+  t.report {
+    res = K_math.short_sort a
+    # print "short sort: "
+    # p res
+  }
+end
 # others types of sort is waiting to be updated
