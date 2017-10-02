@@ -63,3 +63,10 @@ Benchmark.bmbm 5 do |t|
   }
 end
 # others types of sort is waiting to be updated
+def maskify(cc)
+  (cc.split('').each_with_index.map do |i, index| index < cc.length - 4 ? '#' : i end).join
+end
+maskify "11111"
+def find_missing_number(sequence)
+  (sequence.split " ").sort
+end
