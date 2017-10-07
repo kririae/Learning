@@ -16,11 +16,11 @@ int main() {
 		cin >> w >> c;
 		for(int j = k; j >= 0; --j) {
 			if(used[j] && j + w <= m) {
+				cout << w << " " << c << " " << k << endl;
 				if(used[j + w]) 
 					if(value[j + w] < value[j] + c) value[j + w] = value[j] + c;
-				else {
+				else 
 					used[j + w] = true, value[j + w] = value[j] + c;
-				}
 				if(j + w > k) k = j + w;
 			}
 		}	
@@ -30,7 +30,11 @@ int main() {
 		cout << value[i];
 		if(used[i] && value[i] > result) result = value[i];
 	}
-	cout << result;
+	cout << endl;
+	for(int i = 0; i < k; ++i) {
+		cout << used[i];
+	}
+	//cout << result;
 	fclose(stdin);
 	return 0;
 }
