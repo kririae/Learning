@@ -1,0 +1,11 @@
+//<none>					InstallPath
+//c:\GameSaveData\			c:\GameSaveData\
+//<MYDOCUMENTS>				<user name>\My Documents
+//<APPDATA>					<user name>\Application Data
+//<DESKTOPDIRECTORY>		<user name>\Desktop
+//<COMMON_DOCUMENTS>		All Users\Documents
+//<COMMON_APPDATA>			All Users\Application Data
+//<COMMON_DESKTOPDIRECTORY>	All Users\Desktop
+
+//SavePath=<MYDOCUMENTS>\Œ‚ÉŠñ‚è‚»‚¤‰³—‚Ìì–@\
+SavePath=<none>
