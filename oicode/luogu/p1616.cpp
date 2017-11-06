@@ -4,7 +4,8 @@
 using namespace std;
 bool used[1000005];
 int value[1000005];
-int main() {
+int main()
+{
 	memset(used, false, sizeof(used));
 	memset(value, 0, sizeof(value));
 	int t, m;
@@ -14,13 +15,18 @@ int main() {
 	{
 		int time, count;
 		cin >> time >> count;
-		for (int j = 0; j <= t; ++j) {
-			if (j + time > t) break;
-			if (used[j]) {
-				if (value[j + time]) {
+		for (int j = 0; j <= t; ++j)
+		{
+			if (j + time > t)
+				break;
+			if (used[j])
+			{
+				if (value[j + time])
+				{
 					value[j + time] = max(value[j + time], value[j] + count);
 				}
-				else {
+				else
+				{
 					used[j + time] = true;
 					value[j + time] = value[j] + count;
 				}
@@ -28,7 +34,8 @@ int main() {
 		}
 	}
 	int maxn = 0;
-	for (int i = 0; i <= t; ++i) {
+	for (int i = 0; i <= t; ++i)
+	{
 		maxn = max(maxn, value[i]);
 	}
 	cout << maxn;
