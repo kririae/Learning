@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "xstddef": "cpp",
+        "xtr1common": "cpp",
+        "stack": "cpp",
+        "algorithm": "cpp",
+        "deque": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp"
+    }
+}
