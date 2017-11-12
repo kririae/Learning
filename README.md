@@ -23,10 +23,8 @@
 #### This file included my process of learning  csharp \ oi(cpp) \ ruby
 
 > #### About OI
-
-> > Praticing oi on the [website](ybt.ssoier.cn:8088)
-
-> > Learning oi only fewer a month;
+> do not good at cpp itself
+> > Learning oi only three months;
 >
 > #### About Csharp
 
@@ -41,5 +39,4 @@
 > > Learning ruby for only few months;
 > >
 > > @ice1000 introduced it to me;
-
 
