@@ -1,18 +1,13 @@
+// failed?
+#pragma GCC optimize(3)
 #include <bits/stdc++.h>
 using namespace std;
 struct edge {
-	int to, d, p;
-	edge(int t, int d, int p) {
-		to = t, d = v, p = p;
-	}
-	bool operator < (const edge (&a)) const {
-		if(this->d == a.d) return this->p < a.p;
-		return this->d < a.d;
-	}
+	int from, to, d, p;
 };
-int n, m;
+vector<edge> p;
+int n, m, s, t;
 int dist[1005], price[1005];
-vector<edge> graph[1005];
 bool white[1005];
 int main() {
 	cin.tie(0);
@@ -23,30 +18,29 @@ int main() {
 		memset(dist, 1e9, sizeof(dist));
 		memset(price, 0, sizeof(price));
 		for (int i = 0; i < m; ++i) {
-			int a, b, d, p;
-			cin >> a >> b >> d >> p;
-			graph[a].push_back(edge(b, d, p));
-			graph[b].push_back(edge(a, d, p));
+		    edge curr;
+		    cin >> curr.from >> curr.to >> curr.d >> curr.p;
+			p.push_back(curr);
+			int tempo = curr.from;
+			curr.from = curr.to;
+			curr.to = curr.from;
+			p.push_back(curr);
 		}
-		int s, t;
-		cin >> s >> t;
+		cin >>s >> t;
 		white[s] = true;
+		dist[s] = 0;
 		for(int i = 0; i < n; ++i) {
-			int mind = 1e9, minp = 1e9;
-			int minindex = 0;
-			for(int j = 0; j < graph[i].size(); ++j) {
-				if(!white[j] && graph[i][j].d < minnum && graph[i][j].p < minp) {
-					minindex = j;
-				}
-			}
-			white[minindex] = true;
-			for(int j = 0; j < graph[minindex].size(); ++j) {
-				if(dist[minindex] + graph[minindex][j].d < dist[j]) {
-					dist[j] = dist[minindex] + graph[minindex][j].d;
-					price[j] = price[minindex] + graph[minindex][j].p;
-				}
-			}
+		    for(int j = 0; j < m; ++j) {
+		        edge &curr = p[j];
+		        if(dist[curr.from] + curr.d < dist[curr.to]) {
+		            dist[curr.to] = dist[curr.from] + curr.d;
+		            price[curr.to] = price[curr.from] + curr.p;
+		        }
+		        if(dist[curr.from] + curr.d == dist[curr.to]) {
+		            price[curr.to] = min(price[curr.from] + curr.p, price[curr.to]);
+		        }
+		    }
 		}
-		cout << dist[e] << " " price[e] << endl;
+		cout << dist[t] << " " << price[t] << endl;
 	}
 }
