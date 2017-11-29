@@ -1,65 +1,47 @@
-#pragma GCC optimize(3)
-#include <iostream>
-#include <cstdio>
-#include <cmath>
-#include <vector>
-#include <cstdlib>
+/* 
+5 表示节点个数 其中1是源点 5是汇点
+6表示边的个数( 
+5 6
+1 2 4
+2 4 3
+4 5 5
+1 3 6
+3 5 4
+2 3 2
+*/
+#include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-struct cube {
-	ll x;
-	ll y;
-	ll z;
-} p[1005];
-ll n, h, r;
-double dist[2005][2005];
-bool res_dist[2005][2005];
-bool if_true = false;
-inline void floyed () {
-	for(register int k = 1; k <= n; ++k) {
-		for(register int i = 1; i <= n; ++i) {
-			for(register int j = 1; j <= n; ++j) {
-				res_dist[i][j] = res_dist[i][j] || (res_dist[i][k] && res_dist[k][j]);
-			}
-		}
-	}
-}
+struct edge {
+	int to, val, c = 0;
+};
+const int maxn = 1000;
+const int inf = 1e9;
+int past[maxn]; // 储存前驱节点 
+vector<edge> graph[maxn]; // 图 
+vector<edge> revgraph[maxn]; // 反向的图 revgraph[i] 
+// 表示到i的点 
+int n, m;
+void dfs(int val);
 int main() {
-	int t;
-	cin >> t;
-	for(register int rp = 0; rp < t; ++rp) {
-		cin >> n >> h >> r;
-		//  GC
-		for(int i = 1; i <= n; ++i) {
-			p[i].x = p[i].y = p[i].z = 0;
-			for(int j = 1; j <= n; ++j) {
-				dist[i][j] = 0x7fffffff;
-				res_dist[i][j] = false;
-			}
-		}
-		if_true = false;
-		for(register int i = 1; i <= n; ++i) 
-			cin >> p[i].x >> p[i].y >> p[i].z;
-		for(register int i = 1; i <= n; ++i) {
-			for(register int j = 1; j <= n; ++j) {
-				dist[i][j] = sqrt(pow(p[i].x - p[j].x, 2)
-				+ pow(p[i].y - p[j].y, 2)
-				+ pow(p[i].z - p[j].z, 2));
-				if(dist[i][j] <= r * 2) res_dist[i][j] = true;
-			}
-		}
-		floyed();
-		for(register int i = 1; i <= n; ++i) 
-		for(register int j = 1; j <= n; ++j) {
-			if(abs(p[i].z) <= r && abs(p[j].z - h) <= r) {
-				if(res_dist[i][j]) {
-					if_true = true;
-					i = n + 1, j = n + 1;
-				}
-			}
-		}
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	cin >> n >> m;
+	for (int a, b, c, i = 0; i < m; ++i) {
+		cin >> a >> b >> c;
+		edge curr;
+		curr.to = b, edge.val = c;
+		graph[a].push_back(curr);
+		curr.to = a;
+		revgraph[b].push_back(curr);
 	}
-	fclose(stdin);
-	fclose(stdout);
 	return 0;
 }
+void dfs(int val) {
+	if(val == n) {
+		
+	} 
+	int si = graph[val].size();
+	for (int i = 0; i < si; ++i) {
+		dfs(graph[val][i].to);
+	}
+} 
