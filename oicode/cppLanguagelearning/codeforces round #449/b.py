@@ -6,4 +6,4 @@ for i in range(1, a + 1):
     tempo += ''.join(list(reversed(tempo)))
     summ += int(str(tempo))
     summ %= b
-print(summ % b)
+print(summ)
