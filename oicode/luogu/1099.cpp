@@ -1,13 +1,16 @@
-#include <bits/stdc++.h>
+﻿#include <bits/stdc++.h>
 using namespace std;
+
 struct edge {
 	int to, val;
 	edge(int a, int b) {to = a, val = b;}
 };
 const int maxn = 1e4 + 5;
-int n, s, dis[maxn][maxn], maxd;
-int maxs, maxe;
+int n, s, dis[maxn][maxn];
+int maxs, maxe, maxlength;
 int linee[maxn];
+vector<edge> graph[maxn];
+int pre[maxn];
 
 inline int read() {
 	char c; int res;
@@ -27,6 +30,8 @@ inline void init() {
 		cin >> a >> b >> c;
 		// a = read(), b = read(), c = read();
 		dis[a][b] = dis[b][a] = c;
+		graph[a].push_back(edge(b, c));
+		graph[b].push_back(edge(a, c));
 	} 
 }
 
@@ -37,43 +42,20 @@ inline void floyd() {
         dis[i][j] = min(dis[i][j], dis[i][k] + dis[k][j]);
 }
 
-inline int solveD() {
-	int maxn = 0;
-	for (register int i = 1; i <= n; ++i) {
-		for (register int j = 1; j <= n; ++j) {
-			if (dis[i][j] != 1e9 && dis[i][j] > maxn) 
-				maxn = dis[i][j], maxs = i, maxe = j;
-		}
-	}
-}
-
-inline void solve() {
-	// 下面这一点是在题解里看到的清奇思路...很强...
-	int flag = 0;
-	for (register int i = 1; i <= n; ++i) {
-		if (dis[maxs][i] + dis[maxe][i] == dis[maxs][maxe]) {
-			linee[++flag] = i;
-		}
-	}
-	int ans = 1e9;
-	for (register int i = 1; i <= flag; ++i) {
-		for (register int j = 1; j <= flag; ++j) {
-			if(dis[linee[i]][linee[j]] <= s) {
-			    int maxn = 0;
-				for (register int k = 1; k <= n; ++k) {
-					maxn = max(maxn, dis[linee[i]][k] + dis[linee[j]][k] - dis[linee[i]][linee[j]]);
-				}
-				ans = min(ans, maxn);
-			}
-		}
-	}
-	cout << ans / 2 << endl;
+inline void solve(int ind, int deepth) {
+    if(deepth >= maxlength) {
+        
+    }
+    for (int i = 0; i < graph[ind].size(); ++i) {
+        pre[graph[ind][i].to] = ind;
+        solve(graph[ind][i].to, deepth + graph[ind][i].val);
+    }
 }
 
 int main() {
     init();
     floyd();
-    maxd = solveD();
-    solve();
+    for (int i = 1; i <= n; ++i) 
+    solve(1, 0);
 	return 0;
 }
