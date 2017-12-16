@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+﻿#include <bits/stdc++.h>
 using namespace std;
 int n, m, k, father[200005];
 vector<int> result;
@@ -46,3 +46,64 @@ int main() {
   }
   return 0;
 }
+
+#include <iostream>
+#include <cstdio>
+#include <cctype>
+#include <vector>
+#include <algorithm>
+using namespace std;
+inline void read(int &x) {
+	x = 0; char c = getchar();
+	while(!isdigit(c)) c = getchar();
+	while(isdigit(c)) x = x * 10 + c - '0', c = getchar();
+}
+#define MAXN 400006
+int fa[MAXN], cnt;
+inline int find(int x) {
+	return x == fa[x] ? x : fa[x] = find(fa[x]);
+}
+inline void uni(int x, int y) {
+	int xx = find(x), yy = find(y);
+	if(xx == yy) return;
+	--cnt;
+	fa[xx] = yy;
+}
+int n, m;
+typedef pair<int, int> pii;
+pii rel[MAXN >> 1];
+int del[MAXN], ans[MAXN];
+bool vis[MAXN];
+vector<int> v[MAXN];
+inline void add_set(int x, int y) {
+	//cout<<x<<" "<<y<<endl;
+	if(!vis[x] && !vis[y]) {
+		//cout<<x<<" "<<y<<endl;
+		uni(x, y);
+		return;
+	}
+	v[x].push_back(y), v[y].push_back(x);
+}
+int main() {
+	read(n), read(m); 
+	for(int i = 0; i < n; ++i) fa[i] = i;
+	cnt = n;
+	for(int i = 1; i <= m; ++i) read(rel[i].first), read(rel[i].second);
+	int K; read(K);
+	cnt -= K; 
+	for(int i = 1; i <= K; ++i) read(del[i]), vis[del[i]] = 1;
+	//for(int i = 0; i < n; ++i) cout<<vis[i]<<" ";
+	//cout<<endl;
+	for(int i = 1; i <= m; ++i) add_set(rel[i].first, rel[i].second);
+	ans[K + 1] = cnt;
+	for(int i = K; i >= 1; --i) {
+		vis[del[i]] = 0;
+		++cnt;
+		for(int j = 0; j < v[del[i]].size(); ++j)
+			if(!vis[v[del[i]][j]])
+				uni(del[i], v[del[i]][j]);
+		ans[i] = cnt;
+	}
+	for(int i = 1; i <= K + 1; ++i) cout<<ans[i]<<endl;
+	return 0;
+} 
