@@ -1,0 +1,409 @@
+今天复习一下写了FFT。递归4.8s 非递归0.722s 速度不是一个档的。
+然后！然后！重点来了！！！！
+jcvb 261ms 12.4kb 
+ORZORZ跪着膜啊
+然后研究了下长得不想fft的fft
+贴代码：
+//-------------------------------不想看的拉到最后----------------------------
+#include<cstdio>
+#include<cstring>
+#include<cstdlib>
+#include<cmath>
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<map>
+#include<set>
+#include<queue>
+#include<bitset>
+#include<utility>
+#include<functional>
+#include<iomanip>
+#include<sstream>
+#include<ctime>
+#include<cassert>
+using namespace std;
+#define y0 y0z
+#define y1 y1z
+#define yn ynz
+#define j0 j0z
+#define j1 j1z
+#define jn jnz
+#define tm tmz
+#define pi ((db)3.14159265358979323846264338327950288L)
+#define buli __builtin_popcountll
+#define mp make_pair
+#define pb push_back
+#define fi first
+#define se second
+#define fil(a,b) memset((a),(b),sizeof(a))
+#define cl(a) fil(a,0)
+#define siz(x) ((int)(x).size())
+#define all(x) (x).begin(),(x).end()
+#define foreach(it,a) for(__typeof((a).begin()) it=(a).begin();it!=(a).end();it++)
+#define rep(i,a,b) for (int i=(a),_ed=(b);i<_ed;i++)
+#define per(i,a,b) for (int i=(b)-1,_ed=(a);i>=_ed;i--)
+#define pw(x) ((ll(1))<<(x))
+#define upmo(a,b) (((a)=((a)+(b))%mo)<0?(a)+=mo:(a))
+typedef pair<int,int> pii;
+typedef vector<int> vi;
+typedef vector<pii> vpii;
+template<typename T,typename S>inline bool upmin(T&a,const S&b){return a>b?a=b,1:0;}
+template<typename T,typename S>inline bool upmax(T&a,const S&b){return a<b?a=b,1:0;}
+template<typename N,typename PN>inline N flo(N a,PN b){return a>=0?a/b:-((-a-1)/b)-1;}
+template<typename N,typename PN>inline N cei(N a,PN b){return a>0?(a-1)/b+1:-(-a/b);}
+template<typename N>N gcd(N a,N b){return b?gcd(b,a%b):a;}
+#if ( ( _WIN32 || __WIN32__ ) && __cplusplus < 201103L)
+    #define lld "%I64d"
+#else
+    #define lld "%lld"
+#endif
+inline void gn(long long&x){
+	int sg=1;char c;while(((c=getchar())<'0'||c>'9')&&c!='-');c=='-'?(sg=-1,x=0):(x=c-'0');
+	while((c=getchar())>='0'&&c<='9')x=x*10+c-'0';x*=sg;
+}
+inline void gn(int&x){long long t;gn(t);x=t;}
+inline void gn(unsigned long long&x){long long t;gn(t);x=t;}
+inline void gn(double&x){double t;scanf("%lf",&t);x=t;}
+inline void gn(long double&x){double t;scanf("%lf",&t);x=t;}
+#ifdef JCVB
+#define debug(...) fprintf(stderr, __VA_ARGS__)
+#else
+#define debug(...) 
+#endif
+typedef long long ll;
+typedef double db;
+inline ll sqr(ll a){return a*a;}
+inline db sqrf(db a){return a*a;}
+int inf=0x3f3f3f3f;
+db eps=1e-6;
+int mo=1000000007;
+int qp(int a,ll b){int n=1;do{if(b&1)n=1ll*n*a%mo;a=1ll*a*a%mo;}while(b>>=1);return n;}
+
+namespace fastIO{
+    #define BUF_SIZE 100000
+    #define OUT_SIZE 100000
+    #define ll long long
+    //fread->read
+    bool IOerror=0;
+    inline char nc(){
+        static char buf[BUF_SIZE],*p1=buf+BUF_SIZE,*pend=buf+BUF_SIZE;
+        if (p1==pend){
+            p1=buf; pend=buf+fread(buf,1,BUF_SIZE,stdin);
+            if (pend==p1){IOerror=1;return -1;}
+            //{printf("IO error!\n");system("pause");for (;;);exit(0);}
+        }
+        return *p1++;
+    }
+    inline bool blank(char ch){return ch==' '||ch=='\n'||ch=='\r'||ch=='\t';}
+    inline void read(int &x){
+        bool sign=0; char ch=nc(); x=0;
+        for (;blank(ch);ch=nc());
+        if (IOerror)return;
+        if (ch=='-')sign=1,ch=nc();
+        for (;ch>='0'&&ch<='9';ch=nc())x=x*10+ch-'0';
+        if (sign)x=-x;
+    }
+    inline void read(ll &x){
+        bool sign=0; char ch=nc(); x=0;
+        for (;blank(ch);ch=nc());
+        if (IOerror)return;
+        if (ch=='-')sign=1,ch=nc();
+        for (;ch>='0'&&ch<='9';ch=nc())x=x*10+ch-'0';
+        if (sign)x=-x;
+    }
+    inline void read(double &x){
+        bool sign=0; char ch=nc(); x=0;
+        for (;blank(ch);ch=nc());
+        if (IOerror)return;
+        if (ch=='-')sign=1,ch=nc();
+        for (;ch>='0'&&ch<='9';ch=nc())x=x*10+ch-'0';
+        if (ch=='.'){
+            double tmp=1; ch=nc();
+            for (;ch>='0'&&ch<='9';ch=nc())tmp/=10.0,x+=tmp*(ch-'0');
+        }
+        if (sign)x=-x;
+    }
+    inline void read(char *s){
+        char ch=nc();
+        for (;blank(ch);ch=nc());
+        if (IOerror)return;
+        for (;!blank(ch)&&!IOerror;ch=nc())*s++=ch;
+        *s=0;
+    }
+    inline void read(char &c){
+        for (c=nc();blank(c);c=nc());
+        if (IOerror){c=-1;return;}
+    }
+    //getchar->read
+    inline void read1(int &x){
+        char ch;int bo=0;x=0;
+        for (ch=getchar();ch<'0'||ch>'9';ch=getchar())if (ch=='-')bo=1;
+        for (;ch>='0'&&ch<='9';x=x*10+ch-'0',ch=getchar());
+        if (bo)x=-x;
+    }
+    inline void read1(ll &x){
+        char ch;int bo=0;x=0;
+        for (ch=getchar();ch<'0'||ch>'9';ch=getchar())if (ch=='-')bo=1;
+        for (;ch>='0'&&ch<='9';x=x*10+ch-'0',ch=getchar());
+        if (bo)x=-x;
+    }
+    inline void read1(double &x){
+        char ch;int bo=0;x=0;
+        for (ch=getchar();ch<'0'||ch>'9';ch=getchar())if (ch=='-')bo=1;
+        for (;ch>='0'&&ch<='9';x=x*10+ch-'0',ch=getchar());
+        if (ch=='.'){
+            double tmp=1;
+            for (ch=getchar();ch>='0'&&ch<='9';tmp/=10.0,x+=tmp*(ch-'0'),ch=getchar());
+        }
+        if (bo)x=-x;
+    }
+    inline void read1(char *s){
+        char ch=getchar();
+        for (;blank(ch);ch=getchar());
+        for (;!blank(ch);ch=getchar())*s++=ch;
+        *s=0;
+    }
+    inline void read1(char &c){for (c=getchar();blank(c);c=getchar());}
+    //scanf->read
+    inline void read2(int &x){scanf("%d",&x);}
+    inline void read2(ll &x){
+        #ifdef _WIN32
+            scanf("%I64d",&x);
+        #else
+        #ifdef __linux
+            scanf("%lld",&x);
+        #else
+            puts("error:can't recognize the system!");
+        #endif
+        #endif
+    }
+    inline void read2(double &x){scanf("%lf",&x);}
+    inline void read2(char *s){scanf("%s",s);}
+    inline void read2(char &c){scanf(" %c",&c);}
+    inline void readln2(char *s){gets(s);}
+    //fwrite->write
+    struct Ostream_fwrite{
+        char *buf,*p1,*pend;
+        Ostream_fwrite(){buf=new char[BUF_SIZE];p1=buf;pend=buf+BUF_SIZE;}
+        void out(char ch){
+            if (p1==pend){
+                fwrite(buf,1,BUF_SIZE,stdout);p1=buf;
+            }
+            *p1++=ch;
+        }
+        void print(int x){
+            static char s[15],*s1;s1=s;
+            if (!x)*s1++='0';if (x<0)out('-'),x=-x;
+            while(x)*s1++=x%10+'0',x/=10;
+            while(s1--!=s)out(*s1);
+        }
+        void println(int x){
+            static char s[15],*s1;s1=s;
+            if (!x)*s1++='0';if (x<0)out('-'),x=-x;
+            while(x)*s1++=x%10+'0',x/=10;
+            while(s1--!=s)out(*s1); out('\n');
+        }
+        void print(ll x){
+            static char s[25],*s1;s1=s;
+            if (!x)*s1++='0';if (x<0)out('-'),x=-x;
+            while(x)*s1++=x%10+'0',x/=10;
+            while(s1--!=s)out(*s1);
+        }
+        void println(ll x){
+            static char s[25],*s1;s1=s;
+            if (!x)*s1++='0';if (x<0)out('-'),x=-x;
+            while(x)*s1++=x%10+'0',x/=10;
+            while(s1--!=s)out(*s1); out('\n');
+        }
+        void print(double x,int y){
+            static ll mul[]={1,10,100,1000,10000,100000,1000000,10000000,100000000,
+                1000000000,10000000000LL,100000000000LL,1000000000000LL,10000000000000LL,
+                100000000000000LL,1000000000000000LL,10000000000000000LL,100000000000000000LL};
+            if (x<-1e-12)out('-'),x=-x;x*=mul[y];
+            ll x1=(ll)floor(x); if (x-floor(x)>=0.5)++x1;
+            ll x2=x1/mul[y],x3=x1-x2*mul[y]; print(x2);
+            if (y>0){out('.'); for (size_t i=1;i<y&&x3*mul[i]<mul[y];out('0'),++i); print(x3);}
+        }
+        void println(double x,int y){print(x,y);out('\n');}
+        void print(char *s){while (*s)out(*s++);}
+        void println(char *s){while (*s)out(*s++);out('\n');}
+        void flush(){if (p1!=buf){fwrite(buf,1,p1-buf,stdout);p1=buf;}}
+        ~Ostream_fwrite(){flush();}
+    }Ostream;
+    inline void print(int x){Ostream.print(x);}
+    inline void println(int x){Ostream.println(x);}
+    inline void print(char x){Ostream.out(x);}
+    inline void println(char x){Ostream.out(x);Ostream.out('\n');}
+    inline void print(ll x){Ostream.print(x);}
+    inline void println(ll x){Ostream.println(x);}
+    inline void print(double x,int y){Ostream.print(x,y);}
+    inline void println(double x,int y){Ostream.println(x,y);}
+    inline void print(char *s){Ostream.print(s);}
+    inline void println(char *s){Ostream.println(s);}
+    inline void println(){Ostream.out('\n');}
+    inline void flush(){Ostream.flush();}
+    //puts->write
+    char Out[OUT_SIZE],*o=Out;
+    inline void print1(int x){
+        static char buf[15];
+        char *p1=buf;if (!x)*p1++='0';if (x<0)*o++='-',x=-x;
+        while(x)*p1++=x%10+'0',x/=10;
+        while(p1--!=buf)*o++=*p1;
+    }
+    inline void println1(int x){print1(x);*o++='\n';}
+    inline void print1(ll x){
+        static char buf[25];
+        char *p1=buf;if (!x)*p1++='0';if (x<0)*o++='-',x=-x;
+        while(x)*p1++=x%10+'0',x/=10;
+        while(p1--!=buf)*o++=*p1;
+    }
+    inline void println1(ll x){print1(x);*o++='\n';}
+    inline void print1(char c){*o++=c;}
+    inline void println1(char c){*o++=c;*o++='\n';}
+    inline void print1(char *s){while (*s)*o++=*s++;}
+    inline void println1(char *s){print1(s);*o++='\n';}
+    inline void println1(){*o++='\n';}
+    inline void flush1(){if (o!=Out){if (*(o-1)=='\n')*--o=0;puts(Out);}}
+    struct puts_write{
+        ~puts_write(){flush1();}
+    }_puts;
+    inline void print2(int x){printf("%d",x);}
+    inline void println2(int x){printf("%d\n",x);}
+    inline void print2(char x){printf("%c",x);}
+    inline void println2(char x){printf("%c\n",x);}
+    inline void print2(ll x){
+        #ifdef _WIN32
+            printf("%I64d",x);
+        #else
+        #ifdef __linux
+            printf("%lld",x);
+        #else
+            puts("error:can't recognize the system!");
+        #endif
+        #endif
+    }
+    inline void println2(ll x){print2(x);printf("\n");}
+    inline void println2(){printf("\n");}
+    #undef ll
+    #undef OUT_SIZE
+    #undef BUF_SIZE
+};
+using namespace fastIO;
+
+
+// FFT_MAXN = 2^k
+// fft_init() to precalc FFT_MAXN-th roots
+
+const int FFT_MAXN=262144;
+struct cp{
+	db a,b;
+	cp operator+(const cp&y)const{return (cp){a+y.a,b+y.b};}
+	cp operator-(const cp&y)const{return (cp){a-y.a,b-y.b};}
+	cp operator*(const cp&y)const{return (cp){a*y.a-b*y.b,a*y.b+b*y.a};}
+	cp operator!()const{return (cp){a,-b};};
+}nw[FFT_MAXN+1];int bitrev[FFT_MAXN];
+void dft(cp*a,int n,int flag=1){
+	int d=0;while((1<<d)*n!=FFT_MAXN)d++;
+	rep(i,0,n)if(i<(bitrev[i]>>d))swap(a[i],a[bitrev[i]>>d]);
+	for (int l=2;l<=n;l<<=1){
+		int del=FFT_MAXN/l*flag;
+		for (int i=0;i<n;i+=l){
+			cp *le=a+i,*ri=a+i+(l>>1),*w=flag==1?nw:nw+FFT_MAXN;
+			rep(k,0,l>>1){
+				cp ne=*ri**w;
+				*ri=*le-ne,*le=*le+ne;
+				le++,ri++,w+=del;
+			}
+		}
+	}
+	if(flag!=1)rep(i,0,n)a[i].a/=n,a[i].b/=n;
+}
+void fft_init(){
+	int L=0;while((1<<L)!=FFT_MAXN)L++;
+	bitrev[0]=0;rep(i,1,FFT_MAXN)bitrev[i]=bitrev[i>>1]>>1|((i&1)<<(L-1));
+	cp ste=(cp){cosl(2*pi/FFT_MAXN),sinl(2*pi/FFT_MAXN)};
+	nw[0]=nw[FFT_MAXN]=(cp){1,0};
+	rep(i,1,(FFT_MAXN>>1)+1)nw[i]=nw[i-1]*ste;
+	rep(i,(FFT_MAXN>>1)+1,FFT_MAXN)nw[i]=!nw[FFT_MAXN-i];
+	//rep(i,0,FFT_MAXN)nw[i]=(cp){cosl(2*pi/FFT_MAXN*i),sinl(2*pi/FFT_MAXN*i)};	//very slow
+}
+
+void convo(db*a,int n,db*b,int m,db*c){
+	static cp f[FFT_MAXN>>1],g[FFT_MAXN>>1],t[FFT_MAXN>>1];
+	int N=2;while(N<=n+m)N<<=1;
+	rep(i,0,N)
+		if(i&1){
+			f[i>>1].b=(i<=n)?a[i]:0.0;
+			g[i>>1].b=(i<=m)?b[i]:0.0;
+		}else{
+			f[i>>1].a=(i<=n)?a[i]:0.0;
+			g[i>>1].a=(i<=m)?b[i]:0.0;
+		}
+	dft(f,N>>1);dft(g,N>>1);
+	int del=FFT_MAXN/(N>>1);
+	cp qua=(cp){0,0.25},one=(cp){1,0},four=(cp){4,0},*w=nw;
+	rep(i,0,N>>1){
+		int j=i?(N>>1)-i:0;
+		t[i]=(four*!(f[j]*g[j])-(!f[j]-f[i])*(!g[j]-g[i])*(one+*w))*qua;
+		w+=del;
+	}
+	dft(t,N>>1,-1);
+	rep(i,0,n+m+1)c[i]=(i&1)?t[i>>1].a:t[i>>1].b;
+}
+
+
+db a[333333],b[333333],c[333333];
+int main()
+{
+#ifdef JCVB
+	freopen("1.in","r",stdin);
+	freopen("1.out","w",stdout);
+	int _time_jc=clock();
+#endif
+	int n,m;
+	read(n);read(m);
+	//gn(n);gn(m);
+	
+	if(1ll*n*m<=222222){
+		static int a[111111],b[111111],c[222222]={0};
+		rep(i,0,n+1)read(a[i]);
+		rep(i,0,m+1)read(b[i]);
+		rep(i,0,n+1)rep(j,0,m+1)c[i+j]+=a[i]*b[j];
+		rep(i,0,n+m+1)println(c[i]);
+		return 0;
+	}
+
+
+	fft_init();
+	for (int i=0;i<=n;i++){
+		int x;read(x);
+		a[i]=x;
+	}
+	for (int i=0;i<=m;i++){
+		int x;read(x);
+		b[i]=x;
+	}
+	convo(a,n,b,m,c);
+
+	rep(i,0,n+m+1)println(int(0.5+c[i]));
+
+	
+#ifdef JCVB
+	debug("time: %d\n",int(clock()-_time_jc));
+#endif
+	return 0;
+}
+//----------------------------------------------------------------
+然后发现这道题鏼爷交了54次！研究了下速度差关键点的优化
+朴素非递归  913ms 3.7kb
+加入读入优化 798ms 11.3kb
+加入记忆化wn的优化 511ms 11.4kb
+加入奇妙压位的优化 375ms 12.0kb（其实这个叫myy fft）
+更换押位方式 298ms 12.2kb
+加入小数据暴力 261ms 12.4kb
+鏼爷就是鏼爷啊！看完这个尤其是押位后就从跪着膜变成趴着膜了
+详述压位方式 由于UOJ要求输出每一个次方的系数，所以不能够像高精一样押位。
+鏼爷利用了虚数位的系数放入了另外一个数组。原来fft初始化中只有实数位有数字，
+虚数位是空的，这就浪费的计算量了。反正最后在解出来a和b的插值。
+ORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZORZ
