@@ -1,7 +1,8 @@
+// copy from bzoj
 #include<cstdio>
 #include<algorithm>
 #include<cmath>
-/*BZOJ2716 ÀëÏß²Ù×÷ ¶ÔÅÄ³É¹¦*/
+/*BZOJ2716 ç¦»çº¿æ“ä½œ å¯¹æ‹æˆåŠŸ*/
 using namespace std;
 const int maxn=5e5+100;
 const int inf=0x3f3f3f3f;
@@ -36,7 +37,7 @@ namespace KD_tree{
     void build(int &rt,int l,int r,int d,int fa){
         if(l==r){rt=r;tree[rt].d=d;tree[rt].fa=fa;tree[rt].d=d;return;}
         int mid=(l+r)/2;
-        rt=mid;D=d;        /*ÕâÀïµÄÏ¸½ÚÎÊÌâÒ»¶¨Òª×¢Òâ°¡£¬Òª²»È»Ö±½ÓWA+TLEË«Ï²ÁÙÃÅ*/
+        rt=mid;D=d;        /*è¿™é‡Œçš„ç»†èŠ‚é—®é¢˜ä¸€å®šè¦æ³¨æ„å•Šï¼Œè¦ä¸ç„¶ç›´æ¥WA+TLEåŒå–œä¸´é—¨*/
         nth_element(tree+l,tree+mid,tree+r+1);
         tree[rt].d=d;tree[rt].fa=fa;
         if(l<mid) build(tree[rt].ch[0],l,mid-1,d^1,rt);
@@ -73,7 +74,7 @@ namespace KD_tree{
     }
      
     void insert(int now){
-        /* ×¢Òâ,µ±Ç°½ÚµãÒ»µ©²åÈë£¬ĞèÒª³õÊ¼»¯£¬²¢ÇÒÓÃ¸Ã½ÚµãĞÅÏ¢ÖØĞÂ¸üĞÂÕûÌõÁ´ */
+        /* æ³¨æ„,å½“å‰èŠ‚ç‚¹ä¸€æ—¦æ’å…¥ï¼Œéœ€è¦åˆå§‹åŒ–ï¼Œå¹¶ä¸”ç”¨è¯¥èŠ‚ç‚¹ä¿¡æ¯é‡æ–°æ›´æ–°æ•´æ¡é“¾ */
         now=id[now];
         tree[now].init();
         tree[now].exist=1;
@@ -95,7 +96,7 @@ int main(){
     cnt=n;
     for(int i=1;i<=m;i++){
         scanf("%d%d%d",&opt[i][0],&opt[i][1],&opt[i][2]);
-        if(opt[i][0]==1)    /*Î´²åÈëµÄ½ÚµãÈÔÈ»ĞèÒª´«µİÏÂ²ãĞÅÏ¢£¬Ö»ÊÇ²»´«µİ±¾ÉíĞÅÏ¢*/
+        if(opt[i][0]==1)    /*æœªæ’å…¥çš„èŠ‚ç‚¹ä»ç„¶éœ€è¦ä¼ é€’ä¸‹å±‚ä¿¡æ¯ï¼Œåªæ˜¯ä¸ä¼ é€’æœ¬èº«ä¿¡æ¯*/
             tree[++cnt].x=opt[i][1],tree[cnt].y=opt[i][2],tree[cnt].id=i;
     }
     build(root,1,cnt,1,0);
