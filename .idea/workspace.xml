@@ -10,10 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b635adac-35b1-41e4-aca1-d3f5a165d649" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/a.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/b.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp" afterPath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +46,18 @@
       <file leaf-file-name="bst_basic.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oicode/template/tree/平衡树/bst_basic.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="-1338">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bst_basic.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/oicode/template/tree/bst_basic.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="222" column="12" lean-forward="true" selection-start-line="222" selection-start-column="12" selection-end-line="222" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -75,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="c.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="c.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="386">
+              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -99,6 +107,7 @@
         <option value="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/a.cpp" />
         <option value="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/b.cpp" />
         <option value="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp" />
+        <option value="$PROJECT_DIR$/oicode/template/tree/bst_basic.cpp" />
       </list>
     </option>
   </component>
@@ -108,7 +117,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1685" />
     <option name="y" value="252" />
     <option name="width" value="1400" />
@@ -190,7 +199,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -223,15 +232,24 @@
       <workItem from="1514091130631" duration="143000" />
       <workItem from="1514559534440" duration="53000" />
       <workItem from="1514562061630" duration="5750000" />
-      <workItem from="1514570080583" duration="19000" />
+      <workItem from="1514570080583" duration="78000" />
+      <workItem from="1514624530676" duration="1948000" />
     </task>
+    <task id="LOCAL-00001" summary="format">
+      <created>1514625208153</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1514625208153</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7700000" />
+    <option name="totallyTimeSpent" value="9707000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2568" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-2568" y="-8" width="2576" height="1416" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13515624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -261,11 +279,63 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="format" />
+    <option name="LAST_COMMIT_MESSAGE" value="format" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/oicode/template/tree/平衡树/splay.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/template/tree/平衡树/treap.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/template/tree/平衡树/bst_basic.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/a.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/b.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/oicode/template/tree/平衡树/splay.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -402,14 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oicode/template/tree/平衡树/bst_basic.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/a.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -428,8 +490,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="386">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/template/tree/平衡树/bst_basic.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1338">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/template/tree/bst_basic.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="222" column="12" lean-forward="true" selection-start-line="222" selection-start-column="12" selection-end-line="222" selection-end-column="12" />
           <folding />
         </state>
       </provider>
