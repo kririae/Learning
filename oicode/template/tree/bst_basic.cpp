@@ -11,7 +11,7 @@ namespace BASIC {
 namespace BST {
     const int maxn = 1e5 + 5;
     struct treap {
-        int fixnum = rand();
+        int priority = rand();
     }; 
     struct node {
         treap messt;
@@ -35,7 +35,26 @@ namespace BST {
         t[k].size = t[t[k].son[0]].size + t[t[k].son[1]].size + 1;
     }
     inline void pushdown(int k) {
-        if(t[k].size == 0);
+        if(t[k].size == 0); // TODO
+    }
+    inline void rotate(int k) {
+        // if father node of k is root, would there need to be a spec?
+        int curr = k;
+        int fa = t[k].father;
+        int fafa = t[fa].father;
+        bool ifrotateff = true;
+        // if(fafa == 0) return; 
+        if(fafa == 0) { ifrotateff = false;root = curr; }
+        node &currn = t[k], &fan = t[fa], &fafan = t[fafa];
+        // for (int i = 0; i < 2; ++i) if(fan.son[i] && meth == i ^ 1) return -1; // 错误处理
+        int meth = (fan.son[0] != curr);
+        fan.son[meth] = currn.son[meth ^ 1], t[currn.son[meth ^ 1]].father = fa;
+        currn.son[meth ^ 1] = fa, fan.father = curr;
+        if(ifrotateff) {
+        currn.father = fafa;
+        if(fafan.son[meth] == fa) fafan.son[meth] = curr;
+        if(fafan.son[meth ^ 1] == fa) fafan.son[meth ^ 1] = curr;
+        } pushup(fa); pushup(curr); if(ifrotateff) pushup(fafa);
     }
     inline void insert(int k, int val) {
         // root -> k = 0
@@ -49,6 +68,9 @@ namespace BST {
             t[cnt].val = val, curr.son[proc] = cnt, t[cnt].father = k, t[cnt].size = 1, t[cnt].turn = 0;
             ++cnt;
         } else insert(curr.son[proc], val);
+        if(t[k].messt.priority > t[t[k].father].messt.priority) {
+        	rotate(k);
+        }
         pushup(k);
     }
     inline void subreb(int &k, int l, int r) {
@@ -93,43 +115,11 @@ namespace BST {
         if(!find(k, val)) return 0;
         return subgetrank(k, val, 0);
     }
-    /*
-    inline void rotate(int k) {
-        // meth == 0 ? meth = 1 : meth = 0;
-        // meth == 0 右旋 else 左旋
-        int sonindex = t[k].son[0], currindex = k, fatherindex = t[k].father;
-        node &son = t[sonindex], &curr = t[k], &father = t[fatherindex];
-        // 关于father的操作
-        if(k == father.son[0]) father.son[0] = sonindex;
-        if(k == father.son[1]) father.son[1] = sonindex;
-        // 关于当前节点的操作
-        curr.son[0] = son.son[1];
-        curr.father = currindex;
-        // 关于子节点的操作
-        son.father = fatherindex;
-        son.son[1] = currindex;
-        // pushup操作
-        pushup(k); 
-        pushup(sonindex);
-        pushup(fatherindex);
-    }
-    inline int rotate(int k, int meth) {
-        int curr = k;
-        int fa = t[k].father;
-        int fafa = t[fa].father;
-        node &currn = t[k], &fan = t[fa], &fafan = t[fafa];
-        for (int i = 0; i < 2; ++i) if(fan.son[i] && meth == i ^ 1) return -1; // 错误处理
-        fan.son[meth] = currn.son[meth ^ 1], t[currn.son[meth ^ 1]].father = fa;
-        currn.son[meth ^ 1] = fa, fan.father = curr, currn.father = fafa;
-        if(fafan.son[meth] == fa) fafan.son[meth] = curr;
-        if(fafan.son[meth ^ 1] == fa) fafan.son[meth ^ 1] = curr;
-        pushup(fa); pushup(curr); pushup(fafa);
-        return 0; // 正常结束
-    }*/
     inline int prenxtnode(int val, int meth) {
         // by LR
         // 1 -> next
         // 0 -> pre
+        // waiting for modifying
         int idx = find(root, val);
         if(idx == 0) return -1;
         if(t[idx].son[meth]) {
@@ -141,26 +131,6 @@ namespace BST {
             idx = t[idx].father;
         }
         return -1;
-    }
-    inline void rotate(int k) {
-        // if father node of k is root, would there need to be a spec?
-        int curr = k;
-        int fa = t[k].father;
-        int fafa = t[fa].father;
-        bool ifrotateff = true;
-        // if(fafa == 0) return; 
-        if(fafa == 0) { ifrotateff = false;root = curr; }
-        node &currn = t[k], &fan = t[fa], &fafan = t[fafa];
-        // for (int i = 0; i < 2; ++i) if(fan.son[i] && meth == i ^ 1) return -1; // 错误处理
-        int meth = (fan.son[0] != curr);
-        fan.son[meth] = currn.son[meth ^ 1], t[currn.son[meth ^ 1]].father = fa;
-        currn.son[meth ^ 1] = fa, fan.father = curr;
-        if(ifrotateff) {
-        currn.father = fafa;
-        if(fafan.son[meth] == fa) fafan.son[meth] = curr;
-        if(fafan.son[meth ^ 1] == fa) fafan.son[meth ^ 1] = curr;
-        } 
-        pushup(fa); pushup(curr); if(ifrotateff) pushup(fafa);
     }
     inline void splay(int s, int e) {
         // 从index s 到 e
@@ -182,7 +152,7 @@ namespace DEBUG {
         while(!q.empty()) {
             if(cnt > cntm) break;
             ++cnt;
-            auto curr = q.front();
+            node curr = q.front();
             q.pop();
             cout << curr.val << "'s son: ";
             for (int j = 0; j <= 1; ++j)
@@ -197,6 +167,7 @@ namespace DEBUG {
         p.clear();
     }
 }
+/*
 int main() {
     cin.tie(0);
     ios::sync_with_stdio(false);
@@ -212,12 +183,12 @@ int main() {
         if(opt == 2) cout << "delete function" << endl;
         if(opt == 3) cin >> x, cout << getrank(root, x) << endl;
         if(opt == 4) cin >> x, cout << getkth(root, x) << endl;
-        if(opt == 5) cin >> x, cout << prenxtnode(x, 0) << endl;
-        if(opt == 6) cin >> x, cout << prenxtnode(x, 1) << endl;
+        if(opt == 5) cin >> x, cout << prenxtnode(x, 0) << endl; // waiting
+        if(opt == 6) cin >> x, cout << prenxtnode(x, 1) << endl; // waiting
     }
     return 0;
 }
-/*
+*/
 int main() {
     srand(time(NULL));
     using namespace DEBUG;
@@ -228,41 +199,12 @@ int main() {
         cin >> k;
         insert(root, k);
     }
-    cout << prenxtnode(4, 1) << endl;
-    cout << prenxtnode(4, 0) << endl;
+    // printOut();
+    // print(root, false);
+    // cout << prenxtnode(4, 1) << endl;
+    // cout << prenxtnode(4, 0) << endl;
     
-}*/
-// printOut();
-    /*
-    printOut();
-    rotate(find(root, 4));
-    printOut();
-    rotate(find(root, 4));
-    printOut();
-    rotate(find(root, 4));
-    printOut();
-    */
-    /*
-    rotate(find(root, 4));
-    rotate(find(root, 4));
-    rotate(find(root, 4));
-    printOut();
-    print(root, false);
-    cout << find(root, 4) << endl;*/
-    /*
-    for (int i = 0; i < cnt; ++i) {
-        if(t[i].val == 4) cout << i << endl;
-    }
-    cout << "t[i].val => " <<t[5].val << endl;
-    cout << "t[i].size => " << t[5].size << endl;
-    cout << "t[i].father => " << t[5].father << endl;
-    cout << "t[i].son[0] => " << t[5].son[0] <<endl;
-    cout << "t[i].son[1] => " << t[5].son[1] << endl;
-    cout << find(root, 4) <<endl; // 还是找不到 莫名其妙就不见了qwq...
-    cout << endl;
-    printOut();
-    print(root, false);
-    */
+}
 /*
 6
 2 8 9 6 4 1
