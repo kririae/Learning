@@ -1,7 +1,13 @@
 #pragma GCC optimize(2)
 #include <bits/stdc++.h>
 using namespace std;
-
+typedef long long ll;
+namespace BASIC {
+    inline void read(int &val) {
+        char c; val = 0;
+        while(isdigit(c = getchar())) {val = val * 10 + c - '0';}
+    }
+}
 namespace BST {
     const int maxn = 1e5 + 5;
     struct treap {
@@ -120,6 +126,22 @@ namespace BST {
         pushup(fa); pushup(curr); pushup(fafa);
         return 0; // 正常结束
     }*/
+    inline int prenxtnode(int val, int meth) {
+        // by LR
+        // 1 -> next
+        // 0 -> pre
+        int idx = find(root, val);
+        if(idx == 0) return -1;
+        if(t[idx].son[meth]) {
+            idx = t[idx].son[meth];
+            while(t[idx].son[meth ^ 1]) idx = t[idx].son[meth ^ 1];
+        }
+        while(t[idx].father != 0) {
+            if(t[t[idx].father].son[meth ^ 1] == idx) return t[t[idx].father].val;
+            idx = t[idx].father;
+        }
+        return -1;
+    }
     inline void rotate(int k) {
         // if father node of k is root, would there need to be a spec?
         int curr = k;
@@ -176,6 +198,27 @@ namespace DEBUG {
     }
 }
 int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+    srand(time(NULL));
+    using namespace BST;
+    using namespace BASIC;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; ++i) {
+        int opt, x;
+        cin >> opt;
+        if(opt == 1) cin >> x, insert(root, x);
+        if(opt == 2) cout << "delete function" << endl;
+        if(opt == 3) cin >> x, cout << getrank(root, x) << endl;
+        if(opt == 4) cin >> x, cout << getkth(root, x) << endl;
+        if(opt == 5) cin >> x, cout << prenxtnode(x, 0) << endl;
+        if(opt == 6) cin >> x, cout << prenxtnode(x, 1) << endl;
+    }
+    return 0;
+}
+/*
+int main() {
     srand(time(NULL));
     using namespace DEBUG;
     using namespace BST;
@@ -185,7 +228,11 @@ int main() {
         cin >> k;
         insert(root, k);
     }
-    // printOut();
+    cout << prenxtnode(4, 1) << endl;
+    cout << prenxtnode(4, 0) << endl;
+    
+}*/
+// printOut();
     /*
     printOut();
     rotate(find(root, 4));
@@ -195,12 +242,13 @@ int main() {
     rotate(find(root, 4));
     printOut();
     */
+    /*
     rotate(find(root, 4));
     rotate(find(root, 4));
     rotate(find(root, 4));
     printOut();
     print(root, false);
-    cout << find(root, 4) << endl;
+    cout << find(root, 4) << endl;*/
     /*
     for (int i = 0; i < cnt; ++i) {
         if(t[i].val == 4) cout << i << endl;
@@ -215,7 +263,6 @@ int main() {
     printOut();
     print(root, false);
     */
-}
 /*
 6
 2 8 9 6 4 1
@@ -228,6 +275,4 @@ int main() {
 9 
 1 2 3 4 5 6 7 8 9
 */
-/*
-本次调试为了保证根节点能够旋转
-*/
+
