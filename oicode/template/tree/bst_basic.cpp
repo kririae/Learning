@@ -1,3 +1,7 @@
+/*
+ * by kriaeth
+ * 2017/12/31
+ */
 #pragma GCC optimize(2)
 
 #include <bits/stdc++.h>
@@ -49,6 +53,7 @@ namespace BST {
 
     inline void rotate(int k) {
         // if father node of k is root, would there need to be a spec?
+        for (int i = 0; i < n; ++i) cout << i << endl;
         int curr = k;
         int fa = t[k].father;
         int fafa = t[fa].father;
@@ -57,7 +62,7 @@ namespace BST {
         if (fafa == 0) {
             ifrotateff = false;
             root = curr;
-        }
+        } 
         node &currn = t[k], &fan = t[fa], &fafan = t[fafa];
         // for (int i = 0; i < 2; ++i) if(fan.son[i] && meth == i ^ 1) return -1; // ������
         int meth = (fan.son[0] != curr);
