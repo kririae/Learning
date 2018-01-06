@@ -30,20 +30,26 @@
 28: 1  0  0  1  1  1  0  0  1  1  1  0  0  1  1  1  0  0  1  1  1  0  0  1  1  1  0  0  1  1
 29: 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
 30: 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
-先打出来看一下 
+先打出来看一下
 */
 #include<bits/stdc++.h>
 using namespace std;
-char a[300],b[300]; 
-int main(){
-	while(1){
-		gets(a);if(a[0]=='-')break;
+char a[300], b[300];
+int main() {
+	while(1) {
+		gets(a);
+
+		if(a[0] == '-')break;
+
 		gets(b);
-		int p=a[strlen(a)-1]-'0',q=b[strlen(b)-1]-'0';
-		p%=5;q%=5;
-		if(p>=2&&p<=3&&q>=2&&q<=3) puts("SheepDaddy");
+		int p = a[strlen(a) - 1] - '0', q = b[strlen(b) - 1] - '0';
+		p %= 5;
+		q %= 5;
+
+		if(p >= 2 && p <= 3 && q >= 2 && q <= 3) puts("SheepDaddy");
 		else puts("MengMeng");
 	}
+
 	return 0;
 }
 

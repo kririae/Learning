@@ -17,27 +17,28 @@
 #include<iostream>
 #define N 200005
 using namespace std;
-int n,m,cnt,root;
-const int L=0,R=1;
-struct opera{
-    int l,r,h;
-    double hi;
-    LL li,ri;
-}q[40005];
-struct lshh{
-    int *a;int name;
-}lsh[80005];
+int n, m, cnt, root;
+const int L = 0, R = 1;
+struct opera {
+	int l, r, h;
+	double hi;
+	LL li, ri;
+} q[40005];
+struct lshh {
+	int *a;
+	int name;
+} lsh[80005];
 //--------xds-----------
 
 //----------------------
-void pre(){
-    for(int i=1;i<=m;i++){
-        lsh[i*2-1].a=&q[i].l;
-    }
+void pre() {
+	for(int i = 1; i <= m; i++) {
+		lsh[i * 2 - 1].a = &q[i].l;
+	}
 }
 //----------------------
-int main(){
-    
-    
-    return 0;
+int main() {
+
+
+	return 0;
 }

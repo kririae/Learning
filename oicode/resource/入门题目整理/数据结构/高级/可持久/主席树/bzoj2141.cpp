@@ -1,121 +1,139 @@
 /*
-±¾ÌâÊµÖÊ£¬´øĞŞ¸ÄÇø¼äkth
-hzwer·Ö¿é·É¹ı¡££¨Ã²ËÆ²»ÖªÎªºÎ£¬´ËÌâ·Ö¿éºÜÓÅÔ½£¬ÓĞ¿ÉÄÜÑ¯ÎÊÌ«¼¯ÖĞ£©
-·Ö¿éÒ»´ÎĞŞ¸Äsqrt(n)logn,ÎÒµÄ·½·¨Ò»´ÎlognlogINF£¨+´ó³£Êı£© 
-ËãÁËÒ»ÏÂ£¬ÓÉÓÚmÌ«Ğ¡£¬·Ö¿éÎŞÑ¹Á¦¹ı¡£
-»¹ÊÇÁ·Ò»ÏÂbit+Ö÷Ï¯Ê÷¡££¨ÓĞÈËËµbit+Ìæ×ïÑòÊ÷(Îí)£©
-ÎÒ±È½ÏÀÁ£¬²»ÏëÀëÉ¢»¯£¬ÄÇ¾Í±©Á¦10^9µÄÖµÓò°É(Ã²ËÆ³£ÊıÒªx2)
-µÈµÈÌâÄ¿±íÊ¾ai,bi<=n 
-µÈµÈ£¬Ã²ËÆÖ»ÓÃÖ÷Ï¯Êé¾Í¿ÉÒÔÎ¬»¤ÄæĞò¶Ô¸öÊıÁË¡£
-lognË®¹ı 
-²»¶Ô£¬ÉÏÃæ·½·¨ÊÇ´íµÄ¡£
-»¹ÊÇÒªbit+Ö÷Ï¯Ê÷
-ÉÏÃæ·½·¨Ö»ÄÜÓ¦¶ÔÒ»´Î²éÑ¯ 
-²»¶Ôhi<1e9 
+æœ¬é¢˜å®è´¨ï¼Œå¸¦ä¿®æ”¹åŒºé—´kth
+hzweråˆ†å—é£è¿‡ã€‚ï¼ˆè²Œä¼¼ä¸çŸ¥ä¸ºä½•ï¼Œæ­¤é¢˜åˆ†å—å¾ˆä¼˜è¶Šï¼Œæœ‰å¯èƒ½è¯¢é—®å¤ªé›†ä¸­ï¼‰
+åˆ†å—ä¸€æ¬¡ä¿®æ”¹sqrt(n)logn,æˆ‘çš„æ–¹æ³•ä¸€æ¬¡lognlogINFï¼ˆ+å¤§å¸¸æ•°ï¼‰
+ç®—äº†ä¸€ä¸‹ï¼Œç”±äºmå¤ªå°ï¼Œåˆ†å—æ— å‹åŠ›è¿‡ã€‚
+è¿˜æ˜¯ç»ƒä¸€ä¸‹bit+ä¸»å¸­æ ‘ã€‚ï¼ˆæœ‰äººè¯´bit+æ›¿ç½ªç¾Šæ ‘(é›¾)ï¼‰
+æˆ‘æ¯”è¾ƒæ‡’ï¼Œä¸æƒ³ç¦»æ•£åŒ–ï¼Œé‚£å°±æš´åŠ›10^9çš„å€¼åŸŸå§(è²Œä¼¼å¸¸æ•°è¦x2)
+ç­‰ç­‰é¢˜ç›®è¡¨ç¤ºai,bi<=n
+ç­‰ç­‰ï¼Œè²Œä¼¼åªç”¨ä¸»å¸­ä¹¦å°±å¯ä»¥ç»´æŠ¤é€†åºå¯¹ä¸ªæ•°äº†ã€‚
+lognæ°´è¿‡
+ä¸å¯¹ï¼Œä¸Šé¢æ–¹æ³•æ˜¯é”™çš„ã€‚
+è¿˜æ˜¯è¦bit+ä¸»å¸­æ ‘
+ä¸Šé¢æ–¹æ³•åªèƒ½åº”å¯¹ä¸€æ¬¡æŸ¥è¯¢
+ä¸å¯¹hi<1e9
 
 
-eeeWAÁË°ëÌì£¬N¿ª´óÊ®±¶¾ÍAÁË 
-ÎÒÃÇÀ´×ĞÏ¸ËãÒ»ÏÂ¿Õ¼ä¡£
-Êı×é´óĞ¡2*10^4
-Ã¿¸ö½ÚµãÓĞÒ»¸öxds
-e..·¢ÏÖÏß¶ÎÊ÷µÄ¸ß¶È²»ÊÇÑÏ¸ñlognµÄ
-±ÈÈçÒ»¸ö1~15µÄÏß¶ÎÊ÷£¬×îÉîÎå²ã¡£
-Ó¦¸Ã°´2nËãlog 
-ÄÇÃ´±¾ÌâNÒªÎª
-4588000 
-ÄÇÃ´Ê÷×´Êı×éµÄ²ãÊı£¿
-ÑÏ¸ñ£¨logn +1£© 
-*/ 
+eeeWAäº†åŠå¤©ï¼ŒNå¼€å¤§åå€å°±Aäº†
+æˆ‘ä»¬æ¥ä»”ç»†ç®—ä¸€ä¸‹ç©ºé—´ã€‚
+æ•°ç»„å¤§å°2*10^4
+æ¯ä¸ªèŠ‚ç‚¹æœ‰ä¸€ä¸ªxds
+e..å‘ç°çº¿æ®µæ ‘çš„é«˜åº¦ä¸æ˜¯ä¸¥æ ¼lognçš„
+æ¯”å¦‚ä¸€ä¸ª1~15çš„çº¿æ®µæ ‘ï¼Œæœ€æ·±äº”å±‚ã€‚
+åº”è¯¥æŒ‰2nç®—log
+é‚£ä¹ˆæœ¬é¢˜Nè¦ä¸º
+4588000
+é‚£ä¹ˆæ ‘çŠ¶æ•°ç»„çš„å±‚æ•°ï¼Ÿ
+ä¸¥æ ¼ï¼ˆlogn +1ï¼‰
+*/
 #include<cstdio>
 #include<iostream>
 #define low(x) (x&(-x))
 #define N   4588005
 #define INF 1000000005
 using namespace std;
-const int L=0,R=1;
-int n,m,cnt,root[20005],total;
+const int L = 0, R = 1;
+int n, m, cnt, root[20005], total;
 int a[20005];
 //--------hjt-------
-int son[N][2],size[N];
-inline int build(int &k,int fr_,int to_,int &x,int f2){//Ë³´ø·µ»Ø±Èx´óµÄ¸öÊı
-    int f=++cnt;son[f][L]=son[k][L];son[f][R]=son[k][R];
-    size[f]=size[k]+f2;k=f;
-    if(fr_==to_) return 0;
-    int mid=(fr_+to_)>>1;
-    if(mid>=x)  {return size[son[k][R]]+build(son[k][L],fr_,mid,x,f2);}
-    else  return build(son[k][R],mid+1,to_,x,f2);
+int son[N][2], size[N];
+inline int build(int &k, int fr_, int to_, int &x, int f2) { //é¡ºå¸¦è¿”å›æ¯”xå¤§çš„ä¸ªæ•°
+	int f = ++cnt;
+	son[f][L] = son[k][L];
+	son[f][R] = son[k][R];
+	size[f] = size[k] + f2;
+	k = f;
+
+	if(fr_ == to_) return 0;
+
+	int mid = (fr_ + to_) >> 1;
+
+	if(mid >= x)  {
+		return size[son[k][R]] + build(son[k][L], fr_, mid, x, f2);
+	} else  return build(son[k][R], mid + 1, to_, x, f2);
 }
-void pre(){
-    total=0;
-    for(int i=1;i<=n;i++){
-        root[i]=root[i-1];
-        total+=build(root[i],1,INF,a[i],1);
-    }
+void pre() {
+	total = 0;
+
+	for(int i = 1; i <= n; i++) {
+		root[i] = root[i - 1];
+		total += build(root[i], 1, INF, a[i], 1);
+	}
 }
 
-int cxd(int jia1,int jia2,int jian,int fr_,int to_,int &f){
-    if(fr_>f){
-        return size[jia1]+size[jia2]-size[jian];
-    }else if(to_<=f){
-        return 0;
-    }else{
-        int mid=(fr_+to_)>>1;
-        return cxd(son[jia1][L],son[jia2][L],son[jian][L],fr_,mid,f)+
-        cxd(son[jia1][R],son[jia2][R],son[jian][R],mid+1,to_,f);
-    }
+int cxd(int jia1, int jia2, int jian, int fr_, int to_, int &f) {
+	if(fr_ > f) {
+		return size[jia1] + size[jia2] - size[jian];
+	} else if(to_ <= f) {
+		return 0;
+	} else {
+		int mid = (fr_ + to_) >> 1;
+		return cxd(son[jia1][L], son[jia2][L], son[jian][L], fr_, mid, f) +
+		       cxd(son[jia1][R], son[jia2][R], son[jian][R], mid + 1, to_, f);
+	}
 }
-int cxx(int jia1,int jia2,int jian,int fr_,int to_,int &f){
-    if(fr_>=f){
-        return 0;
-    }else if(to_<f){
-        return size[jia1]+size[jia2]-size[jian];
-    }else{
-        int mid=(fr_+to_)>>1;
-        return cxx(son[jia1][L],son[jia2][L],son[jian][L],fr_,mid,f)+
-        cxx(son[jia1][R],son[jia2][R],son[jian][R],mid+1,to_,f);
-    }
+int cxx(int jia1, int jia2, int jian, int fr_, int to_, int &f) {
+	if(fr_ >= f) {
+		return 0;
+	} else if(to_ < f) {
+		return size[jia1] + size[jia2] - size[jian];
+	} else {
+		int mid = (fr_ + to_) >> 1;
+		return cxx(son[jia1][L], son[jia2][L], son[jian][L], fr_, mid, f) +
+		       cxx(son[jia1][R], son[jia2][R], son[jian][R], mid + 1, to_, f);
+	}
 }
 //--------bit-----------
 int bit[20005];
-inline void change(int x,int y){//°Ña[x]±ä³Éy
-    for(int i=x;i<=n;i+=low(i)){
-        build(bit[i],1,INF,a[x],-1);
-        build(bit[i],1,INF,y,1);
-    }
-    a[x]=y;
+inline void change(int x, int y) { //æŠŠa[x]å˜æˆy
+	for(int i = x; i <= n; i += low(i)) {
+		build(bit[i], 1, INF, a[x], -1);
+		build(bit[i], 1, INF, y, 1);
+	}
+
+	a[x] = y;
 }
-inline int querybigger(int x,int k){//²éÑ¯Çø¼ä1-x±Èk´óµÄ¸öÊı
-    int ret=0;
-    for(int i=x;i>=1;i-=low(i)){
-        ret+=cxd(root[i],bit[i],root[i-low(i)],1,INF,k);
-    }
-    return ret;
+inline int querybigger(int x, int k) { //æŸ¥è¯¢åŒºé—´1-xæ¯”kå¤§çš„ä¸ªæ•°
+	int ret = 0;
+
+	for(int i = x; i >= 1; i -= low(i)) {
+		ret += cxd(root[i], bit[i], root[i - low(i)], 1, INF, k);
+	}
+
+	return ret;
 }
-inline int querysmaller(int x,int k){//²éÑ¯Çø¼ä1-x±ÈkĞ¡µÄ¸öÊı
-    int ret=0;
-    for(int i=x;i>=1;i-=low(i)){
-        ret+=cxx(root[i],bit[i],root[i-low(i)],1,INF,k);
-    }
-    return ret;
-} 
+inline int querysmaller(int x, int k) { //æŸ¥è¯¢åŒºé—´1-xæ¯”kå°çš„ä¸ªæ•°
+	int ret = 0;
+
+	for(int i = x; i >= 1; i -= low(i)) {
+		ret += cxx(root[i], bit[i], root[i - low(i)], 1, INF, k);
+	}
+
+	return ret;
+}
 //------------------
-int main(){
-    scanf("%d",&n);
-    for(int i=1;i<=n;i++){
-        scanf("%d",&a[i]);
-    }
-    pre();
-    printf("%d\n",total);
-    scanf("%d",&m);
-    for(int i=1,l,r;i<=m;i++){
-        scanf("%d%d",&l,&r); 
-        int ans=querysmaller(r,a[l])-querysmaller(l,a[l])+querybigger(r,a[r])-querybigger(l,a[r]);
-        total-=ans;int t=a[l];
-        change(l,a[r]);
-		change(r,t);
-        ans=querysmaller(r,a[l])-querysmaller(l,a[l])+querybigger(r,a[r])-querybigger(l,a[r]);
-        total+=ans; 
-        printf("%d\n",total);
-    }
-    return  0;
+int main() {
+	scanf("%d", &n);
+
+	for(int i = 1; i <= n; i++) {
+		scanf("%d", &a[i]);
+	}
+
+	pre();
+	printf("%d\n", total);
+	scanf("%d", &m);
+
+	for(int i = 1, l, r; i <= m; i++) {
+		scanf("%d%d", &l, &r);
+		int ans = querysmaller(r, a[l]) - querysmaller(l, a[l]) + querybigger(r, a[r]) - querybigger(l, a[r]);
+		total -= ans;
+		int t = a[l];
+		change(l, a[r]);
+		change(r, t);
+		ans = querysmaller(r, a[l]) - querysmaller(l, a[l]) + querybigger(r, a[r]) - querybigger(l, a[r]);
+		total += ans;
+		printf("%d\n", total);
+	}
+
+	return  0;
 }

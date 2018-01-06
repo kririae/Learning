@@ -5,19 +5,23 @@
 
 using namespace std;
 
-double rb()
-{
+double rb() {
 	char num[100];
-	scanf("%s",num);
-	if(num[0] == '+') return rb()+rb();
-	if(num[0] == '-') return rb()-rb();
-	if(num[0] == '*') return rb()*rb();
-	if(num[0] == '/') return rb()/rb();
+	scanf("%s", num);
+
+	if(num[0] == '+') return rb() + rb();
+
+	if(num[0] == '-') return rb() - rb();
+
+	if(num[0] == '*') return rb() * rb();
+
+	if(num[0] == '/') return rb() / rb();
+
 	double digit;
-	sscanf(num,"%lf",&digit);
+	sscanf(num, "%lf", &digit);
 	return digit;
 }
-int main(){
-	printf("%lf\n",rb());
+int main() {
+	printf("%lf\n", rb());
 	return 0;
 }

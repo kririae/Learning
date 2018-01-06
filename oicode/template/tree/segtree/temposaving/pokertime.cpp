@@ -4,14 +4,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 bool cmpare(char c1, char c2) {
-	char l[4]; int indexc1, indexc2;
+	char l[4];
+	int indexc1, indexc2;
 	// 不知道c语言怎么写...
-	l[0] = 'H', l[1] = 'S', l[2] = 'D', l[3]= 'C';
+	l[0] = 'H', l[1] = 'S', l[2] = 'D', l[3] = 'C';
+
 	// 用一个比较容易看懂的写法吧...
 	for (int i = 0; i < 4; ++i) {
 		if(l[i] == c1) indexc1 = i;
-		if(l[i] == c2) indexc2 = i; 
+
+		if(l[i] == c2) indexc2 = i;
 	}
+
 	return indexc1 < indexc2;
 }
 struct poker {
@@ -23,25 +27,31 @@ struct poker {
 	}
 	bool operator == (const poker (&a)) const {
 		if(typ == a.typ && x == typ.x) return true;
+
 		return false;
 	}
 };
-poker a[5], b[5]; 
+poker a[5], b[5];
 void convert(poker *s) {
 	for (int i = 0; i < 3; ++i) {
-		char c[10]; int vali;
+		char c[10];
+		int vali;
 		scanf("%s", c);
 		s[i].typ = c[0];
+
 		if(isdigit(c[1])) {
 			sscanf(&c[1], "%d", &vali); // 可能有错
-		}
-		else {
+		} else {
 			// 这时候将字符转化为数字
 			if(c[1] == 'J') vali = 11;
+
 			if(c[1] == 'Q') vali = 12;
+
 			if(c[1] == 'K') vali = 13;
+
 			if(c[1] == 'A') vali = 14;
 		}
+
 		s[i].x = vali;
 	}
 }
@@ -59,19 +69,24 @@ void final_cmp() {
 			return a < b;
 		}
 	}
+
 	return true;
 }
 int main() {
 	init();
-	if(final_cmp()) 
+
+	if(final_cmp())
 		printf("Winner is A!");
-	else 
+	else
 		printf("Winner is B!");
+
 	for (int i = 0; i < 3; ++i) {
-		cout << a[i].typ << a[i].x << " "; 
+		cout << a[i].typ << a[i].x << " ";
 	}
+
 	for (int i = 0; i < 3; ++i) {
-		cout << b[i].typ << b[i].x << " "; 
+		cout << b[i].typ << b[i].x << " ";
 	}
+
 	return 0;
 }

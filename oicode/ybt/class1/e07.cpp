@@ -2,9 +2,9 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main(){
+int main() {
 	double f;
-	cin>>f;
-	printf("%.5f",5*(f-32)/9);
+	cin >> f;
+	printf("%.5f", 5 * (f - 32) / 9);
 	return 0;
 }

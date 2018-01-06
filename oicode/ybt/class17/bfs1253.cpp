@@ -11,8 +11,9 @@ int main() {
 	times[n] = 1;
 	times[k] = 1;
 	int curr = n, proc = n + 1;
+
 	while(n <= k) {
 		if(n == k) break;
-				 
+
 	}
 }

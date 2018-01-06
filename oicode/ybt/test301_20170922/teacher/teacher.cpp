@@ -11,6 +11,7 @@ struct requests {
 requests req[50000];
 bool compare(const requests& a, const requests& b) {
 	if(a.res > b.res) return true;
+
 	return false;
 }
 int main() {
@@ -18,10 +19,12 @@ int main() {
 	freopen("teacher.out", "w", stdout);
 	int all = 0;
 	cin >> m >> n;
+
 	for(int i = 1; i <= m; ++i) {
 		//request
 		int num;
 		cin >> num;
+
 		for(int j = 0; j < num; ++j) {
 			cin >> req[all].money;
 			cin >> req[all].jj;
@@ -29,17 +32,21 @@ int main() {
 			++all;
 		}
 	}
+
 	sort(req, req + all + 3, compare);
 	long long summary = 0;
 	summary += m * 100;
 	int sumnum = 0;
+
 	for(int i = 0; i < all; ++i) {
 		if((sumnum + req[i].money) <= n) {
 			summary += req[i].jj;
 			sumnum += req[i].money;
 		}
 	}
-	cout<<summary;
-	fclose(stdin);fclose(stdout);
+
+	cout << summary;
+	fclose(stdin);
+	fclose(stdout);
 	return 0;
 }

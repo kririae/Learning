@@ -14,17 +14,24 @@ using namespace std;
 顾客从 1 号圈买 2 头，然后把 1 号圈剩下的 1 头放到 2 号圈；第二个顾客从 3
 号圈买 3 头；第三个顾客从 2 号圈买 2 头。总共卖出 2+3+2=7 头。
 */
-int n,m;
-int c(int times,int pigname){
-	return times*1000+pigname;//1000>=pigname>=1
+int n, m;
+int c(int times, int pigname) {
+	return times * 1000 + pigname; //1000>=pigname>=1
 }
-struct edge{
-	int from,to,flow,cap,cost;
-	edge(int from_,int to_,int flow_,int cap_){
-		from=from_;to=to_;flow=flow_;cap=cap_;
+struct edge {
+	int from, to, flow, cap, cost;
+	edge(int from_, int to_, int flow_, int cap_) {
+		from = from_;
+		to = to_;
+		flow = flow_;
+		cap = cap_;
 	}
-	edge(int from_,int to_,int flow_,int cap_,int cost_){
-		from=from_;to=to_;flow=flow_;cap=cap_;cost=cost_;
+	edge(int from_, int to_, int flow_, int cap_, int cost_) {
+		from = from_;
+		to = to_;
+		flow = flow_;
+		cap = cap_;
+		cost = cost_;
 	}
 };
 vector<edge> e;
@@ -32,12 +39,12 @@ vector<edge> e;
 void addedge
 
 
-int zhu[1005];//猪圈 
-struct custom{
+int zhu[1005];//猪圈
+struct custom {
 	int a;//要买几个猪圈
 	vector<int> v;
-	int buy;//要买几只猪 
-}cu[105];
+	int buy;//要买几只猪
+} cu[105];
 
 
 
@@ -45,21 +52,25 @@ struct custom{
 
 
 
-int main(){
-	scanf("%d%d",&m,&n);
-	for(int i=1;i<=m;i++){
-		scanf("%d",&zhu[i]);
+int main() {
+	scanf("%d%d", &m, &n);
+
+	for(int i = 1; i <= m; i++) {
+		scanf("%d", &zhu[i]);
 	}
-	for(int i=1;i<=n;i++){
-		scanf("%d",&cu[i].a);
-		for(int c,i=1;i<=cu[i].a;i++){
-			scanf("%d",&c);
+
+	for(int i = 1; i <= n; i++) {
+		scanf("%d", &cu[i].a);
+
+		for(int c, i = 1; i <= cu[i].a; i++) {
+			scanf("%d", &c);
 			cu[i].v.push_back(c);
 		}
-		scanf("%d",&cu[i].buy);
+
+		scanf("%d", &cu[i].buy);
 	}
-	
-	
-	
+
+
+
 	return 0;
 }

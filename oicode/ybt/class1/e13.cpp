@@ -2,10 +2,10 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main(){
+int main() {
 	float i;
 	int res;
-	cin>>i;
+	cin >> i;
 	res = i;
 	cout << res;
 	return 0;

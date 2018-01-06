@@ -4,8 +4,8 @@ using namespace std;
 //那么分析透了，我就不想做了，我们做bzoj2453吧。
 //TAT我做不起怎么办，
 //看了黄学长的题解，这真是一种神奇的化归
-//留着两周后再做一次吧 
-int main(){
-    
-    return 0;
+//留着两周后再做一次吧
+int main() {
+
+	return 0;
 }

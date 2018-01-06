@@ -2,11 +2,11 @@
 #include<algorithm>
 using namespace std;
 /*
-按右侧排序 
-线段树维护 
+按右侧排序
+线段树维护
 */
 
-int main(){
+int main() {
 
 	return 0;
 }

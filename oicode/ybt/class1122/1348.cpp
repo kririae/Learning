@@ -9,6 +9,7 @@ struct edge {
 int father[1005];
 inline int find(int v) {
 	if(father[v] != v) father[v] = find(father[v]);
+
 	return father[v];
 }
 inline void unionn(int a, int b) {
@@ -21,20 +22,25 @@ int main() {
 	ios::sync_with_stdio(false);
 	int n, k, tot = 0;
 	cin >> n >> k;
-    for(register int i = 0; i <= n; ++i) {
-        father[i] = i;
-    }
+
+	for(register int i = 0; i <= n; ++i) {
+		father[i] = i;
+	}
+
 	for (register int rp = 0; rp < k; ++rp) {
 		cin >> p[rp].x >> p[rp].y >> p[rp].value;
 		tot += p[rp].value;
 	}
+
 	sort(p, p + k);
 	int summ = 0;
+
 	for(register int i = 0; i < k; ++i) {
 		if(find(p[i].x) != find(p[i].y)) {
 			summ += p[i].value;
 			unionn(p[i].x, p[i].y);
 		}
 	}
+
 	cout << tot - summ << endl;
 	return 0;

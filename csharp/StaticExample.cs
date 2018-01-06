@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StaticSample
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        }
-    }
+namespace StaticSample {
+class Program {
+	static void Main(string[] args) {
+	}
+}
 }
