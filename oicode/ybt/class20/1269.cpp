@@ -9,8 +9,10 @@ int main() {
 	int n, m;
 	cin >> n >> m;
 	can[0] = true;
+
 	for(int v, w, s, i = 0; i < n; ++i) {
 		cin >> v >> w >> s;
+
 		// k是该奖品的数目
 		// v是该奖品的价格
 		// w是该奖品的价值
@@ -19,20 +21,23 @@ int main() {
 		for(int j = m; j >= 0; --j) {
 			for(int k = 1; k <= s; ++k) {
 				if(j + k * v > m) break;
-				 if(can[j]) {
-				 	if(can[j + k * v]) {
-				 		value[j + k * v] = max(value[j + k * v], value[j] + w * k);
-				 	}
-				 	else {
-				 		can[j + k * v] = true;
-				 		value[j + k * v] = value[j] + w * k;
-				 	}
-				 }
+
+				if(can[j]) {
+					if(can[j + k * v]) {
+						value[j + k * v] = max(value[j + k * v], value[j] + w * k);
+					} else {
+						can[j + k * v] = true;
+						value[j + k * v] = value[j] + w * k;
+					}
+				}
 			}
 		}
 	}
+
 	int maxn = 0;
-	for(int i = 0; i <= m; ++i) 
+
+	for(int i = 0; i <= m; ++i)
 		maxn = max(value[i], maxn);
+
 	cout << maxn;
 }

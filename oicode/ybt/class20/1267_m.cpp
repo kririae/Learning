@@ -12,22 +12,25 @@ int main() {
 	used[0] = true;
 	value[0] = 0;
 	cin >> n >> m;
-	for(int v, w, s ,i = 0; i < n; ++m) {
+
+	for(int v, w, s, i = 0; i < n; ++m) {
 		cin >> v >> w >> s;
+
 		for(int j = maxn; j >= 0; --j) {
 			for(int k = 1; k <= s; ++k) {
 				if(used[j] && v * k + j <= m) {
 					if(used[v * k + j]) {
 						value[v * k + j] = max(value[v * k + j], value[j] + v * k);
-					}
-					else {
+					} else {
 						used[v * k + j] = true;
 						value[v * k + j] = value[j] + v * k;
 					}
+
 					maxn = max(maxn, v * k + j);
 				}
 			}
 		}
 	}
+
 	cout << value[m];
 }

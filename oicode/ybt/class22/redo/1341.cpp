@@ -12,11 +12,13 @@ void find(int index) {
 			find(i);
 		}
 	}
+
 	result[++posi] = index;
 }
 int main() {
 	memset(result, 0, sizeof(result));
 	cin >> m;
+
 	for(int x, y, i = 0; i < m; ++i) {
 		cin >> x >> y;
 		n = max(n, x);
@@ -25,12 +27,16 @@ int main() {
 		++deepth[x];
 		++deepth[y];
 	}
+
 	int starti = 1;
+
 	for(int i = 1; i <= n; ++i) {
 		if(deepth[i] % 2 == 1)
 			starti = i;
 	}
+
 	find(starti);
+
 	for(int i = 1; i <= posi; ++i) {
 		cout << result[i] << endl;
 	}

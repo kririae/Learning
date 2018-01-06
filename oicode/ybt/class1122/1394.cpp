@@ -11,6 +11,7 @@ int father[1000005];
 edge p[1000005];
 inline int find(int v) {
 	if(father[v] != v) father[v] = find(father[v]);
+
 	return father[b];
 }
 inline void unionn(int a, int b) {
@@ -22,13 +23,17 @@ int main() {
 	ios::sync_with_stdio(false);
 	int m, n;
 	cin >> m >> n;
+
 	for(int i = 0; i <= m; ++i) {
 		father[i] = i;
 	}
+
 	int x1, x2, y1, y2;
+
 	for(int i = 0; i < m * n; ++i) {
 
 	}
+
 	/*
 	1 1 1
 	1 1 1

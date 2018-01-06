@@ -7,14 +7,18 @@ int s[101];
 int n, i, j, k, x;
 int main() {
 	cin >> n;
+
 	for(i = 1; i <= n; ++i) {
 		cin >> x;
 		s[i] = s[i - 1] + x;
 	}
-	memset(f, 127/3, sizeof(f));
+
+	memset(f, 127 / 3, sizeof(f));
+
 	for(i = 1; i <= n; ++i) {
 		f[i][i] = 0;
 	}
+
 	for(i = n - 1; i >= 1; --i) {
 		for(int j = i + 1; j <= n; ++j) {
 			for(k = i; k <= j - 1; ++k) {
@@ -22,5 +26,6 @@ int main() {
 			}
 		}
 	}
+
 	cout << f[1][n];
 }

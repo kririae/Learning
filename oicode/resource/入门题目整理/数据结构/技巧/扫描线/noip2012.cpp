@@ -1,11 +1,11 @@
 #include<cstdio>
 #include<algorithm>
-#define N 1000005 
+#define N 1000005
 using namespace std;
-int start[N],end[N],d[N];
-int n,m;
+int start[N], end[N], d[N];
+int n, m;
 int sor[N];
-int main(){
-	//本题差分 
+int main() {
+	//本题差分
 	return 0;
-} 
+}

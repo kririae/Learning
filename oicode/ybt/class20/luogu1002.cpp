@@ -21,25 +21,31 @@ int main() {
 	cin >> posibx >> posiby >> hposix >> hposiy;
 	++posibx, ++posiby, ++hposix, ++hposiy;
 	horse[hposix][hposiy] = true;
+
 	for(int i = 0; i < 8; ++i)  {
 		int gox = hposix + go_h[i][0];
 		int goy = hposiy + go_h[i][1];
+
 		if(gox < 1 || goy < 1 || gox > posibx || goy > posiby) continue;
+
 		horse[gox][goy] = true;
 	}
+
 	gcan[1][1] = true;
 	memo[1][1] = 1;
+
 	for(int i = 1; i <= posibx; ++i) {
 		for(int j = 1; j <= posiby; ++j) {
 			if(!horse[i][j]) {
 				for(int k = 0; k < 2; ++k) {
 					if(gcan[i + go[k][0]][j + go[k][1]] && !horse[i + go[k][0]][j + go[k][1]]) {
-							memo[i][j] += memo[i + go[k][0]][j + go[k][1]];
-							gcan[i][j] = true;
+						memo[i][j] += memo[i + go[k][0]][j + go[k][1]];
+						gcan[i][j] = true;
 					}
 				}
-			}	
+			}
 		}
-	} 
+	}
+
 	cout << memo[posibx][posiby];
 }

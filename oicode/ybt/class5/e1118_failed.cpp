@@ -3,7 +3,7 @@
 铺地毯
 
 时间限制: 1000 ms         内存限制: 65536 KB
-提交数: 81     通过数: 45 
+提交数: 81     通过数: 45
 【题目描述】
 为了准备一个独特的颁奖典礼，组织者在会场的一片矩形区域（可看做是平面直角坐标系的第一象限）铺上一些矩形地毯。一共有n张地毯，编号从1到n。现在将这些地毯按照编号从小到大的顺序平行于坐标轴先后铺设，后铺的地毯覆盖在前面已经铺好的地毯之上。地毯铺设完成后，组织者想知道覆盖地面某个点的最上面的那张地毯的编号。注意：在矩形地毯边界和四个顶点上的点也算被地毯覆盖。
 
@@ -49,23 +49,28 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-int main(){
-	int n;scanf("%d",&n);
-	int total[n][4],position[2],res=-1;
-	for(int a,b,g,k,i=0;i<n;++i){
-		cin>>a>>b>>g>>k;
-		total[i][0]=a;
-		total[i][1]=b;
-		total[i][2]=g;
-		total[i][3]=k;
+int main() {
+	int n;
+	scanf("%d", &n);
+	int total[n][4], position[2], res = -1;
+
+	for(int a, b, g, k, i = 0; i < n; ++i) {
+		cin >> a >> b >> g >> k;
+		total[i][0] = a;
+		total[i][1] = b;
+		total[i][2] = g;
+		total[i][3] = k;
 	}
-	cin>>position[0]>>position[1];
-	for (int x,y,i = 0; i <= n; ++i)
-	{
-		x = position[0],y=position[1];
-		if(x<=total[i][2]&&x>=total[i][0]&&y>=total[i][1]&&y<=total[i][3])
-			res=i+1;
+
+	cin >> position[0] >> position[1];
+
+	for (int x, y, i = 0; i <= n; ++i) {
+		x = position[0], y = position[1];
+
+		if(x <= total[i][2] && x >= total[i][0] && y >= total[i][1] && y <= total[i][3])
+			res = i + 1;
 	}
-	cout<<res;
+
+	cout << res;
 	return 0;
 }

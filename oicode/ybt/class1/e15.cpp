@@ -2,11 +2,11 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main(){
+int main() {
 	int a;
 	char b;
-	cin>>a;
+	cin >> a;
 	b = a;
-	cout<<b;
+	cout << b;
 	return 0;
 }

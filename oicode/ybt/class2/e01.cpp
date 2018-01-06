@@ -2,21 +2,19 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main(){
+int main() {
 	int n;
-	cin>>n;
-	if (n>0)
-	{
-		cout<<"positive";
-	}
-	else{
-		if (n==0)
-		{
-			cout<<"zero";
-		}
-		else{
-			cout<<"negative";
+	cin >> n;
+
+	if (n > 0) {
+		cout << "positive";
+	} else {
+		if (n == 0) {
+			cout << "zero";
+		} else {
+			cout << "negative";
 		}
 	}
+
 	return 0;
 }

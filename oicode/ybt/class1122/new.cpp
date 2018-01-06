@@ -13,16 +13,20 @@ struct Node {
 
 Node* root;
 
-Node* newnode() { return new Node();}
+Node* newnode() {
+	return new Node();
+}
 bool addnode(int v, char* s) {
 	int length = strlen(s);
 	Node* curr = root;
+
 	for(int i = 0; i < length; ++i) {
 		if(s[i] == 'L') {
-			
+
 		}
+
 		if(s[i] == 'R') {
-			
+
 		}
 	}
 }
