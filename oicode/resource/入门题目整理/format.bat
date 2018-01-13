@@ -1,1 +1,0 @@
-for /R %%f in (*.cpp;*.cs;) do D:\kriaeth\resources\AStyleXP\bin\Astyle.exe --style=gnu -p -X --indent=tab -n "%%f"

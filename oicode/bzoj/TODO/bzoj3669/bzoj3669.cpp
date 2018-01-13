@@ -1,7 +1,19 @@
-ï»¿/*
+/*
 * by kriaeth 2018/1/13
-* è®²çœŸ ä¸çœ‹é¢˜è§£æˆ‘è¿˜çœŸçš„æƒ³ä¸å‡ºè¿™ä¸ª...
-* spfaåŠ¨æ€åŠ ç‚¹...è²Œä¼¼è¿˜æŒºæ–°é²œçš„qwq
+* ½²Õæ ²»¿´Ìâ½âÎÒ»¹ÕæµÄÏë²»³öÕâ¸ö...
+* spfa¶¯Ì¬¼Óµã...Ã²ËÆ»¹Í¦ĞÂÏÊµÄqwq
+*/
+// spfa¶¯Ì¬¼Óµã...
+// status AC (ÎªÉ¶Ã»ÓĞacµÄ...
+/*
+´ó¸Å¿ÉÒÔÕâÃ´×Ü½á
+¿´ÁË¿´Ìâ½â È»ºóÔÙ¿ªÊ¼Ğ´µÄ...(±Ï¾¹×Ô¼º»¹Ã»ÓĞÊ¡Ñ¡µÄË®Æ½
+´ó¸ÅÊÇ³å×ÅspfaµÄ¶¯Ì¬¼ÓµãÀ´µÄ
+¶¯Ì¬¼Óµã/±ßµÄÊ±ºò ÇĞÎğÇåÁãdist
+Ö±½Ópushµ±Ç°±ßµÄÁ½¸öµã¾Í¶Ô...
+ÒÔºóÓ¦¸Ã¿ÉÒÔ¶àÓÃÓÃ...
+++spfaÉ§²Ù×÷
+¶ÔÁË »¹ÓĞÄÇ¸öÏÈÅÅĞòÔÙ¼ÓµÄ
 */
 
 #pragma GCC optimize(2)
@@ -43,7 +55,7 @@ namespace solve
 	std::vector<Edge> edges[maxn];
 	std::priority_queue<Edge> tempo;
 	std::queue<int> proc;
-	long long dis[maxn];
+	int dis[maxn];
 	std::bitset<maxn> vis;
 
 	int res = 1e9;
@@ -54,6 +66,12 @@ namespace solve
 		return a < b ? a : b;
 	}
 
+	template<typename T>
+	inline T max(T a, T b)
+	{
+		return a < b ? b : a;
+	}
+	
 	inline void read(int &val)
 	{
 		val = 0; char c = getchar();
@@ -69,13 +87,12 @@ namespace solve
 			edges[yi].push_back(Edge(yi, xi, ai, bi));
 		}
 		else {
-		    // std::cout << xi << " " << yi << " " << ai << " " << bi << std::endl;
 		    Edge curr(xi, yi, ai, bi);
 			tempo.push(curr);
 		}
 	}
 
-	inline long long spfa(const Edge (&e)) 
+	inline int spfa(const Edge (&e)) 
 	{
 		proc.push(e.from);
 		proc.push(e.to);
@@ -92,8 +109,8 @@ namespace solve
 			for (int i = edges[curr].size() - 1; i >= 0; --i) 
 			{
 				Edge tempo = edges[curr][i];
-				if(dis[curr] + tempo.b < dis[tempo.to]) {
-    				dis[tempo.to] = dis[curr] + tempo.b;
+				if(max(dis[curr], tempo.b) < dis[tempo.to]) {
+    				dis[tempo.to] = max(dis[curr], tempo.b);
     				if(!vis[tempo.to])
     				{
     					vis[tempo.to] = true;
@@ -117,8 +134,6 @@ namespace solve
 
 	inline void solve()
 	{
-//		freopen("testdata.in", "r", stdin);
-//		freopen("out.txt", "w", stdout);
 		init();
 		proc.push(1);
 		vis[1] = true;
@@ -127,11 +142,8 @@ namespace solve
 		{
 			Edge curr = tempo.top();
 			tempo.pop();
-			std::printf("%d %d %d %d\n", curr.from, curr.to, curr.a, curr.b);
 			addedge(curr.from, curr.to, curr.a, curr.b, true);
-			int x = spfa(curr);
-			std::cout << x << "+" << curr.a << std::endl;
-			res = min(res, x + curr.a);
+			res = min(res, spfa(curr) + curr.a);
 		}
 		if(res == 1e9) std::cout << -1 << std::endl;
 		else std::cout << res << std::endl;
