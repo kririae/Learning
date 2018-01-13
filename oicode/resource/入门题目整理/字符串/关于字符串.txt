@@ -1,0 +1,13 @@
+KMP是基础
+Trie也是基础
+Trie+KMP-》AC自动机-》fail图
+		|
+		v
+	    fail树（AC自动机的fail边组成一棵树）[强烈建议画一下]
+字符串+KMP可以利用fail边O(n)构造后缀树、前缀树
+后缀树的中序遍历是后缀数组
+
+
+LCP  hash+二分
+
+可以利用虚树上的差分来完成避免重复的动作 http://www.cnblogs.com/clrs97/p/4403152.html
