@@ -5,7 +5,8 @@
 using namespace std;
 bool used[1001][1001];
 int value[1001][1001];
-int main() {
+int main()
+{
 	memset(used, false, sizeof(used));
 	memset(value, 0, sizeof(value));
 	int n, m, k;

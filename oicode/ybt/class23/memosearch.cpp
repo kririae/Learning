@@ -3,7 +3,8 @@ using namespace std;
 int n, ans = 0, llll[1000][1000];
 int memo[1000][1000];
 void search(int, int, int);
-int main() {
+int main()
+{
 	cin >> n;
 
 	for(int i = 1; i <= n; ++i) {
@@ -16,7 +17,8 @@ int main() {
 	cout << ans;
 	return 0;
 }
-void search(int a, int b, int val) {
+void search(int a, int b, int val)
+{
 	val += llll[a][b];
 
 	if(val <= memo[a][b]) return ;

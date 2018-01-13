@@ -5,12 +5,14 @@ using namespace std;
 struct accurate {
 	int value[1000];
 	int length;
-	accurate() {
+	accurate()
+	{
 		memset(value, -1, sizeof(value));
 		length = 0;
 	}
 };
-accurate convert(int num, int binary) {
+accurate convert(int num, int binary)
+{
 	accurate res, placed;
 	int i = 0;
 
@@ -33,7 +35,8 @@ accurate convert(int num, int binary) {
 
 	return res;
 }
-bool count_a_b(accurate x) {
+bool count_a_b(accurate x)
+{
 	int res = 0;
 
 	for (int i = 0; i < x.length; ++i)
@@ -42,7 +45,8 @@ bool count_a_b(accurate x) {
 	if(res > x.length - res) return true;
 	else return false;
 }
-int main() {
+int main()
+{
 	int a, b;
 	a = b = 0;
 

@@ -9,7 +9,8 @@ struct point {
 };
 const int go[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 point p[8000000];
-int main() {
+int main()
+{
 	int m, n;
 
 	while(true) {

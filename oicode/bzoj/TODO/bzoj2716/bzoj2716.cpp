@@ -9,30 +9,36 @@ const int inf = 0x3f3f3f3f;
 int opt[maxn * 2][3];
 int id[maxn * 2];
 int n, m;
-namespace KD_tree {
+namespace KD_tree
+{
 struct node {
 	int ch[2], mn[2], mx[2], x, y, fa, id;
 	bool d, exist;
-	node() {
+	node()
+	{
 		mn[0] = mn[1] = inf;
 		exist = 0;
 	}
-	node(int rx, int ry) {
+	node(int rx, int ry)
+	{
 		x = rx, y = ry;
 		exist = 0;
 	}
-	void init() {
+	void init()
+	{
 		mx[0] = mn[0] = x;
 		mx[1] = mn[1] = y;
 	}
 } tree[maxn * 4];
 int cnt, D, root;
 
-bool operator <(const node &a, const node &b) {
+bool operator <(const node &a, const node &b)
+{
 	return !D ? a.y < b.y : a.x < b.x;
 }
 
-void push_up(int rt) {
+void push_up(int rt)
+{
 	for(int i = 0; i < 2; i++)
 		for(int j = 0; j < 2; j++) {
 			tree[rt].mn[j] = min(tree[rt].mn[j], tree[tree[rt].ch[i]].mn[j]);
@@ -40,7 +46,8 @@ void push_up(int rt) {
 		}
 }
 
-void build(int &rt, int l, int r, int d, int fa) {
+void build(int &rt, int l, int r, int d, int fa)
+{
 	if(l == r) {
 		rt = r;
 		tree[rt].d = d;
@@ -63,18 +70,21 @@ void build(int &rt, int l, int r, int d, int fa) {
 	push_up(rt);
 }
 
-int dis(int x, int y, node rect) {
+int dis(int x, int y, node rect)
+{
 	int tmp = 0;
 	tmp += max(0, rect.mn[0] - x), tmp += max(0, x - rect.mx[0]);
 	tmp += max(0, rect.mn[1] - y), tmp += max(0, y - rect.mx[1]);
 	return tmp;
 }
 
-int mh(int x, int y, int _x, int _y) {
+int mh(int x, int y, int _x, int _y)
+{
 	return abs(x - _x) + abs(y - _y);
 }
 
-void query(int x, int y, int rt, int &ans) {
+void query(int x, int y, int rt, int &ans)
+{
 	int d, dl = inf, dr = inf;
 
 	if(tree[rt].exist) {
@@ -97,7 +107,8 @@ void query(int x, int y, int rt, int &ans) {
 	}
 }
 
-void insert(int now) {
+void insert(int now)
+{
 	/* 注意,当前节点一旦插入，需要初始化，并且用该节点信息重新更新整条链 */
 	now = id[now];
 	tree[now].init();
@@ -110,7 +121,8 @@ void insert(int now) {
 }
 }
 
-int main() {
+int main()
+{
 	using namespace KD_tree;
 	scanf("%d%d", &n, &m);
 

@@ -2,7 +2,8 @@
 #include <cstdio>
 using namespace std;
 bool data[45][45];
-int main() {
+int main()
+{
 	int r, c;
 	char ch;
 

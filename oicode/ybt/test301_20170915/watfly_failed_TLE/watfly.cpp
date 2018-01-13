@@ -4,7 +4,8 @@
 using namespace std;
 int n, x = 0, y = 0, maxn = 0;
 int res[10005];
-int summary(int start, int end) {
+int summary(int start, int end)
+{
 	long long sumn = 0;
 
 	for(int i = start; i <= end; ++i)
@@ -12,7 +13,8 @@ int summary(int start, int end) {
 
 	return sumn;
 }
-int main() {
+int main()
+{
 	freopen("watfly.in", "r", stdin);
 	freopen("watfly.out", "w", stdout);
 	cin >> n;

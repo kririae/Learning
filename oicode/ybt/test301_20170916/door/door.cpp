@@ -8,7 +8,8 @@ int spacew, spaceh;
 char roads[25][25];
 bool wented[25][25];
 #ifdef DEBUGGING
-void printOut() {
+void printOut()
+{
 	for(int i = 0; i < h; ++i) {
 		for(int j = 0; j < w; ++j)
 			cout << wented[i][j] << " ";
@@ -17,7 +18,8 @@ void printOut() {
 	}
 }
 #endif
-void search(int x, int y, int deepth) {
+void search(int x, int y, int deepth)
+{
 	//x表示纵列上的位置，y表示横列上的位置
 	//简单来说， x -> h; y -> w;
 	if(x > h - 1 || y > w - 1) return;
@@ -54,7 +56,8 @@ void search(int x, int y, int deepth) {
 
 	return ;
 }
-int main() {
+int main()
+{
 	freopen("door.in", "r", stdin);
 	freopen("door.out", "w", stdout);
 	cin >> w >> h;

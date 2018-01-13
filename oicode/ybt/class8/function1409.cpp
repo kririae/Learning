@@ -5,12 +5,14 @@
 using namespace std;
 struct high_precision {
 	int length, value[101];
-	high_precision() {
+	high_precision()
+	{
 		memset(value, 0, sizeof(value));
 	}
 };
 
-void load(high_precision &input) {
+void load(high_precision &input)
+{
 	char string[101];
 	scanf("%s", string);
 
@@ -26,7 +28,8 @@ void load(high_precision &input) {
 	}
 }
 
-high_precision multi(high_precision a, high_precision b) {
+high_precision multi(high_precision a, high_precision b)
+{
 	high_precision c;
 
 	for (int i = 0; i < a.length; ++i) {
@@ -44,7 +47,8 @@ high_precision multi(high_precision a, high_precision b) {
 
 	return c;
 }
-int main() {
+int main()
+{
 	high_precision a, b;
 	load(a);
 	load(b);

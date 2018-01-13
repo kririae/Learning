@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 long long a[101] = {0}, b[101] = {0};
-int main() {
+int main()
+{
 	int x, y, z;
 	std::cin >> x >> y >> z;
 

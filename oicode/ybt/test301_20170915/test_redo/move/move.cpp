@@ -3,7 +3,8 @@
 #include <climits>
 using namespace std;
 int *result;
-int main() {
+int main()
+{
 	freopen("move.in", "r", stdin);
 	//freopen("move.out", "w", stdout);
 	int n, r, m, p, minn;
@@ -12,7 +13,7 @@ int main() {
 	result = new int[n + 5];
 	int minnum;
 
-	for(int i = 0; i < n; ++i)  {
+	for(int i = 0; i < n; ++i) {
 		cin >> result[i];
 
 		if(i == 0) minnum = result[0];

@@ -3,7 +3,8 @@
 using namespace std;
 int a[10000];
 int b[10000];
-int main() {
+int main()
+{
 	int n, z;
 	cin >> n;
 

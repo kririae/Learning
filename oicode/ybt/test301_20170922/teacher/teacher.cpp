@@ -9,12 +9,14 @@ struct requests {
 	double res;
 };
 requests req[50000];
-bool compare(const requests& a, const requests& b) {
+bool compare(const requests& a, const requests& b)
+{
 	if(a.res > b.res) return true;
 
 	return false;
 }
-int main() {
+int main()
+{
 	freopen("teacher.in", "r", stdin);
 	freopen("teacher.out", "w", stdout);
 	int all = 0;

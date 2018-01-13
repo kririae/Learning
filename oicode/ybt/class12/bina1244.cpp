@@ -7,11 +7,13 @@ using namespace std;
 int n, m, start, end, midd;
 int *input = new int[100005];
 //获取两者中的最小值
-int minn(int a, int b) {
+int minn(int a, int b)
+{
 	return a < b ? a : b;
 }
 
-void init() {
+void init()
+{
 	//初始化所有的变量
 	cin >> n;
 
@@ -22,7 +24,8 @@ void init() {
 	//将input数组排序
 	sort(input, input + n);
 }
-bool search(int value) {
+bool search(int value)
+{
 	start = 0, end = n - 1, midd = (start + end) / 2;
 
 	while(start <= end) {
@@ -39,7 +42,8 @@ bool search(int value) {
 	end = n - 1;
 	midd = (start + end) / 2;
 }
-int main() {
+int main()
+{
 	init();
 	bool if_print = false;
 	int minnum = input[0];

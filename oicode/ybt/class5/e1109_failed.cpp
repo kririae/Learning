@@ -3,7 +3,8 @@
 #include<cmath>
 #include<cstring>
 using namespace std;
-int main() {
+int main()
+{
 	int n, m;
 	cin >> n >> m;
 	int a[n];

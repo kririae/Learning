@@ -7,7 +7,8 @@ bool mmp[205][205];
 int value[205];
 int res[205];
 int best[205];
-int main() {
+int main()
+{
 	memset(mmp, false, sizeof(mmp));
 	cin >> n;
 

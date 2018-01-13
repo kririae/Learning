@@ -2,13 +2,15 @@
 using namespace std;
 map<string, string> gen;
 string fa, son;
-inline string find(string val) {
+inline string find(string val)
+{
 	if (gen[val] != val)
 		gen[val] = find(gen[val]);
 
 	return gen[val];
 }
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	char c;

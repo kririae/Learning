@@ -7,7 +7,8 @@ int g[maxn][maxn];
 int deepth[maxn];
 int result[maxn];
 int n, m, position;
-void find(int i) {
+void find(int i)
+{
 	for(int j = 1; j <= n; ++j) {
 		if(g[i][j] == 1) {
 			g[i][j] = g[j][i] = 0;
@@ -18,7 +19,8 @@ void find(int i) {
 	++position;
 	result[position] = i;
 }
-int main() {
+int main()
+{
 	memset(g, 0, sizeof(g));
 	memset(deepth, 0, sizeof(deepth));
 	cin >> n >> m;

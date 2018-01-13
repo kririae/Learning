@@ -3,7 +3,8 @@
 #include <stack>
 using namespace std;
 stack<char> s;
-int main() {
+int main()
+{
 	char c;
 
 	while(!isspace(c = getchar())) {

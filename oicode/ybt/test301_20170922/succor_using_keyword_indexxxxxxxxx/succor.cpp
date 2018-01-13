@@ -7,14 +7,16 @@ struct classroom {
 	int people = 0;
 };
 classroom list[100005];
-bool compare(const classroom& a, const classroom& b) {
+bool compare(const classroom& a, const classroom& b)
+{
 	if(a.people > b.people) return true;
 
 	if(a.people == b.people) return a.__index__ <= b.__index__;
 
 	return false;
 }
-int main() {
+int main()
+{
 	freopen("succor.in", "r", stdin);
 	freopen("succor.out", "w", stdout);
 	int all = 0;

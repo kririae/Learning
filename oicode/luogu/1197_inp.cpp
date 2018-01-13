@@ -11,15 +11,18 @@ set<int> caled;
 struct edge {
 	int x, y;
 } p[200005];
-inline int find(int val) {
+inline int find(int val)
+{
 	if(father[val] != val) father[val] = find(father[val]);
 
 	return father[val];
 }
-inline void unionn(int val1, int val2) {
+inline void unionn(int val1, int val2)
+{
 	father[find(val1)] = find(val2);
 }
-inline int count() {
+inline int count()
+{
 	// 查找联通数量
 	for (int i = 0; i <= n; ++i)
 		int tempo = find(i);
@@ -37,11 +40,13 @@ inline int count() {
 
 	return count;
 }
-inline void initf() {
+inline void initf()
+{
 	for (int i = 0; i <= n; ++i)
 		father[i] = i;
 }
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	cin >> n >> m;

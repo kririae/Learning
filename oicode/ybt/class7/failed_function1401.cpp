@@ -4,7 +4,8 @@
 using namespace std;
 int s[10000], m[10000];
 int a, n, count = 0, mana = 0;
-bool in(int num) {
+bool in(int num)
+{
 	//int length=sizeof(s)/sizeof(s[0]);
 	bool if_in = false;
 
@@ -13,11 +14,13 @@ bool in(int num) {
 
 	return if_in;
 }
-void add(int num) {
+void add(int num)
+{
 	int used = 0;
 	continue;
 }
-int main() {
+int main()
+{
 	cin >> a >> n;
 	memset(s, -1, sizeof(s));
 

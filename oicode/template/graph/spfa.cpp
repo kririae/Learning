@@ -11,7 +11,8 @@ ll start, end, n, m;
 struct edge {
 	int length;
 	int to;
-	edge(ll a, ll b) {
+	edge(ll a, ll b)
+	{
 		to = a, length = b
 	};
 } vector<edge> v[maxn];
@@ -19,7 +20,8 @@ queue<ll> q;
 void add_edge(ll from, ll to, ll value);
 void SPFA();
 int main() {}
-void add_edge(ll from, ll to, ll value) {
+void add_edge(ll from, ll to, ll value)
+{
 	v[from].push_back(edge(to, value));
 }
 void SPFA() {}

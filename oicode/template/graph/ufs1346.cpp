@@ -4,16 +4,19 @@ using namespace std;
 const int maxn = 20005;
 int father[maxn];
 int n, m, q;
-inline int find(int ind) {
+inline int find(int ind)
+{
 	if (father[ind] != ind)
 		father[ind] = find(father[ind]);
 
 	return father[ind];
 }
-inline void unionn(int indx, int indy) {
+inline void unionn(int indx, int indy)
+{
 	father[indy] = indx;
 }
-int main() {
+int main()
+{
 	cin >> n >> m;
 
 	for (int i = 1; i <= n; ++i)

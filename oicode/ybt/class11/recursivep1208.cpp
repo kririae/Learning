@@ -3,7 +3,8 @@
 #include <cstring>
 using namespace std;
 const int MAXN = 100;
-void printOut(int value) {
+void printOut(int value)
+{
 	if(value == 2) {
 		cout << "2";
 		return;
@@ -52,7 +53,8 @@ void printOut(int value) {
 		if(res[i] != 1) cout << ")";
 	}
 }
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 	printOut(n);

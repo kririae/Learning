@@ -8,7 +8,8 @@ using namespace std;
 int res[25], num_length, m;
 bool used_value[25];
 
-void printOut() {
+void printOut()
+{
 	int result = 1;
 
 	for (int i = 1; i <= m; ++i)
@@ -17,7 +18,8 @@ void printOut() {
 	cout << endl;
 }
 
-void insert(int index) {
+void insert(int index)
+{
 	if(index > m) {
 		printOut();
 		return;
@@ -28,7 +30,8 @@ void insert(int index) {
 		insert(index + 1);
 	}
 }
-int main() {
+int main()
+{
 	memset(used_value, false, sizeof(used_value));
 	res[0] = 0;
 	num_length = 5;

@@ -12,7 +12,8 @@ long long memo[23][23];
 bool gcan[23][23];
 bool horse[23][23];
 point p[10000];
-int main() {
+int main()
+{
 	memset(gcan, false, sizeof(gcan));
 	memset(horse, false, sizeof(gcan));
 	memset(memo, 0, sizeof(memo));
@@ -22,7 +23,7 @@ int main() {
 	++posibx, ++posiby, ++hposix, ++hposiy;
 	horse[hposix][hposiy] = true;
 
-	for(int i = 0; i < 8; ++i)  {
+	for(int i = 0; i < 8; ++i) {
 		int gox = hposix + go_h[i][0];
 		int goy = hposiy + go_h[i][1];
 

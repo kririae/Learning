@@ -5,7 +5,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 long long g[50000] = {0};
-int main() {
+int main()
+{
 	long long n, summ = 0, m;
 	cin >> n;
 

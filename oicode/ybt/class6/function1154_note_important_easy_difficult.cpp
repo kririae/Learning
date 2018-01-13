@@ -1,7 +1,8 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-int v(int p) {
+int v(int p)
+{
 	int sum = 0;
 
 	for(int i = 1; i < p; ++i) {
@@ -10,7 +11,8 @@ int v(int p) {
 
 	return sum;
 }
-int main() {
+int main()
+{
 	//cout<<v(220);
 	int a = 1, b;
 

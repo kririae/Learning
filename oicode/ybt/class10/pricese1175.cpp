@@ -2,7 +2,8 @@
 #include "iostream"
 #include "cstring"
 using namespace std;
-int main() {
+int main()
+{
 	char char_array[101];
 	bool if_first = true;
 	gets(char_array);

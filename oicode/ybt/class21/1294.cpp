@@ -5,7 +5,8 @@
 using namespace std;
 bool v[12885];
 int value[12885];
-int main() {
+int main()
+{
 	memset(v, false, sizeof(v));
 	memset(value, 0, sizeof(value));
 	int n, m;

@@ -2,7 +2,8 @@
 using namespace std;
 unsigned int edge[2005][2005] = {10001}, dist[2005] = {10001};
 bool white[2005] = {false};
-int main() {
+int main()
+{
 	for (int i = 0; i < 2005; ++i) {
 		dist[i] = 10001;
 

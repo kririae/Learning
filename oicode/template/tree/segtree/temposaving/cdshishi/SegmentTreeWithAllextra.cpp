@@ -8,26 +8,30 @@ struct Message { //节点维护的信息
 	/*
 	ans = ans*mul + add
 	*/
-	Message() { //初始化函数
+	Message()   //初始化函数
+	{
 		sum = 0;
 		add = 0;
 		len = 0;
 		mul = 1;
 	}
-	Message(long long xsum, long long xlen, long long xadd, long long xmul) { //初始化函数
+	Message(long long xsum, long long xlen, long long xadd, long long xmul)   //初始化函数
+	{
 		sum = xsum;
 		len = xlen;
 		add = xadd;
 		mul = xmul;
 	}
-	Message operator +(const Message &b) { //定义 a+b
+	Message operator +(const Message &b)   //定义 a+b
+	{
 		Message p(sum + b.sum, len + b.len, 0, 1);
 		return p;
 	}
 	/*
 	(ans * mul + add) * famul + faadd
 	*/
-	void modify(Message fa) { //父亲的信息为fa ， 父亲pushdown下传
+	void modify(Message fa)   //父亲的信息为fa ， 父亲pushdown下传
+	{
 		mul = mul * fa.mul;
 		add = add * fa.mul + fa.add;
 		sum = sum * fa.mul + fa.add;
@@ -40,7 +44,8 @@ struct SegmentTree {
 	Message x;
 } node[N * 2];
 
-void pushdown(int k) { //下传标记
+void pushdown(int k)   //下传标记
+{
 	if( node[k].x.add != 0 ) {
 		node[ node[k].son[L] ].x.modify( node[k].x );
 		node[ node[k].son[R] ].x.modify( node[k].x );
@@ -48,7 +53,8 @@ void pushdown(int k) { //下传标记
 	}
 }
 
-void update(int k) { //更新节点k
+void update(int k)   //更新节点k
+{
 	node[k].x = node[node[k].son[L]].x + node[node[k].son[R]].x;
 }
 
@@ -56,7 +62,8 @@ void update(int k) { //更新节点k
 int root, ini[N], cnt; //cnt 当前已经有了多少个节点
 //假设数组初始时为ini
 
-void buildTree(int &k, int l, int r) { //初始化一个管理[l,r]的节点 ， 下标为k
+void buildTree(int &k, int l, int r)   //初始化一个管理[l,r]的节点 ， 下标为k
+{
 	k = ++cnt;
 	node[k].l = l;
 	node[k].r = r;
@@ -72,7 +79,8 @@ void buildTree(int &k, int l, int r) { //初始化一个管理[l,r]的节点 ， 下标为k
 	}
 }
 
-Message work(int k, int ql, int qr, Message y) { //修改 [ql,qr] 顺带查询[ql,qr]
+Message work(int k, int ql, int qr, Message y)   //修改 [ql,qr] 顺带查询[ql,qr]
+{
 	if( ql <= node[k].l && node[k].r <= qr ) {
 		node[k].x.modify(y);
 		return node[k].x;
@@ -104,7 +112,8 @@ Message work(int k,int ql,int qr,Message y){//修改 [ql,qr] 顺带查询[ql,qr]
 */
 
 int n, m;
-int main() {
+int main()
+{
 	scanf("%d", &n);
 
 	for(int i = 1; i <= n; i++) scanf("%d", &ini[i]);

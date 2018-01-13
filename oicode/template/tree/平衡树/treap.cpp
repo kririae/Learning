@@ -30,14 +30,16 @@ LL sum[N], tag[N], val[N];
 int cnt, root;
 const int L = 0, R = 1;
 
-inline void newmark(int &k, LL &mark) {
+inline void newmark(int &k, LL &mark)
+{
 	if (k == 0) return;
 
 	sum[k] += mark * size[k];
 	tag[k] += mark;
 }
 
-inline void pushdown(int &k) {
+inline void pushdown(int &k)
+{
 	if (k == 0 || tag[k] == 0) return;
 
 	val[k] += tag[k];
@@ -46,7 +48,8 @@ inline void pushdown(int &k) {
 	tag[k] = 0;
 }
 
-inline void update(int &k) {
+inline void update(int &k)
+{
 	size[k] = 1 + size[son[k][L]] + size[son[k][R]];
 	sum[k] = sum[son[k][L]] + sum[son[k][R]] + val[k];
 	fr[k] = to[k] = key[k];
@@ -56,7 +59,8 @@ inline void update(int &k) {
 	if (son[k][R] != 0) to[k] = to[son[k][R]];
 }
 
-inline void rotate(int &k, int s) {
+inline void rotate(int &k, int s)
+{
 	int t = son[k][s];//pushdown(k);pushdown(t);
 	son[k][s] = son[t][s ^ 1];
 	son[t][s ^ 1] = k;
@@ -64,7 +68,8 @@ inline void rotate(int &k, int s) {
 	k = t;
 }
 
-void insert(int &k, LL &x, int &key_) {
+void insert(int &k, LL &x, int &key_)
+{
 	if (k == 0) {
 		k = ++cnt;
 		size[k] = 1;
@@ -86,7 +91,8 @@ void insert(int &k, LL &x, int &key_) {
 	}
 }
 
-void add(int k, int &start, int &end, LL &c) {
+void add(int k, int &start, int &end, LL &c)
+{
 	if (start > end) return;
 
 	if (k == 0) printf("BUG\n");
@@ -107,7 +113,8 @@ void add(int k, int &start, int &end, LL &c) {
 	}
 }
 
-LL query(int k, int &start, int &end) {
+LL query(int k, int &start, int &end)
+{
 	if (start > end) return 0;
 
 	if (k == 0) return 0;
@@ -128,7 +135,8 @@ LL query(int k, int &start, int &end) {
 
 //????????+????++????????+???????????????+????+????+????+????+????+????+????=
 //====+===++===+=+==+???????+=+==++==++==+==+=+=
-void init() {
+void init()
+{
 	scanf("%d", &n);
 	LL d, t;
 
@@ -152,7 +160,8 @@ void init() {
 	}
 }
 
-int main() {
+int main()
+{
 	init();
 	return 0;
 }

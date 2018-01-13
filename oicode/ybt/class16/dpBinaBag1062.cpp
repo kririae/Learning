@@ -5,7 +5,8 @@ using namespace std;
 bool board[1605][1605];
 int n, data[45], sum = 0;
 double result = 0;
-void getSqu(int a, int b) {
+void getSqu(int a, int b)
+{
 	int c = sum - a - b;
 
 	if(a + b <= c || b + c <= a || a + c <= b) return;
@@ -17,7 +18,8 @@ void getSqu(int a, int b) {
 
 	// cout << res << " " << sum << endl;
 }
-int main() {
+int main()
+{
 	// freopen("noi1062.in", "r", stdin);
 	cin >> n;
 
@@ -29,7 +31,7 @@ int main() {
 	int fmax = 0, smax = 0;
 	board[0][0] = true;
 
-	for(int i = 0; i < n; ++i)  {
+	for(int i = 0; i < n; ++i) {
 		for(int j = fmax; j >= 0; --j) {
 			for(int k = smax; k >= 0; --k) {
 				// cout << "execute" << endl;

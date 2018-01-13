@@ -3,7 +3,8 @@ using namespace std;
 struct node {
 	int value;
 	int deepth;
-	node(int v, int deep) {
+	node(int v, int deep)
+	{
 		value = v, deepth = deep;
 	}
 };
@@ -11,7 +12,8 @@ struct node {
 vector<int> graph[100000];
 queue<node> q;
 bool vis[100000];
-int main() {
+int main()
+{
 	int n, m;
 	cin >> n >> m;
 

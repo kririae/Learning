@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	int a, b, c, count = 0;
 	scanf("%d%d%d", &a, &b, &c);
 

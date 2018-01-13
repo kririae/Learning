@@ -13,17 +13,21 @@ struct Message { // 节点维护的信息
 	// 写清楚那一个变量优先
 	ans = ans * mul + add;
 	*/
-	Message() { // 初始化函数
+	Message()   // 初始化函数
+	{
 		sum = 0, add = 0, len = 0;
 	}
-	Message(long long xsum, long long xadd, longl long xlen) {
+	Message(long long xsum, long long xadd, longl long xlen)
+	{
 		sum = xsum, add = xadd, len = xlen;
 	}
-	Message operator + (const Message (&b)) { // 合并两部分的信息
+	Message operator + (const Message (&b))   // 合并两部分的信息
+	{
 		Message p(sum + b.sum, 0, len + b.len); // p.sum = sum + b.sum p.add = 0 p.len = len + b.len
 		return p;
 	}
-	void modify(Message fa) { // 父亲的信息为fa, 父亲pushdown下传
+	void modify(Message fa)   // 父亲的信息为fa, 父亲pushdown下传
+	{
 		sum += len * fa.add;
 		add += fa.add;
 	}
@@ -41,7 +45,8 @@ struct SegmentTree {
 } node[N*2];
 */
 
-Message p = (Message) {
+Message p = (Message)
+{
 	5, 6
 };
 
@@ -53,19 +58,22 @@ struct SegmentTree {
 int root, ini[N], cnt; // cnt记录下标分配
 // 假设数组初始化为ini
 
-inline void pushdown(int k) { // TODO 下传标记
+inline void pushdown(int k)   // TODO 下传标记
+{
 	// 把节点k上的数值下传
-	if(node[k].x.add != 0)   {
+	if(node[k].x.add != 0) {
 		node[ node[k].son[L] ].x.modify( node[k].x );
 		node[ node[k].son[R] ].x.modify( node[k].x );
 		node[k].x.add = 0;
 	}
 }
 
-inline void update(int k) { // 更新节点k
+inline void update(int k)   // 更新节点k
+{
 	node[k].x = node[ node[k].son[L] ].x + node[ node[l].son[R] ].x;
 }
-inline void buildTree(int &k, int l, int r) { // 初始化一个管理l, r的节点 下表为k
+inline void buildTree(int &k, int l, int r)   // 初始化一个管理l, r的节点 下表为k
+{
 	// 这个k的引用很妙 在修改下一个的时候会顺便修改上一个节点的儿子们
 	k = ++cnt; // k = cnt + 1; cnt++
 	node[k].l = l, node[k].r = r; // 别写掉了 初始化l, r
@@ -155,7 +163,8 @@ inline long long query(int k, int ql, int qr) { // 查询[ql, qr] 的区间和
 }
 */
 
-inline Message modify(int k, int ql, int qr, Message y) { // 修改 [ql, qr] 顺带查询ql, qr
+inline Message modify(int k, int ql, int qr, Message y)   // 修改 [ql, qr] 顺带查询ql, qr
+{
 	if(node[k].l == ql && node[k].r == qr) {
 		node[k].x.modify(y); // 修改操作的简单写法..(累死了
 		return node[k].x;
@@ -188,7 +197,8 @@ inline Message modify(int k, int ql, int qr, Message y) { // 修改 [ql, qr] 顺
 2 2 6
 */
 
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	cin >> n;

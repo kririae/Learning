@@ -3,7 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-int main() {
+int main()
+{
 	freopen("watfly.in", "w", stdout);
 	srand(time(NULL));
 	int n = rand() % 10000;

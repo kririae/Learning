@@ -11,14 +11,16 @@ int based = 1, processing = 0;
 char input[stringMaxLength], output[stringMaxLength];
 char result[deepMaxn][stringMaxLength];
 int res[deepMaxn];
-bool not_can_exist(char *cache) {
+bool not_can_exist(char *cache)
+{
 	for(int i = 0; i < processing; ++i)
 		if(strcmp(cache, result[i]) == 0) return false;
 
 	return true;
 }
 
-int main() {
+int main()
+{
 	scanf("%s", input);
 	scanf("%s", output);
 	// length of input;

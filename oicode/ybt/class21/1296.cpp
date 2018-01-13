@@ -3,7 +3,8 @@
 using namespace std;
 int t, n, k;
 int res[105], poi[105], val[105];
-int main() {
+int main()
+{
 	cin >> t;
 
 	for (int l = 0; l < t; ++l) {

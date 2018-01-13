@@ -4,7 +4,8 @@
 using namespace std;
 int map[15][15];
 int value[15][15][15][15];
-int main() {
+int main()
+{
 	memset(map, 0, sizeof(map));
 	int n;
 	cin >> n;

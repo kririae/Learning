@@ -3,7 +3,8 @@
 #include<cmath>
 using namespace std;
 
-int main() {
+int main()
+{
 	int x, y, para;
 	char format, kg = 32;
 	cin >> x >> y >> format >> para;

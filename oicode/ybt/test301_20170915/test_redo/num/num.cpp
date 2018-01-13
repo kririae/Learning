@@ -8,7 +8,8 @@ int res[10000];
 bool used[10000];
 int result_l[10000];
 int count = 0;
-bool if_heshu(int num) {
+bool if_heshu(int num)
+{
 	int sqrt_num = sqrt(num);
 
 	for(int i = 2; i <= sqrt_num; ++i) {
@@ -17,7 +18,8 @@ bool if_heshu(int num) {
 
 	return false;
 }
-void printOut() {
+void printOut()
+{
 	int numm = 1;
 	int result = 0;
 
@@ -34,7 +36,8 @@ void printOut() {
 		++count;
 	}
 }
-void search(int index) {
+void search(int index)
+{
 	if(index == m) {
 		printOut();
 		return;
@@ -51,7 +54,8 @@ void search(int index) {
 
 	return ;
 }
-int main() {
+int main()
+{
 	freopen("num.in", "r", stdin);
 	freopen("num.out", "w", stdout);
 	memset(used, false, sizeof(used));

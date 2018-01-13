@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-bool is_prime(int p) {
+bool is_prime(int p)
+{
 	bool prime = true;
 	int k;
 	k = sqrt(p);
@@ -13,7 +14,8 @@ bool is_prime(int p) {
 
 	return prime;
 }
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 	int count = 0;

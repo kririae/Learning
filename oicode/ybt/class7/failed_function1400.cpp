@@ -3,7 +3,8 @@
 #include<cstring>
 using namespace std;
 char char1[233], char2[2333], char3[233][100];
-int main() {
+int main()
+{
 	gets(char1);
 	gets(char2);
 	int index1 = 0, index2 = 0;

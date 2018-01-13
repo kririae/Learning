@@ -7,7 +7,8 @@ using namespace std;
 int r;
 int lines[1005][1005];
 int memo[1005][1005];
-int dfs(int x, int y) {
+int dfs(int x, int y)
+{
 	if(memo[x][y] == -1) {
 		if(x == r) memo[x][y] = lines[x][y];
 		else memo[x][y] = lines[x][y] + max(dfs(x + 1, y), dfs(x + 1, y + 1));
@@ -15,7 +16,8 @@ int dfs(int x, int y) {
 
 	return memo[x][y];
 }
-int main() {
+int main()
+{
 	memset(memo, -1, sizeof(memo));
 	memset(lines, 0, sizeof(lines));
 	cin >> r;

@@ -12,17 +12,20 @@ summ suml[10005]; // used to describe the costs to buy a cloud( suml[i].price is
 int father[10005]; // union find set
 int stor[10005];   // bag problem
 bool can[10005];   // used?
-inline int find(int v) {
+inline int find(int v)
+{
 	if (father[v] != v)
 		father[v] = find(father[v]);
 	else
 		return father[v];
 }
-inline void unionn(int t1, int t2) {
+inline void unionn(int t1, int t2)
+{
 	int uir = find(t1), vir = find(t2);
 	father[uir] = vir; // cloud r1 must be related to r2(the same as r2)
 }
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	int n, m, w;

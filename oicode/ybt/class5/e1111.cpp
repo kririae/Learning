@@ -3,7 +3,8 @@
 #include<cmath>
 #include<cstring>
 using namespace std;
-int main() {
+int main()
+{
 	int a[7];
 	int x, y;
 	int b[7];

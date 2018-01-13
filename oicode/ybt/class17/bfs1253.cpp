@@ -5,7 +5,8 @@ int n, k;
 int summary = 0;
 int times[100005];
 bool can[100005];
-int main() {
+int main()
+{
 	cin >> n >> k;
 	memset(can, false, sizeof(can));
 	times[n] = 1;

@@ -3,7 +3,8 @@
 #include<cstring>
 #include<cstdlib>
 using namespace std;
-bool is_upper(char st) {
+bool is_upper(char st)
+{
 	bool isu = false;
 
 	for (int i = 65; i < 91; ++i)
@@ -14,7 +15,8 @@ bool is_upper(char st) {
 
 	return isu;
 }
-char breakc(char st1, char st2) {
+char breakc(char st1, char st2)
+{
 	bool is_upper_st1 = is_upper(st1);
 	int int_st1 = is_upper(st1) ? st1 - 65 : st1 - 97;
 	int int_st2 = is_upper(st2) ? st2 - 65 : st2 - 97;
@@ -28,7 +30,8 @@ char breakc(char st1, char st2) {
 
 	return res;
 }
-int main() {
+int main()
+{
 	char a[1001], b[101];
 	cin >> b >> a;
 

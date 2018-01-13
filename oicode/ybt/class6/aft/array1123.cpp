@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cstdio>
 using namespace std;
-int main() {
+int main()
+{
 	int count = 0, m, n;
 	cin >> m >> n;
 	int j1[m][n];

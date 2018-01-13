@@ -9,7 +9,8 @@ const int MAXN = 1000;
 int *vol = new int[3], based = 0, processing = 0;
 struct status {
 	int value[3];
-	status() {
+	status()
+	{
 		memset(value, 0, sizeof(value))	;
 	}
 };
@@ -18,13 +19,15 @@ set<int> s;
 status *curr = new status[MAXN];
 int *tempora = new int[3];
 
-bool eql(const int* a, const int* b) {
+bool eql(const int* a, const int* b)
+{
 	for(int i = 0; i < 3; ++i)
 		if(a[i] != b[i]) return false;
 
 	return true;
 }
-bool can_exist() {
+bool can_exist()
+{
 	bool exist = true;
 
 	for(int i = 0; i < processing; ++i)
@@ -33,7 +36,8 @@ bool can_exist() {
 	return true;
 }
 
-int main() {
+int main()
+{
 	cin >> vol[0] >> vol[1] >> vol[2];
 	curr[0].value[0] = 0, curr[0].value[1] = 0, curr[0].value[2] = vol[2];
 

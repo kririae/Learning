@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<algorithm>
 using namespace std;
-double maxn(int a, int b, int c) {
+double maxn(int a, int b, int c)
+{
 	double maxx = a;
 
 	if(maxx < b) maxx = b;
@@ -11,7 +12,8 @@ double maxn(int a, int b, int c) {
 
 	return maxx;
 }
-int main() {
+int main()
+{
 	double m;
 	int a, b, c;
 	cin >> a >> b >> c;

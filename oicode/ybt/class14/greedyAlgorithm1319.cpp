@@ -7,13 +7,15 @@ struct people {
 	int __index__;
 };
 people res[1005];
-bool compare(const people& a, const people& b) {
+bool compare(const people& a, const people& b)
+{
 	if(a.time < b.time) return true;
 
 	return false;
 }
 double summary[1005];
-int main() {
+int main()
+{
 	double summary = 0;
 	int n, first;
 	cin >> n;

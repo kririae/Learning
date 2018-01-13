@@ -12,7 +12,8 @@ vector<int> res;
 posi value[30005];
 int h[30005];
 int all = 0;
-int main() {
+int main()
+{
 	// freopen("test.in", "r", stdin);
 	int indexi = 0, key;
 

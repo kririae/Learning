@@ -3,12 +3,14 @@
 using namespace std;
 bool chess[15][15];
 int n, m;
-void search(int x, int y) {
+void search(int x, int y)
+{
 	// x表示行数 y表示列数；
 	if()
 		if(chess[x - 1][y])
 		}
-int main() {
+int main()
+{
 	freopen("chess.in", "r", stdin);
 	freopen("chess.out", "w", stdout);
 	cin >> n >> m;

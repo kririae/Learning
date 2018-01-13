@@ -5,11 +5,13 @@ using namespace std;
 struct high_per {
 	int length;
 	int value[1000];
-	high_per() {
+	high_per()
+	{
 		memset(value, 0, sizeof(value));
 	}
 };
-void load(high_per &value) {
+void load(high_per &value)
+{
 	char a[1000];
 	gets(a);
 	value.length = strlen(a);
@@ -18,7 +20,8 @@ void load(high_per &value) {
 		value.value[value.length - i - 1] = a[i] - '0';
 	}
 }
-high_per digit(high_per a, high_per b) {
+high_per digit(high_per a, high_per b)
+{
 	high_per c;
 
 	for (int i = 0; i < a.length; ++i)
@@ -48,7 +51,8 @@ high_per digit(high_per a, high_per b) {
 
 	return c;
 }
-int main() {
+int main()
+{
 	high_per a, b, c;
 	load(a);
 	load(b);

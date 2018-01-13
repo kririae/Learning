@@ -8,7 +8,8 @@ using namespace std;
 int triangle[100][100] = {0}, n;
 int ans_or = 0, ans_red = 0, ans_memo = 0;
 int f_or[100][100] = {0}, f_red[100][100] = {0}, f_memo[100][100] = {0};
-inline void ordinary_search(int x, int y, int value) {
+inline void ordinary_search(int x, int y, int value)
+{
 	// dfs 正常搜索
 	value += triangle[x][y];
 
@@ -21,7 +22,8 @@ inline void ordinary_search(int x, int y, int value) {
 	ordinary_search(x + 1, y, value);
 	ordinary_search(x + 1, y + 1, value);
 }
-inline void redundancy_search(int x, int y, int value) {
+inline void redundancy_search(int x, int y, int value)
+{
 	// 冗余搜索 俗称剪枝
 	value += triangle[x][y];
 
@@ -40,7 +42,8 @@ inline void redundancy_search(int x, int y, int value) {
 	redundancy_search(x + 1, y, value);
 	redundancy_search(x + 1, y + 1, value);
 }
-inline void memory_search(int x, int y, int value) {
+inline void memory_search(int x, int y, int value)
+{
 	// 记忆化搜索
 	value += triangle[x][y];
 
@@ -59,7 +62,8 @@ inline void memory_search(int x, int y, int value) {
 	memory_search(x + 1, y, value);
 	memory_search(x + 1, y + 1, value);
 }
-int main() {
+int main()
+{
 	cin >> n;
 
 	for (int i = 1; i <= n; ++i)

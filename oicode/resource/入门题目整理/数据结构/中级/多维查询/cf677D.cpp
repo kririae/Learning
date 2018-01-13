@@ -1,20 +1,20 @@
 /*
 DS维护最短路转移
-代码题啊 
+代码题啊
 */
 //二维线段树
 //写死我了，代码能力退步啊，还是改写4个二维树状数组的
-//T了 
+//T了
 //算了去写树状数组吧
 //哎呀，140ms就过了
 //常数啊常数，怎么差别这么大？
-//莫非我花式线段树写残了？ 
+//莫非我花式线段树写残了？
 #include<cstdio>
 #include<cstring>
 #include<iostream>
 #include<vector>
 using namespace std;
-const int LT=0,RT=1,LB=2,RB=3,H=1,Z=0,L=0,R=1;// 左上 右上 左下 右下
+const int LT = 0, RT = 1, LB = 2, RB = 3, H = 1, Z = 0, L = 0, R = 1; // 左上 右上 左下 右下
 //-----------------------
 /*struct xds{
     int son[2],side,le,ri,tp,bt;
@@ -49,7 +49,7 @@ void insert(int k,int x,int y,int vis,int fx,int val){
     }
 }
 int query(int k,int stx,int endx,int sty,int endy,int fx,int vis){
-    if(a[k].le==stx&&a[k].ri==endx&&a[k].tp==sty&&a[k].bt==endy) 
+    if(a[k].le==stx&&a[k].ri==endx&&a[k].tp==sty&&a[k].bt==endy)
         return a[k].vision[fx]==vis? a[k].mn[fx]:0x3f3f3f3f;
     if(a[k].side==H){
         int mid=(a[k].le+a[k].ri)>>1;
@@ -63,9 +63,10 @@ int query(int k,int stx,int endx,int sty,int endy,int fx,int vis){
         else return min(query(a[k].son[L],stx,endx,sty,mid,fx,vis),query(a[k].son[R],stx,endx,mid+1,endy,fx,vis));
     }
 }*/
-int ffx[4][305][305],vfx[4][305][305];
-void build(){
-	memset(vfx,-1,sizeof(vfx));
+int ffx[4][305][305], vfx[4][305][305];
+void build()
+{
+	memset(vfx, -1, sizeof(vfx));
 }
 //lt x->x y->y
 //lb x->x y->n+1-y
@@ -73,61 +74,82 @@ void build(){
 //rb x->m+1-x y->n+1-y
 #define low(x) x&(-x)
 #define minn(x,y) x<y? x:y
-int n,m,pall;int (*v)[305];int (*biao)[305];int* w;int *wb;
-void insert(int x,int y,int vis,int fx,int val){
-	if(fx&1) x=m+1-x;if(fx>1) y=n+1-y;
-	v=ffx[fx];biao=vfx[fx];
-	for(int i=x;i<=m;i+=low(i)){
-		w=v[i];wb=biao[i];
-		for(int j=y;j<=n;j+=low(j)){
-			if(wb[j]!=vis) wb[j]=vis,w[j]=val;
-			else w[j]=minn(w[j],val);
+int n, m, pall;
+int (*v)[305];
+int (*biao)[305];
+int* w;
+int *wb;
+void insert(int x, int y, int vis, int fx, int val)
+{
+	if(fx & 1) x = m + 1 - x;
+	if(fx > 1) y = n + 1 - y;
+	v = ffx[fx];
+	biao = vfx[fx];
+	for(int i = x; i <= m; i += low(i)) {
+		w = v[i];
+		wb = biao[i];
+		for(int j = y; j <= n; j += low(j)) {
+			if(wb[j] != vis) wb[j] = vis, w[j] = val;
+			else w[j] = minn(w[j], val);
 		}
 	}
 }
 int ret;
-int query(int x,int y,int fx,int vis){
-	if(fx&1) x=m+1-x;if(fx>1) y=n+1-y;
-	v=ffx[fx];biao=vfx[fx];ret=0x3f3f3f3f;
-	for(int i=x;i;i-=low(i)){
-		w=v[i];wb=biao[i];
-		for(int j=y;j;j-=low(j)){
-			if(wb[j]==vis) ret=minn(ret,w[j]);
+int query(int x, int y, int fx, int vis)
+{
+	if(fx & 1) x = m + 1 - x;
+	if(fx > 1) y = n + 1 - y;
+	v = ffx[fx];
+	biao = vfx[fx];
+	ret = 0x3f3f3f3f;
+	for(int i = x; i; i -= low(i)) {
+		w = v[i];
+		wb = biao[i];
+		for(int j = y; j; j -= low(j)) {
+			if(wb[j] == vis) ret = minn(ret, w[j]);
 		}
 	}
 	return ret;
-} 
+}
 //-----------------------
-int p[305][305];int dp[305][305];
-struct pl{int x,y;};
+int p[305][305];
+int dp[305][305];
+struct pl {
+	int x, y;
+};
 vector<pl> vec[90005];
 #define min4(a,b,c,d) min(min(a,b),min(c,d))
-int main(){
-    scanf("%d%d%d",&n,&m,&pall);
-    for(int i=1;i<=n;i++)
-        for(int j=1;j<=m;j++){
-            scanf("%d",&p[i][j]);
-            vec[p[i][j]].push_back((pl){j,i});
-        }
-    build();
-    insert(1,1,0,LT,-2);
-    for(int i=1,xx,yy;i<=pall;i++){
-        for(int j=vec[i].size()-1;j>=0;j--){
-            xx=vec[i][j].x;yy=vec[i][j].y;
-            dp[xx][yy]=min4(query(xx,yy,LT,i-1)+xx+yy,query(xx,yy,LB,i-1)+xx-yy,
-                query(xx,yy,RT,i-1)-xx+yy,query(xx,yy,RB,i-1)-xx-yy);
-        }
-        for(int j=vec[i].size()-1;j>=0;j--){
-            xx=vec[i][j].x;yy=vec[i][j].y;
-            insert(xx,yy,i,LT,dp[xx][yy]-xx-yy);
-            insert(xx,yy,i,LB,dp[xx][yy]-xx+yy);
-            insert(xx,yy,i,RT,dp[xx][yy]+xx-yy);
-            insert(xx,yy,i,RB,dp[xx][yy]+xx+yy);
-        }
-        if(i==pall){
-            printf("%d\n",dp[xx][yy]);
-        }
-    }
-    
-    return 0;
+int main()
+{
+	scanf("%d%d%d", &n, &m, &pall);
+	for(int i = 1; i <= n; i++)
+		for(int j = 1; j <= m; j++) {
+			scanf("%d", &p[i][j]);
+			vec[p[i][j]].push_back((pl) {
+				j, i
+			});
+		}
+	build();
+	insert(1, 1, 0, LT, -2);
+	for(int i = 1, xx, yy; i <= pall; i++) {
+		for(int j = vec[i].size() - 1; j >= 0; j--) {
+			xx = vec[i][j].x;
+			yy = vec[i][j].y;
+			dp[xx][yy] = min4(query(xx, yy, LT, i - 1) + xx + yy, query(xx, yy, LB, i - 1) + xx - yy,
+			                  query(xx, yy, RT, i - 1) - xx + yy, query(xx, yy, RB, i - 1) - xx - yy);
+		}
+		for(int j = vec[i].size() - 1; j >= 0; j--) {
+			xx = vec[i][j].x;
+			yy = vec[i][j].y;
+			insert(xx, yy, i, LT, dp[xx][yy] - xx - yy);
+			insert(xx, yy, i, LB, dp[xx][yy] - xx + yy);
+			insert(xx, yy, i, RT, dp[xx][yy] + xx - yy);
+			insert(xx, yy, i, RB, dp[xx][yy] + xx + yy);
+		}
+		if(i == pall) {
+			printf("%d\n", dp[xx][yy]);
+		}
+	}
+
+	return 0;
 }

@@ -2,7 +2,8 @@
 #include <cstdio>
 #include <cstring>
 using namespace std;
-int main() {
+int main()
+{
 	char a[100];
 	int length = 0;
 	gets(a);

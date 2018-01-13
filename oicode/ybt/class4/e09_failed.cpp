@@ -3,7 +3,8 @@
 #include<cmath>
 using namespace std;
 bool z(int x);
-int main() {
+int main()
+{
 	int n, res = 0;
 
 	cin >> n;

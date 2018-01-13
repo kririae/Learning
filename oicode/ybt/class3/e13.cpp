@@ -2,7 +2,8 @@
 #include<cstdio>
 
 using namespace std;
-int main() {
+int main()
+{
 	int a = 1, b = 1, x, res;
 	cin >> k;
 

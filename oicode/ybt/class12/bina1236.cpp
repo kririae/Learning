@@ -6,12 +6,14 @@ int k;
 struct BigInteger {
 	int length, s[205];
 	//³õÊ¼»¯sÎª0
-	BigInteger() {
+	BigInteger()
+	{
 		memset(this->s, 0, sizeof(s));
 		length = 0;
 	}
 };
-void init(BigInteger& input) {
+void init(BigInteger& input)
+{
 	char n[205];
 	scanf("%s", n);
 	int length = strlen(n);
@@ -21,7 +23,8 @@ void init(BigInteger& input) {
 
 	input.length = length;
 }
-int doubled(BigInteger value) {
+int doubled(BigInteger value)
+{
 	if(value.length == 1 && value.s[0] == 1) return 2011;
 
 	bool if_odd = false;
@@ -57,7 +60,8 @@ int doubled(BigInteger value) {
 
 	return s;
 }
-int main() {
+int main()
+{
 	BigInteger a;
 	init(a);
 	cout << doubled(a);

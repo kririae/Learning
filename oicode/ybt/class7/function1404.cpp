@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-bool prime(int x) {
+bool prime(int x)
+{
 	double k = sqrt(x);
 	bool is_prime = true;
 
@@ -11,7 +12,8 @@ bool prime(int x) {
 
 	return is_prime;
 }
-int main() {
+int main()
+{
 	int s;
 	cin >> s;
 	int maxn = 0;

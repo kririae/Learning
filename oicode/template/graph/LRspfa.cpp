@@ -6,7 +6,8 @@ typedef long long LL;
 LL start, n, m;
 bool vis[MAXN];
 LL dis[MAXN];
-inline void read(LL &x) {
+inline void read(LL &x)
+{
 	x = 0;
 	char c = getchar();
 
@@ -18,15 +19,18 @@ inline void read(LL &x) {
 }
 struct edge {
 	LL to, va;
-	edge(LL a, LL b) {
+	edge(LL a, LL b)
+	{
 		to = a, va = b;
 	}
 };
 vector<edge> v[MAXN];
-void add_edge(LL from, LL to, LL va) {
+void add_edge(LL from, LL to, LL va)
+{
 	v[from].push_back(edge(to, va));
 }
-void SPFA() {
+void SPFA()
+{
 	queue<LL> q;
 	q.push(start);
 	vis[start] = 1;
@@ -50,7 +54,8 @@ void SPFA() {
 		}
 	}
 }
-int main() {
+int main()
+{
 	cin >> n >> m >> start;
 	LL a, b, c;
 

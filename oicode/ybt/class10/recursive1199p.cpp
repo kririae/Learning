@@ -2,21 +2,24 @@
 #include <cstdio>
 using namespace std;
 int char_list[20], n;
-bool can_insert(int index, int value) {
+bool can_insert(int index, int value)
+{
 	for(int i = 1; i <= index - 1; ++i)
 		if(char_list[index] == value)
 			return false;
 
 	return true;
 }
-void printOut() {
+void printOut()
+{
 	for(int i = 1; i <= n; ++i) {
 		printf("%d", char_list[i]);
 	}
 
 	printf("\n");
 }
-void arrangement(int value) {
+void arrangement(int value)
+{
 	if(value > n) printOut();
 	else {
 		for(int i = 1; i <= n; ++i) {
@@ -26,7 +29,8 @@ void arrangement(int value) {
 		}
 	}
 }
-int main() {
+int main()
+{
 	n = 3;
 	arrangement(0);
 	return 0;

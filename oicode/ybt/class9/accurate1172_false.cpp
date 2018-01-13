@@ -6,11 +6,13 @@ const int int_max = 4294967295;
 struct accurate {
 	int length;
 	int value[10000];
-	accurate() {
+	accurate()
+	{
 		memset(value, 0, sizeof(value));
 	}
 };
-accurate multi(accurate a, accurate b) {
+accurate multi(accurate a, accurate b)
+{
 	accurate c;
 
 	for (int i = 0; i < a.length; ++i)
@@ -31,7 +33,8 @@ accurate multi(accurate a, accurate b) {
 
 	return c;
 }
-void split(int x, int res[]) {
+void split(int x, int res[])
+{
 	int i = 1;
 
 	for(int j = 0; i <= x; ++j)
@@ -43,7 +46,8 @@ void split(int x, int res[]) {
 			}
 		}
 }
-accurate re_convert(int x) {
+accurate re_convert(int x)
+{
 	int y = x, count = 0;
 	accurate c;
 
@@ -58,7 +62,8 @@ accurate re_convert(int x) {
 	c.length = count;
 	return c;
 }
-int main() {
+int main()
+{
 	int res[10000];
 	memset(res, 1, sizeof(res));
 	accurate a, b;

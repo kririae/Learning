@@ -3,7 +3,8 @@
 using namespace std;
 double value[2005][2005], dis[2005];
 bool white[2005];
-int main() {
+int main()
+{
 	memset(value, 0, sizeof(value));
 	memset(dis, 0, sizeof(dis));
 	int n, m;

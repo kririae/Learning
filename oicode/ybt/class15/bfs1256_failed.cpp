@@ -19,7 +19,8 @@ const int go[4][2] = {{-1, 0},
 	{ 0, 1}
 };
 set<int> result;
-void printOut() {
+void printOut()
+{
 	for(int i = 0; i < r + 2; ++i) {
 		for(int j = 0; j < c + 2; ++j) {
 			cout << mmp[i][j];
@@ -31,7 +32,8 @@ void printOut() {
 	cout << endl;
 }
 point p[1000];
-int main() {
+int main()
+{
 	freopen("bfs1256.in", "r", stdin);
 	cin >> t;
 
@@ -109,6 +111,7 @@ int main() {
 	fclose(stdin);
 	return 0;
 }
-void bfs() {
+void bfs()
+{
 
 }

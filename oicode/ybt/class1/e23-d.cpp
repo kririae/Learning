@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	double a, b, res;
 	int k;
 	cin >> a >> b;

@@ -16,7 +16,8 @@ int memo[505][505] = {0};
 posi value[505];
 vector<int> res;
 vector<int> res2;
-void initlcs() {
+void initlcs()
+{
 	int length = res.size();
 
 	for(int i = 0; i < length; ++i) {
@@ -57,7 +58,8 @@ void initlcs() {
 	for(int i = res2.size() - 1; i >= 0; --i)
 		cout << res2[i] << " ";
 }
-void initres(int x, int y) {
+void initres(int x, int y)
+{
 	if(x == 0 || y == 0) return;
 
 	if(memo[x][y] == 1) {
@@ -68,7 +70,8 @@ void initres(int x, int y) {
 		else if(memo[x][y] == -1) initres(x - 1, y);
 	}
 }
-int main() {
+int main()
+{
 	int n, m;
 	cin >> n;
 

@@ -14,11 +14,13 @@ struct SegmentTree {
 	int lson, rson;
 } node[maxn * 2];
 
-inline void pushup(int k) {
+inline void pushup(int k)
+{
 	node[k].mess.sum = node[ node[k].lson ].mess.sum + node[ node[k].rson ].mess.sum;
 }
 
-inline void buildTree(int &k, int l, int r) {
+inline void buildTree(int &k, int l, int r)
+{
 	k = ++cnt;
 	node[k].l = l, node[k].r = r;
 
@@ -32,7 +34,8 @@ inline void buildTree(int &k, int l, int r) {
 	}
 }
 
-inline void one_point_modify(int k, int pos, int val) {
+inline void one_point_modify(int k, int pos, int val)
+{
 	if(node[k].lson == node[k].lson) {
 		node[k].mess.sum = val;
 		ini[pos] = val;
@@ -48,7 +51,8 @@ inline void one_point_modify(int k, int pos, int val) {
 	}
 }
 
-inline int range_query(int k, int ql, int qr) {
+inline int range_query(int k, int ql, int qr)
+{
 	if(node[k].lson == ql && node[k].rson == qr) {
 		return node[k].mess.sum;
 	}
@@ -66,7 +70,8 @@ inline int range_query(int k, int ql, int qr) {
 	}
 }
 int n, m, root;
-int main() {
+int main()
+{
 	cin >> n;
 
 	for (int i = 1; i <= n; ++i) {

@@ -7,7 +7,8 @@ struct line {
 } p[1000];
 line *result = new line[1000];
 int *w = new int[1000], *dist = new int[1000] = {0x7fffffff};
-int main() {
+int main()
+{
 	int n, m;
 	cin >> n;
 

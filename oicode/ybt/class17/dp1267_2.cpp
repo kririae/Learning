@@ -2,7 +2,8 @@
 #include <cstdio>
 #include <cstring>
 using namespace std;
-int main() {
+int main()
+{
 	freopen("dp1267.in", "r", stdin);
 	int m, n;
 	cin >> m >> n;

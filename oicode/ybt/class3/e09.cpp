@@ -1,7 +1,8 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-int main() {
+int main()
+{
 	int k, c1 = 0, c5 = 0, c10 = 0, res;
 	cin >> k;
 

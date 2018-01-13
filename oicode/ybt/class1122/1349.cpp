@@ -3,22 +3,26 @@
 using namespace std;
 struct edge {
 	int x = 0, y = 0, value = 0;
-	bool operator < (const edge (&a)) const {
+	bool operator < (const edge (&a)) const
+	{
 		return this->value < a.value;
 	}
 };
 edge *p;
 int *father;
-inline int find(int v) {
+inline int find(int v)
+{
 	if(father[v] != v) father[v] = find(father[v]);
 
 	return father[v];
 }
-inline void unionn(int a, int b) {
+inline void unionn(int a, int b)
+{
 	int r1 = find(a), r2 = find(b);
 	father[r1] = r2;
 }
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	int k;

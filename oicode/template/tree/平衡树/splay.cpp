@@ -10,7 +10,8 @@ const int L = 0, R = 1;
 struct splay_tree {
 	int cnt;
 
-	inline int read() {
+	inline int read()
+	{
 		int x = 0;
 		char c = getchar();
 		int f = 1;
@@ -26,18 +27,20 @@ struct splay_tree {
 		return x * f;
 	}
 
-	struct node {//一定要这样开空间啊，不然慢一倍啊
+	struct node { //一定要这样开空间啊，不然慢一倍啊
 		int son[2], fa, turn, size, val;
 	} a[N];
 
-	inline void update(const int &k) {
+	inline void update(const int &k)
+	{
 		if (k == 0) return;
 
 		node &t = a[k];
 		t.size = ls.size + rs.size + 1;
 	}
 
-	inline void pushdown(const int &k) {
+	inline void pushdown(const int &k)
+	{
 		if (k == 0) return;
 
 		node &t = a[k];
@@ -55,7 +58,8 @@ struct splay_tree {
 		}
 	}
 
-	inline void rotate(const int &x, int &k) {
+	inline void rotate(const int &x, int &k)
+	{
 		int y = a[x].fa, z = a[y].fa;
 		pushdown(y);
 		pushdown(x);
@@ -72,7 +76,8 @@ struct splay_tree {
 		update(y);
 	}
 
-	inline void splay(const int &x, int &k) {
+	inline void splay(const int &x, int &k)
+	{
 		int y, z;
 
 		while (x != k) {
@@ -90,7 +95,8 @@ struct splay_tree {
 		update(x);
 	}
 
-	inline int kth(int k, int x) { //非递归好像更快
+	inline int kth(int k, int x)   //非递归好像更快
+	{
 		//在k及其子树中找k大
 		while (1) {
 			pushdown(k);
@@ -109,7 +115,8 @@ struct splay_tree {
 		}
 	}
 
-	inline int get(int &root, int l, int r) { //一般序列使用
+	inline int get(int &root, int l, int r)   //一般序列使用
+	{
 		l = kth(root, l);
 		r = kth(root, r + 2);
 		splay(l, root);
@@ -117,7 +124,8 @@ struct splay_tree {
 		return a[a[root].son[R]].son[L];
 	}
 
-	void build(int &k, int l, int r, int from) {
+	void build(int &k, int l, int r, int from)
+	{
 		k = ++cnt;
 		a[k].fa = from;
 		a[k].val = 0;
@@ -132,7 +140,8 @@ struct splay_tree {
 	}
 };
 
-int main() {
+int main()
+{
 
 
 	return 0;

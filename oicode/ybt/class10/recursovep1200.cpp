@@ -2,14 +2,16 @@
 #include <cstdio>
 
 using namespace std;
-int recur(int num) {
+int recur(int num)
+{
 	if(num == 1) return 1;
 
 	if(num == 2) return 1;
 
 	return recur(num - 1) + recur(num - 2);
 }
-int main() {
+int main()
+{
 	int count;
 	cin >> count;
 	int value[count];

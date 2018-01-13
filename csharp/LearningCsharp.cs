@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-namespace LearningCsharp {
-class Program {
-	static void Main(string[] args) {
+namespace LearningCsharp
+{
+class Program
+{
+	static void Main(string[] args)
+	{
 		Form F = new Form();
 		//string str = "Hello";
 		/*var a = "HelloWorld";
@@ -21,15 +24,19 @@ class Program {
 		//程序 = 数据 + 算法
 	}
 }
-class Calculator {
-	public static int Add(int a, int b) {
+class Calculator
+{
+	public static int Add(int a, int b)
+	{
 		return a + b;
 	}
-	public static string Today() {
+	public static string Today()
+	{
 		int day = DateTime.Now.Day;
 		return day.ToString();
 	}
-	public static void printSum(int a, int b) {
+	public static void printSum(int a, int b)
+	{
 		int result = a + b;
 		Console.WriteLine(result);
 	}

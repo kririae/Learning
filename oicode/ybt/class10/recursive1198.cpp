@@ -5,7 +5,8 @@
 
 using namespace std;
 
-double rb() {
+double rb()
+{
 	char num[100];
 	scanf("%s", num);
 
@@ -21,7 +22,8 @@ double rb() {
 	sscanf(num, "%lf", &digit);
 	return digit;
 }
-int main() {
+int main()
+{
 	printf("%lf\n", rb());
 	return 0;
 }

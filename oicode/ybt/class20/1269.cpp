@@ -3,7 +3,8 @@
 using namespace std;
 int value[6000];
 bool can[6000];
-int main() {
+int main()
+{
 	memset(value, 0, sizeof(value));
 	memset(can, false, sizeof(can));
 	int n, m;

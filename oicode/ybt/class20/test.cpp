@@ -2,7 +2,8 @@
 #include <cstdio>
 #include <cstring>
 using namespace std;
-int main() {
+int main()
+{
 	int n, m;
 
 	for(int v, w, s, i = 0; i < n; ++i) {

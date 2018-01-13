@@ -12,7 +12,8 @@ const int go[4][2] = {{2, 1},
 	{-1, -2},
 	{-2, -1}
 };
-int main() {
+int main()
+{
 	// freopen("bfs1168.in", "r", stdin);
 	cin >> n >> m;
 	// ini

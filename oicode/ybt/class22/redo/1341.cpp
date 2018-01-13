@@ -5,7 +5,8 @@ bool grap[1005][1005];
 int deepth[1005];
 int result[1005];
 int n = 0, m, posi = 0;
-void find(int index) {
+void find(int index)
+{
 	for(int i = 1; i <= n; ++i) {
 		if(grap[index][i]) {
 			grap[index][i] = grap[i][index] = false;
@@ -15,7 +16,8 @@ void find(int index) {
 
 	result[++posi] = index;
 }
-int main() {
+int main()
+{
 	memset(result, 0, sizeof(result));
 	cin >> m;
 

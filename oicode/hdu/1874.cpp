@@ -3,7 +3,8 @@ using namespace std;
 const int maxn = 205;
 int n, m;
 int mp[maxn][maxn] {0x7fffffff};
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 

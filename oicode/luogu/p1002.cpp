@@ -14,7 +14,8 @@ long long memo[23][23];
 bool gcan[23][23];
 bool horse[23][23];
 point p[10000];
-int main() {
+int main()
+{
 	memset(gcan, false, sizeof(gcan));
 	memset(horse, false, sizeof(gcan));
 	memset(memo, 0, sizeof(memo));
@@ -42,7 +43,7 @@ int main() {
 			if (!horse[i][j]) {
 				for (int k = 0; k < 2; ++k) {
 					if (gcan[i + go[k][0]][j + go[k][1]] &&
-					        !horse[i + go[k][0]][j + go[k][1]]) {
+					    !horse[i + go[k][0]][j + go[k][1]]) {
 						memo[i][j] += memo[i + go[k][0]][j + go[k][1]];
 						gcan[i][j] = true;
 					}

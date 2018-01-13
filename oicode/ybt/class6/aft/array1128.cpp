@@ -2,7 +2,8 @@
 #include <cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	int m, n;
 	cin >> m >> n;
 	int res[m][n], res2[m][n];

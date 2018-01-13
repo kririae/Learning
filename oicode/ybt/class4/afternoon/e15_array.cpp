@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	int n, count = 0;
 	scanf("%d", &n);
 	int a[n];

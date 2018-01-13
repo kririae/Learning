@@ -10,12 +10,13 @@
 #define N 200005
 using namespace std;
 //-----------------
-struct node{
-    vector<int> son;
-    int fa;
-}tree[N];
+struct node {
+	vector<int> son;
+	int fa;
+} tree[N];
 //-----------------
-int main(){
-	
+int main()
+{
+
 	return 0;
-} 
+}

@@ -4,7 +4,8 @@
 
 using namespace std;
 set<int> s;
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 

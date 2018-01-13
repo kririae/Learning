@@ -4,7 +4,8 @@
 using namespace std;
 char res[50000];
 int res_i[50000];
-int main() {
+int main()
+{
 	memset(res_i, 0, sizeof(res_i));
 	freopen("hugeint.in", "r", stdin);
 	freopen("hugeint.out", "w", stdout);

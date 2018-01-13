@@ -2,7 +2,8 @@
 using namespace std;
 int n, m;
 char a[105];
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	cin >> n >> m;

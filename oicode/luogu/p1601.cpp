@@ -5,7 +5,8 @@ using namespace std;
 struct high_precision {
 	int length, value[200];
 };
-void load(high_precision &input) {
+void load(high_precision &input)
+{
 	char string[201];
 	scanf("%s", string);
 
@@ -20,7 +21,8 @@ void load(high_precision &input) {
 		j++;
 	}
 }
-high_precision add(high_precision a, high_precision b) {
+high_precision add(high_precision a, high_precision b)
+{
 	high_precision c;
 	int k = a.length > b.length ? a.length : b.length;
 
@@ -49,7 +51,8 @@ high_precision add(high_precision a, high_precision b) {
 
 	return c;
 }
-int main() {
+int main()
+{
 	high_precision a, b;
 	load(a);
 	load(b);

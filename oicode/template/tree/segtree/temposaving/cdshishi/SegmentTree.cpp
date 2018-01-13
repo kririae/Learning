@@ -17,7 +17,8 @@ struct SegmentTree {
 int root, ini[N], cnt; //cnt 当前已经有了多少个节点
 //假设数组初始时为ini
 
-void buildTree(int &k, int l, int r) { //初始化一个管理[l,r]的节点 ， 下标为k
+void buildTree(int &k, int l, int r)   //初始化一个管理[l,r]的节点 ， 下标为k
+{
 	k = ++cnt; //k = cnt+1; cnt++;
 	node[k].l = l;
 	node[k].r = r; //初始化[l,r]
@@ -32,7 +33,8 @@ void buildTree(int &k, int l, int r) { //初始化一个管理[l,r]的节点 ， 下标为k
 	}
 }
 
-void modify(int k, int pos, int val) { //修改  把ini[pos]修改为val
+void modify(int k, int pos, int val)   //修改  把ini[pos]修改为val
+{
 	if(node[k].l == node[k].r) { //儿子！  l==r l==pos
 		node[k].sum += val;
 		ini[pos] += val;
@@ -46,7 +48,8 @@ void modify(int k, int pos, int val) { //修改  把ini[pos]修改为val
 	}
 }
 
-long long query(int k, int ql, int qr) { //查询[ql,qr]
+long long query(int k, int ql, int qr)   //查询[ql,qr]
+{
 	if(node[k].l == ql && node[k].r == qr) {
 		return node[k].sum;
 	} else {
@@ -59,7 +62,8 @@ long long query(int k, int ql, int qr) { //查询[ql,qr]
 }
 
 int n, m;
-int main() {
+int main()
+{
 	scanf("%d", &n);
 
 	for(int i = 1; i <= n; i++) scanf("%d", &ini[i]);

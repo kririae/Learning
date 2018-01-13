@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	int n, sum = 0;
 	cin >> n;
 	double a, b, c, distance;

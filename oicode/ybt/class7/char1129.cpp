@@ -3,7 +3,8 @@
 #include<cstring>
 using namespace std;
 char charar[256];
-int main() {
+int main()
+{
 	gets(charar);
 	int count = 0;
 

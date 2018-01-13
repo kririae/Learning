@@ -13,7 +13,8 @@ struct edge {
 struct node {
 	int d, u;
 	node(int d, int u) : d(d), u(u) {};
-	const bool operator<(const node &x) const {
+	const bool operator<(const node &x) const
+	{
 		return d > x.d;
 	}
 };
@@ -23,7 +24,8 @@ struct dijkstra {
 	vector<int> g[maxn];
 	bitset<maxn> done;
 	int d[maxn], p[maxn];
-	void init(int n) {
+	void init(int n)
+	{
 		this->n = n;
 
 		for (int i = 0; i <= n; ++i)
@@ -31,11 +33,13 @@ struct dijkstra {
 
 		edges.clear();
 	}
-	void addedge(int f, int t, int d) {
+	void addedge(int f, int t, int d)
+	{
 		edges.push_back(edge(f, t, d));
 		g[f].push_back(edges.size() - 1);
 	}
-	void dijk(int s) {
+	void dijk(int s)
+	{
 		priority_queue<node> q;
 
 		for (int i = 1; i <= n; ++i)

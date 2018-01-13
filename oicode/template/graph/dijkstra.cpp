@@ -11,7 +11,8 @@ struct point {
 double value[101][101];
 double dist[101];
 bool cango[101];
-int main() {
+int main()
+{
 	for (int i = 0; i < 101; ++i)
 		dist[i] = maxn;
 

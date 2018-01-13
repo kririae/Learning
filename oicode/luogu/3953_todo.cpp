@@ -17,7 +17,8 @@ queue<int> q;
 int dis[maxn], countt[maxn];
 bool vis[maxn];
 
-inline ll read() {
+inline ll read()
+{
 	ll res = 0;
 	char c;
 
@@ -27,7 +28,8 @@ inline ll read() {
 	return res;
 }
 
-inline int spfaf(int s, int e) {
+inline int spfaf(int s, int e)
+{
 	for (int i = 0; i <= n + 5; ++i) dis[i] = 1e9;
 
 	q.push(s);
@@ -53,7 +55,8 @@ inline int spfaf(int s, int e) {
 	return dis[e];
 }
 
-inline void spfa(int s, int e) {
+inline void spfa(int s, int e)
+{
 	for (int i = 0; i <= n + 5; ++i) {
 		dis[i] = 1e9;
 		vis[i] = false;
@@ -86,7 +89,8 @@ inline void spfa(int s, int e) {
 	}
 }
 
-int main() {
+int main()
+{
 	freopen("in.in", "r", stdin);
 	cin.tie(0);
 	ios::sync_with_stdio(false);
