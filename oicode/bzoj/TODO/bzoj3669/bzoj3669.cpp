@@ -1,4 +1,4 @@
-/*
+﻿/*
 * by kriaeth 2018/1/13
 * 讲真 不看题解我还真的想不出这个...
 * spfa动态加点...貌似还挺新鲜的qwq
@@ -8,9 +8,9 @@
 #include <iostream>
 #include <cstdio>
 #include <vector>
-#include <priority_queue>
 #include <queue>
 #include <bitset>
+#include <cstring>
 
 namespace solve 
 {
@@ -27,24 +27,24 @@ namespace solve
 		// 	to = t, a = a, b = b;
 		// }
 
-		Edge(int f, int t, int a, int b) 
+		Edge(int f, int t, int ax, int bx) 
 		{
-			from = f, to = t, a = a, b = b;
+			from = f, to = t, a = ax, b = bx;
 		}
 
 		bool operator < (const Edge (&e)) const
 		{
-			return a <= e.a;
+			return a >= e.a;
 		}
 	};
 
 	int n, m;
 	int xi, yi, ai, bi;
-	vector<Edge> edges[maxn];
-	priority_queue<Edge> tempo;
-	queue<int> proc;
-	int dis[maxn];
-	bitset<maxn> vis;
+	std::vector<Edge> edges[maxn];
+	std::priority_queue<Edge> tempo;
+	std::queue<int> proc;
+	long long dis[maxn];
+	std::bitset<maxn> vis;
 
 	int res = 1e9;
 
@@ -52,12 +52,6 @@ namespace solve
 	inline T min(T a, T b) 
 	{
 		return a < b ? a : b;
-	}
-
-	template<typename T>
-	inline T max(T a, T b) 
-	{
-		return a > b ? a : b;
 	}
 
 	inline void read(int &val)
@@ -75,36 +69,39 @@ namespace solve
 			edges[yi].push_back(Edge(yi, xi, ai, bi));
 		}
 		else {
-			tempo.push(Edge(xi, yi, ai, bi));
+		    // std::cout << xi << " " << yi << " " << ai << " " << bi << std::endl;
+		    Edge curr(xi, yi, ai, bi);
+			tempo.push(curr);
 		}
 	}
 
-	inline int spfa(const Edge (&e)) 
+	inline long long spfa(const Edge (&e)) 
 	{
 		proc.push(e.from);
 		proc.push(e.to);
 
 		vis[e.from] = true;
 		vis[e.to] = true;
-
+        
 		while(!proc.empty()) 
 		{
 			int curr = proc.front();
 			proc.pop();
 			vis[curr] = false;
+			
 			for (int i = edges[curr].size() - 1; i >= 0; --i) 
 			{
 				Edge tempo = edges[curr][i];
-				dis[tempo.to] = min(dis[tempo.to], dis[curr] + tempo.b);
-
-				if(!vis[tempo.to])
-				{
-					vis[tempo.to] = true;
-					proc.push(tempo.to);
+				if(dis[curr] + tempo.b < dis[tempo.to]) {
+    				dis[tempo.to] = dis[curr] + tempo.b;
+    				if(!vis[tempo.to])
+    				{
+    					vis[tempo.to] = true;
+    					proc.push(tempo.to);
+    				}
 				}
 			}
 		}
-
 		return dis[n];
 	}
 	inline void init() 
@@ -120,19 +117,24 @@ namespace solve
 
 	inline void solve()
 	{
+//		freopen("testdata.in", "r", stdin);
+//		freopen("out.txt", "w", stdout);
 		init();
-		for (int i = 0; i < m; ++i)
+		proc.push(1);
+		vis[1] = true;
+		dis[1] = 0;
+		while(!tempo.empty()) 
 		{
-			while(!tempo.empty()) 
-			{
-				Edge curr = tempo.front();
-				tempo.pop();
-
-				addedge(curr.from, curr.to, curr.a, curr.b, true);
-				res = min(res, spfa(curr) + curr.a);
-			}
-		}	
-		std::cout << res << std::endl;
+			Edge curr = tempo.top();
+			tempo.pop();
+			std::printf("%d %d %d %d\n", curr.from, curr.to, curr.a, curr.b);
+			addedge(curr.from, curr.to, curr.a, curr.b, true);
+			int x = spfa(curr);
+			std::cout << x << "+" << curr.a << std::endl;
+			res = min(res, x + curr.a);
+		}
+		if(res == 1e9) std::cout << -1 << std::endl;
+		else std::cout << res << std::endl;
 	}
 }
 
