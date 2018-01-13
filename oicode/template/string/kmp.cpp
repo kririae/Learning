@@ -4,7 +4,8 @@ using namespace std;
 int f[N];//fail 数组
 char s[N], t[N]; //s 匹配串  t 被匹配串
 int ans[N];
-int main() {
+int main()
+{
 	scanf("%s%s", s + 1, t + 1); //下表从1开始储存
 	int lens = strlen(s + 1), lent = strlen(t + 1);
 	f[1] = 0; //第一个串显然是空
@@ -15,7 +16,7 @@ int main() {
 		int p = f[i - 1]; //先缩水一次，不然会求出自己
 
 		while(p != 0 && //没有跳到空
-		        s[p + 1] != s[i]) //没有找到正确的缩水后的串
+		      s[p + 1] != s[i]) //没有找到正确的缩水后的串
 			p = f[p]; //那就继续缩水
 
 		if(s[p + 1] == s[i]) //匹配成功

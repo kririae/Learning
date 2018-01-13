@@ -50,7 +50,8 @@ struct high_precision {
 	int length, value[200];
 	//igh_precision(){memset(value,0,sizeof(value))}
 };
-void load(high_precision &input) {
+void load(high_precision &input)
+{
 	char string[200];
 	int j = 0;
 	gets(string);
@@ -62,7 +63,8 @@ void load(high_precision &input) {
 	}
 }
 
-high_precision add(high_precision a, high_precision b) {
+high_precision add(high_precision a, high_precision b)
+{
 	high_precision c;
 	int k = a.length > b.length ? a.length : b.length;
 
@@ -87,7 +89,8 @@ high_precision add(high_precision a, high_precision b) {
 
 	return c;
 }
-int main() {
+int main()
+{
 	high_precision a, b, c;
 	load(a);
 	load(b);

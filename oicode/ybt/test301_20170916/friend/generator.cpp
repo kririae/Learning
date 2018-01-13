@@ -3,7 +3,8 @@
 #include <ctime>
 #include <cstdlib>
 using namespace std;
-int main() {
+int main()
+{
 	freopen("friend.in", "w", stdout);
 	srand(time(NULL));
 	int n = rand() % 100000;

@@ -12,7 +12,8 @@ int n, m;
 bool res[1000][1000];
 
 #ifdef DEBUG
-void printOut() {
+void printOut()
+{
 	for(int i = 0; i < n; ++i) {
 		for(int j = 0; j < m; ++j) {
 			cout << res[i][j];
@@ -31,7 +32,8 @@ const int go[4][2] = {{-1,  0},
 	{ 0,  1},
 	{ 0, -1}
 };
-void dfs(int x, int y) {
+void dfs(int x, int y)
+{
 	res[x][y] = false;
 
 	for(int i = 0; i < 3; ++i)
@@ -43,7 +45,8 @@ void dfs(int x, int y) {
 #endif
 
 #ifdef BASIC_VERSION
-void dfs(int x, int y) {
+void dfs(int x, int y)
+{
 	res[x][y] = false;
 
 	// if(x < 0 || y < 0 || x >= n - 1 || y >= m - 1) return;
@@ -75,7 +78,8 @@ struct point {
 	int y;
 };
 point p[10000];
-void bfs(int x, int y) {
+void bfs(int x, int y)
+{
 	int current = 0, processing = 1;
 	p[0].x = x;
 	p[0].y = y;
@@ -118,7 +122,8 @@ void bfs(int x, int y) {
 	}
 }
 #endif
-int main() {
+int main()
+{
 #ifdef DEBUG
 	freopen("bfs1329.in", "r", stdin);
 #endif

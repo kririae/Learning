@@ -2,10 +2,12 @@
 #include <iostream>
 using namespace std;
 int *list, max_num = 0;
-int maxn(int x, int y) {
+int maxn(int x, int y)
+{
 	return x > y ? x : y;
 }
-int maxnum(int x, int y) {
+int maxnum(int x, int y)
+{
 	if (y - x == 1)
 		return list[x];
 
@@ -25,7 +27,8 @@ int maxnum(int x, int y) {
 
 	return maxn(maxs, left + right);
 }
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 	list = new int[n + 5];

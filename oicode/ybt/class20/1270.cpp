@@ -4,7 +4,8 @@
 using namespace std;
 int value[205];
 bool can[205];
-int main() {
+int main()
+{
 	memset(value, 0, sizeof(value));
 	memset(can, false, sizeof(can));
 	int m, n;

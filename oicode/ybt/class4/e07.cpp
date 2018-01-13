@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	int n, res1 = 0, res2 = 1;
 	scanf("%d", &n);
 

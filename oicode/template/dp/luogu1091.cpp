@@ -9,7 +9,8 @@ struct posi {
 	posi() : a(1), b(1) {};
 };
 posi value[20005];
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 

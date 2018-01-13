@@ -11,7 +11,8 @@ const int go[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 point p[50000];
 bool map[70][70];
 char *c;
-int main() {
+int main()
+{
 	int m, n;
 	int minnres = 100000000;
 	cin >> m >> n;

@@ -1,0 +1,1 @@
+for /R %%f in (*.cpp;*.cs;) do C:\Users\AliceMargatroid\Desktop\programming\AStyle\bin\Astyle.exe --style=linux -p -X --indent=tab -n "%%f"

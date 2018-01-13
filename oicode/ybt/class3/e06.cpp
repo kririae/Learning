@@ -1,7 +1,8 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 	int j = 0, y = 0, t = 0, res;

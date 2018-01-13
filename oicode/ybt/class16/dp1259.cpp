@@ -2,7 +2,8 @@
 #include <vector>
 using namespace std;
 int *queue;
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 	queue = new int[n + 5];

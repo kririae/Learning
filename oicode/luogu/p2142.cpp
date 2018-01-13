@@ -4,11 +4,13 @@
 using namespace std;
 struct high_per {
 	int value[256], length;
-	high_per() {
+	high_per()
+	{
 		memset(value, 0, sizeof(value));
 	}
 };
-void loads(high_per &value) {
+void loads(high_per &value)
+{
 	int count = 0;
 	char c;
 
@@ -24,7 +26,8 @@ void loads(high_per &value) {
 		value.value[value.length - i - 1] = reversed.value[i];
 	}
 }
-int main() {
+int main()
+{
 	high_per a, b, c;
 	loads(a);
 	loads(b);

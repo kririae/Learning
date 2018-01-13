@@ -3,7 +3,8 @@
 // 如果我写的没有问题的话...可以把下面两行去掉并且把上面的注释取了
 #include <bits/stdc++.h>
 using namespace std;
-bool cmpare(char c1, char c2) {
+bool cmpare(char c1, char c2)
+{
 	char l[4];
 	int indexc1, indexc2;
 	// 不知道c语言怎么写...
@@ -22,16 +23,19 @@ bool cmpare(char c1, char c2) {
 struct poker {
 	int x;
 	char typ;
-	bool operator < (const poker (&a)) const {
+	bool operator < (const poker (&a)) const
+	{
 		if(typ == a.typ) return x < a.x;
 		else return cmpare(typ, a.typ);
 	}
 };
 poker a[5], b[5];
-void convert(int *s) {
+void convert(int *s)
+{
 
 }
-void init() {
+void init()
+{
 	// 下面的是初始化 分别把第一排的和第二排的初始化为一个数字
 	for (int i = 0; i < 3; ++i) {
 		char c[10];
@@ -80,7 +84,8 @@ void init() {
 	sort(a, a + 3);
 	sort(b, b + 3);
 }
-int main() {
+int main()
+{
 	init();
 
 	return 0;

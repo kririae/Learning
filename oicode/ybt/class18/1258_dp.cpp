@@ -7,7 +7,8 @@ const int maxn = 1005;
 int lines[maxn][maxn];
 int memo[maxn][maxn];
 int layers;
-int main() {
+int main()
+{
 	scanf("%d", &layers);
 
 	for(int i = 1; i <= layers; ++i)

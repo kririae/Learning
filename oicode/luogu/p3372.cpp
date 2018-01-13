@@ -2,7 +2,8 @@
 #define R 1
 #include <bits/stdc++.h>
 
-namespace SegmentTree {
+namespace SegmentTree
+{
 constexpr int maxn = 1e6;
 static int ini[maxn];
 struct node {
@@ -15,7 +16,8 @@ node t[maxn << 2];
 
 int cnt = 0;
 
-inline void pushdown(const int &k) {
+inline void pushdown(const int &k)
+{
 	if(t[k].add == 0) return;
 
 	t[t[k].son[0]].add += t[k].add, t[t[k].son[1]].add += t[k].add;
@@ -25,11 +27,13 @@ inline void pushdown(const int &k) {
 	t[k].add = 0;
 }
 
-inline void pushup(const int &k) {
+inline void pushup(const int &k)
+{
 	t[k].sum = t[t[k].son[0]].sum + t[t[k].son[1]].sum;
 }
 
-inline void buildTree(int &k, int l, int r) {
+inline void buildTree(int &k, int l, int r)
+{
 	k = ++cnt;
 	t[k].l = l, t[k].r = r, t[k].add = t[k].sum = 0;
 
@@ -43,7 +47,8 @@ inline void buildTree(int &k, int l, int r) {
 	}
 }
 
-inline void range_add(const int &k, const int &ql, const int &qr, const int &val) {
+inline void range_add(const int &k, const int &ql, const int &qr, const int &val)
+{
 	if(ql > t[k].r || qr < t[k].l) return;
 
 	if(t[k].l == ql && t[k].r == qr) {
@@ -59,7 +64,8 @@ inline void range_add(const int &k, const int &ql, const int &qr, const int &val
 	pushup(k);
 }
 
-inline long long range_query(const int &k, const int &ql, const int &qr) {
+inline long long range_query(const int &k, const int &ql, const int &qr)
+{
 	if(ql > t[k].r || qr < t[k].l) return 0;
 
 	if(ql <= t[k].l && qr >= t[k].r) {
@@ -72,7 +78,8 @@ inline long long range_query(const int &k, const int &ql, const int &qr) {
 }
 }
 int n, m;
-int main() {
+int main()
+{
 	using namespace SegmentTree;
 	using namespace std;
 	cin.tie(0);

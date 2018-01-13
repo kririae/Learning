@@ -8,7 +8,8 @@ struct point {
 	double y;
 } p[101];
 double value[101][101];
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 
@@ -33,7 +34,7 @@ int main() {
 		for (int i = 1; i <= n; ++i) {
 			for (int j = 1; j <= n; ++j) {
 				if (i != j && i != k && j != k &&
-				        value[i][k] + value[k][j] < value[i][j]) {
+				    value[i][k] + value[k][j] < value[i][j]) {
 					value[i][j] = value[i][k] + value[k][j];
 				}
 			}

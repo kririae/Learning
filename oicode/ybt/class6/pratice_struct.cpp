@@ -5,7 +5,8 @@ struct name1 {
 	int chinese, math;
 	int total;
 } a[3];
-int main() {
+int main()
+{
 	name1 a[3];
 
 	for (int i = 0; i < 3; ++i) {

@@ -12,7 +12,8 @@ bool map[600][600];
 const int go[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 Point p[100000];
 int t;
-int main() {
+int main()
+{
 	cin >> t;
 
 	for(int k = 0; k < t; ++k) {

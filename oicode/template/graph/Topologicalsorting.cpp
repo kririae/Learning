@@ -4,7 +4,8 @@ int n, degree[105], value;
 vector<int> son[105];
 queue<int> proc;
 bool graph[105][105];
-int main() {
+int main()
+{
 	cin >> n;
 
 	for (int value, i = 1; i <= n; ++i) {

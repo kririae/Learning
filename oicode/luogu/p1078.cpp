@@ -6,7 +6,8 @@ int coun_cul[maxn];
 bool cul_graph[105][105];
 int phy_graph[1005][1005] {1e9};
 
-inline void floyd() {
+inline void floyd()
+{
 	for (int k = 1; k <= n; ++k) {
 		for (int i = 1; i <= n; ++i) {
 			for (int j = 1; j <= n; ++j) {
@@ -17,7 +18,8 @@ inline void floyd() {
 		}
 	}
 }
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	cin >> n >> k >> m >> s >> t;

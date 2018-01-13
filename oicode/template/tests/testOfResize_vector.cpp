@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 vector<int> v;
-int main() {
+int main()
+{
 	v.resize(10);
 
 	for (int i = 0; i < 10; ++i)

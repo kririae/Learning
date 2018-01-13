@@ -3,7 +3,8 @@
 using namespace std;
 int n, r, minn = 0, m, p;
 int test[10005];
-int main() {
+int main()
+{
 	freopen("move.in", "r", stdin);
 	freopen("move.out", "w", stdout);
 	scanf("%d%d", &n, &r);

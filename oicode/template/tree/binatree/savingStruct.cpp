@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
-int main() {
+int main()
+{
 
 	return 0;
 }

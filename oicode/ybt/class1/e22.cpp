@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	char a;
 	cin >> a;
 	printf("  %c  \n", a);

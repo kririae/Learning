@@ -2,7 +2,8 @@
 #include <cstdio>
 using namespace std;
 bool used[20005];
-int main() {
+int main()
+{
 	int v, n;
 	cin >> v >> n;
 	int maxn = 0;

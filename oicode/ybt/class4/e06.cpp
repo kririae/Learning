@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	bool if_in7;
 	int x;
 	cin >> x;

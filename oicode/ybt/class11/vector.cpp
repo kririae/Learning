@@ -2,7 +2,8 @@
 #include <iostream>
 #include <vector>
 vector <int> res;
-int main() {
+int main()
+{
 	int value;
 
 	while(scanf("%d", &res) != EOF) {

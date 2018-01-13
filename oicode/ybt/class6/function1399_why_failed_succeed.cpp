@@ -8,11 +8,13 @@ struct person {
 	float temp;
 	int cou;
 };
-bool if_heat(person info) {
+bool if_heat(person info)
+{
 	if(info.temp >= 37.5 && info.cou == 1) return true;
 	else return false;
 }
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 	int count = 0;

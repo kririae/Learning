@@ -13,10 +13,12 @@ struct Node {
 
 Node* root;
 
-Node* newnode() {
+Node* newnode()
+{
 	return new Node();
 }
-bool addnode(int v, char* s) {
+bool addnode(int v, char* s)
+{
 	int length = strlen(s);
 	Node* curr = root;
 
@@ -30,7 +32,8 @@ bool addnode(int v, char* s) {
 		}
 	}
 }
-int main() {
+int main()
+{
 
 	return 0;
 }

@@ -9,7 +9,8 @@ struct BigInteger {
 	static const int WIDTH = 4;
 	int num_length;
 	int *s;
-	BigInteger(char *a = "") {
+	BigInteger(char *a = "")
+	{
 		int length_str = strlen(a);
 		num_length = (length_str + WIDTH - 1) / WIDTH;
 		s = new int[num_length + 1];
@@ -26,7 +27,8 @@ struct BigInteger {
 			s[index] += w * item;
 		}
 	}
-	BigInteger operator * (const BigInteger& other) const {
+	BigInteger operator * (const BigInteger& other) const
+	{
 		BigInteger c;
 		c.num_length = (*this).num_length + other.num_length + 1;
 		c.s = new int[c.num_length + 1];
@@ -48,12 +50,14 @@ struct BigInteger {
 	}
 };
 template<typename T>
-void swap_n(T &a, T &b) {
+void swap_n(T &a, T &b)
+{
 	T t = a;
 	a = b;
 	b = t;
 }
-void ngets() {
+void ngets()
+{
 	char res[201];
 	scanf("%s", res);
 	int length = strlen(res);
@@ -61,7 +65,8 @@ void ngets() {
 	for(int i = 0; i < length / 2; ++i)
 		swap_n(res[i], (res[length - i - 1]));
 }
-int main() {
+int main()
+{
 	char *x = new char[2000];
 	char *y = new char[2000];
 	scanf("%s", x);

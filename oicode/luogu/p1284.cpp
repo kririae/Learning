@@ -5,7 +5,8 @@ using namespace std;
 bool board[1605][1605];
 int n, data[45], sum = 0;
 double result = 0;
-void getSqu(int a, int b) {
+void getSqu(int a, int b)
+{
 	int c = sum - a - b;
 
 	if (a + b <= c || b + c <= a || a + c <= b)
@@ -19,7 +20,8 @@ void getSqu(int a, int b) {
 
 	// cout << res << " " << sum << endl;
 }
-int main() {
+int main()
+{
 	// freopen("noi1062.in", "r", stdin);
 	cin >> n;
 

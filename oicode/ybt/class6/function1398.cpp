@@ -1,11 +1,13 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-int price(int p) {
+int price(int p)
+{
 	if(p % 70 == 0) return p / 70;
 	else return (p / 70) + 1;
 }
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 	double count = 0;

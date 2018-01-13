@@ -5,21 +5,25 @@ const int L = 0, R = 1;
 
 struct Message { //节点维护的信息
 	long long sum, len, add; //区间和 区间长度 区间lazy的加法
-	Message() { //初始化函数
+	Message()   //初始化函数
+	{
 		sum = 0;
 		add = 0;
 		len = 0;
 	}
-	Message(long long xsum, long long xadd, long long xlen) { //初始化函数
+	Message(long long xsum, long long xadd, long long xlen)   //初始化函数
+	{
 		sum = xsum;
 		add = xadd;
 		len = xlen;
 	}
-	Message operator +(const Message &b) { //定义 a+b
+	Message operator +(const Message &b)   //定义 a+b
+	{
 		Message p(sum + b.sum, 0, len + b.len); //p.sum = sum+b.sum p.add=0 p.len=len+b.len
 		return p;
 	}
-	void modify(Message fa) { //父亲的信息为fa ， 父亲pushdown下传
+	void modify(Message fa)   //父亲的信息为fa ， 父亲pushdown下传
+	{
 		sum += len * fa.add;
 		add += fa.add;
 	}
@@ -31,7 +35,8 @@ struct SegmentTree {
 	Message x;
 } node[N * 2];
 
-void pushdown(int k) { //下传标记
+void pushdown(int k)   //下传标记
+{
 	if( node[k].x.add != 0 ) {
 		node[ node[k].son[L] ].x.modify( node[k].x );
 		node[ node[k].son[R] ].x.modify( node[k].x );
@@ -39,7 +44,8 @@ void pushdown(int k) { //下传标记
 	}
 }
 
-void update(int k) { //更新节点k
+void update(int k)   //更新节点k
+{
 	node[k].x = node[node[k].son[L]].x + node[node[k].son[R]].x;
 }
 
@@ -47,7 +53,8 @@ void update(int k) { //更新节点k
 int root, ini[N], cnt; //cnt 当前已经有了多少个节点
 //假设数组初始时为ini
 
-void buildTree(int &k, int l, int r) { //初始化一个管理[l,r]的节点 ， 下标为k
+void buildTree(int &k, int l, int r)   //初始化一个管理[l,r]的节点 ， 下标为k
+{
 	k = ++cnt;
 	node[k].l = l;
 	node[k].r = r;
@@ -63,7 +70,8 @@ void buildTree(int &k, int l, int r) { //初始化一个管理[l,r]的节点 ， 下标为k
 	}
 }
 
-Message work(int k, int ql, int qr, Message y) { //修改 [ql,qr] 顺带查询[ql,qr]
+Message work(int k, int ql, int qr, Message y)   //修改 [ql,qr] 顺带查询[ql,qr]
+{
 	if( node[k].l == ql && node[k].r == qr ) {
 		node[k].x.modify(y);
 		return node[k].x;
@@ -82,7 +90,8 @@ Message work(int k, int ql, int qr, Message y) { //修改 [ql,qr] 顺带查询[ql,qr]
 }
 
 int n, m;
-int main() {
+int main()
+{
 	scanf("%d", &n);
 
 	for(int i = 1; i <= n; i++) scanf("%d", &ini[i]);

@@ -5,16 +5,19 @@ vector<int> result;
 struct edge {
 	int x, y;
 } p[200005];
-inline int find(int val) {
+inline int find(int val)
+{
 	if (father[val] != val)
 		father[val] = find(val);
 
 	return father[val];
 }
-inline void unionn(int val1, int val2) {
+inline void unionn(int val1, int val2)
+{
 	father[find(val1)] = find(val2);
 }
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	cin >> n >> m;
@@ -67,7 +70,8 @@ int main() {
 #include <vector>
 #include <algorithm>
 using namespace std;
-inline void read(int &x) {
+inline void read(int &x)
+{
 	x = 0;
 	char c = getchar();
 
@@ -77,10 +81,12 @@ inline void read(int &x) {
 }
 #define MAXN 400006
 int fa[MAXN], cnt;
-inline int find(int x) {
+inline int find(int x)
+{
 	return x == fa[x] ? x : fa[x] = find(fa[x]);
 }
-inline void uni(int x, int y) {
+inline void uni(int x, int y)
+{
 	int xx = find(x), yy = find(y);
 
 	if(xx == yy) return;
@@ -94,7 +100,8 @@ pii rel[MAXN >> 1];
 int del[MAXN], ans[MAXN];
 bool vis[MAXN];
 vector<int> v[MAXN];
-inline void add_set(int x, int y) {
+inline void add_set(int x, int y)
+{
 	//cout<<x<<" "<<y<<endl;
 	if(!vis[x] && !vis[y]) {
 		//cout<<x<<" "<<y<<endl;
@@ -104,7 +111,8 @@ inline void add_set(int x, int y) {
 
 	v[x].push_back(y), v[y].push_back(x);
 }
-int main() {
+int main()
+{
 	read(n), read(m);
 
 	for(int i = 0; i < n; ++i) fa[i] = i;

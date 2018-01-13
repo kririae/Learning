@@ -6,7 +6,8 @@ struct segtreeNode {
 	int val;
 } segTree[maxn];
 int arr[maxn];
-inline void build(int root, int istart, int iend) {
+inline void build(int root, int istart, int iend)
+{
 	if(istart == iend) {
 		segTree[root].val = arr[istart];
 	} else {

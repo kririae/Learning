@@ -7,7 +7,8 @@
 #include <sstream>
 using namespace std;
 
-int main() {
+int main()
+{
 	string res;
 	getline(cin, res);
 	stringstream ss(res);

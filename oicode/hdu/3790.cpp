@@ -9,7 +9,8 @@ vector<edge> p;
 int n, m, s, t;
 int dist[1005], price[1005];
 bool white[1005];
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 

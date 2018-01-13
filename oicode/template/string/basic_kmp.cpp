@@ -6,7 +6,8 @@ int f[maxn];
 char s[maxn], t[maxn];
 int ans[maxn];
 
-int main() {
+int main()
+{
 	scanf("%s%s", s, t);
 	int lens = strlen(s), lent = strlen(t);
 	int pts = 0, ptt = 0;

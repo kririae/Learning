@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	double a;
 	cin >> a;
 	printf("%.12f", a);

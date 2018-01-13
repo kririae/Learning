@@ -6,7 +6,8 @@ int r, c, md = 0;
 const int go[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 int map[105][105];
 int xxx[105][105];
-int dfs(int x, int y) {
+int dfs(int x, int y)
+{
 	int xmax = 0;
 
 	for(int i = 0; i < 4; ++i) {
@@ -26,7 +27,8 @@ int dfs(int x, int y) {
 	xxx[x][y] = xmax + 1;
 	return xxx[x][y];
 }
-int main() {
+int main()
+{
 	memset(map, 0, sizeof(map));
 	memset(xxx, 0, sizeof(xxx));
 	cin >> r >> c;

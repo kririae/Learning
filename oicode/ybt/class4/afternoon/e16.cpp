@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	int n = 0, res = 0;
 	int wzs = 0, ls = 0, day, totalday = 0, count = 0;
 	cin >> day;

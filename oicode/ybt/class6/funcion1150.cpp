@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-bool w(int n) {
+bool w(int n)
+{
 	int res = 0;
 
 	for (int i = 1; i < n; ++i)
@@ -11,7 +12,8 @@ bool w(int n) {
 
 	return res == n;
 }
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 

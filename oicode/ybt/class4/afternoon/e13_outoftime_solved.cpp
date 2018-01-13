@@ -3,7 +3,8 @@
 #include<cmath>
 using namespace std;
 bool is_prime_number(int x);
-int main() {
+int main()
+{
 	int n, a, b;
 	cin >> n;
 
@@ -18,7 +19,8 @@ int main() {
 	printf("%d", a > b ? a : b);
 	return 0;
 }
-bool is_prime_number(int x) {
+bool is_prime_number(int x)
+{
 	bool is_prime = true;
 
 	for (int i = 2; i < sqrt(x); ++i) {

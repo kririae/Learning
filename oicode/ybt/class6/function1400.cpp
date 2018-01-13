@@ -3,12 +3,14 @@
 #include<algorithm>
 using namespace std;
 int a[10];
-bool cmp(int a, int b) {
+bool cmp(int a, int b)
+{
 	if(a >= b)return false;
 
 	return true;
 }
-int main() {
+int main()
+{
 	int n, i = 0, count = 0;
 	cin >> n;
 	int count2 = 0;

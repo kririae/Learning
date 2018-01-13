@@ -8,7 +8,8 @@ int value[205][205] = {0};
 char a[205];
 char b[205];
 int lcs(char *a, char *b);
-int main() {
+int main()
+{
 	while (scanf("%s%s", a + 1, b + 1) == 2) {
 		cout << lcs(a, b) << endl;
 		memset(a, 0, sizeof(a));
@@ -17,7 +18,8 @@ int main() {
 
 	return 0;
 }
-int lcs(char *a, char *b) {
+int lcs(char *a, char *b)
+{
 	memset(value, 0, sizeof(value));
 	int lena = strlen(a + 1), lenb = strlen(b + 1);
 

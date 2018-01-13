@@ -2,7 +2,8 @@
 using namespace std;
 int graph[105][105] = {0};
 int value[105][105];
-int main() {
+int main()
+{
 	int n, m, a, b;
 	cin >> n >> m;
 

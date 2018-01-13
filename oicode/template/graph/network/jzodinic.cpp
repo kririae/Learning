@@ -11,7 +11,8 @@ const int inf = 0xfffffff;
 sd mp[200005];
 int layer[200005];//记录层数
 vector<int>head[200005];
-bool bfs(int u, int st) {
+bool bfs(int u, int st)
+{
 	memset(layer, 0, sizeof(layer));
 	queue<int>q;
 	q.push(u);
@@ -36,7 +37,8 @@ bool bfs(int u, int st) {
 
 	return layer[st];//标记终点能否到达
 }
-int dfs(int u, int mn, int t) {
+int dfs(int u, int mn, int t)
+{
 	if(u == t) return mn; //如果两点重合，返回mn
 
 	int ret = 0; //记录能走过的边
@@ -61,7 +63,8 @@ int dfs(int u, int mn, int t) {
 
 	return ret;
 }
-int dinic(int u, int t) {
+int dinic(int u, int t)
+{
 	int ans = 0;
 
 	while(bfs(u, t)) { //当终点能到达时
@@ -70,7 +73,8 @@ int dinic(int u, int t) {
 
 	return ans;
 }
-int main() {
+int main()
+{
 	int cnt = 0, m, n, s, t;
 	scanf("%d%d%d%d", &m, &n, &s, &t);
 

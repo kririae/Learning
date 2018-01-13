@@ -5,13 +5,16 @@
 using namespace std;
 int *firstList;
 int n, count = 0;
-void printFirst(int curr) {
+void printFirst(int curr)
+{
 	if(firstList[curr] != 0 && firstList[curr] != 1) cout << firstList[curr];
 }
-void printX(int curr) {
+void printX(int curr)
+{
 	if(curr != 0 && curr != 1) cout << "^" << curr;
 }
-void printOne(int curr) {
+void printOne(int curr)
+{
 	//´òÓ¡ÏµÊý
 	printFirst(curr);
 
@@ -27,7 +30,8 @@ void printOne(int curr) {
 		printX(curr);
 	}
 }
-int main() {
+int main()
+{
 	freopen("power.in", "r", stdin);
 	freopen("power.out", "w", stdout);
 	cin >> n;

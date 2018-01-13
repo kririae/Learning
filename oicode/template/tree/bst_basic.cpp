@@ -8,8 +8,10 @@
 
 using namespace std;
 typedef long long ll;
-namespace BASIC {
-inline void read(int &val) {
+namespace BASIC
+{
+inline void read(int &val)
+{
 	char c;
 	val = 0;
 
@@ -18,7 +20,8 @@ inline void read(int &val) {
 	}
 }
 }
-namespace BST {
+namespace BST
+{
 const int maxn = 1e5 + 5;
 struct treap {
 	int priority = rand();
@@ -35,7 +38,8 @@ vector<int> templ;
 vector <node> p;
 int cnt = 1, root = 1;
 
-inline void print(int k, bool typ) {
+inline void print(int k, bool typ)
+{
 	if (t[k].son[0]) print(t[k].son[0], typ);
 
 	// if (!typ) cout << t[k].val << " ";
@@ -48,15 +52,18 @@ inline void print(int k, bool typ) {
 	if (t[k].son[1]) print(t[k].son[1], typ);
 }
 
-inline void pushup(int k) {
+inline void pushup(int k)
+{
 	t[k].size = t[t[k].son[0]].size + t[t[k].son[1]].size + 1;
 }
 
-inline void pushdown(int k) {
+inline void pushdown(int k)
+{
 	if (t[k].size == 0); // TODO
 }
 
-inline void rotate(int k) {
+inline void rotate(int k)
+{
 	// if father node of k is root, would there need to be a spec?
 	for (int i = 0; i < n; ++i) cout << i << endl;
 
@@ -91,7 +98,8 @@ inline void rotate(int k) {
 	if (ifrotateff) pushup(fafa);
 }
 
-inline void insert(int k, int val) {
+inline void insert(int k, int val)
+{
 	// root -> k = 0
 	if (cnt == 1) {
 		t[cnt++].val = val;
@@ -117,7 +125,8 @@ inline void insert(int k, int val) {
 	pushup(k);
 }
 
-inline void subreb(int &k, int l, int r) {
+inline void subreb(int &k, int l, int r)
+{
 	if (l > r) return;
 
 	int mid = (l + r) >> 1;
@@ -129,7 +138,8 @@ inline void subreb(int &k, int l, int r) {
 	pushup(k);
 }
 
-inline void rebuild(int k) {
+inline void rebuild(int k)
+{
 	int currcnt = cnt;
 	templ.clear();
 	print(k, true); // init the lst k
@@ -137,14 +147,16 @@ inline void rebuild(int k) {
 	root = currcnt + 1;
 }
 
-inline int find(int k, int val) {
+inline int find(int k, int val)
+{
 	if (t[k].val == val) return k;
 
 	if (val <= t[k].val && t[k].son[0]) return find(t[k].son[0], val);
 	else if (t[k].son[1]) return find(t[k].son[1], val);
 }
 
-inline int getkth(int k, int val) {
+inline int getkth(int k, int val)
+{
 	// by LittleRewriter
 	if (val > cnt) return 0;
 
@@ -155,7 +167,8 @@ inline int getkth(int k, int val) {
 		return getkth(t[k].son[1], val - t[t[k].son[0]].size - 1);
 }
 
-inline int subgetrank(int k, int val, int cnt) {
+inline int subgetrank(int k, int val, int cnt)
+{
 	// by LittleRewriter
 	if (t[k].val == val) return cnt + t[t[k].son[0]].size + 1;
 	else if (t[k].son[0] && t[k].val > val) return subgetrank(t[k].son[0], val, cnt);
@@ -163,13 +176,15 @@ inline int subgetrank(int k, int val, int cnt) {
 }
 
 // ��Ϊ���е�ԭ�� ����ֱ�ӵ��� ���Լ���һ���Ӻ���
-inline int getrank(int k, int val) {
+inline int getrank(int k, int val)
+{
 	if (!find(k, val)) return 0;
 
 	return subgetrank(k, val, 0);
 }
 
-inline int prenxtnode(int val, int meth) {
+inline int prenxtnode(int val, int meth)
+{
 	// by LR
 	// 1 -> next
 	// 0 -> pre
@@ -193,7 +208,8 @@ inline int prenxtnode(int val, int meth) {
 	return -1;
 }
 
-inline void splay(int s, int e) {
+inline void splay(int s, int e)
+{
 	// ��index s �� e
 	int fa, fafa;
 
@@ -202,11 +218,13 @@ inline void splay(int s, int e) {
 	}
 }
 }
-namespace DEBUG {
+namespace DEBUG
+{
 using namespace BST;
 const int cntm = 1e5;
 
-inline void printOut() {
+inline void printOut()
+{
 	int cnt = 0;
 	print(root, true);
 	queue <BST::node> q;
@@ -258,7 +276,8 @@ int main() {
     return 0;
 }
 */
-int main() {
+int main()
+{
 	srand(time(NULL));
 	using namespace DEBUG;
 	using namespace BST;

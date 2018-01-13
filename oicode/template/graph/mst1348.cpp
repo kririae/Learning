@@ -2,14 +2,16 @@
 using namespace std;
 struct edge {
 	int sp, v, ep;
-	bool operator<(const edge(&a)) const {
+	bool operator<(const edge(&a)) const
+	{
 		return this->v < a.v;
 	}
 };
 edge p[105];
 struct point {
 	int x, y;
-	bool operator<(const point(&a)) const {
+	bool operator<(const point(&a)) const
+	{
 		if (this->x < a.x)
 			return true;
 
@@ -21,17 +23,20 @@ struct point {
 };
 std::set<point> result;
 int father[105];
-inline int find(int v) {
+inline int find(int v)
+{
 	if (father[v] != v)
 		father[v] = find(father[v]);
 
 	return father[v];
 }
-inline void unionn(int a, int b) {
+inline void unionn(int a, int b)
+{
 	int r1 = find(a), r2 = find(b);
 	father[r1] = r2;
 }
-int main() {
+int main()
+{
 	int n, e;
 	cin >> n >> e;
 

@@ -17,11 +17,13 @@ struct SegmentTree {
 int root, ini[N], cnt; //cnt 当前已经有了多少个节点
 //假设数组初始时为ini
 
-void pushdown(int k) { //把节点K上的数值下传
+void pushdown(int k)   //把节点K上的数值下传
+{
 	if(node[k].add == 0 || node[k].l == node[k].r ) return; //没有需要下传的 或者 没有儿子
 }
 
-void buildTree(int &k, int l, int r) { //初始化一个管理[l,r]的节点 ， 下标为k
+void buildTree(int &k, int l, int r)   //初始化一个管理[l,r]的节点 ， 下标为k
+{
 	k = ++cnt; //k = cnt+1; cnt++;
 	node[k].l = l;
 	node[k].r = r; //初始化[l,r]
@@ -36,7 +38,8 @@ void buildTree(int &k, int l, int r) { //初始化一个管理[l,r]的节点 ， 下标为k
 	}
 }
 
-void modify(int k, int ql, int qr, int val) { //[ql,qr] += val
+void modify(int k, int ql, int qr, int val)   //[ql,qr] += val
+{
 	pushdown(k);
 
 	if( node[k].l == ql && node[k].r == qr ) {
@@ -51,7 +54,8 @@ void modify(int k, int ql, int qr, int val) { //[ql,qr] += val
 	}
 }
 
-long long query(int k, int pos, int val) {
+long long query(int k, int pos, int val)
+{
 	pushdown(k);
 
 	if( node[k].l == node[k].r ) { // l==r==pos
@@ -65,7 +69,8 @@ long long query(int k, int pos, int val) {
 }
 
 int n, m;
-int main() {
+int main()
+{
 
 	return 0;
 }

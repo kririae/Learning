@@ -4,7 +4,8 @@
 #define inf 0x7fffffff
 using namespace std;
 // 读入操作
-inline int read() {
+inline int read()
+{
 	int x = 0, f = 1;
 	char ch = getchar();
 
@@ -30,7 +31,8 @@ int tag[50005], v[50005], mx[50005], size[50005];
 // 是否翻转（左右翻转
 bool rev[50005];
 // 上传标记
-inline void pushup(int k) {
+inline void pushup(int k)
+{
 	// 获取左右子树的index
 	int l = c[k][0], r = c[k][1];
 	// 更新当前的最大值吧
@@ -40,7 +42,8 @@ inline void pushup(int k) {
 	size[k] = size[l] + size[r] + 1;
 }
 // 下传标记
-void pushdown(int k) {
+void pushdown(int k)
+{
 	// 还是获取左右子树的index 然后找到当前的tag
 	int l = c[k][0], r = c[k][1], t = tag[k];
 
@@ -71,7 +74,8 @@ void pushdown(int k) {
 		swap(c[k][0], c[k][1]);
 	}
 }
-void rotate(int x, int &k) {
+void rotate(int x, int &k)
+{
 	// 获取当前点的前面两个点的inx
 	int y = fa[x], z = fa[y], l, r;
 
@@ -108,7 +112,8 @@ void rotate(int x, int &k) {
 	pushup(x);
 }
 // splay辣! 将节点x旋转到k的位置
-void splay(int x, int &k) {
+void splay(int x, int &k)
+{
 	// 当x不等于k的时候
 	while(x != k) {
 		// 还是那样 获取当前节点的祖宗两代
@@ -128,7 +133,8 @@ void splay(int x, int &k) {
 	}
 }
 // 如果没错的话...这段的意思应该是获取rank的数字, k应该是根节点 返回节点index
-int find(int k, int rank) {
+int find(int k, int rank)
+{
 	// 如果tag和rev有值 那就下传
 	if(tag[k] || rev[k])pushdown(k);
 
@@ -146,7 +152,8 @@ int find(int k, int rank) {
 	else return find(r, rank - size[l] - 1);
 }
 // 更新区间 区间加
-inline void update(int l, int r, int val) {
+inline void update(int l, int r, int val)
+{
 	int x = find(rt, l), y = find(rt, r + 2);
 	splay(x, rt);
 	splay(y, c[x][1]);
@@ -155,21 +162,24 @@ inline void update(int l, int r, int val) {
 	v[z] += val;
 	mx[z] += val;
 }
-inline void rever(int l, int r) {
+inline void rever(int l, int r)
+{
 	int x = find(rt, l), y = find(rt, r + 2);
 	splay(x, rt);
 	splay(y, c[x][1]);
 	int z = c[y][0];
 	rev[z] ^= 1;
 }
-inline void query(int l, int r) {
+inline void query(int l, int r)
+{
 	int x = find(rt, l), y = find(rt, r + 2);
 	splay(x, rt);
 	splay(y, c[x][1]);
 	int z = c[y][0];
 	printf("%d\n", mx[z]);
 }
-inline void build(int l, int r, int f) {
+inline void build(int l, int r, int f)
+{
 	if(l > r)return;
 
 	int now = id[l], last = id[f];
@@ -194,7 +204,8 @@ inline void build(int l, int r, int f) {
 	if(mid < f)c[last][0] = now;
 	else c[last][1] = now;
 }
-int main() {
+int main()
+{
 	mx[0] = -inf;
 	n = read();
 	m = read();

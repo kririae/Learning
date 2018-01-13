@@ -14,7 +14,8 @@ int n, m, res, cnt;
 char s[105];
 int goList[25][4];
 
-int main() {
+int main()
+{
 	int tempo[4] = {0, 1, 2, 3};
 
 	do {

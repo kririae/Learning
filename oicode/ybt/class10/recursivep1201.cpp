@@ -5,11 +5,13 @@ using namespace std;
 struct precise {
 	int length;
 	int value[10000];
-	precise() {
+	precise()
+	{
 		memset(value, 0, sizeof(value));
 	}
 };
-precise split(int value) {
+precise split(int value)
+{
 	precise result;
 	int length = 0;
 
@@ -22,14 +24,16 @@ precise split(int value) {
 	result.length = length;
 	return result;
 }
-int pell(int index) {
+int pell(int index)
+{
 	if(index == 1) return 1;
 
 	if(index == 2) return 2;
 
 	return 2 * pell(index - 1) + pell(index - 2);
 }
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 

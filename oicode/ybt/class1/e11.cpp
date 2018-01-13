@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	float a;
 	double b;
 	cout << sizeof(a) << " " << sizof(b);

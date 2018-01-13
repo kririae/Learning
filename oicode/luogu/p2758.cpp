@@ -2,7 +2,8 @@
 using namespace std;
 int f[2002][2002];
 char a[2002], b[2002];
-int main() {
+int main()
+{
 	memset(f, 0, sizeof(f));
 	cin >> a >> b;
 	int lena = strlen(a);

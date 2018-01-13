@@ -7,7 +7,8 @@ int n;
 int mmp[1005][1005];
 int go[1005];
 int indexi[1005];
-int main() {
+int main()
+{
 	// freopen("test.in", "r", stdin);
 	cin >> n;
 	memset(mmp, -1, sizeof(mmp));

@@ -5,7 +5,8 @@ using namespace std;
 int m, n;
 int res[100];
 bool used[100];
-void printOut() {
+void printOut()
+{
 	for(int i = 1; i <= n; ++i) {
 		if(i != n) cout << res[i] << " ";
 		else cout << res[i];
@@ -13,7 +14,8 @@ void printOut() {
 
 	cout << endl;
 }
-void search(int index) {
+void search(int index)
+{
 	if(index > n) {
 		printOut();
 		return;
@@ -28,7 +30,8 @@ void search(int index) {
 		}
 	}
 }
-int main() {
+int main()
+{
 	memset(used, false, sizeof(used));
 	cin >> m >> n;
 	res[0] = 1;

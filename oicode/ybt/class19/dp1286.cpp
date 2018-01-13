@@ -6,7 +6,8 @@ using namespace std;
 int input[105];
 int summ[105];
 int summ2[105];
-int main() {
+int main()
+{
 	int k;
 	cin >> k;
 

@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
+int main()
+{
 	int a = 3;
 	cout << (a << 1) << endl; // a * 2
 	cout << (a << 2) << endl;

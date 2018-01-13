@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-int main() {
+int main()
+{
 	bool used[20005];
 	int v, n;
 	cin >> v >> n;

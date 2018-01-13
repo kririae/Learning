@@ -9,13 +9,15 @@ using namespace std;
 int n;
 int *res, *v, *input, *check;
 void generate(int length);
-bool ascend(int *a, int times) {
+bool ascend(int *a, int times)
+{
 	for(int i = 1; i < times; ++i)
 		if(a[i] <= a[i - 1]) return false;
 
 	return true;
 }
-int main() {
+int main()
+{
 	srand(time(NULL));
 	cin >> n;
 	input = new int[n];
@@ -37,7 +39,8 @@ int main() {
 
 	return 0;
 }
-void generate(int length) {
+void generate(int length)
+{
 	res = new int[length + 2];
 	v = new int[length + 2];
 	int size_v = length, curr_index_res = 0;

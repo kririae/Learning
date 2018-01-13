@@ -7,7 +7,8 @@ int h, l;
 int dx[] {-1, 0, 1, 0};
 int dy[] {0, 1, 0, -1};
 bool vis[maxn][maxn];
-inline void dfs(int x, int y) {
+inline void dfs(int x, int y)
+{
 	if(x >= h || x < 0 | y >= l || y < 0) return;
 
 	if(vis[x][y]) return;
@@ -23,7 +24,8 @@ inline void dfs(int x, int y) {
 		}
 	}
 }
-int main() {
+int main()
+{
 
 	return 0;
 }

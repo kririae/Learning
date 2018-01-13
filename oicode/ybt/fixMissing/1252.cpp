@@ -11,7 +11,8 @@ struct point {
 };
 point p[10000000];
 const int go[4][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-int main() {
+int main()
+{
 	int r, c;
 	cin >> r >> c;
 	memset(input, false, sizeof(input));

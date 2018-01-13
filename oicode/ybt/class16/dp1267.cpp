@@ -2,7 +2,8 @@
 #include <cstdio>
 #include <cstring>
 using namespace std;
-int main() {
+int main()
+{
 	freopen("dp1267.in", "r", stdin);
 	int m, n;
 	cin >> m >> n;
@@ -13,7 +14,7 @@ int main() {
 	memset(used, false, sizeof(used));
 	used[0] = true, value[0] = 0;
 
-	for(int w, c, i = 0; i < n; ++i)  {
+	for(int w, c, i = 0; i < n; ++i) {
 		cin >> w >> c;
 
 		for(int j = k; j >= 0; --j) {

@@ -5,7 +5,8 @@ struct a {
 	int value;
 	int line, l;
 };
-int main() {
+int main()
+{
 	int n[5][5];
 	int count = 0;
 

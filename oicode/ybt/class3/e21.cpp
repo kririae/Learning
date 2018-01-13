@@ -2,7 +2,8 @@
 //
 #include<iostream>
 #include<cstdio>
-int main() {
+int main()
+{
 	using namespace std;
 	int n, f = 1;
 	double sum = 0;

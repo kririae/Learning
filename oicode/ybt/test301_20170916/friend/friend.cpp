@@ -11,14 +11,16 @@ struct result {
 	int sumn;
 };
 result *data;
-bool compare(const result& a, const result& b) {
+bool compare(const result& a, const result& b)
+{
 	if(a.sumn > b.sumn) return true;
 
 	if(a.sumn == b.sumn) return a.wei > b.wei;
 
 	return false;
 }
-int main() {
+int main()
+{
 	freopen("friend.in", "r", stdin);
 	freopen("friend.out", "w", stdout);
 	int n;

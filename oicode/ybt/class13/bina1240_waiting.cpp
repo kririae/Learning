@@ -4,7 +4,8 @@
 using namespace std;
 int *list, *list_rep;
 int n, m;
-int search(int value) {
+int search(int value)
+{
 	list_rep = new int[n + 5];
 	list_rep[0] = 0;
 
@@ -25,7 +26,8 @@ int search(int value) {
 
 	return list[minn];
 }
-int main() {
+int main()
+{
 	cin >> n;
 	list = new int[n + 5];
 	list[0] = 0;

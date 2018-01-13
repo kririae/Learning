@@ -1,7 +1,8 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-int main() {
+int main()
+{
 	int x[5][5];
 	int y[5][5];
 

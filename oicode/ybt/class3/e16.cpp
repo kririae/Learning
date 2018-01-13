@@ -1,7 +1,8 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-int main() {
+int main()
+{
 	int mother = 0, daughter = 0, l;
 
 	for(int i = 1; i <= 12; ++i) {

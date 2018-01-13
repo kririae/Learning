@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	long int paper = 1, count = 0;
 
 	while(paper <= 8848.43 * 100 * 10 * 10) {

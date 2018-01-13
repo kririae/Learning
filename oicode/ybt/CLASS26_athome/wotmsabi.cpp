@@ -7,7 +7,8 @@ using namespace std;
 int v[1000][1000] = {0};
 int a[1000] = {0};
 int b[1000] = {0};
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 

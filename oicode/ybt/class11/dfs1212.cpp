@@ -6,7 +6,8 @@ int r, s;
 char input[600][30];
 bool used[200];
 int maxn = 0;
-void search(int x, int y, int m) {
+void search(int x, int y, int m)
+{
 	cout << x << " " << y << endl;
 
 	if(m > maxn) maxn = m;
@@ -41,7 +42,8 @@ void search(int x, int y, int m) {
 
 	return ;
 }
-int main() {
+int main()
+{
 	memset(used, false, sizeof(used));
 	cin >> r >> s;
 

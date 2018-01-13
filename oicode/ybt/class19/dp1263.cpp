@@ -8,10 +8,12 @@ struct point {
 	point(): a(0), b(0), c(0) {};
 };
 point p[50005];
-bool cmp(const point a, const point b) {
+bool cmp(const point a, const point b)
+{
 	return a.a <= b.a;
 }
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 

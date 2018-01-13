@@ -5,12 +5,14 @@ using namespace std;
 struct accurate {
 	int length;
 	int value[50000];
-	accurate() {
+	accurate()
+	{
 		memset(value, 0, sizeof(value));
 	}
 };
 char a[50000];
-void load(accurate &value) {
+void load(accurate &value)
+{
 	gets(a);
 	value.length = strlen(a);
 
@@ -18,7 +20,8 @@ void load(accurate &value) {
 		value.value[value.length - i - 1] = a[i] - '0';
 	}
 }
-accurate sub(accurate a, accurate b) {
+accurate sub(accurate a, accurate b)
+{
 	accurate c;
 	int length = a.length > b.length ? a.length : b.length;
 
@@ -36,7 +39,8 @@ accurate sub(accurate a, accurate b) {
 	c.length = length;
 	return c;
 }
-accurate multi(accurate a, accurate b) {
+accurate multi(accurate a, accurate b)
+{
 	accurate c;
 
 	for (int i = 0; i < a.length; ++i)
@@ -66,7 +70,8 @@ accurate multi(accurate a, accurate b) {
 
 	return c;
 }
-int convert(accurate a) {
+int convert(accurate a)
+{
 	int num;
 	int x = 1;
 
@@ -77,7 +82,8 @@ int convert(accurate a) {
 
 	return num;
 }
-int main() {
+int main()
+{
 	accurate a, b, c;
 	load(a);
 	int num_a = convert(a);

@@ -7,7 +7,8 @@ struct posi {
 	int b;
 };
 posi value[20005];
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 

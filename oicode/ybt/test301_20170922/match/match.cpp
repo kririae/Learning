@@ -4,7 +4,8 @@
 using namespace std;
 
 int *res;
-int main() {
+int main()
+{
 	freopen("match.in", "r", stdin);
 	freopen("match.out", "w", stdout);
 	int n;
@@ -14,7 +15,7 @@ int main() {
 	cin >> res[0];
 	minn = res[0];
 
-	for(int i = 1; i < n; ++i)  {
+	for(int i = 1; i < n; ++i) {
 		cin >> res[i];
 
 		if(res[i] < minn) minn = res[i];

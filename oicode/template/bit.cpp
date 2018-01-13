@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
+int main()
+{
 	int a = 233;
 	cout << ~a << endl;
 	cout << (a << 1) << endl;

@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 int f[202][202];
-int main() {
+int main()
+{
 	int m, n;
 	cin >> m >> n;
 

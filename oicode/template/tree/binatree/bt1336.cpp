@@ -3,7 +3,8 @@
 #include <algorithm>
 using namespace std;
 int tree[2005] = {0};
-int main() {
+int main()
+{
 	int n, m;
 	cin >> n >> m;
 

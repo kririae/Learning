@@ -4,7 +4,8 @@
 using namespace std;
 int map[51][51];
 int value[51][51][51][51];
-int main() {
+int main()
+{
 	memset(map, 0, sizeof(map));
 	memset(value, 0, sizeof(value));
 	int m, n;

@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 int value[1000005] = {0}, pre[1000005] = {0}, fu[1000005] = {0};
-int main() {
+int main()
+{
 	int t;
 	cin >> t;
 

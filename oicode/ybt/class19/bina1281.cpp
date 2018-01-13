@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 int i, j, n, s, t, a[100001];
-int main() {
+int main()
+{
 	cin >> n;
 	a[0] = -1000000;
 

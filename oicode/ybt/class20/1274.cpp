@@ -5,7 +5,8 @@ using namespace std;
 int f[101][101];
 int s[101];
 int n, i, j, k, x;
-int main() {
+int main()
+{
 	cin >> n;
 
 	for(i = 1; i <= n; ++i) {

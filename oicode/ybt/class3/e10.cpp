@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	int k, n, c = 0;
 	cin >> k >> n;
 	int res;

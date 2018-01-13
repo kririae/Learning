@@ -2,10 +2,12 @@
 #include <cstdio>
 using namespace std;
 int *list, *list_s;
-int maxn(int x, int y) {
+int maxn(int x, int y)
+{
 	return x > y ? x : y;
 }
-int main() {
+int main()
+{
 	freopen("watfly.in", "r", stdin);
 	freopen("watfly.out", "w", stdout);
 	int n;

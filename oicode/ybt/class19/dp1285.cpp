@@ -4,7 +4,8 @@
 using namespace std;
 int input[1005];
 int summ[1005];
-int main() {
+int main()
+{
 	memset(summ, 0, sizeof(summ));
 	int n;
 	cin >> n;

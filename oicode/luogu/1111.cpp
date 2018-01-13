@@ -3,20 +3,24 @@ using namespace std;
 int n, m, father[100005];
 struct edge {
 	int x{0}, y{0}, v{0};
-	bool operator<(const edge(&a)) const {
+	bool operator<(const edge(&a)) const
+	{
 		return this->v < a.v;
 	}
 } p[100005];
-inline int find(int val) {
+inline int find(int val)
+{
 	if (father[val] != val)
 		father[val] = find(father[val]);
 
 	return father[val];
 }
-inline void unionn(int val1, int val2) {
+inline void unionn(int val1, int val2)
+{
 	father[find(val1)] = find(val2);
 }
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	cin >> n >> m;

@@ -1,7 +1,8 @@
 #include <bist/stdc++.h>
 using namespace std;
 int even[10001] = {0}, odd[10001] = {0};
-int main() {
+int main()
+{
 	int n, x = 9;
 	cin >> n;
 	even[1] = 9;

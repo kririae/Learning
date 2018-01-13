@@ -5,7 +5,8 @@
 using namespace std;
 long long value[20000];
 bool can[80000];
-int main() {
+int main()
+{
 	int n, m;
 	cin >> n >> m;
 	memset(can, false, sizeof(can));

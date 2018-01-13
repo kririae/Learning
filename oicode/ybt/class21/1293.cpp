@@ -5,7 +5,8 @@ using namespace std;
 const int pri[4] = { 10, 20, 50, 100 };
 bool used[1005];
 int value[1005];
-int main() {
+int main()
+{
 	memset(used, false, sizeof(used));
 	memset(value, 0, sizeof(value));
 	int n;

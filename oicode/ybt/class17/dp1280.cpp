@@ -18,7 +18,8 @@ int res[4];
 bool cmp(item a, item b);
 int getMax();
 
-int main() {
+int main()
+{
 	freopen("dp1280.in", "r", stdin);
 	memset(res, 0, sizeof(res));
 	int r, c;
@@ -47,9 +48,9 @@ int main() {
 				int go_y = list[i].index_y + go[j][1];
 
 				if(go_x < 0
-				        || go_x > r
-				        || go_y < 0
-				        || go_y > c)
+				   || go_x > r
+				   || go_y < 0
+				   || go_y > c)
 					continue;
 
 				res[j] = p[go_x][go_y];
@@ -64,10 +65,12 @@ int main() {
 	fclose(stdin);
 	return 0;
 }
-bool cmp(item a, item b) {
+bool cmp(item a, item b)
+{
 	return a.value >= b.value;
 }
-int getMax() {
+int getMax()
+{
 	int maxn = -1;
 	sort(res, res + 4);
 

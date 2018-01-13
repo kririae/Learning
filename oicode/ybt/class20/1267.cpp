@@ -2,7 +2,8 @@
 #include <cstdio>
 #include <cstring>
 using namespace std;
-int main() {
+int main()
+{
 	int m, n;
 	cin >> m >> n;
 	bool used[400];

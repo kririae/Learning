@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-double arctanx(double x) {
+double arctanx(double x)
+{
 	int f = 1;
 	int count = 1;
 	double res = 0;
@@ -16,7 +17,8 @@ double arctanx(double x) {
 
 	return res;
 }
-int main() {
+int main()
+{
 	cout << 6 * arctanx(1 / sqrt(3.0));
 	return 0;
 }

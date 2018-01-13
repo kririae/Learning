@@ -3,7 +3,8 @@
 
 using namespace std;
 
-void loads(char array[]) {
+void loads(char array[])
+{
 	char *ca;
 	gets(ca);
 	int length = strlen(array), index1 = 0, index2 = 0;
@@ -18,7 +19,8 @@ void loads(char array[]) {
 		}
 	}
 }
-int main() {
+int main()
+{
 	char array[1000][60];
 	loads(array);
 

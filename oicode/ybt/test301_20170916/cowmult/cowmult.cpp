@@ -3,7 +3,8 @@
 #include <cstring>
 #include <algorithm>
 using namespace std;
-int main() {
+int main()
+{
 	freopen("cowmult.in", "r", stdin);
 	freopen("cowmult.out", "w", stdout);
 	char *a = new char[100];

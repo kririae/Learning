@@ -10,7 +10,8 @@ struct posi {
 };
 vector<int> res;
 posi value[20005];
-int main() {
+int main()
+{
 	freopen("test.in", "r", stdin);
 	freopen("output2.txt", "w", stdout);
 	int n;

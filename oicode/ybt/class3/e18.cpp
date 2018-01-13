@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	int length = 0, ss, sz, n, maxn = 0;
 	cin >> n;
 

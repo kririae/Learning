@@ -1,7 +1,8 @@
 #include<iostream>
 #include<cstdio>
 using namespace std;
-bool prime(int x) {
+bool prime(int x)
+{
 	double k = sqrt(x);
 	bool is_prime = true;
 
@@ -10,7 +11,8 @@ bool prime(int x) {
 
 	return is_prime;
 }
-bool is_upper(char st) {
+bool is_upper(char st)
+{
 	bool isu = false;
 
 	for (int i = 65; i < 91; ++i)
@@ -21,7 +23,8 @@ bool is_upper(char st) {
 
 	return isu;
 }
-int main() {
+int main()
+{
 	char char1[101];
 	cin >> char1;
 	int maxn = 0, minn = 0;

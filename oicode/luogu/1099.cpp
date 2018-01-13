@@ -3,7 +3,8 @@ using namespace std;
 
 struct edge {
 	int to, val;
-	edge(int a, int b) {
+	edge(int a, int b)
+	{
 		to = a, val = b;
 	}
 };
@@ -14,7 +15,8 @@ int linee[maxn];
 vector<edge> graph[maxn];
 int pre[maxn];
 
-inline int read() {
+inline int read()
+{
 	char c;
 	int res;
 
@@ -24,7 +26,8 @@ inline int read() {
 	return res;
 }
 
-inline void init() {
+inline void init()
+{
 	cin >> n >> s;
 
 	for (int i = 0; i <= n + 5; ++i)
@@ -42,14 +45,16 @@ inline void init() {
 	}
 }
 
-inline void floyd() {
+inline void floyd()
+{
 	for (register int k = 1; k <= n; ++k)
 		for (register int i = 1; i <= n; ++i)
 			for (register int j = 1; j <= n; ++j)
 				dis[i][j] = min(dis[i][j], dis[i][k] + dis[k][j]);
 }
 
-inline void solve(int ind, int deepth) {
+inline void solve(int ind, int deepth)
+{
 	if(deepth >= maxlength) {
 
 	}
@@ -60,7 +65,8 @@ inline void solve(int ind, int deepth) {
 	}
 }
 
-int main() {
+int main()
+{
 	init();
 	floyd();
 

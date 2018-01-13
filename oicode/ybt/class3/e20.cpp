@@ -2,7 +2,8 @@
 #include<cstdio>
 #include<cmath>
 using namespace std;
-int main() {
+int main()
+{
 	double n, pi = 1, qi = 2, sum = 0, p;
 	cin >> n;
 

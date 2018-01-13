@@ -7,7 +7,8 @@ int n;
 char res[MAXN][MAXN];
 bool if_true = false;
 int ha, la, hb, lb;
-void goPosition(int x, int y) {
+void goPosition(int x, int y)
+{
 	if(x > n || y > n || x < 0 || y < 0) return ;
 
 	res[x][y] = '#';
@@ -28,7 +29,8 @@ void goPosition(int x, int y) {
 		return ;
 	} else return;
 }
-int main() {
+int main()
+{
 	int times;
 	cin >> times;
 

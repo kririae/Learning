@@ -4,14 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithm {
-class Program {
-	static void Main(string[] args) {
+namespace Algorithm
+{
+class Program
+{
+	static void Main(string[] args)
+	{
 		//Calculator.printXto1(10);
 		Console.WriteLine(Calculator.SumFrom1ToX(100));
 	}
 }
-class Calculator {
+class Calculator
+{
 	//public static void printXto1(int x)
 	//{
 	//    //for (int i = x; i > 0; --i)
@@ -26,7 +30,8 @@ class Calculator {
 	//        printXto1(x - 1);
 	//    }
 	//}
-	public static int SumFrom1ToX(int x) {
+	public static int SumFrom1ToX(int x)
+	{
 		if(x == 1) {
 			return 1;
 		} else {

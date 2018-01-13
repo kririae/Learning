@@ -3,10 +3,12 @@
 using namespace std;
 int mmp[105][105];
 int ass[105][105];
-int minin(const int &a, const int &b) {
+int minin(const int &a, const int &b)
+{
 	return a < b ? a : b;
 }
-int main() {
+int main()
+{
 	int n;
 	cin >> n;
 

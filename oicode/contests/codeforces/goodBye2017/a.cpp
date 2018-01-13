@@ -6,16 +6,19 @@
 using namespace std;
 char c[55], lst[5] {'a', 'e', 'i', 'o', 'u'};
 int summ = 0;
-inline bool isvowel(char c) {
+inline bool isvowel(char c)
+{
 	for (int i = 0; i <= 4; ++i)
 		if(c == lst[i]) return true;
 
 	return false;
 }
-inline bool isthdigit(int val) {
+inline bool isthdigit(int val)
+{
 	return val % 2 != 0;
 }
-int main() {
+int main()
+{
 	cin.tie(0);
 	ios::sync_with_stdio(false);
 	cin >> c;

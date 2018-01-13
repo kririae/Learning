@@ -1,7 +1,8 @@
 #pragma GCC optimize(2)
 #include <bits/stdc++.h>
 using namespace std;
-namespace BST {
+namespace BST
+{
 const int maxn = 1e5 + 5;
 struct node {
 	int val, lson, rson, father, size, rtag; // remove tag
@@ -10,7 +11,8 @@ struct node {
 node t[maxn];
 vector<int> templ;
 int cnt = 1, root = 1;
-inline void print(int k, bool typ) {
+inline void print(int k, bool typ)
+{
 	if (t[k].lson) print(t[k].lson, typ);
 
 	if (!typ) cout << t[k].val << " ";
@@ -18,10 +20,12 @@ inline void print(int k, bool typ) {
 
 	if (t[k].rson) print(t[k].rson, typ);
 }
-inline void pushup(int k) {
+inline void pushup(int k)
+{
 	t[k].size = t[t[k].lson].size + t[t[k].rson].size + 1;
 }
-inline void insert(int k, int val) {
+inline void insert(int k, int val)
+{
 	// root -> k = 0
 	if (cnt == 1) {
 		t[cnt++].val = val;
@@ -54,7 +58,8 @@ inline void insert(int k, int val) {
 
 	pushup(k);
 }
-inline void subreb(int &k, int l, int r) {
+inline void subreb(int &k, int l, int r)
+{
 	if (l > r) return;
 
 	int mid = (l + r) >> 1;
@@ -66,18 +71,21 @@ inline void subreb(int &k, int l, int r) {
 	pushup(k);
 }
 
-inline void rebuild(int k) {
+inline void rebuild(int k)
+{
 	templ.clear();
 	print(k, true); // ????????????????lst(???)
 	subreb(k, 0, templ.size() - 1);
 }
-inline int find(int k, int val) {
+inline int find(int k, int val)
+{
 	if(t[k].val == val) return k;
 
 	if(val <= t[k].val && t[k].lson) return find(t[k].lson, val);
 	else if(t[k].rson) return find(t[k].rson, val);
 }
-inline int getkth(int k, int val) {
+inline int getkth(int k, int val)
+{
 	// by LittleRewriter
 	if(t[t[k].lson].size + 1 == val) return t[k].val;
 	else if(t[k].lson && val <= t[t[k].lson].size) return getkth(t[k].lson, val);
@@ -85,7 +93,8 @@ inline int getkth(int k, int val) {
 }
 }
 
-int main() {
+int main()
+{
 	using namespace BST;
 	int n;
 	cin >> n;

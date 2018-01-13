@@ -9,7 +9,8 @@ const int go[4][2] = {{2, 1},
 };
 bool map[402][402];
 int mapi[402][402];
-int main() {
+int main()
+{
 	int n, m;
 	memset(map, false, sizeof(map));
 	memset(mapi, 0, sizeof(mapi));

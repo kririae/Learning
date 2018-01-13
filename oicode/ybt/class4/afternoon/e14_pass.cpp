@@ -3,7 +3,8 @@
 #include<cmath>
 using namespace std;
 bool is_prime_number(int x);
-int main() {
+int main()
+{
 	int n, res, count = 0, i = 2;
 	cin >> n;
 

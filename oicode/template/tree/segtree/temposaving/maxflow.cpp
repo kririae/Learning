@@ -14,12 +14,14 @@ vector<edge> graph[maxn]; // 表示一条边
 vector<int> linkgraph[maxn]; // 表示某两个边在 graph 中的index
 int a[maxn]; // 到当前的可改进量
 int p[maxn]; // 入弧编号
-void init(int n) {
+void init(int n)
+{
 	for (int i = 0; i < n; ++i) linkgraph[i].clear();
 
 	graph.clear();
 }
-void addEdge(int from, int to, int cap, int flow) {
+void addEdge(int from, int to, int cap, int flow)
+{
 	graph.push_back(edge(from, to, cap, 0));
 	graph.push_back(edge(to, from, 0, 0));
 	int sizee = graph.size();
@@ -27,7 +29,8 @@ void addEdge(int from, int to, int cap, int flow) {
 	linkgraph[to].push_back(sizee - 1);
 }
 
-int maxFlow(int s, int t) {
+int maxFlow(int s, int t)
+{
 	int flow = 0;
 
 	for (;;) {
@@ -66,7 +69,8 @@ int maxFlow(int s, int t) {
 	return flow;
 }
 
-int main() {
+int main()
+{
 
 	return 0;
 }

@@ -5,7 +5,8 @@
 using namespace std;
 bool used[7000];
 int value[7000];
-int main() {
+int main()
+{
 	memset(used, false, sizeof(used));
 	memset(value, 0, sizeof(value));
 	int n, m, maxn = 0;
