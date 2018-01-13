@@ -1,0 +1,58 @@
+今日就是PE工程开始之日
+554题，修长城吧
+1题 容斥或者暴力
+2题 不超过4000000的fib不超过
+
+	while(a+b<=m){
+		sum+=((a+b)&1)==0 ? a+b:0;
+		t=a+b;a=b;b=t;
+	}
+faster:
+
+Well it is easy to spot that new even term consists of four times previous term + one before previous. probably it is some kind of derivation of that golden ratio rule.
+
+0 + 2*4 = 8
+2 + 8*4 = 34
+8 + 34*4 = 144 
+and so on.
+
+3题 模拟
+	for(int i=2,t=sqrt(n);i<=t;i++){
+		while(n%i==0) n/=i,ans=i;
+	}
+faster:
+number = 600851475143 
+i=2
+while i<number:
+    if number % i ==0:
+        number = number/i
+    i = i+1
+print number
+
+4题 暴力n^2
+faster:
+The palindrome can be written as:
+
+abccba
+
+Which then simpifies to:
+
+100000a + 10000b + 1000c + 100c + 10b + a
+
+And then:
+
+100001a + 10010b + 1100c
+
+Factoring out 11, you get:
+
+11(9091a + 910b + 100c)
+
+So the palindrome must be divisible by 11.  Seeing as 11 is prime, at least one of the numbers must be divisible by 11.  So brute force in Python, only with less numbers to be checked:
+
+5题 lcm(nlogn) 或者讨论因数（n筛 n*loglogn/logn算）
+
+
+6题 平方和公式，直接手算
+	cout<<(-n*(n+1)*(2*n+1)/6+(n+1)*n*(n+1)*n/4);
+
+7题 nlogn(筛nth)
