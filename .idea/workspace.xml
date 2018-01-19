@@ -10,707 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e6b4936-52ee-4860-b6f9-b804af048253" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/csharp/Algorithm.cs" afterPath="$PROJECT_DIR$/csharp/Algorithm.cs" />
-      <change beforePath="$PROJECT_DIR$/csharp/Learning.cs" afterPath="$PROJECT_DIR$/csharp/Learning.cs" />
-      <change beforePath="$PROJECT_DIR$/csharp/LearningCsharp.cs" afterPath="$PROJECT_DIR$/csharp/LearningCsharp.cs" />
-      <change beforePath="$PROJECT_DIR$/csharp/StaticExample.cs" afterPath="$PROJECT_DIR$/csharp/StaticExample.cs" />
-      <change beforePath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj1251/bzoj1251.cpp" afterPath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj1251/bzoj1251.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj2716/bzoj2716.cpp" afterPath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj2716/bzoj2716.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj3669/bzoj3669.cpp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj3669/bzoj3669.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj3669/bzoj3669.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj3669/out1.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj3669/testdata.in" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/oicode/bzoj/TODO/bzoj3669/testdata.out" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/oicode/contests/codeforces/codeforces round #449/a.cpp" afterPath="$PROJECT_DIR$/oicode/contests/codeforces/codeforces round #449/a.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/a.cpp" afterPath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/a.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/b.cpp" afterPath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/b.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp" afterPath="$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/hdu/1874.cpp" afterPath="$PROJECT_DIR$/oicode/hdu/1874.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/hdu/3790.cpp" afterPath="$PROJECT_DIR$/oicode/hdu/3790.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/1099.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/1099.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/1111.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/1111.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/1197.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/1197.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/1197_inp.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/1197_inp.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/3953_todo.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/3953_todo.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/luogu3953/luogu3953.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/luogu3953/luogu3953.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1001.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1001.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1002.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1002.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1004.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1004.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1006.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1006.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1048.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1048.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1049.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1049.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1078.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1078.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1115.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1115.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1119.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1119.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1284.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1284.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1303.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1303.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1421.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1421.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1434.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1434.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1601.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1601.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1616.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1616.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p1823.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p1823.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p2142.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p2142.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p2758.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p2758.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/p3372.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/p3372.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/一般技巧/贪心/1634.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/一般技巧/贪心/1634.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/一般技巧/贪心/1828.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/一般技巧/贪心/1828.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/一般技巧/贪心/bzoj4276.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/一般技巧/贪心/bzoj4276.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/一般技巧/贪心/codevs石子归并2.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/一般技巧/贪心/codevs石子归并2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/KD-tree/bzoj2648.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/KD-tree/bzoj2648.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/KD-tree/bzoj2850.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/KD-tree/bzoj2850.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/pick定理/2954.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/pick定理/2954.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/三角剖分/codevs1273.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/三角剖分/codevs1273.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/三角剖分/三角剖分之bzoj2391.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/三角剖分/三角剖分之bzoj2391.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/三角剖分/梯形剖分之bzoj2391.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/三角剖分/梯形剖分之bzoj2391.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/SGU278.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/SGU278.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/bzoj1249.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/bzoj1249.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/bzoj2300.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/bzoj2300.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/凸包周长.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/凸包周长.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/小矮人.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/小矮人.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/最大边数凸多边形  (动归)codevs1494.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/凸包/最大边数凸多边形  (动归)codevs1494.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/半平面交/bzoj1007.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/半平面交/bzoj1007.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/半平面交/半平面（版）.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/半平面交/半平面（版）.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/坐标旋转/bzoj1069.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/坐标旋转/bzoj1069.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/坐标旋转/圈地.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/坐标旋转/圈地.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/平面区域/bzoj1035.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/平面区域/bzoj1035.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/扫描线/SCOI2012.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/扫描线/SCOI2012.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/O(nlogn)最大三角形姿势1.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/O(nlogn)最大三角形姿势1.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/POJ2187.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/POJ2187.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/cf682E.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/cf682E.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/poj2079最大三角形.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/poj2079最大三角形.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/最大三角形快速随机求法.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/旋转卡壳/最大三角形快速随机求法.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/最近点对/bzoj 2458/ans.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/最近点对/bzoj 2458/ans.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/最近点对/bzoj 2458/bzoj 2458.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/最近点对/bzoj 2458/bzoj 2458.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/最近点对/最近点对.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/最近点对/最近点对.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/计算几何基础模板.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/中等/计算几何基础模板.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/叉积/bzoj1132.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/叉积/bzoj1132.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/叉积/poj2318 二分.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/叉积/poj2318 二分.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/旋转/圈地.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/旋转/圈地.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/旋转/旋转poj3845.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/旋转/旋转poj3845.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/相交/POJ2653-直线相交.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/相交/POJ2653-直线相交.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/相交/poj3304.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/相交/poj3304.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/解析几何.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/解析几何.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/计算几何基础模板.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/基础/计算几何基础模板.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/标准几何库.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/标准几何库.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/计算几何基础模板.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/计算几何基础模板.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/高级/圆的反演/bzoj2961.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/高级/圆的反演/bzoj2961.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/高级/登顶计划.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/几何/高级/登顶计划.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/LIS/大视野  4300/demo.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/LIS/大视野  4300/demo.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj(NOI2014).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj(NOI2014).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1010.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1010.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1096.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1096.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1597(right).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1597(right).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1597.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1597.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1911.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj1911.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj3256.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj3256.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj3675.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/斜率优化/bzoj3675.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/概率DP/bzoj 1419.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/概率DP/bzoj 1419.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/概率DP/bzoj2134(水).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/概率DP/bzoj2134(水).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/概率DP/bzoj3566.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/概率DP/bzoj3566.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/简单/bzoj1646.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/简单/bzoj1646.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/背包/未命名1.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/动归/背包/未命名1.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/cactus/仙人掌生成.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/cactus/仙人掌生成.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/最小割/BC round1 C.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/最小割/BC round1 C.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/最小割/切糕.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/最小割/切糕.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/线段树优化建图/bzoj3218.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/线段树优化建图/bzoj3218.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/#终极情报 费用流.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/#终极情报 费用流.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/51nod装盒子费用流.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/51nod装盒子费用流.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/Dinic.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/Dinic.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/KM算法.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/KM算法.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/PIGs POJ.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/PIGs POJ.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/SOJ 2662.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/SOJ 2662.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/ZKW.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/ZKW.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/ZKW翻译版.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/ZKW翻译版.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/bzoj1458.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/bzoj1458.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/bzoj2718.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/bzoj2718.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/creat.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/creat.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/hzwer版zkw.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/hzwer版zkw.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/poj 3498.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/poj 3498.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/poj1698.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/poj1698.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/匈牙利算法.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/匈牙利算法.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/外太空旅行？.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/外太空旅行？.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/太空飞行计划问题.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/太空飞行计划问题.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/草地排水.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/网络流/草地排水.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/费用流/费用流SPFA.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/中级/费用流/费用流SPFA.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/2-SAT/HDU1814(2).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/2-SAT/HDU1814(2).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/2-SAT/HDU1814.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/2-SAT/HDU1814.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/2-SAT/bzoj2199.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/2-SAT/bzoj2199.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/二分图/二分图染色/双栈排序.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/二分图/二分图染色/双栈排序.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/并查集/NOI2008假面舞会/noi2008 BCJ.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/并查集/NOI2008假面舞会/noi2008 BCJ.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/并查集/NOI2008假面舞会/sj.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/并查集/NOI2008假面舞会/sj.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/拓扑/DFS版拓扑/DFS不反转版.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/拓扑/DFS版拓扑/DFS不反转版.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/拓扑/DFS版拓扑/tuopu(poj2367).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/拓扑/DFS版拓扑/tuopu(poj2367).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/拓扑/DFS版拓扑/拓扑常规版.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/拓扑/DFS版拓扑/拓扑常规版.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/最短路/中级/K短路.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/最短路/中级/K短路.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/最短路/高级/bzoj2259.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/最短路/高级/bzoj2259.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/bzoj1051.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/bzoj1051.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/bzoj10519（tarjan）.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/bzoj10519（tarjan）.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/codevs2822(模板题).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/codevs2822(模板题).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/版/kosaraju - 刘汝佳.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/版/kosaraju - 刘汝佳.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/版/kosaraju.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/初级/连通与缩点/版/kosaraju.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/LCA/(倍增)LCA hzwer.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/LCA/(倍增)LCA hzwer.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/树上动规/BZOJ1060.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/树上动规/BZOJ1060.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/树上动规/sj.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/树上动规/sj.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/树上动规/神的BZOJ1060.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/树上动规/神的BZOJ1060.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/点分治/BZOJ2152.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/点分治/BZOJ2152.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/点分治/bzoj3697.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/点分治/bzoj3697.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/点分治/bzoj3924.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/图论/树/点分治/bzoj3924.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/2825.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/2825.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/bzoj1030.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/bzoj1030.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/hdu3247.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/hdu3247.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/hdu4117.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/hdu4117.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/zoj3494.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+DP/zoj3494.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+矩阵/2243.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/+矩阵/2243.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/fail树/bzoj2434.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/fail树/bzoj2434.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/常规/bzoj2754.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/常规/bzoj2754.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/常规/bzoj2938.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/常规/bzoj2938.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/常规/bzoj3172.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/AC自动机/常规/bzoj3172.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/JSOI2007/JSOI2007.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/JSOI2007/JSOI2007.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/JSOI2007/hzwer.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/JSOI2007/hzwer.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/JSOI2007/sj.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/JSOI2007/sj.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/Trie/bzoj1174 (2).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/Trie/bzoj1174 (2).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/Trie/bzoj1174.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/Trie/bzoj1174.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/manacher/hdu3068.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/manacher/hdu3068.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀数组/bzoj3998.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀数组/bzoj3998.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀数组/bzoj4453.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀数组/bzoj4453.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/LCS2.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/LCS2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/POJ1743(维护right数组).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/POJ1743(维护right数组).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/bzoj2946.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/bzoj2946.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/bzoj2946a.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/bzoj2946a.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/hdu4416.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/hdu4416.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/spoj_NSUBSTR.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/spoj_NSUBSTR.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/spoj_par.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/spoj_par.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/sz.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/sz.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/模板/后缀自动机模板fast.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/模板/后缀自动机模板fast.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/模板/后缀自动机版.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/后缀自动机/模板/后缀自动机版.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/PalindromicTree/1.PalindromicTree-by Adilet Zhaxybay.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/PalindromicTree/1.PalindromicTree-by Adilet Zhaxybay.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/PalindromicTree/2.PalindromicTree-by YueYueZha.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/PalindromicTree/2.PalindromicTree-by YueYueZha.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/PalindromicTree/3.PalindromicTree-by Victor Wonder.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/PalindromicTree/3.PalindromicTree-by Victor Wonder.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/bzoj2106.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/bzoj2106.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/bzoj2565.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/bzoj2565.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/fc/2.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/fc/2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/fc/bzoj2106.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/fc/bzoj2106.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/fc/sj.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/fc/sj.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/hw.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/回文自动机/hw.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/AC自动机.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/AC自动机.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/KMP all.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/KMP all.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/KMP.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/KMP.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/LA period 3026.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/LA period 3026.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/la 3026 lrj.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/la 3026 lrj.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/trie.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/trie.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/后缀数组快排版.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/后缀数组快排版.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/最小表示BZOJ2882.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/最小表示BZOJ2882.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/最小表示法.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/字符串/版/最小表示法.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/搜索/启发式/bzoj 2102.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/搜索/启发式/bzoj 2102.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/10.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/10.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/11.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/11.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/12.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/12.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/13.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/13.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/14.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/14.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/16.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/16.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/54.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/54.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/69(phi函数分析题).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/69(phi函数分析题).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/71数学分析.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/71数学分析.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/8.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/8.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/9.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/9.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/99.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/PE/99.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/多项式/FFT_NTT_FWT/FFT.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/多项式/FFT_NTT_FWT/FFT.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/多项式/FFT_NTT_FWT/NTT.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/多项式/FFT_NTT_FWT/NTT.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/多项式/FFT_NTT_FWT/myy_FFT.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/多项式/FFT_NTT_FWT/myy_FFT.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数学基础/博弈论/bzoj1982.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数学基础/博弈论/bzoj1982.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数学基础/博弈论/vijos1655.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数学基础/博弈论/vijos1655.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数学基础/调和级数/约数和.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数学基础/调和级数/约数和.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数学基础/逆元/逆元递推.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数学基础/逆元/逆元递推.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数论/杜教筛/51nod_phi函数之和.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数论/杜教筛/51nod_phi函数之和.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数论/杜教筛/51nod莫比乌斯函数之和.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/数论/杜教筛/51nod莫比乌斯函数之和.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/期望与概率/cf148D期望.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/期望与概率/cf148D期望.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/模相关/模线性方程组/bzoj古代猪文.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/模相关/模线性方程组/bzoj古代猪文.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/线性规划/UOJ线性规划.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/线性规划/UOJ线性规划.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/容斥/bzoj2693.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/容斥/bzoj2693.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/容斥/hdu4059.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/容斥/hdu4059.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/容斥/poj3904.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/容斥/poj3904.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/母函数/整数拆分hdu1028.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/母函数/整数拆分hdu1028.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/组合数学/组合数模板.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/组合计数/组合数学/组合数模板.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/bzoj1778(期望+高斯).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/bzoj1778(期望+高斯).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/bzoj1923.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/bzoj1923.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/游走(期望+方程).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/游走(期望+方程).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/玛里苟斯.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/玛里苟斯.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/高斯消元.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数学/高斯消元/高斯消元.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/KD-Tree/KD-tree.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/KD-Tree/KD-tree.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/KD-Tree/大神的KD-tree.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/KD-Tree/大神的KD-tree.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/NOI2004 treap.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/NOI2004 treap.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/Real Treap.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/Real Treap.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/Treap codes.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/Treap codes.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/Treap.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/Treap.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/名次相关/2828(树状数组).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/名次相关/2828(树状数组).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/名次相关/2828.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/名次相关/2828.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/常规维护/codevs 1082.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/Treap/常规维护/codevs 1082.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj1251(指针).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj1251(指针).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj1251（标准模版）.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj1251（标准模版）.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj1500.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj1500.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj1861.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj1861.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj3678.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/bzoj3678.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/codevs3303(2).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/codevs3303(2).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/codevs3303.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/codevs3303.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/splay(模板).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/splay(模板).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/splay(递归).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/splay(递归).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/splay.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/splay/splay.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/可并堆/bzoj1455.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/可并堆/bzoj1455.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/可并堆/线段树的快速合并/bzoj1483.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/可并堆/线段树的快速合并/bzoj1483.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/可并堆/线段树的快速合并/bzoj2733.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/可并堆/线段树的快速合并/bzoj2733.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/可并堆/线段树的快速合并/bzoj3545.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/可并堆/线段树的快速合并/bzoj3545.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/多维查询/cf677D.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/多维查询/cf677D.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/多维查询/vijos1512(树状数组).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/多维查询/vijos1512(树状数组).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/多维查询/vijos1512(花式二叉树).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/多维查询/vijos1512(花式二叉树).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/最短路树/bzoj3694.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/最短路树/bzoj3694.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/树链剖分/sj.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/树链剖分/sj.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/树链剖分/树链剖分加强题.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/树链剖分/树链剖分加强题.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/树链剖分/树链剖分大神模板.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/树链剖分/树链剖分大神模板.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/树链剖分/树链剖分模板.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/中级/树链剖分/树链剖分模板.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/单调栈/bzoj 1345-fastest.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/单调栈/bzoj 1345-fastest.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/单调栈/bzoj1345.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/单调栈/bzoj1345.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/单调栈/音乐会的等待.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/单调栈/音乐会的等待.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/2007四川省选降雨量.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/2007四川省选降雨量.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/count on a tree.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/count on a tree.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/hard/bzoj3165.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/hard/bzoj3165.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/可持久化线段树.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/可持久化线段树.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/P1083.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/P1083.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/P1473.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/P1473.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/bzoj1645.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/bzoj1645.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/bzoj3878.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/bzoj3878.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/bzoj3995.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/bzoj3995.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/cf444c.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/cf444c.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/codevs 1299.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/codevs 1299.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/codevs2216.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/codevs2216.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/poj2829.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/poj2829.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/上帝造题的七分钟2.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/上帝造题的七分钟2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/四川2010省选.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/四川2010省选.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/约瑟夫.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/常规维护/约瑟夫.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/最值查询/P1659 wkl.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/最值查询/P1659 wkl.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/最值查询/P1659 zkw-fast.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/最值查询/P1659 zkw-fast.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/最值查询/P1659 zkw.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/最值查询/P1659 zkw.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/树状数组动态建树 .cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/初级/线段树/树状数组动态建树 .cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/坑/bzoj2388.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/坑/bzoj2388.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/基础/STL/bzoj2151.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/基础/STL/bzoj2151.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/基础/bcj/bzoj2333.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/基础/bcj/bzoj2333.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/基础/bcj/加强/bzoj3714.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/基础/bcj/加强/bzoj3714.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/DFS序/bzoj3306.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/DFS序/bzoj3306.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/DFS序/bzoj3653.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/DFS序/bzoj3653.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/DFS序/bzoj3784.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/DFS序/bzoj3784.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/cqd分治/bzoj4025.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/cqd分治/bzoj4025.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/中位数/bzoj1112.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/中位数/bzoj1112.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/其他/bzoj1483.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/其他/bzoj1483.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/bzoj1293.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/bzoj1293.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/bzoj1818.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/bzoj1818.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/bzoj1935.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/bzoj1935.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/noip2012.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/noip2012.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/逆序对/bzoj3702.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/扫描线/逆序对/bzoj3702.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/莫队算法/bzoj2223.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/技巧/莫队算法/bzoj2223.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/bzoj2010.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/bzoj2010.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/弹飞绵羊.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/弹飞绵羊.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/洞穴2.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/洞穴2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/洞穴探测 -fast.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/洞穴探测 -fast.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/洞穴探测.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/LCT/洞穴探测.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/分块/bzoj2388.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/分块/bzoj2388.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/分块/bzoj2724.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/分块/bzoj2724.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/分块/bzoj2821.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/分块/bzoj2821.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/分块/bzoj3585.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/分块/bzoj3585.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/Treap/codevs3303.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/Treap/codevs3303.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/trie/bzoj3166.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/trie/bzoj3166.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/trie/bzoj3261.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/trie/bzoj3261.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/bzoj2141.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/bzoj2141.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/bzoj3343.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/bzoj3343.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/bzoj3524.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/bzoj3524.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/bzoj3544.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/bzoj3544.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/zoj2112(bzoj1901).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/zoj2112(bzoj1901).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/陌上花开-主席树套树状数组.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/主席树/陌上花开-主席树套树状数组.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/线段树/codevs3303.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/线段树/codevs3303.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/线段树/其他/bzoj3674.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/可持久/线段树/其他/bzoj3674.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/bzoj2738.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/bzoj2738.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/bzoj3343 (分块+Treap).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/bzoj3343 (分块+Treap).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/cdoj1259.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/cdoj1259.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/主席+树状.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/主席+树状.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/线段树套bcj.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/树套树/线段树套bcj.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/链剖+树/bzoj2243.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/数据结构/高级/链剖+树/bzoj2243.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/buf/未命名1.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/buf/未命名1.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/buf/未命名2.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/buf/未命名2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/乱搞/模拟退火/poj2420.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/乱搞/模拟退火/poj2420.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/乱搞/模拟退火/别人的模拟退火.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/乱搞/模拟退火/别人的模拟退火.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/乱搞/爬山/poj2420.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/乱搞/爬山/poj2420.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/乱搞/随机化/最近点对poj3714.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/乱搞/随机化/最近点对poj3714.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/构造题/cf 401 c.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/构造题/cf 401 c.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/构造题/cf508E.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/构造题/cf508E.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/构造题/uoj31.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/构造题/uoj31.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/输入优化/Untitled1.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/输入优化/Untitled1.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/高效算法/bzoj1011.cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/高效算法/bzoj1011.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/黑科技/树状数组写三角剖分(来自韩国).cpp" afterPath="$PROJECT_DIR$/oicode/resource/入门题目整理/杂/黑科技/树状数组写三角剖分(来自韩国).cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/segmenttree.cpp" afterPath="$PROJECT_DIR$/oicode/segmenttree.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/bit.cpp" afterPath="$PROJECT_DIR$/oicode/template/bit.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/dp/bag.cpp" afterPath="$PROJECT_DIR$/oicode/template/dp/bag.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/dp/dp1299.cpp" afterPath="$PROJECT_DIR$/oicode/template/dp/dp1299.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/dp/lcs.cpp" afterPath="$PROJECT_DIR$/oicode/template/dp/lcs.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/dp/luogu1091.cpp" afterPath="$PROJECT_DIR$/oicode/template/dp/luogu1091.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/dp/set_luogu1466.cpp" afterPath="$PROJECT_DIR$/oicode/template/dp/set_luogu1466.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/dp/triangle_search_version.cpp" afterPath="$PROJECT_DIR$/oicode/template/dp/triangle_search_version.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/dp/walkpath.cpp" afterPath="$PROJECT_DIR$/oicode/template/dp/walkpath.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/1381_failed.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/1381_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/1382.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/1382.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/1385.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/1385.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/1388.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/1388.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/LRspfa.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/LRspfa.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/Topologicalsorting.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/Topologicalsorting.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/dijkstra.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/dijkstra.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/floyed.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/floyed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/ford.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/ford.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/mst1348.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/mst1348.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/network/jzodinic.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/network/jzodinic.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/network/maximumFlowProblem.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/network/maximumFlowProblem.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/spfa.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/spfa.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/ufs1346.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/ufs1346.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/graph/ufs1387.cpp" afterPath="$PROJECT_DIR$/oicode/template/graph/ufs1387.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/string/basic_kmp.cpp" afterPath="$PROJECT_DIR$/oicode/template/string/basic_kmp.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/string/kmp.cpp" afterPath="$PROJECT_DIR$/oicode/template/string/kmp.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/test.cpp" afterPath="$PROJECT_DIR$/oicode/template/test.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tests/testOfResize_vector.cpp" afterPath="$PROJECT_DIR$/oicode/template/tests/testOfResize_vector.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/binatree/bt1336.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/binatree/bt1336.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/binatree/bt1338.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/binatree/bt1338.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/binatree/savingStruct.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/binatree/savingStruct.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/bst_basic.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/bst_basic.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/permutation.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/permutation.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/segtree.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/segtree.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/Segmentree.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/Segmentree.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/KMP.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/KMP.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/SegmentTree.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/SegmentTree.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/SegmentTreeWithAll.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/SegmentTreeWithAll.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/SegmentTreeWithAllextra.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/SegmentTreeWithAllextra.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/SegmentTreeWithPushdown.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/cdshishi/SegmentTreeWithPushdown.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/maxflow.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/maxflow.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/pokertime.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/temposaving/pokertime.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/segtree/zkw.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/segtree/zkw.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/平衡树/bst_basic.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/平衡树/bst_basic.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/平衡树/splay.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/平衡树/splay.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/template/tree/平衡树/treap.cpp" afterPath="$PROJECT_DIR$/oicode/template/tree/平衡树/treap.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/tempo.cpp" afterPath="$PROJECT_DIR$/oicode/tempo.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS24_athome/1297.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS24_athome/1297.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS24_athome/1302.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS24_athome/1302.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS24_athome/1376.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS24_athome/1376.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS24_athome/failed_1344.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS24_athome/failed_1344.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/1188.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/1188.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/1312.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/1312.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/1313.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/1313.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/margatroidsDijkstra.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS25_athome/margatroidsDijkstra.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS26_athome/1306.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS26_athome/1306.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/CLASS26_athome/wotmsabi.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/CLASS26_athome/wotmsabi.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e01.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e01.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e02.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e02.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e03.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e03.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e04.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e04.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e05.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e05.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e06.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e06.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e07.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e07.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e08.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e08.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e09.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e09.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e10.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e10.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e11.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e11.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e12.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e12.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e13.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e13.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e14.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e14.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e15.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e15.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e16.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e16.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e17.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e17.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e18.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e18.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e19.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e19.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e20.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e20.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e21.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e21.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e22.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e22.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e23-d.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e23-d.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e24.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e24.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e25.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e25.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e26.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e26.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e27.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e27.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e28.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e28.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e29.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e29.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e30.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e30.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1/e31.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1/e31.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/again.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/again.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/pricese1175.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/pricese1175.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursive1166.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursive1166.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursive1167.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursive1167.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursive1198.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursive1198.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursive1199p.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursive1199p.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursive1202.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursive1202.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursive_test.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursive_test.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursivep1197.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursivep1197.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursivep1198.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursivep1198.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursivep1201.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursivep1201.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class10/recursovep1200.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class10/recursovep1200.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class11/dfs1212.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class11/dfs1212.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class11/dfs1215.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class11/dfs1215.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class11/hanoi.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class11/hanoi.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class11/recursive1317.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class11/recursive1317.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class11/recursivep1208.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class11/recursivep1208.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class11/vector.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class11/vector.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/1108.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/1108.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/1348.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/1348.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/1349.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/1349.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/1350.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/1350.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/1383.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/1383.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/1392.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/1392.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/1393.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/1393.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/1394.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/1394.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/new.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/new.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class1122/test.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class1122/test.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class12/bin1234.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class12/bin1234.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class12/bina1236.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class12/bina1236.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class12/bina1244.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class12/bina1244.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class12/bina1245.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class12/bina1245.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class12/test1.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class12/test1.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class13/bina1240_waiting.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class13/bina1240_waiting.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class14/bfs1181.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class14/bfs1181.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class14/bfs1248.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class14/bfs1248.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class14/bfs1252.1506186243.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class14/bfs1252.1506186243.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class14/bfs1252.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class14/bfs1252.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class14/bfsLearning.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class14/bfsLearning.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class14/gA1320.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class14/gA1320.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class14/greedyAlgorithm1319.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class14/greedyAlgorithm1319.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class14/stack1353.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class14/stack1353.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class15/bfs1168_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class15/bfs1168_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class15/bfs1256_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class15/bfs1256_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class15/bfs1329.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class15/bfs1329.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class15/bfs1329_2.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class15/bfs1329_2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class15/dp1169.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class15/dp1169.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class16/bfs1168.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class16/bfs1168.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class16/bfs1256.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class16/bfs1256.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class16/dp1169.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class16/dp1169.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class16/dp1259.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class16/dp1259.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class16/dp1267.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class16/dp1267.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class16/dp1281.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class16/dp1281.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class16/dp1295.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class16/dp1295.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class16/dpBinaBag1062.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class16/dpBinaBag1062.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class17/bfs1251.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class17/bfs1251.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class17/bfs1252.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class17/bfs1252.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class17/bfs1253.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class17/bfs1253.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class17/bfs1256.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class17/bfs1256.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class17/dp1267_2.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class17/dp1267_2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class17/dp1280.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class17/dp1280.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class17/dp1280_dfs.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class17/dp1280_dfs.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/1258_dfs.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/1258_dfs.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/1258_dp.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/1258_dp.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/1258_dp2.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/1258_dp2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/1259_dp.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/1259_dp.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/1260_dp_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/1260_dp_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/1261_dp.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/1261_dp.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/1262_dp.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/1262_dp.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/1341.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/1341.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/lpa.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/lpa.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class18/test.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class18/test.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/bina1281.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/bina1281.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1142.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1142.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1263.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1263.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1264.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1264.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1277.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1277.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1283.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1283.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1285.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1285.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1286.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1286.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1287.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1287.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1288.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1288.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1289.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1289.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/dp1338.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/dp1338.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class19/xuanxue.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class19/xuanxue.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e01.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e01.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e02.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e02.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e03.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e03.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e04.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e04.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e05.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e05.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e06.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e06.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e07.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e07.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e08.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e08.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e09.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e09.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class2/e10.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class2/e10.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class20/1267.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class20/1267.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class20/1267_m.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class20/1267_m.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class20/1269.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class20/1269.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class20/1270.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class20/1270.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class20/1273.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class20/1273.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class20/1274.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class20/1274.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class20/luogu1002.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class20/luogu1002.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class20/test.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class20/test.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class21/1271.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class21/1271.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class21/1272.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class21/1272.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class21/1293.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class21/1293.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class21/1294.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class21/1294.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class21/1295.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class21/1295.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class21/1296.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class21/1296.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class22/1344.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class22/1344.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class22/redo/1267.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class22/redo/1267.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class22/redo/1278.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class22/redo/1278.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class22/redo/1341.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class22/redo/1341.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class23/memosearch.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class23/memosearch.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/aft/e21.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/aft/e21.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/aft/e22.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/aft/e22.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/aft/e23.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/aft/e23.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e01.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e01.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e02.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e02.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e03.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e03.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e04.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e04.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e05.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e05.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e06.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e06.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e06_s.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e06_s.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e07_wait_to_complete.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e07_wait_to_complete.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e08.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e08.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e09.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e09.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e10.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e10.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e11_f.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e11_f.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e11_s.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e11_s.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e12.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e12.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e13.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e13.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e14_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e14_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e15_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e15_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e16.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e16.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e17.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e17.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e18.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e18.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e19.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e19.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e20.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e20.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e21.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e21.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e22.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e22.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e23.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e23.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e24.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e24.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e25_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e25_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/e26_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/e26_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class3/pratice1.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class3/pratice1.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e13_outoftime_solved.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e13_outoftime_solved.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e14_outoftime.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e14_outoftime.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e14_pass.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e14_pass.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e15_array.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e15_array.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e16.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e16.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e17.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e17.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e18.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e18.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e19.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e19.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e20.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/e20.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/sorted.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/afternoon/sorted.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e01.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e01.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e02.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e02.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e03.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e03.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e04.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e04.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e05.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e05.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e06.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e06.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e07.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e07.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e08.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e08.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e09_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e09_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e10.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e10.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e11.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e11.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class4/e12.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class4/e12.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1109_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1109_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1109_succeed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1109_succeed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1110.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1110.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1111.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1111.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1112_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1112_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1112_failed_2.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1112_failed_2.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1113.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1113.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1114.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1114.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1115.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1115.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1116_common_method.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1116_common_method.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1116_pratice_of_sorted.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1116_pratice_of_sorted.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1117_slow.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1117_slow.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1118_again.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1118_again.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1118_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1118_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1119.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1119.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1120.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1120.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class5/e1121.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class5/e1121.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1122.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1122.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1123.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1123.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1124.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1124.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1125.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1125.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1126.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1126.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1126_short.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1126_short.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1127.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1127.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1127_short.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1127_short.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1128.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/aft/array1128.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/funcion1150.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/funcion1150.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1151.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1151.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1152.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1152.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1153.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1153.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1154_note_important_easy_difficult.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1154_note_important_easy_difficult.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1155.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1155.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1156_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1156_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1157.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1157.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1397.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1397.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1398.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1398.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1399_why_failed_succeed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1399_why_failed_succeed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/function1400.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/function1400.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class6/pratice_struct.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class6/pratice_struct.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/char1129.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/char1129.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/failed_function1400.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/failed_function1400.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/failed_function1401.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/failed_function1401.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1400_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1400_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1400_giveup_cpp_on_windows_and_linux_is_diffffffffffferent.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1400_giveup_cpp_on_windows_and_linux_is_diffffffffffferent.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1402.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1402.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1403.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1403.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1404.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1404.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1405.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1405.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1405_s.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1405_s.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1406.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1406.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1407.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1407.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/function1407_failed.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/function1407_failed.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class7/un.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class7/un.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/accurate1172.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/accurate1172.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/accurate1172_false.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/accurate1172_false.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/accurate1174.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/accurate1174.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/function1408.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/function1408.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/function1409.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/function1409.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/function1410.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/function1410.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/function1413.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/function1413.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/recursive1158.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/recursive1158.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/recursive1159.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/recursive1159.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/recursive1160.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/recursive1160.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/recursive1161.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/recursive1161.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/recursive1162_generally_method.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/recursive1162_generally_method.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/recursive1164.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/recursive1164.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/recursive1165.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/recursive1165.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class8/test.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class8/test.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class9/accurate1172.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class9/accurate1172.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class9/accurate1172_false.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class9/accurate1172_false.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class9/accurate1174.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class9/accurate1174.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class9/function1413.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class9/function1413.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class9/recursive1158.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class9/recursive1158.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class9/recursive1159.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class9/recursive1159.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class9/recursive1160.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class9/recursive1160.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class9/recursive1161.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class9/recursive1161.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/class9/recursive1162_generally_method.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/class9/recursive1162_generally_method.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/fixMissing/1252.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/fixMissing/1252.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/fixMissing/1254.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/fixMissing/1254.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/fixMissing/1256.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/fixMissing/1256.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/hugeint/hugeint.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/hugeint/hugeint.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/move/move.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/move/move.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/num_failed_the_last/num.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/num_failed_the_last/num.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/hugeint/generator.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/hugeint/generator.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/hugeint/hugeint.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/hugeint/hugeint.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/move/move.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/move/move.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/num/num.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/num/num.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/watfly/generator.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/watfly/generator.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/watfly/watfly.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/watfly/watfly.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/watfly/watfly_test.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/test_redo/watfly/watfly_test.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/watfly_failed_TLE/test.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/watfly_failed_TLE/test.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170915/watfly_failed_TLE/watfly.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170915/watfly_failed_TLE/watfly.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170916/cowmult/cowmult.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170916/cowmult/cowmult.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170916/door/door.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170916/door/door.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170916/friend/friend.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170916/friend/friend.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170916/friend/generator.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170916/friend/generator.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170916/power/power.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170916/power/power.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170922/chess/chess.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170922/chess/chess.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170922/chess_failed/chess.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170922/chess_failed/chess.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170922/match/match.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170922/match/match.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170922/succor/succor.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170922/succor/succor.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170922/succor_using_keyword_indexxxxxxxxx/succor.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170922/succor_using_keyword_indexxxxxxxxx/succor.cpp" />
-      <change beforePath="$PROJECT_DIR$/oicode/ybt/test301_20170922/teacher/teacher.cpp" afterPath="$PROJECT_DIR$/oicode/ybt/test301_20170922/teacher/teacher.cpp" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -721,21 +21,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="bzoj3669.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/oicode/bzoj/bzoj3669/bzoj3669.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-594">
-              <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bzoj1251.cpp" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="bzoj1251.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj1251/bzoj1251.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3429">
+            <state relative-caret-position="3915">
               <caret line="145" column="30" lean-forward="false" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
               <folding />
             </state>
@@ -751,6 +41,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/oicode/bzoj/bzoj3669/bzoj3669.cpp" />
+        <option value="$PROJECT_DIR$/oicode/hdu/hdu2433/hdu2433.cpp" />
       </list>
     </option>
   </component>
@@ -855,6 +146,12 @@
               <item name="TODO" type="462c0819:PsiDirectoryNode" />
               <item name="bzoj1251" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="learning" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="learning" type="462c0819:PsiDirectoryNode" />
+              <item name="oicode" type="462c0819:PsiDirectoryNode" />
+              <item name="hdu" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -891,11 +188,12 @@
       <option name="presentableId" value="Default" />
       <updated>1515840943983</updated>
       <workItem from="1515840946528" duration="1138000" />
+      <workItem from="1516375029382" duration="1954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1138000" />
+    <option name="totallyTimeSpent" value="3092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -903,20 +201,20 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13515624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22299923" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22299923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -931,18 +229,42 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/oicode/bzoj/bzoj3669/bzoj3669.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj1251/bzoj1251.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3429">
+        <state relative-caret-position="3915">
           <caret line="145" column="30" lean-forward="false" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/hdu/hdu2433/hdu2433.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oicode/bzoj/bzoj3669/bzoj3669.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
-          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state relative-caret-position="605">
+          <caret line="131" column="17" lean-forward="true" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj1251/bzoj1251.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3915">
+          <caret line="145" column="30" lean-forward="false" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
           <folding />
         </state>
       </provider>
