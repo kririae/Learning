@@ -9,7 +9,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e6b4936-52ee-4860-b6f9-b804af048253" name="Default" comment="" />
+    <list default="true" id="3e6b4936-52ee-4860-b6f9-b804af048253" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/oicode/luogu/3953_todo.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/3953_todo.cpp" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,18 +22,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bzoj1251.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj1251/bzoj1251.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3063">
-              <caret line="226" column="30" lean-forward="true" selection-start-line="226" selection-start-column="30" selection-end-line="226" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bzoj2049.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj2147/bzoj2049.cpp">
+      <file leaf-file-name="c.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -40,22 +32,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bzoj2716.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj2716/bzoj2716.cpp">
+      <file leaf-file-name="b.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/b.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bzoj3669.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/oicode/bzoj/bzoj3669/bzoj3669.cpp">
+      <file leaf-file-name="a.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/a.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oicode/template/template.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1593">
+              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="luogu3953.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oicode/luogu/luogu3953/luogu3953.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-933">
+              <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3953_todo.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/oicode/luogu/3953_todo.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2037">
+              <caret line="140" column="42" lean-forward="true" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+              <folding>
+                <element signature="e#1630#1723#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,6 +94,7 @@
       <list>
         <option value="$PROJECT_DIR$/oicode/hdu/hdu2433/hdu2433.cpp" />
         <option value="$PROJECT_DIR$/oicode/bzoj/bzoj3669/bzoj3669.cpp" />
+        <option value="$PROJECT_DIR$/oicode/luogu/3953_todo.cpp" />
       </list>
     </option>
   </component>
@@ -79,7 +104,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="202" />
     <option name="y" value="155" />
     <option name="width" value="1400" />
@@ -194,7 +219,39 @@
               <item name="learning" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="learning" type="462c0819:PsiDirectoryNode" />
               <item name="oicode" type="462c0819:PsiDirectoryNode" />
+              <item name="contests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="learning" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="learning" type="462c0819:PsiDirectoryNode" />
+              <item name="oicode" type="462c0819:PsiDirectoryNode" />
+              <item name="contests" type="462c0819:PsiDirectoryNode" />
+              <item name="codeforces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="learning" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="learning" type="462c0819:PsiDirectoryNode" />
+              <item name="oicode" type="462c0819:PsiDirectoryNode" />
               <item name="hdu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="learning" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="learning" type="462c0819:PsiDirectoryNode" />
+              <item name="oicode" type="462c0819:PsiDirectoryNode" />
+              <item name="luogu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="learning" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="learning" type="462c0819:PsiDirectoryNode" />
+              <item name="oicode" type="462c0819:PsiDirectoryNode" />
+              <item name="luogu" type="462c0819:PsiDirectoryNode" />
+              <item name="luogu3953" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="learning" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="learning" type="462c0819:PsiDirectoryNode" />
+              <item name="oicode" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -233,20 +290,20 @@
       <updated>1515840943983</updated>
       <workItem from="1515840946528" duration="1138000" />
       <workItem from="1516375029382" duration="1954000" />
-      <workItem from="1516414188849" duration="1973000" />
+      <workItem from="1516414188849" duration="5019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5065000" />
+    <option name="totallyTimeSpent" value="8111000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="202" y="155" width="1400" height="1000" extended-state="1" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13515624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22299923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -299,18 +356,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oicode/hdu/hdu2433/hdu2433.cpp" />
-    <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj1251/bzoj1251.cpp">
+    <entry file="file://$PROJECT_DIR$/oicode/bzoj/bzoj3669/bzoj3669.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3063">
-          <caret line="226" column="30" lean-forward="true" selection-start-line="226" selection-start-column="30" selection-end-line="226" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj2147/bzoj2049.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="513">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -323,11 +372,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oicode/bzoj/bzoj3669/bzoj3669.cpp">
+    <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj2147/bzoj2049.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/bzoj/TODO/bzoj1251/bzoj1251.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1686">
+          <caret line="226" column="30" lean-forward="true" selection-start-line="226" selection-start-column="30" selection-end-line="226" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/c.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/b.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/luogu/p2142.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/contests/codeforces/goodBye2017/a.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/template/template.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1593">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/luogu/luogu3953/luogu3953.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-933">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oicode/luogu/3953_todo.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2037">
+          <caret line="140" column="42" lean-forward="true" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+          <folding>
+            <element signature="e#1630#1723#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
