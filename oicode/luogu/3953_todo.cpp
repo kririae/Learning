@@ -1,118 +1,153 @@
-#pragma GCC optimize(3)
-#include <bits/stdc++.h>
-using namespace std;
+/*
+ *  @author kriaeth
+ *  :time 2018/1/20
+ *  dp + spfa
+ */
 
-typedef long long ll;
-struct edge {
-	int to, val;
-	edge(int a, int b): to(a), val(b) {}
-};
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <bitset>
+#include <deque>
+#include <queue>
 
-const int maxn = 1e6;
-int t, n, m, k, p, d;
-// temp
-int ai, bi, ci;
-vector<edge> graph[maxn];
-queue<int> q;
-int dis[maxn], countt[maxn];
-bool vis[maxn];
-
-inline ll read()
+namespace solve
 {
-	ll res = 0;
-	char c;
+	constexpr int maxn = 1e5 + 5;
 
-	while(!isspace(c = getchar()) && isdigit(c))
-		res = res * 10 + (c - '0');
+	template<typename T>
+	inline T min(T a, T b)
+	{
+		return a < b ? a : b;
+	}
 
-	return res;
-}
+	template<typename T>
+	inline T max(T a, T b)
+	{
+		return a < b ? b : a;
+	}
 
-inline int spfaf(int s, int e)
-{
-	for (int i = 0; i <= n + 5; ++i) dis[i] = 1e9;
+	inline char read()
+	{
+		static const int IN_LEN = 1000000;
+		static char buf[IN_LEN], *s, *t;
+		s == t ? t = (s = buf) + fread(buf, 1, IN_LEN, stdin) : 0;
+		return s == t ? -1 : *s++;
+	}
 
-	q.push(s);
-	vis[s] = true, dis[s] = 0;
+	template <typename T>
+	inline void read(T &x)
+	{
+		static char c;
+		static bool iosig;
+		for (c = read(), iosig = false; !isdigit(c); c = read()) {
+			if (c == -1) return;
+			c == '-' ? iosig = true : 0;
+		}
+		for (x = 0; isdigit(c); c = read()) x = (x + (x << 2) << 1) + (c ^ '0');
+		iosig ? x = -x : 0;
+	}
 
-	while (!q.empty()) {
-		int curr = q.front();
-		q.pop();
-		vis[curr] = false;
+	struct Edge
+	{
+		int to, val;
 
-		for (int i = 0; i < graph[curr].size(); ++i) {
-			if (dis[graph[curr][i].to] > dis[curr] + graph[curr][i].val) {
-				dis[graph[curr][i].to] = dis[curr] + graph[curr][i].val;
+		Edge(){}
 
-				if (!vis[graph[curr][i].to]) {
-					vis[graph[curr][i].to] = true;
-					q.push(graph[curr][i].to);
+		Edge(int a, int b)
+		{
+			to = a, val = b;
+		}
+	};
+
+	// define
+	int t, n, m, k, p;
+	int ai, bi, ci;
+	int d;
+	vector<Edge> edges[maxn];
+	bitset<maxn> vis;
+	long long dis[maxn];
+	queue<int> proc;
+	int f[maxn][55];
+
+	inline void f_spfa(int s, int t)
+	{
+		vis[s] = true;
+		dis[s] = 0;
+
+		proc.push(s);
+
+		while(!proc.empty())
+		{
+			int curr = proc.front();
+			proc.pop();
+			vis[curr] = false;
+
+			for (int i = edges[curr].size(); i >= 0; --i)
+			{
+				Edge &tempo = edges[curr][i];
+
+				if(dis[tempo.to] > dis[curr] + tempo.val)
+				{
+					dis[tempo.to] = dis[curr] + tempo.val;
+
+					if(!vis[tempo.to])
+					{
+						vis[tempo.to] = true;
+						proc.push(tempo.to);
+					}
 				}
 			}
 		}
+
+		d = dis[t] + k;
 	}
 
-	return dis[e];
-}
-
-inline void spfa(int s, int e)
-{
-	for (int i = 0; i <= n + 5; ++i) {
-		dis[i] = 1e9;
-		vis[i] = false;
+	inline void
+	inline void addedge(int a, int b, int c)
+	{
+		edges[a].push_back(Edge(b, c));
 	}
 
-	q.push(s);
-	vis[s] = true;
-	dis[s] = 0;
+	inline void init()
+	{
+		read(t);
 
-	while (!q.empty()) {
-		int curr = q.front();
-		q.pop();
-		vis[curr] = false;
+		for (int rp = 0; rp < t; ++rp)
+		{
+			for (int i = 0; i < maxn; ++i)
+			{
+				edges[i].clear();
+				dis[i] = maxn;
+			}
+			vis.clear();
 
-		for (int i = 0; i < graph[curr].size(); ++i) {
-			if(dis[graph[curr][i].to] > dis[curr] + graph[curr][i].val) {
-				dis[graph[curr][i].to] = dis[curr] + graph[curr][i].val;
+			read(n); read(m); read(k); read(p);
 
-				if(dis[graph[curr][i].to] <= d + k) {
-					++countt[graph[curr][i].to];
-					countt[graph[curr][i].to] %= p;
-				}
-
-				if(!vis[graph[curr][i].to]) {
-					vis[graph[curr][i].to] = true;
-					q.push(graph[curr][i].to);
-				}
+			for (int i = 0; i < m; ++i)
+			{
+				read(ai); read(bi); read(ci);
+				addedge(ai, bi, ci);
 			}
 		}
+
+		f_spfa(1, n);
+
+
+	}
+
+	inline void solve()
+	{
+		// freopen("park.in", "r", stdin);
+		// freopen("park.out", "w", stdout);
+		init();
+
+
 	}
 }
 
 int main()
 {
-	freopen("in.in", "r", stdin);
-	cin.tie(0);
-	ios::sync_with_stdio(false);
-	cin >> t;
-
-	while (--t) {
-		cin >> n >> m >> k >> p;
-
-		// n = read(), m = read(), k = read(), p = read();
-		for (int i = 0; i < m; ++i) {
-			// ai = read(), bi = read(), ci = read();
-			cin >> ai >> bi >> ci;
-			graph[ai].push_back(edge(bi, ci));
-			graph[bi].push_back(edge(ai, ci));
-		}
-
-		d = spfaf(1, n);
-		spfa(1, n);
-		cout << countt[n] << endl;
-		cout << endl << endl;
-	}
-
-	fclose(stdout);
+	solve::solve();
 	return 0;
 }
