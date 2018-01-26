@@ -10,7 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e6b4936-52ee-4860-b6f9-b804af048253" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/oicode/luogu/3953_todo.cpp" afterPath="$PROJECT_DIR$/oicode/luogu/3953_todo.cpp" />
+      <change beforePath="$PROJECT_DIR$/galgame/eden2/Thumbs.db" afterPath="$PROJECT_DIR$/galgame/eden2/Thumbs.db" />
+      <change beforePath="$PROJECT_DIR$/galgame/魔法使之夜/Thumbs.db" afterPath="$PROJECT_DIR$/galgame/魔法使之夜/Thumbs.db" />
+      <change beforePath="$PROJECT_DIR$/galgame/魔法使之夜/krkr.console.log" afterPath="$PROJECT_DIR$/galgame/魔法使之夜/krkr.console.log" />
+      <change beforePath="$PROJECT_DIR$/galgame/魔法使之夜/savedatasc.ksd" afterPath="$PROJECT_DIR$/galgame/魔法使之夜/savedatasc.ksd" />
+      <change beforePath="$PROJECT_DIR$/galgame/魔法使之夜/savedatasu.ksd" afterPath="$PROJECT_DIR$/galgame/魔法使之夜/savedatasu.ksd" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/oicode/template/template.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1593">
-              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -66,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/oicode/luogu/luogu3953/luogu3953.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-933">
-              <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -75,8 +79,8 @@
       <file leaf-file-name="3953_todo.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/oicode/luogu/3953_todo.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2037">
-              <caret line="140" column="42" lean-forward="true" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+            <state relative-caret-position="-1095">
+              <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
               <folding>
                 <element signature="e#1630#1723#0" expanded="false" />
               </folding>
@@ -290,12 +294,12 @@
       <updated>1515840943983</updated>
       <workItem from="1515840946528" duration="1138000" />
       <workItem from="1516375029382" duration="1954000" />
-      <workItem from="1516414188849" duration="5019000" />
+      <workItem from="1516414188849" duration="5021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8111000" />
+    <option name="totallyTimeSpent" value="8113000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="7" />
@@ -423,7 +427,7 @@
     <entry file="file://$PROJECT_DIR$/oicode/template/template.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1593">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -431,15 +435,15 @@
     <entry file="file://$PROJECT_DIR$/oicode/luogu/luogu3953/luogu3953.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-933">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oicode/luogu/3953_todo.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2037">
-          <caret line="140" column="42" lean-forward="true" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+        <state relative-caret-position="-1095">
+          <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
           <folding>
             <element signature="e#1630#1723#0" expanded="false" />
           </folding>
