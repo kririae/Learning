@@ -22,8 +22,8 @@ func swap(a, b string) (string, string) {
 }
 
 func split(sum int) (x, y, z int) {
-	x = sum / 2 - 1
-	y = sum / 2 + 1
+	x = sum/2 - 1
+	y = sum/2 + 1
 	z = 0
 	return
 }
