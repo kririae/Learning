@@ -17,4 +17,11 @@ func main() {
 	)
 	fmt.Println(A, B, C)
 	fmt.Println(a, b, c)
+
+	const (
+		x = iota
+		y
+		z
+	)
+	fmt.Println(x, y, z)
 }

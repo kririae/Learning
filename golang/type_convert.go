@@ -1,11 +1,12 @@
 package main
 
 import "fmt"
-import "strconv"
 
 func main() {
-	var orz string = "23333"
+	// common type convert
+	var sum int = 17
+	var count int = 5
 
-	result, _ := strconv.Atoi(orz)
-	fmt.Println(result)
+	var mean float64 = float64(sum) / float64(count)
+	fmt.Println(mean)
 }
