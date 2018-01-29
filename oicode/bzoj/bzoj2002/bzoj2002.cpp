@@ -1,8 +1,6 @@
 /*
 * by kriaeth
-* time:
-* using template v0.0
-* read function by xehoth
+* status: RE
 */
 #pragma GCC optimize(2)
 #include <iostream>
