@@ -1,0 +1,179 @@
+% by kririae
+\documentclass[UTF-8, 22pt，  a4paper]{ctexart}
+\usepackage{geometry, fancyhdr}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+    numbers=left, 
+    numberstyle= \tiny, 
+    keywordstyle= \color{ blue!70},
+    commentstyle= \color{red!50!green!50!blue!50}, 
+    frame=shadowbox, 
+    rulesepcolor= \color{ red!20!green!20!blue!20} ,
+    escapeinside=``, 
+    xleftmargin=2em,xrightmargin=2em, aboveskip=1em,
+    framexleftmargin=2em
+} 
+\setlength{\parindent}{2em}
+% \geometry{papersize={20cm, 35cm}}
+\geometry{left=2cm, right=2cm, top=3cm, bottom=3cm}
+
+\lhead{\author}
+\chead{\today}
+
+\title{ \huge{总结} }
+\author{\huge{kririae(徐子轲)}}
+\date{\today}
+\begin{document}
+\maketitle
+% \centering{\large{这大概是我学oi这半年以来的总结}}
+\newpage
+\section{数据结构}
+在学长教学的这几天，对数据结构的了解还是蛮多的..大概是从11月末开始到1月中旬，学完了数据结构的初级和中级。
+
+\newline\rule[-10pt]{17.0cm}{0.05em}\newline
+
+\newline\indent 最先学的就是线段树，单说关于线段树，打过很多次模板，但是没有怎么真实地做过题，所以对于线段树，不敢自称很熟悉，主要是一种可以在考试的时候引用思路，但是实际做起题来就会很困难的那种，毕竟线段树的区间的范围，至今都会写错那么一点点...
+\newline\indent bzoj2288 bzoj3878 bzoj2829 bzoj3165
+
+\newline\indent 其次学的就是平衡树等等东西，比如说splay和treap之类的东西，笔记也是很多的，splay有写过一次，treap写过两次，但是，和线段树一样，没有做过任何的实际题目，仅仅是打过模板。寒假有了时间，我会抓紧这一点时间来完成线段树和平衡树的等等练习。
+\newline\indent bzoj1251 bzoj3678 bzoj2733 bzoj1251
+\newline\rule[-10pt]{17.0cm}{0.05em}\newline
+
+\newline\indent 再然后，就学习了分块的用法，分块这玩意儿看起来简单实际上用法是很多的。现在做过的只有弹飞绵羊，而且全re了...
+\newline\indent bzoj2002
+\newline\rule[-10pt]{17.0cm}{0.05em}\newline
+
+\newline\indent 接着就是kd-tree 完全不懂，所以也就没啥可以说的...准备留着以后学习吧，应该是的...
+\newline\rule[-10pt]{17.0cm}{0.05em}\newline
+
+\newline\indent TODO\_LIST 
+\begin{enumerate}
+    \item 可持久化系列
+    \item LCT(最想学的
+\end{enumerate} 
+
+\section{数论}
+然而我对于数论一无所知，所以还是算了（
+
+\section{图论}
+\newline\indent 图论的入门部分应该是我最熟悉的了...图论的掌握了的知识如下
+\newpage
+\begin{enumerate}
+    \item floyd
+    \item dijkstra
+    \item SPFA(一切的一切中最熟悉的)
+    \item 分层图
+    \item 网络流入门(应该可以把我对网络流的熟悉程度归为“基本不会”)
+\end{enumerate}
+
+\newline\indent 因为是最熟悉的...所以这方面可以偏袒一点，发一点自己还没做的题好了
+\newline\indent k步最短路: Cow relays bzoj2259
+\newline\indent k短路: 
+\begin{lstlisting}
+#include<cstdio>
+#include<queue>
+#include<vector>
+#include<iostream>
+#include<cstring>
+using namespace std;
+struct edge {
+	int from, to, val;
+	edge(int from_, int to_, int val_)
+	{
+		from = from_;
+		to = to_;
+		val = val_;
+	}
+};
+vector<edge> e;
+int elen = 0;
+vector<int> node[1004];
+void addedge(int from, int to, int val)
+{
+	e.push_back(edge(from, to, val));
+	node[from].push_back(elen++);
+}
+
+int distan[1004];
+bool SPFA(int S, int T)
+{
+	memset(distan, -1, sizeof(distan));
+	distan[S] = 0;
+	queue<int> x;
+	x.push(S);
+	while(!x.empty()) {
+		int u = x.front();
+		x.pop();
+		for(int i = 0, len = node[u].size(); i < len; i++) {
+			edge& ed = e[node[u][i]];
+			if(distan[ed.to] == -1 
+			|| distan[ed.to] > distan[ed.from] + ed.val) {
+				distan[ed.to] = distan[u] + ed.val;
+				x.push(ed.to);
+			}
+		}
+	}
+	return distan[T] != -1;
+}
+
+struct state {
+	int f, g;
+	int place;
+	state(int place_, int g_)
+	{
+		place = place_;
+		g = g_;
+		f = g + distan[place];
+	}
+	bool operator < (const state &b)const
+	{
+		return f > b.f;
+	}
+};
+
+void Astar(int S, int T, int k)
+{
+	priority_queue<state> pq;
+	pq.push(state(S, 0));
+	while(k > 0 && !pq.empty()) {
+		int u = pq.top().place;
+		int g = pq.top().g;
+		pq.pop();
+		if(u == T) {
+			printf("%d\n", g);
+			k--;
+			if(k == 0) break;
+			continue;
+		}
+		for(int i = 0, len = node[u].size(); i < len; i++) {
+			edge& ed = e[node[u][i]];
+			pq.push(state(ed.to, g + ed.val));
+		}
+	}
+	if(k != 0) {
+		for(int i = k; i > 0; i--)
+			printf("-1\n");
+	}
+}
+
+int n, m, k;
+void init()
+{
+	scanf("%d%d%d", &n, &m, &k);
+	for(int f, t, d, i = 1; i <= m; i++) {
+		scanf("%d%d%d", &f, &t, &d);
+		addedge(f, t, d);
+	}
+	SPFA(1, n);
+}
+int main()
+{
+	init();
+	Astar(n, 1, k);
+	return 0;
+}
+学长的代码，我就简单复制一下了
+\end{lstlisting}
+\end{document}
