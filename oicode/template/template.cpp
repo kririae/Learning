@@ -14,17 +14,11 @@
 
 namespace solve
 {
-template<typename T>
-inline T min(T a, T b)
-{
-	return a < b ? a : b;
-}
 
 template<typename T>
-inline T max(T a, T b)
-{
-	return a < b ? b : a;
-}
+auto min = [](T a, T b) { return a < b ? a : b; };
+template<typename T>
+auto max = [](T a, T b) { return a < b ? b : a; };
 
 inline char read()
 {
