@@ -1,6 +1,6 @@
 /*
 * by kriaeth
-* status: ???
+* status: AC
 */
 #pragma GCC optimize(2)
 #include <bits/stdc++.h>
@@ -62,16 +62,12 @@ struct block
 {
     // 内聚很高...
 	int l, r;
-	int this_sum;
-	queue< pair<pair<int, int>, int> > lazy_tag;
-	// 需要建立一个lazy_tag来保证数据没有炸掉qwq...
-	// long long inside_sum[(int)sqrt(maxn)];
-	block(): l(0), r(0), this_sum(0) {}
+	int this_sum; // this_num 永远表示当前块的总和
+	int t_sum; // t_sum 永远是当前块总体加的值...
+	block(): l(0), r(0), this_sum(0), t_sum(0) {}
 
 	inline pair<int, int> get_range(int ql, int qr)
 	{
-		// 貌似稍微写大了点...
-		// 作用就是获取目标区间和当前区间的交点
 		static pair<int, int> ret;
 		if(ql >= l) 
 		{
@@ -103,27 +99,22 @@ struct block
 		// 获取本区间内的一段的长度
 		// TODO
 		pair<int, int> qwq = get_range(ql, qr);
-		qwq.first -= l, qwq.second -= l;
-		for (int i = lazy_tag.size() - 1; i >= 0; --i)
-		{
-			auto t = lazy_tag.front();
-			lazy_tag.pop();
-			for (int i = t.first.first; i <= t.first.second; ++i)
-				vals[i].val += t.second;
-			this_sum += (((t.first.second - t.first.first) + 1) * t.second);
-		}
-		qwq.first += l, qwq.second += l;
-		if(qwq.first == l && qwq.second == r)
-		    return this_sum;    
-		int summ = 0;
-		for (int i = qwq.first; i <= qwq.second; ++i)
-		    summ += vals[i].val;
+		if(qwq.first == l && qwq.second == r) return this_sum;
+		long long summ = 0;
+		for (int i = qwq.first; i <= qwq.second; ++i) summ += vals[i].val;
+		// cout << t_sum << endl;
+		summ += (t_sum * (qwq.second - qwq.first + 1));
 		return summ;
 	}
 
 	inline void modify_range(int ql, int qr, int k)
 	{
-		lazy_tag.push(pair<pair<int, int>, int>(get_range(ql, qr), k));
+		// 如果是包含的话..直接全加，如果不是包含的话，就加一半 
+		auto t = get_range(ql, qr);
+		if(t.first == l && t.second == r) t_sum += k;
+		else for (int i = t.first; i <= t.second; ++i) vals[i].val += k;
+		this_sum += ((t.second - t.first + 1) * k);
+		// lazy_tag.push(pair<pair<int, int>, int>(get_range(ql, qr), k));
 	}
 };
 //-----------
@@ -166,8 +157,6 @@ inline long long get_sum(int ql, int qr)
 }
 inline void solve()
 {
-	freopen("testdata.in", "r", stdin);
-	freopen("out.txt", "w", stdout);
     init();
 	for (int i = 0; i < m; ++i)
 	{
@@ -180,6 +169,7 @@ inline void solve()
 		if(op == 2)
 			std::printf("%lld\n", get_sum(x, y));
 	}
+	
 }
 }
 
