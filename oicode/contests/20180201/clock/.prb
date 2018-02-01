@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problem type="TRA_0_4" version="1.1.0" maker="ccr-plus">
+    <source code="100" dir="clock" file="clock">
+        <language file="clock.c" cmd="gcc -o clock clock.c -lm -static" time="10"/>
+        <language file="clock.cpp" cmd="g++ -o clock clock.cpp -lm -static" time="10"/>
+        <language file="clock.pas" cmd="fpc clock.pas" time="10"/>
+    </source>
+    <task input="clock.in" output="clock.out" checker="fulltext" time="10">
+        <subtask score="10">
+            <point out="clock1.out" mem="128" in="clock1.in" time="1"/>
+        </subtask>
+        <subtask score="10">
+            <point out="clock2.out" mem="128" in="clock2.in" time="1"/>
+        </subtask>
+        <subtask score="10">
+            <point out="clock3.out" mem="128" in="clock3.in" time="1"/>
+        </subtask>
+        <subtask score="10">
+            <point out="clock4.out" mem="128" in="clock4.in" time="1"/>
+        </subtask>
+        <subtask score="10">
+            <point out="clock5.out" mem="128" in="clock5.in" time="1"/>
+        </subtask>
+        <subtask score="10">
+            <point out="clock6.out" mem="128" in="clock6.in" time="1"/>
+        </subtask>
+        <subtask score="10">
+            <point out="clock7.out" mem="128" in="clock7.in" time="1"/>
+        </subtask>
+        <subtask score="10">
+            <point out="clock8.out" mem="128" in="clock8.in" time="1"/>
+        </subtask>
+        <subtask score="10">
+            <point out="clock9.out" mem="128" in="clock9.in" time="1"/>
+        </subtask>
+        <subtask score="10">
+            <point out="clock10.out" mem="128" in="clock10.in" time="1"/>
+        </subtask>
+    </task>
+</problem>
