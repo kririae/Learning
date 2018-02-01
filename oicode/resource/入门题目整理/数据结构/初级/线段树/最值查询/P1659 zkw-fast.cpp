@@ -1,4 +1,4 @@
-﻿#include<cstdio>
+#include<cstdio>
 #define N 1<<18
 #define INF 1<<28
 #include<iostream>
