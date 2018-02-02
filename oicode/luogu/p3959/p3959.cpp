@@ -1,24 +1,23 @@
 /*
 * by kriaeth
-* time:
-* using template v0.0
-* read function by xehoth
+* status: AC
 */
-
-#include <iostream>
-#include <cstdio>
-#include <vector>
-#include <bitset>
-#include <deque>
-#include <queue>
-
+#pragma GCC optimize(2)
+#include <bits/stdc++.h>
+using namespace std;
 namespace solve
 {
+template<typename T>
+inline T min(T a, T b)
+{
+	return a < b ? a : b;
+}
 
 template<typename T>
-auto min = [](T a, T b) { return a < b ? a : b; };
-template<typename T>
-auto max = [](T a, T b) { return a < b ? b : a; };
+inline T max(T a, T b)
+{
+	return a < b ? b : a;
+}
 
 inline char read()
 {
@@ -33,7 +32,8 @@ inline void read(T &x)
 {
 	static char c;
 	static bool iosig;
-	for (c = read(), iosig = false; !isdigit(c); c = read()) {
+	for (c = read(), iosig = false; !isdigit(c); c = read()) 
+	{
 		if (c == -1) return;
 		c == '-' ? iosig = true : 0;
 	}
@@ -41,15 +41,7 @@ inline void read(T &x)
 	iosig ? x = -x : 0;
 }
 
-inline void init()
-{
-
-}
-
-inline void solve()
-{
-
-}
+const int maxn = 
 }
 
 int main()

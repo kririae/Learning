@@ -1,8 +1,6 @@
 /*
 * by kriaeth
-* time:
-* using template v0.0
-* read function by xehoth
+* time: 2018/2/1
 */
 
 #include <iostream>
@@ -41,15 +39,33 @@ inline void read(T &x)
 	iosig ? x = -x : 0;
 }
 
-inline void init()
-{
+const int maxn = 1e5;
 
+struct node 
+{
+	int l, int r;
+	int mex;
+	int son[2];
+};
+node t[maxn << 2];
+int cnt = 0;
+
+inline void pushdown(int k)
+{
+	if(t[k].son[0] == 0 && t[k].son[1] == 0) return;
+	for(int i = 0; i <= 1; ++i)
+	t[t[k].son[i]].mex = min(t[t[k].son[i]].mex, t[k].mex);	
 }
 
-inline void solve()
+inline void buildTree(int &k, int l, int r) 
 {
-
+	k = ++cnt;
+	t[k].l = l, t[k].r = r;	
+	int mid = (l + r) / 2;
+	buildTree(t[k].son[0], l, mid);
+	buildTree(t[k].son[1], mid + 1, r);
 }
+
 }
 
 int main()
