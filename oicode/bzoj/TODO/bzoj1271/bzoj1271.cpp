@@ -1,4 +1,5 @@
 // 题目本身是很简单的
+// statuc: WA???
 /*
 可以这么想
 既然总共只有一个奇数点
@@ -10,10 +11,11 @@
 emmmmm......怎么做啊（...想简单了（
 emmmmm是每check一次都要重新跑一次么qwq...好像还行的样子，毕竟是二分
 O(nlogn)
+bzoj卡住了，趁机写一写注释 
  */
 #include <bits/stdc++.h>
 using namespace std;
-
+// 快读，不解释 
 inline int read()
 {
 	int x = 0, f = 1;
@@ -29,9 +31,25 @@ inline int read()
 	return x * f;
 }
 const int maxn = 200005;
+// t表示总问题组数 n表示输入组数 
 int t, n;
+// 题中输入的三组数据
+ 
 int s[maxn], e[maxn], d[maxn];
-inline bool check(int val)
+/*
+二分的本质就是将求数字的问题转化为判定
+所以基本上每一个二分的程序都需要一个判定
+由于是logn次判定，哪怕判定复杂点都没有问题的说
+这个判定就比较复杂 是O(n)的...
+原理嘛，从左向右扫描 之前输入的数据(其实排序了好像还可以更快，不过没必要了
+判断当前数字之前所有的个数
+之前已经描述了，如果是奇数，就代表奇数点在当前judge的之前，如果是偶数就在之后
+最后加了一个特判，因为怕跑过了，val后面多算...
+为啥bzoj还没好啊...
+总之这个judge的意义就在这里 
+啊 WA了...算了... 
+ */ 
+inline bool check(long long val)
 {
 	int count = 0;
 	for (int i = 1; i <= n; ++i) {
@@ -41,6 +59,16 @@ inline bool check(int val)
 		}
 	}
 	return (count % 2 != 0);
+}
+// 下面是二分的精华 
+inline long long bina(long long l, long long r) 
+{
+	while(l < r) {
+		long long mid = (l + r) >> 1;
+		if(check(mid)) r = mid;
+		else l = mid + 1;		
+	} 
+	return l;
 }
 
 int main() 
@@ -53,19 +81,14 @@ int main()
 			s[i] = read(); e[i] = read(); d[i] = read();
 		}
     	// init finished
-    	int l = 1, r = n, mid = (l + r) >> 1;
-    	while(true) 
-    	{
-    		int mid = (l + r) >> 1;
-    		if(check(mid))
-    		{
-    			l = mid + 1;
-    		}
-    		else {
-    			r = mid;
-    		}
-    		if(l == r) break;
+    	long long posi = bina(1, n);
+    	long long cnt = 0;
+    	for (int i = 1; i <= n; ++i) {
+    	    // 这里是求“夹在中间的点数”
+    	    // 所以有一个s[i] <= posi && e[i] >=
+    		if(s[i] <= posi && e[i] >= posi && (posi - s[i]) % d[i] == 0) ++cnt;
     	}
-    	cout << l << endl;
+    	if(cnt % 2 == 0) cout << "Poor QIN Teng:(" << endl;
+    	else cout << posi << " " << cnt << endl;
 	}
 }

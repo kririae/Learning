@@ -1,8 +1,6 @@
 /*
 * by kriaeth
-* time:
-* using template v0.0
-* read function by xehoth
+* time: 2018/2/1
 */
 
 #include <iostream>
