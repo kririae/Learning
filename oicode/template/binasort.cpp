@@ -1,25 +1,24 @@
 /*
 * by kriaeth
-* time:
-* using template v0.0
-* read function by xehoth
 */
 
-#include <iostream>
-#include <cstdio>
-#include <vector>
-#include <bitset>
-#include <deque>
-#include <queue>
+#include <bits/stdc++.h>
+
+using std::cout;
+using std::cin;
+using std::endl;
 
 namespace solve
 {
+template<typename T>
+inline T max(T a, T b) {
+	return a > b ? a : b;
+}
 
 template<typename T>
-auto min = [](T a, T b) { return a < b ? a : b; };
-
-template<typename T>
-auto max = [](T a, T b) { return a < b ? b : a; };
+inline T min(T a, T b) {
+	return a < b ? a : b;
+}
 
 inline char read()
 {
@@ -42,14 +41,34 @@ inline void read(T &x)
 	iosig ? x = -x : 0;
 }
 
+const int inf = ~(1 << 31);
+const int maxn = 1e6;
+int n, maxx, la;
+unsigned int lst[maxn];
 inline void init()
-{
-
+{        
+	read(n);
+	for (register int i = 1; i <= n; ++i) {
+		read(lst[i]);
+		maxx = max(maxx, lst[i]);
+	}
+	la = floor(log(maxx) / log(2)) + 1;
 }
 
 inline void solve()
 {
-
+	vector<int> res;
+	for (int i = la; i >= 0; --i) {
+		unsigned int curr = (1 << la);
+		queue<int> ln; int cnt = 0;
+		for (register int i = 1; i <= n; ++i) {
+			if(curr & lst[i]) {
+				ln.push(lst[i]); ++cnt;
+			}
+		}
+		while(cnt != 0) {
+		}
+	}
 }
 }
 
