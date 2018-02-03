@@ -22,6 +22,7 @@ const int maxn = 1e5 +5;
 int n;
 unsigned int array[maxn];
 vector<unsigned int> res;
+int s[75]; // 表示状态压缩后的数字
 int main() {
 	n = read();
 	for (register int i = 1; i <= n; ++i) array[i] = read();
@@ -30,6 +31,7 @@ int main() {
 		if(!last[i]) res.push_back(i);
 		for (int j = i << 1; j <= n; j += i) last[j] = true;
 	}
+	for (int i = 0)
 	// 求出素数之后建立一个[19]元素长度的a，来储存状态qwq
 	// give up
 }
