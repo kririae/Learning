@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problem type="TRA_0_4" maker="pcdialog">
+    <source dir="prime" file="prime" code="100">
+        <language cmd="fpc prime.pas" file="prime.pas"/>
+        <language cmd="g++ -o prime prime.cpp -lm" file="prime.cpp"/>
+        <language cmd="gcc -o prime prime.c -lm" file="prime.c"/>
+    </source>
+    <task output="prime.out" input="prime.in" io="0" checker="全文比较">
+        <subtask score="5">
+            <point in="prime0.in" out="prime0.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime1.in" out="prime1.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime2.in" out="prime2.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime3.in" out="prime3.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime4.in" out="prime4.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime5.in" out="prime5.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime6.in" out="prime6.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime7.in" out="prime7.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime8.in" out="prime8.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime9.in" out="prime9.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime10.in" out="prime10.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime11.in" out="prime11.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime12.in" out="prime12.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime13.in" out="prime13.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime14.in" out="prime14.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime15.in" out="prime15.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime16.in" out="prime16.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime17.in" out="prime17.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime18.in" out="prime18.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="prime19.in" out="prime19.out" time="1" mem="128"/>
+        </subtask>
+    </task>
+</problem>
