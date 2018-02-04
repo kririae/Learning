@@ -15,11 +15,13 @@ inline void merge(int l, int mid, int r) {
 }
 // 最后merge地总和就是逆序对的个数
 // 完整代码如下
+#pragma GCC optimize(2)
 #include <bits/stdc++.h>
 
 using namespace std;
 const int maxn = 1e5;
 int n;
+int cnt = 0;
 int a[maxn], tpr[maxn];
 long long t = 0;
 
