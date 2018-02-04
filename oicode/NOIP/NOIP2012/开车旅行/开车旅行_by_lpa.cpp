@@ -96,7 +96,7 @@ int main()
 {
     int numm;
     in(numm);
-    for(R int i=1;i<=numm;++i)
+    for(R int i = 1 ;i<=numm;++i)
     {
         in(data[i].height);
         data[i].num=i;

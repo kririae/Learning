@@ -38,18 +38,22 @@ inline void read(T &x)
 }
 
 constexpr int maxn = 1e5 + 5;
-constexpr int inf = ~(1 << 31);
+constexpr long long inf = (long long)~(1 << 31);
 
 struct node {
 	int p, pp, pidx, ppidx;
 	node() {}
-	node (int a, int b, int c, int d): p(a), pp(b), pidx(c), pp(d) {}
+	// node (int a, int b, int c, int d): p(a), pp(b), pidx(c), pp(d) {}
 };
 
 int n, h[maxn], as; // all step 总共可以走2^as次
+long long ans = inf;
+long long ansa = ans, ansb = ans;
 node next[maxn]; // 表示第一个小于它的和第二个
 set<pair<int, int> > st; // 表示一个数字本身，和它的索引
 int a[maxn][35], b[maxn][35], f[maxn][25];
+
+int times, ina, inb;
 /*
  * 用三个数组来储存倍增数列
  * a[i][j]表示a从i开始走2^j次行驶的距离
@@ -57,9 +61,9 @@ int a[maxn][35], b[maxn][35], f[maxn][25];
  */
 auto abs = [](int a) -> int { return a < 0 ? -a : a; };
 template<typename T>
-auto max = [](T a, T b) -> T { return a > b ? a : b; };
+inline T max(T a, T b) { return a > b ? a : b; };
 template<typename T>
-auto min = [](T a, T b) -> T { return a < b ? a : b; };
+inline T min(T a, T b) { return a > b ? a : b; };
 
 inline void init()
 {
@@ -70,21 +74,29 @@ inline void init()
 	// 初始化走到的位置，用一个pair储存，pair第一个是高度，第二个是数组位置
 	for (int i = n; i >= 1; --i) {
 		st.insert(pair<int, int>(h[i], i));
-		auto ptr = st.find(i);
+		auto ptr = st.find(pair<int, int>(h[i], i));
 		// 防止RE
 		// int pre = inf, nxt = inf;
-		int pre, nxt;
-		pre = nxt = 0;
-		int preidx = 0, nxtidx = 0;
+		int aa, bb, cc, dd;
+		int aaidx, bbidx, ccidx, ddidx;
+		aa = bb = cc = dd = inf;
+		aaidx = bbidx = ccidx = ddidx = inf;
 		if(ptr != st.begin()) {
-			pre = (--ptr) -> first, preidx = (--ptr) -> second; // 相对较大的那个
-			if((--ptr) != st.begin()) {
-				nxt = (--(--ptr)) -> first, nxtidx = (--(--ptr)) -> second; // 更小的那个
-			}
+			bb = (--ptr) -> first, bbidx = (--ptr) -> second;
+			// if((--ptr) != st.begin()) 
+			// 	aa = (--(--ptr)) -> first, aaidx = (--(--ptr)) -> second;
 		}
-		if(abs(h[i] - pre) == abs(nxt - h[i])) next[i].p = nxt, next[i].pidx = nxtidx,
-			next[i].pp = pre, next[i].ppidx = preidx;
-		else next[i].p = pre, next[i].pidx = preidx, next[i].pp = nxt, next[i].ppidx=  nxtidx;
+		if(ptr != st.end()) {
+			cc = (++ptr) -> first, ccidx = (++ptr) -> second;
+			// if((++ptr) != st.end()) 
+			// 	dd = (++(++ptr)) -> first, ddidx = (++(++ptr)) -> second;
+		}
+		// 上面的aa bb cc dd分别算出了该数周围四个数字的大小...但是可能有bug...一会儿再来调...
+		// 分别为前一个 前两个 后一个 后二个...
+		// 下一步是初始化最短的
+		if(abs(h[i] - bb) <= abs(cc - h[i])) 
+			next[i].p = abs(h[i] - bb), next[i].pidx = bbidx, next[i].pp = abs(cc - h[i]), next[i].ppidx = ccidx;
+		else next[i].p = abs(cc - h[i]), next[i].pidx = ccidx, next[i].pp = abs(h[i] - bb), next[i].ppidx = bbidx;
 	} // next.first 是到下一个的距离 next.second是到下一个的数组位置
 
 	for (int i = 1; i <= n; ++i) {
@@ -111,7 +123,7 @@ inline pair<long long, long long> query(int now, int x) {
 			x -= (a[now][i] + b[now][i]); now = f[now][i]; // 跳转到该去的位置...
 		}
 	}
-	if(!next[now].ppidx) return;
+	if(!next[now].ppidx) return pair<long long, long long>(0, 0);
 	int dis = abs(h[next[now].ppidx] - h[now]);
 	if(x >= dis) resa += dis;
 	return pair<long long, long long>(resa, resb);
@@ -119,8 +131,22 @@ inline pair<long long, long long> query(int now, int x) {
 inline void solve()
 {
 	init();
-	for (int i = 0; i < n; ++i) {
-		
+	pair<long long, long long> steps;
+	for (int i = 0; i <= n; ++i) { // 枚举全部情况...然后solute...
+		steps = query(i, n);
+		if(steps.first == 0 && steps.second == 0) continue;
+		if(steps.second && (!ans || ansa * steps.first > ansb * steps.second)) {
+            ansa = steps.first, ansb = steps.second, ans = i;
+        }
+	}
+	cout << ans << endl;
+
+	read(times);
+	while(--times) {
+		read(ina); read(inb);
+		pair<long long, long long> tpr;
+		tpr = query(ina, inb);
+		cout << tpr.first << " " << tpr.second << endl;
 	}
 }
 }
