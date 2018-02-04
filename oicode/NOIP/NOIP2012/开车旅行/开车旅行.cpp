@@ -98,7 +98,9 @@ inline void init()
 			next[i].p = abs(h[i] - bb), next[i].pidx = bbidx, next[i].pp = abs(cc - h[i]), next[i].ppidx = ccidx;
 		else next[i].p = abs(cc - h[i]), next[i].pidx = ccidx, next[i].pp = abs(h[i] - bb), next[i].ppidx = bbidx;
 	} // next.first 是到下一个的距离 next.second是到下一个的数组位置
-
+	for (int i = 1; i <= n; ++i) {
+		cout << next[i].p << " " << next[i].pidx << next[i].pp << " " << next[i].ppidx << endl;
+	}
 	for (int i = 1; i <= n; ++i) {
 		a[i][0] = next[i].pp;
 		b[i][0] = next[i].p;	
