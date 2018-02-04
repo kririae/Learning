@@ -1,4 +1,5 @@
 /*
+<<<<<<< Updated upstream
 * by kriaeth
 * __template__
 */
@@ -65,3 +66,59 @@ int main()
 	solve::__template__();
 	return 0;
 }
+=======
+ * 这里记录一些之前在别人的blog上看到的笔记
+ * http://blog.csdn.net/starstar1992/article/details/54913261
+ * 总觉得写的很清楚
+ * 直接上关键部分吧
+ *
+ * 对于目标字符串
+ * ababaca
+ * 长度是7
+ * 所以
+ * next[0] -> a
+ * next[1] -> ab
+ * next[2] -> aba
+ * next[3] -> abab
+ * next[4] -> ababa
+ * next[5] -> ababac
+ * next[6] -> ababaca
+ *
+ * a -> ""
+ * ab -> ""
+ * aba -> "a"
+ * abab -> "ab"
+ * ababa -> "aba"
+ * ababac -> ""
+ * ababaca -> "a"
+ *
+ * next[0] = -1
+ * next[1] = -1
+ * next[2] = 0
+ * next[3] = 1
+ * next[4] = 2
+ * next[5] = -1
+ * next[6] = 0
+ *
+ */
+
+#include <bits/stdc++.h>
+inline void cal_next(char *str, int *next, int len)
+{
+    next[0] = 0;
+    int k = -1;
+    for (int q = 1; q <= len - 1; ++q)
+    {
+        while(k > -1 && str[k + 1] != str[q])
+        {
+            k = next[k];
+        }
+
+        if(str[k + 1] == str[q])
+        {
+            ++k;
+        }
+        next[q] = k;
+    }
+}
+>>>>>>> Stashed changes

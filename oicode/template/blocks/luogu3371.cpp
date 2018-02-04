@@ -41,8 +41,8 @@ inline void read(T &x)
 	iosig ? x = -x : 0;
 }
 
-// ´ËÇ°È«¶¼ÊÇ¶ÁÈëÓÅ»¯
-// ±äÁ¿¶¨Òå
+// æ­¤å‰å…¨éƒ½æ˜¯è¯»å…¥ä¼˜åŒ–
+// å˜é‡å®šä¹‰
 const int maxn = 100005;
 
 int n, m, block_num;
@@ -56,14 +56,14 @@ struct valll
 	valll(): belong(0), val(0) {}
 };
 
-valll vals[maxn]; // ÏÂ±êÍ³Ò»´Ó1¿ªÊ¼
+	valll vals[maxn]; // ä¸‹æ ‡ç»Ÿä¸€ä»1å¼€å§‹
 
 struct block
 {
-    // ÄÚ¾ÛºÜ¸ß...
+	// å†…èšå¾ˆé«˜...
 	int l, r;
-	int this_sum; // this_num ÓÀÔ¶±íÊ¾µ±Ç°¿éµÄ×ÜºÍ
-	int t_sum; // t_sum ÓÀÔ¶ÊÇµ±Ç°¿é×ÜÌå¼ÓµÄÖµ...
+	int this_sum; // this_num æ°¸è¿œè¡¨ç¤ºå½“å‰å—çš„æ€»å’Œ
+	int t_sum; // t_sum æ°¸è¿œæ˜¯å½“å‰å—æ€»ä½“åŠ çš„å€¼...
 	block(): l(0), r(0), this_sum(0), t_sum(0) {}
 
 	inline pair<int, int> get_range(int ql, int qr)
@@ -96,7 +96,7 @@ struct block
     
 	inline long long get_sum(int ql, int qr)
 	{
-		// »ñÈ¡±¾Çø¼äÄÚµÄÒ»¶ÎµÄ³¤¶È
+		// è·å–æœ¬åŒºé—´å†…çš„ä¸€æ®µçš„é•¿åº¦
 		// TODO
 		pair<int, int> qwq = get_range(ql, qr);
 		if(qwq.first == l && qwq.second == r) return this_sum;
@@ -109,7 +109,7 @@ struct block
 
 	inline void modify_range(int ql, int qr, int k)
 	{
-		// Èç¹ûÊÇ°üº¬µÄ»°..Ö±½ÓÈ«¼Ó£¬Èç¹û²»ÊÇ°üº¬µÄ»°£¬¾Í¼ÓÒ»°ë 
+		// å¦‚æœæ˜¯åŒ…å«çš„è¯..ç›´æ¥å…¨åŠ ï¼Œå¦‚æœä¸æ˜¯åŒ…å«çš„è¯ï¼Œå°±åŠ ä¸€åŠ 
 		auto t = get_range(ql, qr);
 		if(t.first == l && t.second == r) t_sum += k;
 		else for (int i = t.first; i <= t.second; ++i) vals[i].val += k;
@@ -125,15 +125,15 @@ inline void init()
 	read(n); read(m);
     block_size = int(sqrt(n));
 	for (register int i = 1; i <= n; ++i) read(vals[i].val);
-	// ³õÊ¼»¯ĞèÒªµÄ¿éµÄ¸öÊı...²¢³õÊ¼»¯¿é±¾Éí, ÀûÓÃ¶¯Ì¬Êı×é
+	// åˆå§‹åŒ–éœ€è¦çš„å—çš„ä¸ªæ•°...å¹¶åˆå§‹åŒ–å—æœ¬èº«, åˆ©ç”¨åŠ¨æ€æ•°ç»„
 	block_num = n % block_size == 0 ? n / block_size : n / block_size + 1;
 	blocks = new block[block_num + 5];
-	// ³õÊ¼»¯blocksµÄ×óÓÒ¶Ëµã
+	// åˆå§‹åŒ–blocksçš„å·¦å³ç«¯ç‚¹
 	int curr = 1;
 	for (int i = 1 ; i <= block_num; ++i)
 		blocks[i].l = curr, blocks[i].r = (curr += block_size) - 1;
 	blocks[block_num].r = n;
-	// ±éÀúÈÏÁìvalÊôÓÚµÄblocks ²¢ÇÒ³õÊ¼»¯blocksÄÚ²¿µÄÇ°×ººÍÊı×éºÍsumÊı×é
+	// éå†è®¤é¢†valå±äºçš„blocks å¹¶ä¸”åˆå§‹åŒ–blockså†…éƒ¨çš„å‰ç¼€å’Œæ•°ç»„å’Œsumæ•°ç»„
 	for (int i = 1; i <= block_num; ++i)
 	{
 		for (int j = blocks[i].l; j <= blocks[i].r; ++j)
