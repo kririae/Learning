@@ -20,12 +20,14 @@ inline T abs(T val) {
 }
 
 long long x, y, m, n, l;
-long long k, tempo;
+long long  xi, yi;
 int main() {
 	cin >> x >> y >> m >> n >> l;
-	long long a = abs(x - y), b = abs(m - n);
-	if(b % gcd(a, l)) cout << "Impossible" << endl;
-	exgcd(b, l, k, tempo);
-	// kb - l\alpha = -a
-	cout << k << endl;
+	long long a = x - y, b = m - n;
+	if(b < 0) a = -a, b = -b;
+	long long muv = gcd(b, l);
+	if(a % muv != 0) // 假如说不能整除，代表无解
+		cout << "Impossible" << endl;
+	exgcd(b, l, xi, yi);
+	cout << ((xi * a / muv) % (l / muv) + (l / r)) % (l / r) << endl;
 }
