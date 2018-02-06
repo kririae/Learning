@@ -1,0 +1,80 @@
+# [学习笔记]2018-2-6
+> 为啥我刚才写的blog炸了...好桑心...
+
+[TOC]
+## 中位数
+先来一个题..POJ1723
+注意求中位数的位置
+```cpp
+#include <vector>
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+using namespace std;
+int n;
+long long tot = 0;
+const int maxn = 5;
+int a[maxn], b[maxn];
+template<typename T>
+inline T abss(T a) { return a < 0 ? -a : a; }
+int main() 
+{
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	cin >> n;
+	for (register int i = 1; i <= n; ++i) 
+		cin >> a[i] >> b[i];
+	sort(a + 1, a + 1 + n);
+	sort(b + 1, b + 1 + n);
+	int mida = a[n / 2 + 1];
+	int midb = b[n / 2 + 1];
+	for (int i = 1; i <= n; ++i) {
+		tot += abss(a[i] - mida) + abss(b[i] - midb);
+	}
+	cout << tot << endl;
+	return 0;
+}
+```
+公式是$\sum_{x=1}^{n}{|S_i - mid|}$
+## 图论提升
+> 图论什么的最好玩了
+
+[例题1](https://www.luogu.org/problemnew/show/P2176)
+随机挑选一个边权修改为原来的两倍，求修改后的最长的最短路。$n \leq 250, m \leq 250000$。
+看一看就知道是dij，思路是枚举所有修改的边。时间复杂度$O(nm\log{n})$
+这种难一点的题目需要仔细观察题目性质..虽然这道题还是比较简单就是了
+> //TODO
+
+## 拓展欧几里得算法
+### 欧几里得算法
+$gcd(a, b)$ 说白了就是求最大公约数，辗转相除法，结论是
+$$ gcd(a, b) = gcd(b, a \% b) $$
+代码实现
+```cpp
+inline int gcd(int a, int b) {
+    return b ? gcd(b, a % b) : a;
+}
+```
+### 拓展欧几里得
+> exgcd
+
+求出不定方程ax + by = gcd(a, b)的一组解，用欧几里得算法来求解。
+由$\mathrm{mod}$的定义可知，$a \; (\mathrm{mod} \; b) = a - \lfloor\frac{a}{b}\rfloor p$，可变换为$a = a \; (\mathrm{mod} \; b) + \lfloor\frac{a}{b}\rfloor b$，所以可得公式
+$$ 
+ax + by = (a \; (\mathrm{mod} \; b))x +b(y + \lfloor\frac{a}{b}\rfloor x)
+$$
+又$ gcd(a, b) = gcd(b, a \% b) $, 所以
+$$
+b(y + \lfloor\frac{a}{b}\rfloor x) +(a \% b)x = gcd(b, a \% b)
+$$
+按照这个方法不断迭代，$b = 0$时，$a = gcd(a, b)$，此时$x = 1, y = 0$是唯一解，然后迭代回去，代码如下
+```cpp
+inline void exgcd(int a, int b, int &x, int &y) {
+    if(b) {
+        exgcd(b, a % b, y, x);
+        y -= a / b * x;
+    } else {
+        x = 1, y = 0;
+    }
+}
+```
