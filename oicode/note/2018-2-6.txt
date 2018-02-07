@@ -1,0 +1,82 @@
+
+## problem1
+**Market** by Claris
+> Input file: market.in   
+Output file: market.out   
+Time limit: 1 seconds   
+Memory limit: 128 megabytes   
+
+在比特镇一共有n 家商店，编号依次为1 到n。每家商店只会卖一种物品，其中第i 家商店的物品单价为ci，价值为vi，且该商店开张的时间为ti。   
+Byteasar 计划进行m 次购物，其中第i 次购物的时间为Ti，预算为Mi。每次购物的时候，Byteasar会在每家商店购买最多一件物品，当然他也可以选择什么都不买。如果购物的时间早于商店开张的时间，那么显然他无法在这家商店进行购物。
+现在Byteasar 想知道，对于每个计划，他最多能购入总价值多少的物品。请写一个程序，帮助Byteasar 合理安排购物计划。
+注意：每次所花金额不得超过预算，预算也不一定要花完，同时预算不能留给其它计划使用。
+##### Input
+第一行包含两个正整数$n;m$，表示商店的总数和计划购物的次数。
+接下来n 行，每行三个正整数$c_i; v_i; t_i$，分别表示每家商店的单价、价值以及开张时间。   
+接下来m 行，每行两个正整数$T_i;M_i$，分别表示每个购物计划的时间和预算。 ? 
+##### Output
+输出m 行，每行一个整数，对于每个计划输出最大可能的价值和。   
+> 测试点1; $2，n \leq 20; m \leq 10; c_i; M_i; v_i \leq 100。$   
+测试点3; $4，n \leq 200; m = 1; c_i; M_i; v_i \leq 200; t_i = T_i = 1。$   
+测试点5; 6，$n \leq 300; m \leq 100000; c_i; M_i; v_i \leq 300。$  
+测试点7，$n \leq 20; m \leq 100000; c_i; M_i \leq 109; v_i \leq 300。$   
+
+首先想到的是，给询问排个序。毕竟t有序之后会方便很多。   
+难度很高，背包+二分。
+注释了一发std
+```cpp
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+const int N=305,M=100010,inf=1000000010;
+int n,m,lim,i,j,f[M],ans[M];
+struct P{int t,c,v;}a[N]; // 单价，价值，开张时间
+struct Q{int t,m,p;}b[M]; // 询问的信息
+// 时间和预算
+bool cmpP(const P&a,const P&b){return a.t<b.t;}                // 用时间排序
+bool cmpQ(const Q&a,const Q&b){return a.t<b.t;}                // 用时间排序
+void add(int c,int v){
+  for(int i=lim;i>=v;i--)f[i]=min(f[i],f[i-v]+c);                // 背包问题
+  for(int i=lim-1;~i;i--)f[i]=min(f[i],f[i+1]);                // ??意义是啥
+}
+int ask(int x){
+  int l=0,r=lim,mid,t;
+  while(l<=r)if(f[mid=(l+r)>>1]<=x)l=(t=mid)+1;else r=mid-1;
+  return t;
+}
+int main(){
+  freopen("market.in","r",stdin);freopen("market.out","w",stdout);
+  scanf("%d%d",&n,&m);lim=n*300;
+  for(i=1;i<=n;i++)scanf("%d%d%d",&a[i].c,&a[i].v,&a[i].t); // 读入商品的信息
+  for(i=1;i<=m;i++)scanf("%d%d",&b[i].t,&b[i].m),b[i].p=i;  // 读入询问的信息
+  sort(a+1,a+n+1,cmpP);                         // 分别将商品和询问按时间排序 
+  sort(b+1,b+m+1,cmpQ);
+  for(i=1;i<=lim;i++)f[i]=inf;                                 // 全都刷成inf
+  for(i=j=1;i<=m;i++){
+    while(j<=n&&a[j].t<=b[i].t)add(a[j].c,a[j].v),j++;  // 按时间信息加入背包
+    ans[b[i].p]=ask(b[i].m);               // 桶排序，将询问得到的信息放入ans
+  }
+  for(i=1;i<=m;i++)printf("%d\n",ans[i]);
+  fclose(stdin);fclose(stdout);
+  return 0;
+}
+```
+
+## 拓展欧几里得笔记2
+1. 今天学会了一个关键qwq
+$ax-kc=b$，先假设$ax-kc=gcd(a, c)$，现在的解是乘$\frac{\mathrm{gcd}(a, c)}{b}$之后的，在输出结果的时候需要保证是正数。
+2. 需要证明$ax \equiv b \; (\mathrm{mod} \; c)$
+支持换元
+$$\Rightarrow ax - b \equiv 0 \; (\mathrm{mod} \; c)$$
+由此可得
+$$\Rightarrow ax - b = ck$$
+移项可得拓展欧几里得式
+$$ ax-  ck = b$$
+假设
+$$ ax - ck = \mathrm{gcd}(a, c)$$
+然后$exgcd(a, c, x, -k)$求出x和-k。
+左右同时乘$\frac{b}{\mathrm{gcd}(a, c)}$，解出x的值。
+> 如何证明，当且仅当$gcd(a, c) | b$时，才存在解？
+
+已经看到了，上面的公式中，结果需要乘一个数$\frac{b}{gcd(a, b)}$
+当且仅当这个数字是整数，才行。
