@@ -144,10 +144,9 @@ inline void solve()
 	cout << ans << endl;
 
 	read(times);
-	while(--times) {
+	while(times--) {
 		read(ina); read(inb);
-		pair<long long, long long> tpr;
-		tpr = query(ina, inb);
+		pair<long long, long long> tpr = query(ina, inb);
 		cout << tpr.first << " " << tpr.second << endl;
 	}
 }
