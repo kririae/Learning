@@ -3,7 +3,7 @@
  * 20180203
  * qwq...
  * 我知道题解下面怨声一片的原因了...
- * 
+ * status: WA
  */
 #pragma GCC optimize(2)
 #include <bits/stdc++.h>
