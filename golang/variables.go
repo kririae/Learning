@@ -9,4 +9,3 @@ func main() {
 	var i int = 23333
 	fmt.Println(cpp, python, ruby, golang, i)
 }
-
