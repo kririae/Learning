@@ -15,9 +15,9 @@ func main() {
 	fmt.Println(mmp["fakegirl"])
 
 	// if exist?
-	fmt.Println(exist(mmp, "fakegirl"));
+	fmt.Println(exist(mmp, "fakegirl"))
 
 	delete(mmp, "fakegirl")
 
-	fmt.Println(exist(mmp, "fakegirl"));
+	fmt.Println(exist(mmp, "fakegirl"))
 }

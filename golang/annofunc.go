@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func getSequence() (func() int) {
+func getSequence() func() int {
 	i := 0
 	return func() int {
 		i++
@@ -21,7 +21,7 @@ func add1(a int) int {
 }
 
 func main() {
-	list := []int {1, 2, 3, 4, 5}
+	list := []int{1, 2, 3, 4, 5}
 	proc(list, add1)
 	for _, value := range list {
 		fmt.Println(value)

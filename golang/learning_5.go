@@ -1,9 +1,11 @@
 package main
+
 // 之前学的全都忘完了TAT
 // 重新学一次吧
 import (
 	"fmt"
 )
+
 /*
 func main() {
 	fmt.Println("The time is", time.Now())
