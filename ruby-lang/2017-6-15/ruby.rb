@@ -14,7 +14,6 @@ END{
 请忽略这个注释
 =end
 
-
 a = 5
 puts "#{a}"
 puts 'using #{a}'
