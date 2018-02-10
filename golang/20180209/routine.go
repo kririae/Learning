@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"time"
-	"sttconv"
+	"strconv"
 )
 
 func main() {
