@@ -24,15 +24,27 @@ inline void read(T &val)
 }
 
 const int maxn = 1e5 + 5;
-int n, f;
-unsigned int fields[maxn];
-unsigned int addup[maxn];
+double a[maxn], b[maxn], c[maxn];
+int n, l;
 inline void init()
 {
-    read(n); read(f);
+    read(n); read(l);
     for (register int i = 1; i <= n; ++i) 
-        read(fileds[i]); // init the 
-    
+        read(a[i]); // init the 
+    double l = 1e-6, r = 1e6;
+    double acc = 1e-5;
+    while(r - l > acc) {
+        double mid = (l + r) / 2;
+        for (int i = 1; i <= n; ++i) a[i] -= mid;
+        for (int i = 1; i <= n; ++i) a[i] += a[i - 1];
+        double ans = 1e-9, minn = 1e9;
+        for (int i = l; i <= n; ++i) {
+            minn = min(minn, a[i - L]);
+            ans = max(minn, a[i] - minn);
+        }
+        ans >= 0 ? l = mid : r = mid;
+    }
+    cout << (int)r * 1000 << endl;
 }
 
 inline void solve() 
