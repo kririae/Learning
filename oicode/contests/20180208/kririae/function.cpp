@@ -1,15 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-template<typename T>
-inline void read(T &val) {
-	val = 0; int f = 1;
+template <typename T>
+inline void read(T &val)
+{
+	val = 0;
+	int f = 1;
 	char ch = getchar();
-	while(!isdigit(ch)) {
-		if(ch == '-') f = -1;
+	while (!isdigit(ch))
+	{
+		if (ch == '-')
+			f = -1;
 		ch = getchar();
 	}
-	while(isdigit(ch)) {
+	while (isdigit(ch))
+	{
 		val = val * 10 + ch - '0';
 		ch = getchar();
 	}
@@ -22,32 +27,42 @@ int n, m;
 int a[maxn], b[maxn], c[maxn];
 int p, q, x;
 
-inline long long bf(int p, int q, int x) 
+inline long long bf(int p, int q, int x)
 {
-	if(c[p] < q) return (a[p] * x) + b[p];
-	else return (a[p] * bf(c[p], q, x) + b[p]) % mod;
+	if (c[p] < q)
+		return (a[p] * x) + b[p];
+	else
+		return (a[p] * bf(c[p], q, x) + b[p]) % mod;
 }
 /*
-...100¶àµã×ã¹»ÁË...
-¿ÉÄÜÓÐÖÖË¼Â·£¬²¢²é¼¯²»Ñ¹ËõÎ¬»¤ÐòÁÐ
-ÉèÖÃc[p]Îª²¢²é¼¯father[p]
-ÏÈ°ÑÑ¯ÎÊÅÅÐòÒ»´Î
-ÀëÉ¢»¯Ò»·¢ 
-×ß¹ýµÄÂ·³ÌÖ±½Ó±£´æÒ»·¢£¬È»ºó¸´ÓÃ£¡ 
-xÔõÃ´´¦Àí°¡......................
-¿ÉÒÔÊ¹ÓÃº¯ÊýÊ½±à³ÌµÄË¼Ïë¡£¡£ÔÚ×ß¹ýµÄÃ¿Ò»¸öµã½¨Á¢Ò»¸öº¯Êý
-²¢ÇÒ½¨Á¢¿ÉÒÔÌøµ½ÏÂÒ»¸öµãµÄÎ»ÖÃ... (ÄÔ¶´Ì«´óÁË 
-*/ 
-int main() {
+...100ï¿½ï¿½ï¿½ï¿½ã¹»ï¿½ï¿½...
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼Â·ï¿½ï¿½ï¿½ï¿½ï¿½é¼¯ï¿½ï¿½Ñ¹ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½c[p]Îªï¿½ï¿½ï¿½é¼¯father[p]
+ï¿½È°ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+ï¿½ï¿½É¢ï¿½ï¿½Ò»ï¿½ï¿½ 
+ï¿½ß¹ï¿½ï¿½ï¿½Â·ï¿½ï¿½Ö±ï¿½Ó±ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½Ã£ï¿½ 
+xï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½......................
+ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ãºï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ìµï¿½Ë¼ï¿½ë¡£ï¿½ï¿½ï¿½ï¿½ï¿½ß¹ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ã½¨ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½... (ï¿½Ô¶ï¿½Ì«ï¿½ï¿½ï¿½ï¿½ 
+*/
+int main()
+{
 	freopen("function.in", "r", stdin);
 	freopen("function.out", "w", stdout);
-	read(n); read(m);
-	for (int i = 1; i <= n; ++i) {
-		read(a[i]); read(b[i]); read(c[i]);
+	read(n);
+	read(m);
+	for (int i = 1; i <= n; ++i)
+	{
+		read(a[i]);
+		read(b[i]);
+		read(c[i]);
 	}
 	int ans = 0;
-	for (int i = 1; i <= m; ++i) {
-		read(p); read(q); read(x);
+	for (int i = 1; i <= m; ++i)
+	{
+		read(p);
+		read(q);
+		read(x);
 		int res = bf(p, q, x);
 		ans = ans ^ res % mod;
 	}
