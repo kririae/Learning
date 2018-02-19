@@ -23,7 +23,7 @@ func (this *handle) ServeHTTP(w http.ResponseWriter, r *http.Request) {
   
 func startServer() {  
     //被代理的服务器host和port  
-    h := &handle{host: "127.0.0.1", port: "1027"}  
+    h := &handle{host: "http://idea.lanyus.com", port: "80"}  
     err := http.ListenAndServe(":8088", h)  
     if err != nil {  
         log.Fatalln("ListenAndServe: ", err)  

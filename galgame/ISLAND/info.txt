@@ -1,0 +1,496 @@
+仭仭 僔僗僥儉忣曬 仭仭
+
+ E儊乕儖偱僒億乕僩傪庴偗傞帪偼丄偙偺僼傽僀儖傪揧晅偟偰偔偩偝偄丅
+
+
+{01}-- title --
+(01)ISLAND
+
+{02}-- system --
+(01)cs2.exe version 2.6.1.68
+(02)ISLAND version 1.0
+(03)id : dc647032-032e7635-6c54ed3d-c2284d91
+
+{03}-- pc model info --
+(01)Manufacturer : 
+(02)Model : 
+
+{04}-- windows info --
+(01)Windows 8.1 (x64)
+(02)Professional
+(03)
+(04)Version : 6.3.9600
+
+{05}-- cpu info --
+(01)Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz
+(02)GenuineIntel
+(03)type : 0
+(04)family.model.stepping : 6.13.4
+(05)number : 4
+(06)clock : 2195MHz (2203MHz)
+(07)cpuid : 1
+(08)mmx : 1
+(09)cmov : 1
+(10)SSE : 1
+(11)3DNow! : 0
+
+{06}-- memory info --
+(01)慡暔棟儊儌儕 : 7888 MB
+(02)嬻偒暔棟儊儌儕 : 5806 MB
+(03)慡壖憐儊儌儕 : 9104 MB
+(04)嬻偒壖憐儊儌儕 : 7096 MB
+
+{07}-- DirectX info --
+(01)Version : 11.0
+
+
+{09}-- display driver info --
+(01)Driver : igdumdim32.dll [20.19.15.4531]
+(02)Description : Intel(R) HD Graphics 5500
+(03)Product : 20
+(04)Version : 19
+(05)SubVersion : 15
+(06)Build : 4531
+(07)VendorId : 00008086
+(08)DeviceId : 00001616
+(09)SubSysId : 503517aa
+(10)Revision : 00000009
+(11)DeviceIdentifier : d7b78e66:00005556:000011cf:02daa970
+(12)WHQLLevel : 00000000
+
+{09}-- now display info --
+(01)Width  : 1366
+(02)Height : 768
+(03)Rate   : 60
+(04)Format : X8R8G8B8
+
+{10}-- device caps info (Direct3D9) --
+[DeviceType] : HAL
+[Caps] : 00020000
+  READ_SCANLINE : 1
+[Caps2] : e0020000
+  CANCALIBRATEGAMMA : 0
+  FULLSCREENGAMMA : 1
+[Caps3] : 00000320
+[PresentationIntervals] : 8000000f
+  unknown
+[CursorCaps] : 00000001
+  COLOR : 1
+  LOWRES : 0
+[DevCaps] : 0019ae50
+  CANBLTSYSTONONLOCAL : 0
+  CANRENDERAFTERFLIP : 1
+  DRAWPRIMTLVERTEX : 1
+  EXECUTESYSTEMMEMORY : 1
+  EXECUTEVIDEOMEMORY : 0
+  HWRASTERIZATION : 1
+  HWTRANSFORMANDLIGHT : 1
+  NPATCHES : 0
+  PUREDEVICE : 1
+  QUINTICRTPATCHES : 0
+  RTPATCHES : 0
+  RTPATCHHANDLEZERO : 0
+  SEPARATETEXTUREMEMORIES : 0
+  TEXTURENONLOCALVIDMEM : 0
+  TEXTURESYSTEMMEMORY : 0
+  TEXTUREVIDEOMEMORY : 1
+  TLVERTEXSYSTEMMEMORY : 1
+  TLVERTEXVIDEOMEMORY : 0
+[PrimitiveMiscCaps] : 002fccf2
+  BLENDOP : 1
+  CLIPPLANESCALEDPOINTS : 0
+  CLIPTLVERTS : 0
+  COLORWRITEENABLE : 1
+  CULLCCW : 1
+  CULLCW : 1
+  CULLNONE : 1
+  MASKZ : 1
+  TSSARGTEMP : 1
+[RasterCaps] : 0f736191
+  ANISOTROPY : 1
+  COLORPERSPECTIVE : 1
+  DITHER : 1
+  FOGRANGE : 1
+  FOGTABLE : 1
+  FOGVERTEX : 1
+  MIPMAPLODBIAS : 1
+  WBUFFER : 0
+  D3DPRASTERCAPS_WFOG : 1
+  ZBUFFERLESSHSR : 0
+  ZFOG : 1
+  ZTEST : 1
+[ZCmpCaps] : 000000ff
+  ALWAYS : 1
+  EQUAL : 1
+  GREATER : 1
+  GREATEREQUAL : 1
+  LESS : 1
+  LESSEQUAL : 1
+  NEVER : 1
+  NOTEQUAL : 1
+[SrcBlendCaps] : 00003fff
+  BOTHINVSRCALPHA : 1
+  BOTHSRCALPHA : 1
+  DESTALPHA : 1
+  DESTCOLOR : 1
+  INVDESTALPHA : 1
+  INVDESTCOLOR : 1
+  INVSRCALPHA : 1
+  INVSRCCOLOR : 1
+  ONE : 1
+  SRCALPHA : 1
+  SRCALPHASAT : 1
+  SRCCOLOR : 1
+  ZERO : 1
+[DestBlendCaps] : 000027ff
+  BOTHINVSRCALPHA : 0
+  BOTHSRCALPHA : 0
+  DESTALPHA : 1
+  DESTCOLOR : 1
+  INVDESTALPHA : 1
+  INVDESTCOLOR : 1
+  INVSRCALPHA : 1
+  INVSRCCOLOR : 1
+  ONE : 1
+  SRCALPHA : 1
+  SRCALPHASAT : 1
+  SRCCOLOR : 1
+  ZERO : 1
+[AlphaCmpCaps] : 000000ff
+  ALWAYS : 1
+  EQUAL : 1
+  GREATER : 1
+  GREATEREQUAL : 1
+  LESS : 1
+  LESSEQUAL : 1
+  NEVER : 1
+  NOTEQUAL : 1
+[ShadeCaps] : 00084208
+  ALPHAGOURAUDBLEND : 1
+  COLORGOURAUDRGB : 1
+  FOGGOURAUD : 1
+  SPECULARGOURAUDRGB : 1
+[TextureCaps] : 0021ec45
+  ALPHA : 1
+  ALPHAPALETTE : 0
+  CUBEMAP : 1
+  CUBEMAP_POW2 : 0
+  MIPCUBEMAP : 1
+  MIPMAP : 1
+  MIPVOLUMEMAP : 1
+  NONPOW2CONDITIONAL : 0
+  PERSPECTIVE : 1
+  POW2 : 0
+  PROJECTED : 1
+  SQUAREONLY : 0
+  TEXREPEATNOTSCALEDBYSIZE : 1
+  VOLUMEMAP : 1
+  VOLUMEMAP_POW2 : 0
+[TextureFilterCaps] : 07030700
+  MAGFANISOTROPIC : 1
+  MAGFLINEAR : 1
+  MAGFPOINT : 1
+  MINFANISOTROPIC : 1
+  MINFLINEAR : 1
+  MINFPOINT : 1
+  MIPFLINEAR : 1
+  MIPFPOINT : 1
+[CubeTextureFilterCaps] : 07030700
+  MAGFANISOTROPIC : 1
+  MAGFLINEAR : 1
+  MAGFPOINT : 1
+  MINFANISOTROPIC : 1
+  MINFLINEAR : 1
+  MINFPOINT : 1
+  MIPFLINEAR : 1
+  MIPFPOINT : 1
+[VolumeTextureFilterCaps] : 07030700
+  MAGFANISOTROPIC : 1
+  MAGFLINEAR : 1
+  MAGFPOINT : 1
+  MINFANISOTROPIC : 1
+  MINFLINEAR : 1
+  MINFPOINT : 1
+  MIPFLINEAR : 1
+  MIPFPOINT : 1
+[TextureAddressCaps] : 0000003f
+  BORDER : 1
+  CLAMP : 1
+  INDEPENDENTUV : 1
+  MIRROR : 1
+  MIRRORONCE : 1
+  WRAP : 1
+[VolumeTextureAddressCaps] : 0000003f
+  BORDER : 1
+  CLAMP : 1
+  INDEPENDENTUV : 1
+  MIRROR : 1
+  MIRRORONCE : 1
+  WRAP : 1
+[LineCaps] : 0000001f
+  ALPHACMP : 1
+  BLEND : 1
+  FOG : 1
+  TEXTURE : 1
+  ZTEST : 1
+[MaxTexture] : 8192 x 8192
+[MaxVolumeExtent] : 2048
+[MaxTextureRepeat] : 8192
+[MaxTextureAspectRatio] : 8192
+[MaxAnisotropy] : 16
+[MaxVertexW] : 10000000000.000000
+[GuardBand] : -16384.000000, -16384.000000, 16384.000000, 16384.000000
+[ExtentsAdjust] : 0.000000
+[StencilCaps] : 000001ff
+  DECR : 1
+  DECRSAT : 1
+  INCR : 1
+  INCRSAT : 1
+  INVERT : 1
+  KEEP : 1
+  REPLACE : 1
+  ZERO : 1
+[FVFCaps] : 00180008
+  DONOTSTRIPELEMENTS : 1
+  PSIZE : 1
+  TEXCOORDCOUNTMASK : 1
+[TextureOpCaps] : 03ffffff
+  ADD : 1
+  ADDSIGNED : 1
+  ADDSIGNED2X : 1
+  ADDSMOOTH : 1
+  BLENDCURRENTALPHA : 1
+  BLENDDIFFUSEALPHA : 1
+  BLENDFACTORALPHA : 1
+  BLENDTEXTUREALPHA : 1
+  BLENDTEXTUREALPHAPM : 1
+  BUMPENVMAP : 1
+  BUMPENVMAPLUMINANCE : 1
+  DISABLE : 1
+  DOTPRODUCT3 : 1
+  LERP : 1
+  MODULATE : 1
+  MODULATE2X : 1
+  MODULATE4X : 1
+  MODULATEALPHA_ADDCOLOR : 1
+  MODULATECOLOR_ADDALPHA : 1
+  MODULATEINVALPHA_ADDCOLOR : 1
+  MODULATEINVCOLOR_ADDALPHA : 1
+  MULTIPLYADD : 1
+  PREMODULATE : 1
+  SELECTARG1 : 1
+  SELECTARG2 : 1
+  SUBTRACT : 1
+[ExtentsAdjust] : 8
+[MaxSimultaneousTextures] : 8
+[VertexProcessingCaps] : 0000017b
+  DIRECTIONALLIGHTS : 1
+  LOCALVIEWER : 1
+  MATERIALSOURCE7 : 1
+  POSITIONALLIGHTS : 1
+  TEXGEN : 1
+  TWEENING : 1
+[MaxActiveLights] : 8
+[MaxUserClipPlanes] : 6
+[MaxVertexBlendMatrices] : 4
+[MaxVertexBlendMatrixIndex] : 0
+[MaxPointSize] : 256.000000
+[MaxPrimitiveCount] : 8388607
+[MaxVertexIndex] : 16777215
+[MaxStreams] : 16
+[MaxStreamStride] : 255
+[VertexShaderVersion] : fffe0300
+[MaxVertexShaderConst] : 256
+[PixelShaderVersion] : ffff0300
+
+{11}-- display mode --
+320 x 200 (48) [X8R8G8B8]
+320 x 200 (60) [X8R8G8B8]
+320 x 240 (48) [X8R8G8B8]
+320 x 240 (60) [X8R8G8B8]
+400 x 300 (48) [X8R8G8B8]
+400 x 300 (60) [X8R8G8B8]
+512 x 384 (48) [X8R8G8B8]
+512 x 384 (60) [X8R8G8B8]
+640 x 400 (48) [X8R8G8B8]
+640 x 400 (60) [X8R8G8B8]
+640 x 480 (48) [X8R8G8B8]
+640 x 480 (60) [X8R8G8B8]
+800 x 600 (48) [X8R8G8B8]
+800 x 600 (60) [X8R8G8B8]
+1024 x 768 (48) [X8R8G8B8]
+1024 x 768 (60) [X8R8G8B8]
+1280 x 720 (48) [X8R8G8B8]
+1280 x 720 (60) [X8R8G8B8]
+1280 x 768 (48) [X8R8G8B8]
+1280 x 768 (60) [X8R8G8B8]
+1360 x 768 (48) [X8R8G8B8]
+1360 x 768 (60) [X8R8G8B8]
+1366 x 768 (48) [X8R8G8B8]
+1366 x 768 (60) [X8R8G8B8]
+
+{12}-- audio device info --
+device(0) : 主声音驱动程序
+module(0) : 
+device(1) : 喇叭/耳机 (Realtek High Definition Audio)
+module(1) : {0.0.0.00000000}.{4705c105-7af9-487f-aaba-5a40081d95d1}
+
+-- config --
+texture bpp : 32
+texture filter min : 1
+texture filter mag : 1
+use dither : 1
+use 3d sound : 0
+use sticky : 1
+use camouflage : 0
+use gdi cap : 0
+32bit Zbuffer : 0
+use Zbuffer : 1
+out info : 1
+use file cache : 1
+enable drag wnd : 1
+startup screen : 0
+full screen : 0
+screen bpp : -1
+game bpp : 32
+font : 俵俽 僑僔僢僋
+font shadow : 47978292
+font bold : 0
+use proportional : 1
+width : 1280
+height : 720
+img cache : 32
+enable dual core : 1
+disable movie : 0
+max back buffer : 2
+disable pixelshader : 0
+wait D3D query : 0
+use hardware TnL : 1
+use back buffer : 1
+use light : 1
+use wait vsync : 1
+use antialias : 0
+backbuffer max size : -1
+
+-- voice --
+vol bgm : 0
+vol se : 0
+vol voice : 0
+vol play : 0
+play 0 : 1
+master 0 : 70
+play 1 : 1
+master 1 : 100
+play 2 : 1
+master 2 : 100
+play 3 : 1
+master 3 : 100
+play 4 : 1
+master 4 : 100
+play 5 : 1
+master 5 : 100
+play 6 : 1
+master 6 : 100
+play 7 : 1
+master 7 : 100
+play 8 : 1
+master 8 : 100
+play 9 : 1
+master 9 : 100
+play 10 : 1
+master 10 : 100
+play 11 : 1
+master 11 : 100
+play 12 : 1
+master 12 : 100
+play 13 : 1
+master 13 : 100
+play 14 : 1
+master 14 : 100
+play 15 : 1
+master 15 : 100
+play 16 : 1
+master 16 : 100
+play 17 : 1
+master 17 : 100
+play 18 : 1
+master 18 : 100
+play 19 : 1
+master 19 : 100
+play 20 : 1
+master 20 : 100
+play 21 : 1
+master 21 : 100
+play 22 : 1
+master 22 : 100
+play 23 : 1
+master 23 : 100
+play 24 : 1
+master 24 : 100
+play 25 : 1
+master 25 : 100
+play 26 : 1
+master 26 : 100
+play 27 : 1
+master 27 : 100
+play 28 : 1
+master 28 : 100
+play 29 : 1
+master 29 : 100
+play 30 : 1
+master 30 : 100
+play 31 : 1
+master 31 : 100
+play 32 : 1
+master 32 : 100
+play 33 : 1
+master 33 : 100
+play 34 : 1
+master 34 : 100
+play 35 : 1
+master 35 : 100
+play 36 : 1
+master 36 : 100
+play 37 : 1
+master 37 : 100
+play 38 : 1
+master 38 : 100
+play 39 : 1
+master 39 : 100
+play 40 : 1
+master 40 : 100
+play 41 : 1
+master 41 : 100
+play 42 : 1
+master 42 : 100
+play 43 : 1
+master 43 : 100
+play 44 : 1
+master 44 : 100
+play 45 : 1
+master 45 : 100
+play 46 : 1
+master 46 : 100
+play 47 : 1
+master 47 : 100
+cont : 1
+
+-- message --
+speed : 4
+auto p : 4
+auto base : 15
+auto CHAR : 5
+continue auto : 0
+wait pcm : 1
+
+-- effect --
+speed : 0
+auto cursor : 1
+auto cursor hide : 1
+auto cursor hide spd : 5
+dramatic : 0
+
+-- window --
+argb : 0xcc000c10
+drag : 1
+disp : 1
