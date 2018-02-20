@@ -22,12 +22,12 @@
 (04)Version : 6.3.9600
 
 {05}-- cpu info --
-(01)Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz
+(01)Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz
 (02)GenuineIntel
 (03)type : 0
-(04)family.model.stepping : 6.13.4
-(05)number : 4
-(06)clock : 2195MHz (2203MHz)
+(04)family.model.stepping : 6.14.3
+(05)number : 8
+(06)clock : 4008MHz (4007MHz)
 (07)cpuid : 1
 (08)mmx : 1
 (09)cmov : 1
@@ -35,33 +35,33 @@
 (11)3DNow! : 0
 
 {06}-- memory info --
-(01)ëSï®óùÉÅÉÇÉä : 7888 MB
-(02)ãÛÇ´ï®óùÉÅÉÇÉä : 5806 MB
-(03)ëSâºëzÉÅÉÇÉä : 9104 MB
-(04)ãÛÇ´âºëzÉÅÉÇÉä : 7096 MB
+(01)ëSï®óùÉÅÉÇÉä : 16299 MB
+(02)ãÛÇ´ï®óùÉÅÉÇÉä : 11138 MB
+(03)ëSâºëzÉÅÉÇÉä : 18731 MB
+(04)ãÛÇ´âºëzÉÅÉÇÉä : 11959 MB
 
 {07}-- DirectX info --
 (01)Version : 11.0
 
 
 {09}-- display driver info --
-(01)Driver : igdumdim32.dll [20.19.15.4531]
-(02)Description : Intel(R) HD Graphics 5500
-(03)Product : 20
-(04)Version : 19
-(05)SubVersion : 15
-(06)Build : 4531
-(07)VendorId : 00008086
-(08)DeviceId : 00001616
-(09)SubSysId : 503517aa
-(10)Revision : 00000009
-(11)DeviceIdentifier : d7b78e66:00005556:000011cf:02daa970
+(01)Driver : nvldumd.dll [0.0.0.0]
+(02)Description : NVIDIA GeForce GTX 1060 6GB
+(03)Product : 23
+(04)Version : 21
+(05)SubVersion : 13
+(06)Build : 9077
+(07)VendorId : 000010de
+(08)DeviceId : 00001c03
+(09)SubSysId : 85ac1043
+(10)Revision : 000000a1
+(11)DeviceIdentifier : d7b71e3e:00005f43:000011cf:00d47fa8
 (12)WHQLLevel : 00000000
 
 {09}-- now display info --
-(01)Width  : 1366
-(02)Height : 768
-(03)Rate   : 60
+(01)Width  : 2560
+(02)Height : 1440
+(03)Rate   : 59
 (04)Format : X8R8G8B8
 
 {10}-- device caps info (Direct3D9) --
@@ -71,18 +71,18 @@
 [Caps2] : e0020000
   CANCALIBRATEGAMMA : 0
   FULLSCREENGAMMA : 1
-[Caps3] : 00000320
+[Caps3] : 000003a0
 [PresentationIntervals] : 8000000f
   unknown
 [CursorCaps] : 00000001
   COLOR : 1
   LOWRES : 0
-[DevCaps] : 0019ae50
-  CANBLTSYSTONONLOCAL : 0
+[DevCaps] : 001bbef0
+  CANBLTSYSTONONLOCAL : 1
   CANRENDERAFTERFLIP : 1
   DRAWPRIMTLVERTEX : 1
   EXECUTESYSTEMMEMORY : 1
-  EXECUTEVIDEOMEMORY : 0
+  EXECUTEVIDEOMEMORY : 1
   HWRASTERIZATION : 1
   HWTRANSFORMANDLIGHT : 1
   NPATCHES : 0
@@ -91,22 +91,22 @@
   RTPATCHES : 0
   RTPATCHHANDLEZERO : 0
   SEPARATETEXTUREMEMORIES : 0
-  TEXTURENONLOCALVIDMEM : 0
+  TEXTURENONLOCALVIDMEM : 1
   TEXTURESYSTEMMEMORY : 0
   TEXTUREVIDEOMEMORY : 1
   TLVERTEXSYSTEMMEMORY : 1
-  TLVERTEXVIDEOMEMORY : 0
-[PrimitiveMiscCaps] : 002fccf2
+  TLVERTEXVIDEOMEMORY : 1
+[PrimitiveMiscCaps] : 002fcef2
   BLENDOP : 1
   CLIPPLANESCALEDPOINTS : 0
-  CLIPTLVERTS : 0
+  CLIPTLVERTS : 1
   COLORWRITEENABLE : 1
   CULLCCW : 1
   CULLCW : 1
   CULLNONE : 1
   MASKZ : 1
   TSSARGTEMP : 1
-[RasterCaps] : 0f736191
+[RasterCaps] : 07732191
   ANISOTROPY : 1
   COLORPERSPECTIVE : 1
   DITHER : 1
@@ -142,9 +142,9 @@
   SRCALPHASAT : 1
   SRCCOLOR : 1
   ZERO : 1
-[DestBlendCaps] : 000027ff
-  BOTHINVSRCALPHA : 0
-  BOTHSRCALPHA : 0
+[DestBlendCaps] : 00003fff
+  BOTHINVSRCALPHA : 1
+  BOTHSRCALPHA : 1
   DESTALPHA : 1
   DESTCOLOR : 1
   INVDESTALPHA : 1
@@ -170,9 +170,9 @@
   COLORGOURAUDRGB : 1
   FOGGOURAUD : 1
   SPECULARGOURAUDRGB : 1
-[TextureCaps] : 0021ec45
+[TextureCaps] : 0001ecc5
   ALPHA : 1
-  ALPHAPALETTE : 0
+  ALPHAPALETTE : 1
   CUBEMAP : 1
   CUBEMAP_POW2 : 0
   MIPCUBEMAP : 1
@@ -186,8 +186,8 @@
   TEXREPEATNOTSCALEDBYSIZE : 1
   VOLUMEMAP : 1
   VOLUMEMAP_POW2 : 0
-[TextureFilterCaps] : 07030700
-  MAGFANISOTROPIC : 1
+[TextureFilterCaps] : 03030700
+  MAGFANISOTROPIC : 0
   MAGFLINEAR : 1
   MAGFPOINT : 1
   MINFANISOTROPIC : 1
@@ -195,20 +195,20 @@
   MINFPOINT : 1
   MIPFLINEAR : 1
   MIPFPOINT : 1
-[CubeTextureFilterCaps] : 07030700
-  MAGFANISOTROPIC : 1
+[CubeTextureFilterCaps] : 03030300
+  MAGFANISOTROPIC : 0
   MAGFLINEAR : 1
   MAGFPOINT : 1
-  MINFANISOTROPIC : 1
+  MINFANISOTROPIC : 0
   MINFLINEAR : 1
   MINFPOINT : 1
   MIPFLINEAR : 1
   MIPFPOINT : 1
-[VolumeTextureFilterCaps] : 07030700
-  MAGFANISOTROPIC : 1
+[VolumeTextureFilterCaps] : 03030300
+  MAGFANISOTROPIC : 0
   MAGFLINEAR : 1
   MAGFPOINT : 1
-  MINFANISOTROPIC : 1
+  MINFANISOTROPIC : 0
   MINFLINEAR : 1
   MINFPOINT : 1
   MIPFLINEAR : 1
@@ -233,13 +233,13 @@
   FOG : 1
   TEXTURE : 1
   ZTEST : 1
-[MaxTexture] : 8192 x 8192
+[MaxTexture] : 16384 x 16384
 [MaxVolumeExtent] : 2048
 [MaxTextureRepeat] : 8192
-[MaxTextureAspectRatio] : 8192
+[MaxTextureAspectRatio] : 16384
 [MaxAnisotropy] : 16
 [MaxVertexW] : 10000000000.000000
-[GuardBand] : -16384.000000, -16384.000000, 16384.000000, 16384.000000
+[GuardBand] : -100000000.000000, -100000000.000000, 100000000.000000, 100000000.000000
 [ExtentsAdjust] : 0.000000
 [StencilCaps] : 000001ff
   DECR : 1
@@ -254,7 +254,7 @@
   DONOTSTRIPELEMENTS : 1
   PSIZE : 1
   TEXCOORDCOUNTMASK : 1
-[TextureOpCaps] : 03ffffff
+[TextureOpCaps] : 03feffff
   ADD : 1
   ADDSIGNED : 1
   ADDSIGNED2X : 1
@@ -277,25 +277,25 @@
   MODULATEINVALPHA_ADDCOLOR : 1
   MODULATEINVCOLOR_ADDALPHA : 1
   MULTIPLYADD : 1
-  PREMODULATE : 1
+  PREMODULATE : 0
   SELECTARG1 : 1
   SELECTARG2 : 1
   SUBTRACT : 1
 [ExtentsAdjust] : 8
 [MaxSimultaneousTextures] : 8
-[VertexProcessingCaps] : 0000017b
+[VertexProcessingCaps] : 0000013b
   DIRECTIONALLIGHTS : 1
   LOCALVIEWER : 1
   MATERIALSOURCE7 : 1
   POSITIONALLIGHTS : 1
   TEXGEN : 1
-  TWEENING : 1
+  TWEENING : 0
 [MaxActiveLights] : 8
-[MaxUserClipPlanes] : 6
+[MaxUserClipPlanes] : 8
 [MaxVertexBlendMatrices] : 4
 [MaxVertexBlendMatrixIndex] : 0
-[MaxPointSize] : 256.000000
-[MaxPrimitiveCount] : 8388607
+[MaxPointSize] : 8192.000000
+[MaxPrimitiveCount] : 16777215
 [MaxVertexIndex] : 16777215
 [MaxStreams] : 16
 [MaxStreamStride] : 255
@@ -304,36 +304,72 @@
 [PixelShaderVersion] : ffff0300
 
 {11}-- display mode --
-320 x 200 (48) [X8R8G8B8]
-320 x 200 (60) [X8R8G8B8]
-320 x 240 (48) [X8R8G8B8]
-320 x 240 (60) [X8R8G8B8]
-400 x 300 (48) [X8R8G8B8]
-400 x 300 (60) [X8R8G8B8]
-512 x 384 (48) [X8R8G8B8]
-512 x 384 (60) [X8R8G8B8]
-640 x 400 (48) [X8R8G8B8]
-640 x 400 (60) [X8R8G8B8]
-640 x 480 (48) [X8R8G8B8]
+2560 x 1440 (59) [X8R8G8B8]
+2560 x 1440 (60) [X8R8G8B8]
+640 x 480 (59) [X8R8G8B8]
 640 x 480 (60) [X8R8G8B8]
-800 x 600 (48) [X8R8G8B8]
+640 x 480 (72) [X8R8G8B8]
+640 x 480 (75) [X8R8G8B8]
+720 x 480 (59) [X8R8G8B8]
+720 x 480 (60) [X8R8G8B8]
+720 x 576 (50) [X8R8G8B8]
+800 x 600 (56) [X8R8G8B8]
 800 x 600 (60) [X8R8G8B8]
-1024 x 768 (48) [X8R8G8B8]
+800 x 600 (72) [X8R8G8B8]
+800 x 600 (75) [X8R8G8B8]
 1024 x 768 (60) [X8R8G8B8]
-1280 x 720 (48) [X8R8G8B8]
+1024 x 768 (70) [X8R8G8B8]
+1024 x 768 (75) [X8R8G8B8]
+1152 x 864 (60) [X8R8G8B8]
+1176 x 664 (50) [X8R8G8B8]
+1176 x 664 (59) [X8R8G8B8]
+1176 x 664 (60) [X8R8G8B8]
+1280 x 720 (59) [X8R8G8B8]
+1280 x 720 (50) [X8R8G8B8]
 1280 x 720 (60) [X8R8G8B8]
-1280 x 768 (48) [X8R8G8B8]
 1280 x 768 (60) [X8R8G8B8]
-1360 x 768 (48) [X8R8G8B8]
+1280 x 800 (60) [X8R8G8B8]
+1280 x 960 (60) [X8R8G8B8]
+1280 x 960 (75) [X8R8G8B8]
+1280 x 1024 (60) [X8R8G8B8]
+1280 x 1024 (75) [X8R8G8B8]
 1360 x 768 (60) [X8R8G8B8]
-1366 x 768 (48) [X8R8G8B8]
 1366 x 768 (60) [X8R8G8B8]
+1600 x 900 (59) [X8R8G8B8]
+1600 x 900 (60) [X8R8G8B8]
+1600 x 1024 (59) [X8R8G8B8]
+1600 x 1024 (60) [X8R8G8B8]
+1600 x 1200 (60) [X8R8G8B8]
+1680 x 1050 (59) [X8R8G8B8]
+1680 x 1050 (60) [X8R8G8B8]
+1768 x 992 (25) [X8R8G8B8]
+1768 x 992 (29) [X8R8G8B8]
+1768 x 992 (30) [X8R8G8B8]
+1920 x 1080 (29) [X8R8G8B8]
+1920 x 1080 (59) [X8R8G8B8]
+1920 x 1080 (25) [X8R8G8B8]
+1920 x 1080 (50) [X8R8G8B8]
+1920 x 1080 (60) [X8R8G8B8]
+1920 x 1080 (30) [X8R8G8B8]
+1920 x 1080 (61) [X8R8G8B8]
+1920 x 1200 (60) [X8R8G8B8]
+1920 x 1440 (59) [X8R8G8B8]
+1920 x 1440 (60) [X8R8G8B8]
+1440 x 900 (60) [X8R8G8B8]
 
 {12}-- audio device info --
 device(0) : ÷˜…˘“Ù«˝∂Ø≥Ã–Ú
 module(0) : 
-device(1) : ¿Æ∞»/∂˙ª˙ (Realtek High Definition Audio)
-module(1) : {0.0.0.00000000}.{4705c105-7af9-487f-aaba-5a40081d95d1}
+device(1) : Bose“ÙœÏ (Realtek High Definition Audio)
+module(1) : {0.0.0.00000000}.{86c6b8a0-9de1-4216-bb6e-0811868abe6a}
+device(2) : DigitalOutput (NVIDIA High Definition Audio)
+module(2) : {0.0.0.00000000}.{6cda6402-e8a2-4bb2-aa16-c0efabef7932}
+device(3) : Realtek Digital Output(Optical) (Realtek High Definition Audio)
+module(3) : {0.0.0.00000000}.{c80f612c-3cb2-44b9-8347-5bd363242fe7}
+device(4) : Realtek Digital Output (Realtek High Definition Audio)
+module(4) : {0.0.0.00000000}.{df6d2fca-bc9a-4817-9a6a-ec8582a39bfe}
+device(5) : DigitalOutput (NVIDIA High Definition Audio)
+module(5) : {0.0.0.00000000}.{f100ebbe-b098-46a0-9bfa-2af581476107}
 
 -- config --
 texture bpp : 32
@@ -354,7 +390,7 @@ full screen : 0
 screen bpp : -1
 game bpp : 32
 font : ÇlÇr ÉSÉVÉbÉN
-font shadow : 47978292
+font shadow : 14472580
 font bold : 0
 use proportional : 1
 width : 1280
