@@ -900,7 +900,7 @@
   </TEXTURE>
   <WINDOW>
     <setmode>1</setmode>
-    <fullscreen>1</fullscreen>
+    <fullscreen>0</fullscreen>
     <out_info>1</out_info>
     <camouflage>0</camouflage>
     <screensaver>1</screensaver>
@@ -910,8 +910,8 @@
     <bpp>-1</bpp>
     <mode>0</mode>
     <fps>60</fps>
-    <full_height>768</full_height>
-    <full_width>1366</full_width>
+    <full_height>1440</full_height>
+    <full_width>2560</full_width>
     <height>720</height>
     <width>1280</width>
   </WINDOW>
