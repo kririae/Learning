@@ -5,12 +5,7 @@
  * read function by xehoth
  */
 
-#include <bitset>
-#include <cstdio>
-#include <deque>
-#include <iostream>
-#include <queue>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 namespace solve {
