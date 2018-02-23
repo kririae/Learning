@@ -1839,7 +1839,7 @@ double dis(point a, point b)
 }
 #undef db
 #undef eps
-
+// -------defimal---------
 #include <string>
 class Decimal
 {
@@ -2677,7 +2677,7 @@ Decimal &Decimal::operator-=(const Decimal &b)
     *this = *this - b;
     return *this;
 }
-
+// ---end---decimal---
 //----------------------------
 int main()
 {
