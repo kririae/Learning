@@ -24,7 +24,21 @@ c[i] 是 father
 引入最简单的莫比乌斯反演 -> 
 卷积满足结合律
 定义满足f的函数
-kronecker delta function 单位矩阵
-zeta function    一半是0，一半是1
-ζ(x, y) = x \leq y ? 1 : 0
-表明了一个偏序关系，
+δ(x, y) kronecker delta function 单位矩阵
+zeta function 一半是0，一半是1
+	ζ(x, y) = x \leq y ? 1 : 0       偏序关系
+表明了一个偏序关系
+mobius function μ为ζ的逆函数
+μ函数想象成ζ的逆矩阵
+
+
+数学归纳法
+要证明x + x = 2x
+可以用数学归纳法来证明
+1. 归纳dianji
+x = 1时 1 + 1 = 2
+x = n的时候成立
+要证明x = n + 1时也是成立的
+(n + 1) + (n + 1) => n + n + 1 + 1
+用归纳假设
+不完全数学归纳法 -> 瞎猜
