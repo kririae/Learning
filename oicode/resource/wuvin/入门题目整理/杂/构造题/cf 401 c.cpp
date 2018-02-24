@@ -1,27 +1,26 @@
 #include<cstdio>
 using namespace std;
 /*
-codeforces зЂвтбЁдёБрвыЦї
+codeforces зЂвтбЁдёБрвыЦї 
 */
 int zero;
 int one;
-int n;
-int main()
-{
-	scanf("%d%d", &zero, &one);
-	if((zero * 2 + 2 < one) || (zero > one + 1)) {
+int n; 
+int main(){
+	scanf("%d%d",&zero,&one);
+	if((zero*2+2<one)||(zero>one+1)){
 		printf("-1");
-	} else {
-		if(one > zero) {
+	}else{
+		if(one> zero) {
 			printf("11");
-			one -= 2;
+			one-=2;
 		}
-		for(int i = zero; i > 0; i--) {
+		for(int i=zero;i>0;i--){
 			printf("0");
-			if(one > i) {
+			if(one>i){
 				printf("11");
-				one -= 2;
-			} else if(one > 0) {
+				one-=2;
+			}else if(one>0){
 				printf("1");
 				one--;
 			}
