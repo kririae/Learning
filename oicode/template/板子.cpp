@@ -1777,7 +1777,7 @@ namespace Suffix_Array
         return 0;
     }
 }
-//------------??ã¼¸??-------
+//------------??ã¼??-------
 #define db double
 #define eps 1e-8
 struct point
