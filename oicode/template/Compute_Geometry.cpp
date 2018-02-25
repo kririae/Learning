@@ -1,7 +1,17 @@
 // by kririae
 // Kririae's Compute Geometry Library
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+#include <cstring>
+#include <cmath>
+#include <deque>
+
+using std::cin;
+using std::endl;
+using std::cout;
 
 <<<<<<< HEAD
 namespace Basic {
@@ -118,8 +128,10 @@ namespace Compute_Geometry
         double y;
 
         Point() {}
-        Point(double a, double b):
-            x(a), y(b) {}
+        
+        template<typename T>
+        Point(T a, T b):
+            x(double(a)), y(double(b)) {}
 
         friend std::ostream &operator<<(std::ostream &os, const Point &p);
 
@@ -158,41 +170,83 @@ namespace Compute_Geometry
             return Point(x / val, y / val);
         }
     };
+    
+    class Vector 
+    {
+    public:
+        double x;
+        double y;
+
+        Vector(Point a, Point b)
+        {
+            x = b.x - a.x, y = b.y - a.y;
+        }
+        
+        template<typename T>
+        Vector(T a, T b) :x(a), y(b){}
+
+        Vector operator+ (const Vector &a)
+        {
+            return Vector(x + a.x, y + a.y);
+        }
+
+        Vector operator- (const Vector &a)
+        {
+            return Vector(x - a.x, y - a.y);
+        }
+
+        double operator* (const Vector &a)
+        {
+            return x * a.y - a.x * y;
+        }
+    };
+
+    template<typename T>
+    inline Point make_point(T a, T b)
+    {
+        return Point(double(a), double(b));
+    }
 
     bool parallel(Point a1, Point a2, Point b1, Point b2)
     {
         return abs((a2.x - a1.x) * (b2.y - b1.y) - (b2.x - b1.x) * (a2.y - a1.y)) < eps;
     }
-    
-    std::ostream &operator<<(std::ostream &os, const Point &p) 
+
+    std::ostream &operator<<(std::ostream &os, const Point &p)
     {
         os << "(" << p.x << ", " << p.y << ")";
         return os;
     }
 
-    bool a_left(Point a, Point b) 
+    bool a_left(Point a, Point b)
     {
         return a * b < -eps;
     }
 
-    double area(Point a, Point b, Point c) 
+    double area(Point a, Point b, Point c)
     {
         return abs((a - c) * (b - c) / 2.0);
     }
 
-    Point inter(Point a1, Point a2, Point b1, Point b2) 
+    Point inter(Point a1, Point a2, Point b1, Point b2)
     {
         double s1 = area(b1, b2, a1), s2 = area(b1, b2, a2);
         return (a1 - a2) / (s1 + s2) * s2 + a2;
     }
 
-    bool intersect(Point a1, Point a2, Point b1, Point b2) 
+    inline bool eql(double a, double b)
     {
-        Point interse = inter(a1, a2, b1, b2);
-        return parallel(interse, b2, b1, b2);
+        if(abs(a - b) < eps) return true;
+        return false;
     }
     
-    double dis(const Point &a, const Point &b) 
+    bool intersect(Point a1, Point a2, Point b1, Point b2)
+    {
+        Vector v(a1, a2);
+        if((v * Vector(a1, b1)) * (v * Vector(a1, b2)) < eps) return true;
+        return false;
+    }
+    double dis(const Point &a, const Point &b)
     {
         return sqrt((a.x - b.x) * (a.x - b.x)
                     + (a.y - b.y) * (a.y - b.y));
@@ -203,22 +257,27 @@ namespace Compute_Geometry
         return std::make_pair(abs(a.x - b.x), abs(a.y - b.y));
     }
 
-    template<typename T>
-    inline Point make_point(T a, T b)
-    {
-        return Point(double(a), double(b));
-    }
-
     namespace algorithms
     {
+
+        // inline bool angle_compare
+        // (Compute_Geometry::Point a, Compute_Geometry::Point b)
+        // {
+        //  return std::atan2(a.y, a.x) < std::atan2(b.y, b.x);
+        // }
+
         inline std::vector<Compute_Geometry::Point>
-        convex_package(std::vector<Compute_Geometry::Point> a) 
+        convex_package(std::vector<Compute_Geometry::Point> a)
         {
+            // 是否利用极角排序 -> type(未测试)
             using std::vector;
             using std::deque;
             using namespace Compute_Geometry;
             static deque<Point> ret;
-            sort(a.begin(), a.end());
+
+            // if (type) sort(a.begin(), a.end(), angle_compare);
+            // else sort(a.begin(), a.end());
+            // sort(a.begin(), a.end());
             for (int i = 0; i < a.size(); ++i)
             {
                 while(ret.size() > 1 && a_left(
@@ -241,28 +300,9 @@ namespace Compute_Geometry
         }
 
         inline double
-        polygon_area(std::vector<Compute_Geometry::Point> a) 
+        polygon_area(const std::vector<Compute_Geometry::Point> &a)
         {
             double tot = 0;
-            for (int i = 1; i < a.size() - 1; ++i)
-                tot += area(a[0], a[i], a[i + 1]);
-            return tot;
-        }
-
-        inline bool angle_compare
-        (Compute_Geometry::Point a, Compute_Geometry::Point b)
-        {
-        	return atan2(a.y, a.x) < atan2(b.y, b.x);
-        }
-
-        inline double // without test
-        polygon_area_without_sort(std::vector<Compute_Geometry::Point> a)
-        {
-        	// auto angle_compare = 
-        	// [](Compute_Geometry::Point a, Compute_Geometry::Point b)
-        	// { atan2(a.y, a.x) < atan2(b.y, b.x); };
-        	sort(a.begin(), b.begin(), angle_compare)
-        	double tot = 0;
             for (int i = 1; i < a.size() - 1; ++i)
                 tot += area(a[0], a[i], a[i + 1]);
             return tot;
@@ -274,16 +314,15 @@ namespace solve
 {
     using namespace Compute_Geometry;
     using namespace std;
-    
+
     inline void init()
     {
-
     }
 
     inline void solve()
     {
         init();
-        cout << intersect(Point(0, 2), Point(1, 1), Point(1, 0), Point(3, 3)) << endl;
+
     }
 >>>>>>> cba2985724e624c5a8bf4e3dbcee36700254ff61
 }

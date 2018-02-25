@@ -1,0 +1,33 @@
+warning warning
+这题不仅可以单调栈，还可以贪心！！
+还有更直观的。。
+
+
+蒟蒻沙茶酱
+#include <cstdio>
+using namespace std;
+int A[1000010];
+int main()
+{
+int n;
+long long res=0;
+scanf("%d",&n);
+for(int i=1;i<=n;i++) scanf("%d",&A [i] );
+A[0]=A[n+1]=2147483645;
+for(int i=1;i<=n;i++)
+{
+if(A [i] >A[i-1]) res+=A [i] ;
+if(A [i] >=A[i+1]) res+=A [i] ;
+}
+printf("%lld\n",res);
+return 0;
+}
+这道题不是有非常直观的做法吗。。
+2014年12月8日回复顶转发举报
+hzwer
+hzwer
+好吧是我蒟蒻
+
+
+我蒟蒻。。。。
+claris200ms跑过。。。。我根本不知道他是怎么做到的。。。
