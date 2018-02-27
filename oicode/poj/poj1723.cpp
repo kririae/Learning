@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
-#include <>
+
 using namespace std;
 int n;
 int ai, bi;
