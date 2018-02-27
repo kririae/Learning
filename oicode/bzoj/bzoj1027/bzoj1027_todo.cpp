@@ -12,7 +12,8 @@ struct node
     node()
     {}
     template<typename T>
-    node(T a, T b): x(double(a)), y(double(b)), z(double(1 - a - b))
+    node(T a, T b): x(double(a)), y(double(b)),
+        z(double(1 - a - b))
     {}
     template<typename T>
     node(T a, T b, T c): x(a), y(b), z(c)
@@ -43,15 +44,20 @@ int m, n;
 inline void init()
 {
     cin >> m >> n;
-    for (register int i = 1; i <= m; ++i) cin >> a[i].x >> a[i].y >> a[i].z;
-    for (register int i = 1; i <= n; ++i) cin >> b[i].x >> b[i].y >> b[i].z;    
+
+    for (register int i = 1; i <= m;
+         ++i) cin >> a[i].x >> a[i].y >> a[i].z;
+
+    for (register int i = 1; i <= n;
+         ++i) cin >> b[i].x >> b[i].y >> b[i].z;
 }
 
 inline void solve()
 {
     init();
     register int i, j, k;
-    for (i = 1; i <= m; ++i) 
+
+    for (i = 1; i <= m; ++i)
     {
         for (j = 1; j <= m; ++j)
         {

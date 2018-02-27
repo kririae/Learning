@@ -53,10 +53,10 @@ int maxFlow(int s, int t)
 				}
 			}
 
-			if(a[t] != 0) break;
+			if(a[t]) break;
 		}
 
-		if(a[t] == 0) break;
+		if(!a[t]) break;
 
 		for (int u = t; u != s; u = graph[p[u]].from) {
 			graph[p[u]].flow += a[t];
