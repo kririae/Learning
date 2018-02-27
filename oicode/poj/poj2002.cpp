@@ -29,7 +29,7 @@ inline int read()
 }
 
 const int maxn = 1005;
-const int mod = 105;
+const int mod = 1005;
 int n;
 int a, b;
 vector<pair<int, int> > lst[mod];
@@ -73,42 +73,31 @@ inline void solve()
             all.push_back(make_pair(a, b));
             insert(make_pair(a, b));
         }
-
+        
+        int suby, subx, tempx, tempy, tempx1, tempy1;
         for (register int i = 0; i < all.size(); ++i)
         {
             for (register int j = i + 1; j < all.size(); ++j)
             {
-                // emmmmmmmmmmmmm...
                 bool ext = false;
-
                 pair<int, int>& p1 = all[i];
                 pair<int, int>& p2 = all[j];
-
-                int suby = p2.second - p1.second;
-                int subx = p2.first - p1.first;
-
-                int tempx = p1.first + suby;
-                int tempy = p1.second - subx;
-                int tempx1 = p2.first + suby;
-                int tempy1 = p2.second - subx;
-
-                if (exist(make_pair(tempx, tempy)) &&
-                    exist(make_pair(tempx1, tempy1))) ++cnt;
-
+                suby = p2.second - p1.second;
+                subx = p2.first - p1.first;
+                tempx = p1.first + suby;
+                tempy = p1.second - subx;
+                tempx1 = p2.first + suby;
+                tempy1 = p2.second - subx;
+                if(exist(make_pair(tempx, tempy)) && exist(make_pair(tempx1, tempy1))) ++cnt;
                 tempx = p1.first - suby;
                 tempy = p1.second + subx;
                 tempx1 = p2.first - suby;
                 tempy1 = p2.second + subx;
-
-                if (exist(make_pair(tempx, tempy)) &&
-                    exist(make_pair(tempx1, tempy1))) ++cnt;
+                if(exist(make_pair(tempx, tempy)) && exist(make_pair(tempx1, tempy1))) ++cnt;
             }
         }
-
         cout << cnt / 4 << endl;
-
         for (int i = 0; i < mod; ++i) lst[i].resize(0);
-
         all.resize(0);
     }
 }
