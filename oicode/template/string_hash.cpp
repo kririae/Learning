@@ -44,3 +44,111 @@ inline unsigned long long hash_of_range(int l, int r)
 {
 	return f[r] - f[l - 1] * p[r - l + 1];
 }
+
+// hash_ver KMP
+#include <bits/stdc++.h>
+using namespace std;
+
+const int maxn = 1e6 + 5;
+const unsigned int progress = 2333;
+const unsigned int mod = 19260817;
+
+char s[maxn], t[maxn];
+unsigned int f[maxn], p[maxn];
+
+inline void prework(char c[])
+{
+	int length = strlen(c + 1);
+	p[0] = 1;
+	for (int i = 1; i <= length; ++i)
+	{	
+		f[i] = (unsigned long long)(f[i - 1] * progress + (c[i] - 'a' + 1));
+		p[i] = (unsigned long long)(p[i - 1] * progress);
+	}
+}
+
+inline unsigned int hashw_of_range(int l, int r)
+{
+	return (f[r] - (unsigned long long)(f[l - 1] * p[r - l + 1]));
+}
+
+int main()
+{
+	scanf("%s", s + 1);
+	scanf("%s", t + 1);
+	
+	int lent = strlen(t + 1);
+	int lens = strlen(s + 1);
+	
+	prework(t);
+	unsigned int ht = f[lent];
+	
+	memset(f, 0, sizeof(f));
+	memset(p, 0, sizeof(s));
+	
+	prework(s);
+	
+	for (int i = 1; i <= lens; ++i)
+	{
+		if(hashw_of_range(i, i + lent - 1) == ht) {
+			cout << i << endl;
+		}
+	}
+	return 0;
+}
+
+// --------------------------------------------------------
+
+// 下面的是有问题的算法，但是我觉得没有什么差别...
+
+// hash_ver KMP
+#include <bits/stdc++.h>
+using namespace std;
+
+const int maxn = 1e6 + 5;
+const unsigned int progress = 2333;
+const unsigned int mod = 19260817;
+
+char s[maxn], t[maxn];
+unsigned int f[maxn], p[maxn];
+
+inline void prework(char c[])
+{
+	int length = strlen(c + 1);
+	p[0] = 1;
+	for (int i = 1; i <= length; ++i)
+	{	
+		f[i] = (unsigned long long)(f[i - 1] * progress + (c[i] - 'a' + 1)) % mod;
+		p[i] = (unsigned long long)(p[i - 1] * progress) % mod;
+	}
+}
+
+inline unsigned int hashw_of_range(int l, int r)
+{
+	return (f[r] - (unsigned long long)(f[l - 1] * p[r - l + 1])) % mod;
+}
+
+int main()
+{
+	scanf("%s", s + 1);
+	scanf("%s", t + 1);
+	
+	int lent = strlen(t + 1);
+	int lens = strlen(s + 1);
+	
+	prework(t);
+	unsigned int ht = f[lent];
+	
+	memset(f, 0, sizeof(f));
+	memset(p, 0, sizeof(s));
+	
+	prework(s);
+	
+	for (int i = 1; i <= lens; ++i)
+	{
+		if(hashw_of_range(i, i + lent - 1) == ht) {
+			cout << i << endl;
+		}
+	}
+	return 0;
+}

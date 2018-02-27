@@ -90,6 +90,7 @@ namespace solve
         return fabs(a - b) < eps;
     }
 
+
     inline Segments the_next(Segments curr)
     {
         // 鑾峰彇鑳藉璧板埌鐨勪笅涓€涓?
@@ -113,6 +114,39 @@ namespace solve
         maxx = max(maxx, minx);
         return sg[minindex];
     }
+
+	double n, a, b;
+	vector<Segments> sg;
+	vector<int> res;
+	bitset<100005> used;
+	
+	template<typename T>
+	inline bool eql(T a, T b) {
+		return fabs(a - b) < eps;
+	}
+
+	inline Segments the_next(Segments curr)
+	{
+		// 获取能够走到的下一个
+		double minx, mina, minb;
+		int minindex = 0;
+		minx = mina = minb = 1e9;
+		for (int i = 0; i < sg.size(); ++i)
+		{	
+			if(!used[sg[i].index] && !eql(curr.a, sg[i].a)) {
+				Point ret = inter(curr, sg[i]);	
+				if(eql(ret.x, minx)) {
+					if (sg[i].a > mina) 
+						mina = sg[i].a, minindex = i;
+				} else if (ret.x < minx) {
+					minx = ret.x, minindex = i;
+				}
+			}
+		} // 获取y最大的那个点和所有直线。
+		used[sg[minindex].index] = true;
+		delete_all(sg[minindex].a);
+		return sg[minindex];
+	}
 
     inline void init()
     {
