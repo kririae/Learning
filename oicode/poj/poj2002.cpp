@@ -1,5 +1,5 @@
 // by kririae 2018/2/27
-// poj2002 水题
+// poj2002...为啥要判4次...2次就WA
 
 #include <iostream>
 #include <cstdio>
@@ -39,7 +39,7 @@ inline int hash(pair<int, int> p)
 {
     int x = (long long)(p.first * p.second) % mod;
     int s = (p.first + p.second) % mod;
-    return (x + s) % mod;
+    return abs(x + s) % mod;
 }
 
 inline void insert(pair<int, int> p)
@@ -76,20 +76,40 @@ inline void solve()
 
         for (register int i = 0; i < all.size(); ++i)
         {
-            for (register int j = 0; j < all.size(); ++j)
+            for (register int j = i + 1; j < all.size(); ++j)
             {
+                // emmmmmmmmmmmmm...
                 bool ext = false;
+
                 pair<int, int>& p1 = all[i];
                 pair<int, int>& p2 = all[j];
-                pair<int, int> p3 = make_pair(p2.first + (p2.second - p1.second), p2.second - (p2.first - p1.first));
-                pair<int, int> p4 =  make_pair(p1.first + (p2.second - p1.second), p1.second - (p2.first - p1.first));
-                ext |= (exist(p3) && exist(p4));
-                if(ext) ++cnt;
+
+                int suby = p2.second - p1.second;
+                int subx = p2.first - p1.first;
+
+                int tempx = p1.first + suby;
+                int tempy = p1.second - subx;
+                int tempx1 = p2.first + suby;
+                int tempy1 = p2.second - subx;
+
+                if (exist(make_pair(tempx, tempy)) &&
+                    exist(make_pair(tempx1, tempy1))) ++cnt;
+
+                tempx = p1.first - suby;
+                tempy = p1.second + subx;
+                tempx1 = p2.first - suby;
+                tempy1 = p2.second + subx;
+
+                if (exist(make_pair(tempx, tempy)) &&
+                    exist(make_pair(tempx1, tempy1))) ++cnt;
             }
         }
-        cout << cnt << endl;
-        for (int i = 0; i < mod; ++i) lst[i].clear();
-        all.clear();
+
+        cout << cnt / 4 << endl;
+
+        for (int i = 0; i < mod; ++i) lst[i].resize(0);
+
+        all.resize(0);
     }
 }
 }

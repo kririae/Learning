@@ -33,7 +33,8 @@ inline void print(int& k)
 {
 	if (t[k].son[0] != 0) print(t[k].son[0]);
 
-	for (int i = 0; i < t[k].times; ++i) cout << t[k].val << " ";
+	for (int i = 0; i < t[k].times;
+		 ++i) cout << t[k].val << " ";
 
 	if (t[k].son[1] != 0) print(t[k].son[1]);
 }
@@ -61,7 +62,8 @@ inline int find(int& k, int val)
 inline void update(int k)
 {
 	t[k].size = t[k].times;
-	t[k].size += (t[t[k].son[0]].size + t[t[k].son[1]].size);
+	t[k].size += (t[t[k].son[0]].size +
+				  t[t[k].son[1]].size);
 }
 
 inline void rotate(int& k)
@@ -92,7 +94,8 @@ inline void insert(int val)
 	if (root == 0)
 	{
 		t[++cnt].son[0] = t[cnt].son[1] = 0;
-		t[cnt].times = 1, t[cnt].val = val, t[cnt].size = 1, root = cnt;
+		t[cnt].times = 1, t[cnt].val = val,
+			   t[cnt].size = 1, root = cnt;
 		return;
 	}
 
@@ -102,7 +105,7 @@ inline void insert(int val)
 	{
 		if (t[curr].val == val)
 		{
-		    ++t[curr].times;
+			++t[curr].times;
 			update(curr), update(fa);
 			splay(curr);
 			break;
@@ -115,9 +118,11 @@ inline void insert(int val)
 		{
 			t[++cnt].son[0] = t[cnt].son[1] = 0,
 											  t[cnt].size = 1;
-			t[cnt].val = val; t[cnt].times = 1;
+			t[cnt].val = val;
+			t[cnt].times = 1;
 			t[cnt].fa = fa, t[fa].son[t[fa].val < val] = cnt;
-			update(fa); splay(cnt);
+			update(fa);
+			splay(cnt);
 			break;
 		}
 	}
@@ -125,14 +130,19 @@ inline void insert(int val)
 }
 
 inline int read()
-    {
-        char c = getchar();
-        int ret = 0, f = 1;
-        for (; !isdigit(c); f = c == '-' ? -1 : 1, c = getchar());
-        for (; isdigit(c); ret = ret * 10 + c - '0', c = getchar());
-        return ret * f;
-    }
-    
+{
+	char c = getchar();
+	int ret = 0, f = 1;
+
+	for (; !isdigit(c);
+		 f = c == '-' ? -1 : 1, c = getchar());
+
+	for (; isdigit(c);
+		 ret = ret * 10 + c - '0', c = getchar());
+
+	return ret * f;
+}
+
 int main()
 {
 	using namespace splay;
