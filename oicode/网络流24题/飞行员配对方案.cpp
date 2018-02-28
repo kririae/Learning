@@ -1,3 +1,5 @@
+// by kririae
+// 2018/2/28
 #include <bits/stdc++.h>
 using namespace std;
 namespace dinic
@@ -9,9 +11,9 @@ struct Edge
 {
     int from, to, cap, flow;
     Edge() {}
-    Edge(int fr, int t, int c, int f):
-        from(fr), to(t), cap(c), flow(f)
-    {}
+    Edge(int fr, int t, int c, int f) : from(fr), to(t), cap(c), flow(f)
+    {
+    }
 };
 
 vector<Edge> edges;
@@ -34,7 +36,6 @@ inline void addedge(int from, int to, int cap,
     int size = edges.size();
     G[from].push_back(size - 2);
     G[to].push_back(size - 1);
-
 }
 
 inline bool BFS()
@@ -52,7 +53,7 @@ inline bool BFS()
 
         for (int i = 0; i < G[x].size(); ++i)
         {
-            Edge& e = edges[G[x][i]];
+            Edge &e = edges[G[x][i]];
 
             if (!vis[e.to] && e.cap > e.flow)
             {
@@ -67,23 +68,25 @@ inline bool BFS()
 
 inline int dfs(int x, int a)
 {
-    if (x == t || a == 0) return a;
+    if (x == t || a == 0)
+        return a;
 
     int flow = 0, f;
 
-    for (int& i = cur[x]; i < G[x].size(); ++i)
+    for (int &i = cur[x]; i < G[x].size(); ++i)
     {
-        Edge& e = edges[G[x][i]];
+        Edge &e = edges[G[x][i]];
 
         if (d[x] + 1 == d[e.to] &&
-                       (f = dfs(e.to, min(a, e.cap - e.flow))) > 0)
+            (f = dfs(e.to, min(a, e.cap - e.flow))) > 0)
         {
             e.flow += f;
             edges[G[x][i] ^ 1].flow -= f;
             flow += f;
             a -= f;
 
-            if (a == 0) break;
+            if (a == 0)
+                break;
         }
     }
 
@@ -106,36 +109,37 @@ int maxFlow(int st, int ed)
 
 int main()
 {
-	cin.tie(0);
-	ios::sync_with_stdio(false);
+    cin.tie(0);
+    ios::sync_with_stdio(false);
     using namespace dinic;
     int u, v;
-	cin >> m >> n;
-	s = n + 1;
-	t = n + 2;
-	while(cin >> u >> v)
-	{
-	    if(u == -1 && v == -1) break;
-		addedge(u, v, 1, 0);
-	}
-	for (int i = 1; i <= m; ++i)
-		addedge(s, i, 1, 0);
-	for (int i = m + 1; i <= n; ++i) 
-		addedge(i, t, 1, 0);
-	int ans = maxFlow(s, t);
-	if(ans == 0) {
-	    cout << "No Solution!" << endl;
-	    return 0;
-	}
-	cout << ans << endl;
-	for (int i = 0; i < edges.size(); i += 2)
-	{
-	    if(edges[i].flow == 1 &&
-        edges[i].from != s &&
-        edges[i].to != s &&
-        edges[i].from != t &&
-        edges[i].to != t)
-        cout << edges[i].from << " " << edges[i].to << endl;
-	}
-	
+    cin >> m >> n;
+    s = n + 1;
+    t = n + 2;
+    while (cin >> u >> v)
+    {
+        if (u == -1 && v == -1)
+            break;
+        addedge(u, v, 1, 0);
+    }
+    for (int i = 1; i <= m; ++i)
+        addedge(s, i, 1, 0);
+    for (int i = m + 1; i <= n; ++i)
+        addedge(i, t, 1, 0);
+    int ans = maxFlow(s, t);
+    if (ans == 0)
+    {
+        cout << "No Solution!" << endl;
+        return 0;
+    }
+    cout << ans << endl;
+    for (int i = 0; i < edges.size(); i += 2)
+    {
+        if (edges[i].flow == 1 &&
+            edges[i].from != s &&
+            edges[i].to != s &&
+            edges[i].from != t &&
+            edges[i].to != t)
+            cout << edges[i].from << " " << edges[i].to << endl;
+    }
 }
