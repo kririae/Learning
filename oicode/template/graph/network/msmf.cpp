@@ -36,11 +36,13 @@ inline void addedge(int from, int to, int cap,
 	G[to].push_back(size - 1);
 }
 
+// SPFA和DINIC都有利用bfs，这就很臭味相投了
 inline bool SPFA(int s, int t, int& flow,
-				 int& cost)
+				 int& cost) // 在最短路上增广
 {
 	for (int i = 0; i < n; ++i) d[i] = INF;
 
+	// 套路的SPFA初始化
 	memset(inq, 0, sizeof(inq));
 	d[s] = 0;
 	inq[s] = true;
@@ -60,12 +62,16 @@ inline bool SPFA(int s, int t, int& flow,
 		{
 			Edge& e = edges[G[u][i]];
 
+			// 当且仅当当前边满足最短路的性质（并没有
+			// 主要是满足网络流的性质，flow < cap
 			if (e.cap > e.flow && d[e.to] > d[u] + e.cost)
 			{
-				d[e.to] = d[u] + e.cost;
-				p[e.to] = G[u][i];
+				d[e.to] = d[u] +
+						  e.cost; // 计算到当前的最短路
+				p[e.to] = G[u][i]; // 初始化上一弧，方便往回走
 				a[e.to] = min(a[u], e.cap - e.flow);
 
+				// 初始化可改进量数组
 				if (!inq[e.to])
 				{
 					Q.push(e.to);
@@ -77,10 +83,12 @@ inline bool SPFA(int s, int t, int& flow,
 
 	if (d[t] == INF) return false;
 
+	// 修改总值
 	flow += a[t];
 	cost += d[t] * a[t];
 	int u = t;
 
+	// 向前循环修改flow
 	while (u != s)
 	{
 		edges[p[u]].flow += a[t];
