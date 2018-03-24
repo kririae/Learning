@@ -62,7 +62,6 @@ priority_queue<status> pq; // <dist, x>
 inline void addedge(int from, int to, int val)
 {
     edges[from].push_back(Edge(from, to, val));
-    // edges[to].push_back(Edge(to, from, val));
 }
 
 inline int SPFA(int s, int t, int k)
