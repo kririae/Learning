@@ -86,7 +86,6 @@ inline int Astar(int s, int t)
     while(!pq.empty())
     {
         status curr = pq.top(); pq.pop();
-        if(curr.cost > e) continue;
         if(curr.from == t) tot += curr.cost, ++cnt;
         if(tot > e) return cnt - 1;
         for (int i = 0; i < edges[curr.from].size(); ++i)
