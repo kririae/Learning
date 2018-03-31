@@ -47,3 +47,9 @@ inline void solve(int c, int s, int e)
 }
 ```
 
+TODO: 
+POJ1742
+POJ1015
+TYVJ1061
+TYVJ1051
+
