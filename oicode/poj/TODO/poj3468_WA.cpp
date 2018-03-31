@@ -1,4 +1,3 @@
-// luogu-judger-enable-o2
 /*
 * by kriaeth
 * status: ???

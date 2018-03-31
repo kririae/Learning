@@ -10,14 +10,26 @@ namespace JuryPromise
 const int maxn = 205;
 const int maxm = 25;
 
-int n, m, sub;
-int a[maxn], b[maxn], f[maxm][405];
+int n, m, sub, x, y;
+int a[maxn], b[maxn], f[maxm][405], d[maxm][405];
+vector<int> res;
 
 inline void init()
 {
     memset(a, 0, sizeof(a));
     memset(b, 0, sizeof(b));
     memset(f, 0, sizeof(f));
+    memset(d, 0, sizeof(d));
+    n = m = sub = x = y = 0;
+}
+
+inline void dfs(int i, int j)
+{
+    if(i == 0 && j == 0) return;
+    res.push_back(d[i][j]);
+    x += a[d[i][j]];
+    y += b[d[i][j]];
+    dfs(i - 1, d[i - 1][j - (a[d[i][j]] - b[d[i][j]])]);
 }
 
 inline void solve()
@@ -31,17 +43,17 @@ inline void solve()
         for (int i = 1; i <= n; ++i)
             cin >> a[i] >> b[i];
         f[0][0] = 0;
-        
-        for (int i = n; i >= 1; --i)
+        for (int i = 1; i <= n; ++i)
         {
-            cout << "qwq" << endl;
-            for (int j = 0; j < 402; ++j)
+            int ai = a[i], bi = b[i];
+            for (int j = m; j >= 0; --j)
             {
-                f[i][j] = max(f[i][j], f[i - 1][j - (a[i] - b[i])] + a[i] + b[i]);
-            }   
+                for (int k = 0; k <= 405; ++k)
+                {
+                    f[j][k] = max(f[j][k], f[j - 1][k - a[i] + b[i]] + a[i] + b[i]);
+                }
+            }
         }
-        
-        for (int i = 0; i <= 400; ++i) cout << f[m][i] << endl;
         init();
     }
 }
