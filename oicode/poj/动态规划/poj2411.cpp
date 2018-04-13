@@ -26,7 +26,7 @@ inline void solve()
         //     {
         //         // 如果第i位是0
         //         if(i >> j & 1) 
-        //             if(cnt % 2 == 1) goto end1; 
+        //             if(cnt & 1) goto end1; 
         //             else cnt = 0;
         //         else ++cnt;
         //     }
