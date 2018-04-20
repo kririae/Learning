@@ -5,7 +5,7 @@ using namespace std;
 namespace YSRC
 {
 const int maxn = 550;
-const int g1[4] { -1, 0, 1, 0}, g2[4] {0, 1, 0, -1};
+const int g1[4] {-1, 0, 1, 0}, g2[4] {0, 1, 0, -1};
 
 int n, m, a[maxn][maxn], f[maxn][maxn];
 pair<int, int> r[maxn];
@@ -77,7 +77,6 @@ inline pair<int, int> solve1()
 	sort(r + 1, r + 1 + cnt);
 
 	int all = 0;
-
 	for (int i = 1; i <= cnt; ++i)
 	{
 		int tmp = i;

@@ -1,4 +1,5 @@
 // by kririae
+// status: WA???
 // BZOJ4293
 #define ls t[k].son[0]
 #define rs t[k].son[1]
@@ -43,7 +44,6 @@ struct Node
 {
 	int l, r, son[2];
 	long long sum, add, set, max;
-	// sum, add, set, max
 	Node(): set(-1) {}
 };
 
@@ -87,15 +87,12 @@ inline void buildTree(int &k, int l, int r)
 
 	if(l == r) 
 	{
-		// t[k].sum = 0, t[k].max = 0;
 		return;
 	}
 
 	int mid = (l + r) >> 1;
 	buildTree(ls, l, mid);
 	buildTree(rs, mid + 1, r);
-
-	// pushup(k);
 }
 
 inline long long cut(int k, int l, int r, int val)
@@ -111,11 +108,13 @@ inline long long cut(int k, int l, int r, int val)
 	pushdown(k);
 
 	int mid = (t[k].l + t[k].r) >> 1;
-	if(r <= mid) return cut(ls, l, r, val);
-	else if (l > mid) return cut(rs, l, r, val);
-	else return cut(ls, l, mid, val) + cut(rs, mid + 1, r, val);
+	long long ans = 0;
+	if(r <= mid) ans = cut(ls, l, r, val);
+	else if (l > mid) ans = cut(rs, l, r, val);
+	else ans = cut(ls, l, mid, val) + cut(rs, mid + 1, r, val);
 
 	pushup(k);
+	return ans;
 }
 
 inline int get(int k, int val)
@@ -135,15 +134,6 @@ inline void add(int val)
 	t[root].sum += (a[n] * val);
 	t[root].max += ((a[n] - a[n - 1]) * val);
 }
-
-/*
-4 4
-109238 1902839 12897391 123124123
-1 12313
-2 1231343
-3 12413
-4 1231514
- */
 
 inline int solve()
 {
