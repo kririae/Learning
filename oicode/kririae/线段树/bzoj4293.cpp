@@ -1,6 +1,5 @@
 // by kririae
-
-#pragma GCC optimize("Ofast")
+// BZOJ4293
 #define ls t[k].son[0]
 #define rs t[k].son[1]
 #include <bits/stdc++.h>
@@ -56,7 +55,7 @@ long long d, b, pre, a[maxn];
 inline void pushup(int k)
 {
 	t[k].sum = t[ls].sum + t[rs].sum;
-	t[k].max = t[rs].max;
+	t[k].max = max(t[ls].max, t[rs].max);
 }
 
 inline void pushdown(int k)
@@ -134,8 +133,17 @@ inline void add(int val)
 {
 	t[root].add += val;
 	t[root].sum += (a[n] * val);
-	t[root].max += (a[n] - a[n - 1]) * val;
+	t[root].max += ((a[n] - a[n - 1]) * val);
 }
+
+/*
+4 4
+109238 1902839 12897391 123124123
+1 12313
+2 1231343
+3 12413
+4 1231514
+ */
 
 inline int solve()
 {
@@ -149,7 +157,7 @@ inline int solve()
 
 	buildTree(root, 1, n);
 
-	for (int i = 2; i <= n; ++i)
+	for (int i = 1; i <= n; ++i)
 		a[i] += a[i - 1];
 	
 	for (int i = 1; i <= m; ++i)
