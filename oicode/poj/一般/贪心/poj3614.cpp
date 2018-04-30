@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
 
 using namespace std;
 
@@ -33,19 +35,19 @@ inline void solve()
 	for (int i = 1; i <= m; ++i)
 		cin >> b[i].SPF >> b[i].cover;
 		
-    sort(b + 1, b + 1 + m);
-    sort(a + 1, a + 1 + n);
-    
+	sort(b + 1, b + 1 + m);
+	sort(a + 1, a + 1 + n);
+	
 	for (int i = 1; i <= n; ++i)
 	{
 		for (int j = m; j >= 1; --j)
 		{
-		    if(b[j].cover > 0 && b[j].SPF >= a[i].minSPF && b[j].SPF <= a[i].maxSPF)
-		    {
-		        --b[j].cover;
-		        ++cnt;
-		        break;
-		    }
+			if(b[j].cover > 0 && b[j].SPF >= a[i].minSPF && b[j].SPF <= a[i].maxSPF)
+			{
+				--b[j].cover;
+				++cnt;
+				break;
+			}
 		}
 	}
 
