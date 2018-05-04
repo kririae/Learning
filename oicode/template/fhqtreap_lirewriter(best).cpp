@@ -31,7 +31,7 @@ inline void make_heap(int& k, int val)
 
 inline void merge(int& k, int a, int b)
 {
-    if (!a || !b) { k = a + b; return; } // 取有值的一个
+    if (!a || !b) return k = a + b, void(); // 取有值的一个
     if (t[a].key < t[b].key) k = a, merge(rs, rs, b);
     else k = b, merge(ls, a, ls);
     pushup(k);
@@ -39,7 +39,7 @@ inline void merge(int& k, int a, int b)
 
 inline void split(int k, int& a, int& b, int key)
 {
-    if (!k) { a = b = 0; return; }
+    if (!k) return a = b = 0, void();
     if (t[k].val <= key) a = k, split(rs, rs, b, key);
     else b = k, split(ls, a, ls, key);
     pushup(k);
