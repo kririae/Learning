@@ -1,5 +1,10 @@
 // by kririae
 // dp
+/*
+用差值压缩二维信息是ac关键
+类似题有poj1015
+当然这道题的状态设计要复杂一些
+ */
 #include <bits/stdc++.h>
 
 using namespace std;

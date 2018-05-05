@@ -11,31 +11,38 @@
 #define W while
 #define MX 500005
 #define ls tree[now << 1]
-#define rs tree[now << 1 | 1] 
+#define rs tree[now << 1 | 1]
+
 using namespace std;
 template <typename T>
 IN void in (T &x)
 {
-    x = 0; R char c =gc;
+    x = 0;
+    R char c = gc;
     W (!isdigit(c))c = gc;
     W (isdigit(c))
-    {x = (x << 1) + (x << 3), x += c - 48, c = gc;}
+    {
+        x = (x << 1) + (x << 3), x += c - 48, c = gc;
+    }
 }
 
 struct Edge
 {
     int nex, to;
-}edge[MX];
+} edge[MX];
 struct Node
 {
     int lef, rig, del, val, siz;
-}tree[MX]; 
+} tree[MX];
 int dep[MX], top[MX], son[MX], head[MX], fat[MX], tot[MX], idx[MX];
 int pre[MX], deal[MX];
 int cnt/*to arrange the edge*/, id/*to arrange the tree node*/, MOD, dot, q, root;
 IN void addedge(const int &from, const int &to)
 {
-    edge[++cnt] = (Edge){head[from], to};
+    edge[++cnt] = (Edge)
+    {
+        head[from], to
+    };
     head[from] = cnt;
 }
 int dfs1(int now, int fa, int deep)
@@ -61,8 +68,8 @@ void dfs2(int now, int topf)
     dfs2(son[now], topf);
     for (R int i = head[now]; i; i = edge[i].nex)
     {
-        if(!idx[edge[i].to]) 
-        dfs2(edge[i].to, edge[i].to);
+        if(!idx[edge[i].to])
+            dfs2(edge[i].to, edge[i].to);
     }
 }
 IN void pushup(const int &now)
@@ -72,7 +79,11 @@ IN void pushup(const int &now)
 void build(int now, int l, int r)
 {
     tree[now].lef = l, tree[now].rig = r, tree[now].siz = r - l + 1;
-    if(l == r) {tree[now].val = deal[l];return;}
+    if(l == r)
+    {
+        tree[now].val = deal[l];
+        return;
+    }
     int mid = (l + r) >> 1;
     build(now << 1, l, mid);
     build(now << 1 | 1, mid + 1, r);
@@ -81,10 +92,14 @@ void build(int now, int l, int r)
 IN void pushdown(const int &now)
 {
     if (!tree[now].del) return;
-    ls.val += tree[now].del * ls.siz; ls.val %= MOD;
-    rs.val += tree[now].del * rs.siz; rs.val %= MOD;
-    ls.del += tree[now].del; ls.del %= MOD;
-    rs.del += tree[now].del; rs.del %= MOD;
+    ls.val += tree[now].del * ls.siz;
+    ls.val %= MOD;
+    rs.val += tree[now].del * rs.siz;
+    rs.val %= MOD;
+    ls.del += tree[now].del;
+    ls.del %= MOD;
+    rs.del += tree[now].del;
+    rs.del %= MOD;
     tree[now].del = 0;
 }
 void add(const int &now, const int &lb, const int &rb, const int &delta)
@@ -129,7 +144,7 @@ IN int tree_sum(int x, int y)
     R int rt = 0;
     W (top[x] != top[y])
     {
-        if(dep[top[x]] < dep[top[y]]) swap(x,y);
+        if(dep[top[x]] < dep[top[y]]) swap(x, y);
         rt = (rt + query(1, idx[top[x]], idx[x])) % MOD;
         x = fat[top[x]];
     }
@@ -141,7 +156,7 @@ int main()
 {
     int a, b, c, command;
     in(dot), in(q), in(root), in(MOD);
-    for (R int i = 1; i <= dot; ++i) in(pre[i]);	
+    for (R int i = 1; i <= dot; ++i) in(pre[i]);
     for (R int i = 1; i < dot; ++i)
     {
         in(a), in(b);
@@ -155,29 +170,29 @@ int main()
         in(command);
         switch (command)
         {
-            case 1:
-            {
-                in(a), in(b), in(c);
-                tree_add(a, b, c % MOD);
-                break;
-            }
-            case 2:
-            {
-                in(a), in(b);
-                printf("%d\n", tree_sum(a, b) % MOD);
-                break;
-            }
-            case 3:
-            {
-                in(a), in(b);
-                add(1, idx[a], idx[a] + tot[a] - 1, b % MOD);
-                break;
-            }
-            case 4:
-            {
-                in(a);
-                printf("%d\n", query(1, idx[a], idx[a] + tot[a] - 1) % MOD);
-            }
+        case 1:
+        {
+            in(a), in(b), in(c);
+            tree_add(a, b, c % MOD);
+            break;
+        }
+        case 2:
+        {
+            in(a), in(b);
+            printf("%d\n", tree_sum(a, b) % MOD);
+            break;
+        }
+        case 3:
+        {
+            in(a), in(b);
+            add(1, idx[a], idx[a] + tot[a] - 1, b % MOD);
+            break;
+        }
+        case 4:
+        {
+            in(a);
+            printf("%d\n", query(1, idx[a], idx[a] + tot[a] - 1) % MOD);
+        }
         }
     }
     return 0;

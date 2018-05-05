@@ -43,7 +43,7 @@ inline void solve()
 				if(last > 1) inc(f[i + 1][j + 2][k], f[i][j][k] * C(last));
 				// 放一个在有一个棋子的列，放一个在没有棋子的列
 				if(j > 0 && last > 0) inc(f[i + 1][j][k + 1], f[i][j][k] * last * j);
-				// 放两个在有一个妻子的列
+				// 放两个在有一个棋子的列
 				if(j > 1) inc(f[i + 1][j - 2][k + 2], f[i][j][k] * C(j)); 
 			}
 
