@@ -4,9 +4,14 @@
 
 <!--more-->
 
+## 优化策略汇总
+TODO
+
 ## [luogu1273] 有线电视网
 ### 说明
 一道比较普通的树形dp
+树形dp套路挺深的...这道题可以概括一小半了。
+有时间写点复杂点的树形dp。
 ### 代码
 ```cpp
 // by kririae
@@ -39,12 +44,12 @@ inline void dp(int k)
 {
 	f[k][0] = 0;
 	if(!edges[k].size()) 
-			return f[k][1] = a[k], siz[k] = 1, void();
+		return f[k][1] = a[k], siz[k] = 1, void();
 	
 	for (int i = 0; i < edges[k].size(); ++i)
 	{
 		Edge &e = edges[k][i];
-				dp(e.to);
+		dp(e.to);
 		for (int j = siz[k]; j >= 0; --j)
 			for (int l = siz[e.to]; l >= 0; --l)
 					f[k][j + l] = max(f[k][j + l], f[k][j] + f[e.to][l] - e.val); 
@@ -55,6 +60,7 @@ inline void dp(int k)
 inline void solve()
 {
 	memset(f, ~0x3f, sizeof(f));
+		
 	cin >> n >> m;
 	for (int i = 1; i <= (n - m); ++i)
 	{
@@ -66,8 +72,8 @@ inline void solve()
 		}
 	}
 
-	// for (int i = 1; i <= n; ++i)
-	// cin >> a[i];
+		// for (int i = 1; i <= n; ++i)
+		// cin >> a[i];
 		
 	for (int i = (n - m + 1); i <= n; ++i)
 		cin >> a[i];
@@ -86,6 +92,67 @@ int main()
 	ios::sync_with_stdio(false);
 	luogu1273::solve();
 	return 0;
+}
+```
+
+## [POJ1742] Coins
+### 说明
+好蛇皮啊。
+男人八题之一。
+这题搞细节，贪心优化dp
+我们发现$N$很小，所以优化的时候时间复杂度一定会带上$N$（大雾
+如果仔细看英文会发现，本题关注的是可行性而不是最优解
+蛇皮操作开始了，我们需要一个$g[maxn]$数组
+$g[j]$表示用到放第i种硬币的时候，$f[j]$为1最少用多少枚$i$硬币。这样可以保证不超过$c[i]$
+所以时间复杂度是$O(nm)$
+### 代码
+```cpp
+// by kririae
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+namespace Coins
+{
+const int maxn = 105;
+const int maxm = 1e5 + 5;
+
+int n, m, c[maxn], a[maxn], f[maxm], g[maxm];
+
+inline void solve()
+{
+	while(cin >> n >> m && n && m)
+	{
+		memset(f, 0, sizeof(f));
+		for (int i = 1; i <= n; ++i)
+			cin >> a[i];
+		for (int i = 1; i <= n; ++i)
+			cin >> c[i];
+
+		int ans = 0;
+		f[0] = 1;
+		for (int i = 1; i <= n; ++i)
+		{
+			memset(g, 0, sizeof(g));
+			for (int j = a[i]; j <= m; ++j)
+				// 如果f[j]没有被到达过，并且可以由f[j - a[i]]转移过来，并且当前硬币还可以用。
+				// 喂喂喂这是dp套贪心套dp啊！
+				if(!f[j] && f[j - a[i]] && g[j - a[i]] < c[i])	
+					f[j] = 1, g[j] = g[j - a[i]] + 1, ++ans;
+		}
+
+		cout << ans << endl;
+	}
+}
+}
+
+int main()
+{
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+
+	Coins::solve();
 }
 ```
 
@@ -172,6 +239,87 @@ int main()
 }
 ```
 
+## [IOI1998] POLYGON
+### 说明
+一开始会觉得很简单，仔细一看
+卧槽，两者一正一负，乘积不是更小么！
+那么转移两个吧，转移一个最大值一个最小值。
+$f[i][j][2]$中，$f[i][j][0]$表示合并$[i, j]$的最小值，$f[i][j][1]$表示合并$[i, j]$的最大花费。
+转移自然也简单了，看代码吧，代码量不大。
+### 代码
+```cpp
+// by kririae
+#include <iostream>
+
+using namespace std;
+
+namespace IOI1998
+{
+const int maxn = 55;
+int n;
+int a[maxn << 2];
+char op[maxn << 2];
+int f[maxn << 2][maxn << 2][2];
+
+inline void solve()
+{
+    cin >> n;
+    for (int i = 1; i <= n; ++i) 
+    {
+        cin >> op[i] >> a[i]; 
+        op[i + n] = op[i];
+        a[i + n] = a[i];
+    }
+    
+    // for (int i = 1; i <= n << 1; ++i) cout << a[i] << " ";
+    // cout << endl;
+    // for (int i = 1; i <= n << 1; ++i) cout << op[i] << " ";
+    
+    for (int i = 1; i <= n << 1; ++i)
+        for (int j = 1; j <= n << 1; ++j)
+            f[i][j][0] = (1 << 31), f[i][j][1] = ~(1 << 31);
+    for (int i = 1; i <= n << 1; ++i) f[i][i][0] = f[i][i][1] = a[i];
+    
+    for (int len = 2; len <= n << 1; ++len)
+        for (int l = 1; l <= (n << 1) - len + 1; ++l)
+        {
+            int r = l + len - 1;
+            for (int k = l; k < r; ++k)
+            {
+                if(op[k + 1] == 't')
+                {
+                    f[l][r][0] = max(f[l][r][0], f[l][k][0] + f[k + 1][r][0]);
+                    f[l][r][1] = min(f[l][r][1], f[l][k][1] + f[k + 1][r][1]);
+                }
+                
+                if(op[k + 1] == 'x')
+                {
+                    f[l][r][0] = max(f[l][r][0], max(f[l][k][0] * f[k + 1][r][0], f[l][k][1] * f[k + 1][r][1]));
+                    f[l][r][1] = min(f[l][r][1], min(f[l][k][1] * f[k + 1][r][1],min(f[l][k][1] * f[k + 1][r][0], f[l][k][0] * f[k + 1][r][1])));
+                }
+            }
+        }
+
+    int res = (1 << 31);
+    for (int i = 1; i <= n; ++i)
+        res = max(res, f[i][i + n - 1][0]);
+        
+    cout << res << endl;
+    
+    for (int i = 1; i <= n; ++i)
+        if(f[i][i + n - 1][0] == res) cout << i << " "; 
+}
+}
+
+int main()
+{
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+    IOI1998::solve();
+    return 0;
+}
+```
+
 ## [BZOJ1801] 中国象棋
 ### 说明
 这道题被作为省选题难度就在“压缩信息”上吧。
@@ -208,7 +356,7 @@ inline void inc(T &a, T b)
 
 inline long long C(int val)
 {
-	return val * (val - 1) / 2;
+    return val * (val - 1) / 2;
 }
 
 inline void solve()
@@ -402,6 +550,209 @@ inline void solve()
 int main()
 {
 	NOIP2017D1T3::solve();
+	return 0;
+}
+```
+
+## [SCOI2005] 最大子矩阵
+### 说明
+### 代码
+```cpp
+
+```
+## Prime 和 [NOI2015]寿司晚宴
+> 分组背包
+### 统一解释
+这两道题利用一个共同的性质：
+对于任意一个数$n$，$\sqrt{n}$以上的素因子只有一个。
+首先对$\sqrt{n}$以下的数进行质因数分解，然后把剩下的一个数（一个素数）作为归类标准进行分组背包。
+#### Prime
+首先说Prime吧，Prime应该是由寿司晚宴改编的
+### Prime
+> 互质
+
+这是一道dp神题(我发过
+#### 题面
+##### 互质
+###### 题目描述
+Shy有$n$个数，问这$n$个数里最多有几个数两两之间互质。
+###### 输入
+第一行一个整数$n$。
+第二行$n$个数表示数组。
+###### 输出
+输出一个数表示答案。
+###### 输入样例
+```
+5
+1 2 3 4 5
+```
+###### 输出样例
+```
+4
+```
+###### 数据范围
+对于$30\%$的数据，$1\leq n \leq10$;
+对于$100\%$的数据，$1\leq n \leq1000$，$1 \leq 数字 \leq 1000$;
+##### 数据
+https://pan.baidu.com/s/1B7FTs6mhBDaD1CUOxRaN1w
+vhkq
+#### 代码
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+namespace Prime
+{
+const int maxn = 1005;
+
+int t, n, val, f[1 << 11], g[1 << 11];
+bitset<maxn> vis;
+vector<int> p, s[maxn];
+
+inline void solve()
+{
+	cin >> n;
+	
+	for (int i = 2; i <= sqrt(maxn); ++i)
+	{
+		if(!vis[i]) p.push_back(i);
+		for (int j = (i << 1); j <= sqrt(maxn); j += i)
+			vis[j] = 1;
+	}	
+	
+	t = 1 << p.size();
+	
+	for (int i = 1; i <= n; ++i)
+	{
+		cin >> val;
+		
+		int S = 0;
+		for (int j = 0; j < p.size(); ++j)
+			while(val % p[j] == 0) S |= (1 << j), val /= p[j];
+		if(val > 33) s[val].push_back(S);
+		else for (int j = 0; j < t; ++j)
+				if((j & S) == 0) f[j | S] = max(f[j | S], f[j] + 1);
+	}
+	
+	for (int i = 0; i <= 1000; ++i)
+	{
+		if(!s[i].size()) continue;
+		memcpy(g, f, sizeof(f));
+		for (int k = 0; k < s[i].size(); ++k)
+			for (int j = 0; j < t; ++j)
+				if((j & s[i][k]) == 0) g[j | s[i][k]] = max(g[j | s[i][k]], f[j] + 1);
+		swap(g, f);
+	}
+	
+	cout << f[t - 1] << endl;
+}	
+}
+
+int main()
+{
+	cin.tie(0);
+	ios::sync_with_stdio(false);	
+	Prime::solve();
+	return 0;
+}
+```
+
+### [NOI2015] 寿司晚宴
+#### 代码
+```cpp
+// by kririae
+#pragma GCC optimize("Ofast")
+#include <bits/stdc++.h>
+
+using namespace std;
+
+namespace SSWY
+{
+const int maxn = 505;
+
+int n, t, ans, f[1 << 8][1 << 8], g[2][1 << 8][1 << 8];
+// f[S_1][S_2]表示两个人选择的质因子的集合是？
+// G[S_1][S_2][0/1]表示 
+long long P;
+bitset<maxn> vis;
+vector<int> p, s[maxn];
+
+template<typename T>
+inline void inc(T &a, T b)
+{
+	a = (long long)(a + b) % P;
+}
+
+inline void solve()
+{
+	register int s1, s2;
+	cin >> n >> P;
+	
+	for (int i = 2; i <= sqrt(500); ++i)
+	{
+		if(!vis[i]) p.push_back(i);
+		for (int j = (i << 1); j <= sqrt(500); j += i)
+			vis[j] = 1;
+	}	
+	t = 1 << p.size();	
+
+	f[0][0] = 1;
+	
+	for (int i = 1; i < n; ++i)
+	{
+		int val = i + 1, S = 0;
+		for (int j = 0; j < p.size(); ++j)
+			while(val % p[j] == 0) S |= (1 << j), val /= p[j];
+		s[val].push_back(S);  
+	}
+	
+	for (int i = 0; i < s[1].size(); ++i)
+	{
+		for (s1 = t - 1; s1 >= 0; --s1)
+			for (s2 = t - 1; s2 >= 0; --s2)
+				inc(f[s1 | s[1][i]][s2], f[s1][s2]),
+				inc(f[s1][s2 | s[1][i]], f[s1][s2]);
+	}
+
+	for (int i = 2; i <= 500; ++i)
+	{
+		if(!s[i].size()) continue;
+		memcpy(g[0], f, sizeof(f));
+		memcpy(g[1], f, sizeof(f));
+		
+		for (int j = 0; j < s[i].size(); ++j)
+		{
+			int S = s[i][j];
+			for (s1 = t - 1; s1 >= 0; --s1)
+				for (s2 = t - 1; s2 >= 0; --s2)
+				{
+					// 如果选取当前的数，加入S1集合之后不冲突，那么可以加入S1集合，这个时候是小G选择 
+					if((S & s2) == 0) inc(g[0][s1 | S][s2], g[0][s1][s2]);
+					// 如果加入S2集合不冲突，那么这时候是小W选择 
+					if((S & s1) == 0) inc(g[1][s1][s2 | S], g[1][s1][s2]);
+				}
+		} 
+		
+		for (s1 = 0; s1 < t; ++s1)
+			for (s2 = 0; s2 < t; ++s2)
+				f[s1][s2] = ((g[0][s1][s2] + g[1][s1][s2] - f[s1][s2]) % P + P) % P;
+	}
+	
+	for (s1 = 0; s1 < t; ++s1)
+		for (s2 = 0; s2 < t; ++s2)
+			if((s1 & s2) == 0) 
+				inc(ans, f[s1][s2]);
+	
+	cout << ans << endl;
+}
+}
+
+int main()
+{
+	cin.tie(0);
+	ios::sync_with_stdio(false);	
+	SSWY::solve();
 	return 0;
 }
 ```
