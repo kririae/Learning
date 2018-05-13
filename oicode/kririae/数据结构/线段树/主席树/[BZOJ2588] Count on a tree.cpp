@@ -47,7 +47,7 @@ struct Node
 Node t[maxn * 20];
 int root, cnt, t[maxn];
 int n, m, x, y, sz, lastans;
-int a[maxn], b[maxn], dep[maxn], fa[maxn], siz[maxn], id[maxn];
+int a[maxn], b[maxn], dep[maxn], fa[maxn], siz[maxn], id[maxn], id2[maxn];
 vector<int> edges[maxn];
 
 inline void addedge(int from, int to)
@@ -79,7 +79,7 @@ inline int update(int pre, int l, int r, int val)
 
 inline void dfs1(int k)
 {
-		dep[k] = dep[fa[k]] + 1, id[k] = ++tot;
+		dep[k] = dep[fa[k]] + 1, id[++tot] = k, id2[k] = tot;
 		for (int i = 0; i < edges[k].size(); ++i)
 			dfs1(edges[k][i]);
 }
