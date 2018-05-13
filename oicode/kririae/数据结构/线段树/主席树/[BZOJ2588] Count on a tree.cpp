@@ -1,6 +1,8 @@
 // by kririae
 #define ls t[k].son[0]
 #define rs t[k].son[1]
+#define pls t[pre].son[0]
+#define prs t[pre].son[1]
 #define mid ((l + r) >> 1)
 #include <bits/stdc++.h>
 
@@ -43,18 +45,50 @@ struct Node
 };
 
 Node t[maxn * 20];
-int root, cnt;
-int n, m, x, y, lastans, a[maxn], dep[maxn], father[maxn];
+int root, cnt, t[maxn];
+int n, m, x, y, sz, lastans;
+int a[maxn], b[maxn], dep[maxn], fa[maxn], siz[maxn], id[maxn];
 vector<int> edges[maxn];
 
 inline void addedge(int from, int to)
 {
 	edges[from].push_back(to);
+	edges[to].push_back(from);
 }
 
-inline void dfs(int k, int fa)
+inline int build(int l, int r)
 {
+	int k = ++cnt;
+	if(l < r)
+		ls = build(l, mid),
+		rs = build(mid + 1, r);
+	return k;
+}
 
+inline int update(int pre, int l, int r, int val)
+{
+	int k = ++cnt;
+	ls = pls, rs = prs, t[k].sum = t[pre].sum + 1;
+	if(l < r)
+	{
+		if(val <= mid) ls = update(pls, l, mid, val);
+		else rs = update(prs, mid + 1, r, val);
+	}
+	return k;
+}
+
+inline void dfs1(int k)
+{
+		dep[k] = dep[fa[k]] + 1, id[k] = ++tot;
+		for (int i = 0; i < edges[k].size(); ++i)
+			dfs1(edges[k][i]);
+}
+
+inline void dfs2(int k)
+{
+	root[k] = update(fa[k], 1, sz, lower_bound(b + 1, b + 1 + sz, a[k]) - b);
+	for (int i = 0; i < edges[k].size(); ++i) if(edges[k][i] != fa[k])
+		dfs2(edges[k][i]);
 }
 
 inline void solve()
@@ -62,15 +96,17 @@ inline void solve()
 	using namespace IO;
 	read(n), read(m);
 	for (int i = 1; i <= n; ++i)
-		read(a[i]);
+		read(a[i]), b[i] = a[i];
+
+	sort(b + 1, b + 1 + n);
+	sz = unique(b + 1, b + 1 + n) - b - 1;
+
+	root[0] = build(1, sz);
 
 	for (int i = 1; i < n; ++i)
-		read(x), read(y), addedge(x, y), father[y] = x;
+		read(x), read(y), addedge(x, y), fa[y] = x;
 
+	dfs1(1), dfs2(1);
 
-	for (int i = 1; i <= m; ++i)
-	{
-
-	}
 }
 }
