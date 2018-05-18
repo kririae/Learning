@@ -16,7 +16,7 @@ inline void solve()
 	cin >> n >> from;
 	for (int i = 1; i <= n; ++i)
 		cin >> p[i] >> c[i], s[i] = s[i - 1] + c[i];
-        
+		
 	f[from][from][0] = f[from][from][1] = 0;
 	
 	for (int k = 2; k <= n; ++k)

@@ -1,4 +1,5 @@
 Problem1000
+2588
 var a,b:Longint;
 Begin
 Readln(a,b);

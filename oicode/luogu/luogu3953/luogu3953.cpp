@@ -129,7 +129,7 @@ inline void solve()
 		for (int i = 0; i <= k; ++i)
 		{
 			for (int j = 0; j <= k; ++j)
-			    r[j].reset();
+					r[j].reset();
 			inc(ans, dp(1, i));
 		}
 				
