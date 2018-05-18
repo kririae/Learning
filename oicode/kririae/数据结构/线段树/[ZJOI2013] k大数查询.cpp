@@ -77,9 +77,9 @@ inline void update2(int &k, int l, int r, int a, int b)
 		return;
 	}
 
-	if(b <= mid) update2(ls, l, r, a, b);
-	else if(a > mid) update2(rs, l, r, a, b);
-	else update2(ls, l, mid, a, b), update2(rs, mid + 1, r, a, b);
+	if(b <= mid) update2(ls, l, mid, a, b);
+	else if(a > mid) update2(rs, mid + 1, r, a, b);
+	else update2(ls, l, mid, a, mid), update2(rs, mid + 1, r, mid + 1, b);
 	pushup(k);
 }
 
@@ -102,9 +102,9 @@ inline int query2(int k, int l, int r, int a, int b)
 	pushdown(k, l, r);
 	if(l == a && r == b)
 		return t[k].sum;
-	if(b <= mid) return query2(ls, l, r, a, b);
-	else if(a > mid) return query2(rs, l, r, a, b);
-	else return query2(ls, l, mid, a, b) + query2(rs, mid + 1, r, a, b);
+	if(b <= mid) return query2(ls, l, mid, a, b);
+	else if(a > mid) return query2(rs, mid + 1, r, a, b);
+	else return query2(ls, l, mid, a, mid) + query2(rs, mid + 1, r, mid + 1, b);
 }
 
 inline int query1(int a, int b, int c)
