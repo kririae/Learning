@@ -11,30 +11,25 @@ using namespace std;
 
 namespace IO
 {
-inline char read()
+inline char gc()
 {
-	static const int IN_LEN = 1000000;
-	static char buf[IN_LEN], *s, *t;
-	s == t ? t = (s = buf) + fread(buf, 1, IN_LEN, stdin) : 0;
-	return s == t ? -1 : *s++;
+	static const int LEN = 1e7;
+	static char buf[LEN];
+	static int s = 0, t = 0;
+	s == t ? s = 0, t = fread(buf, 1, LEN, stdin) : 0;
+	return s == t ? -1 : buf[s++];
 }
 
-template <typename T>
-inline void read(T &x)
+template<class T>
+inline void read(T &val)
 {
-	static char c;
-	static bool iosig;
-
-	for (c = read(), iosig = false; !isdigit(c); c = read())
-	{
-		if (c == -1) return;
-		c == '-' ? iosig = true : 0;
-	}
-
-	for (x = 0; isdigit(c); c = read()) 
-		x = (x + (x << 2) << 1) + (c ^ '0');
-
-	iosig ? x = -x : 0;
+	int m, c;
+	for (m = 1, c = gc(); !isdigit(c); c = gc())
+		m = c == '-' ? -1 : 1;
+	if(c == -1) return;
+	for (val = 0; isdigit(c); c = gc())
+		val = (val << 3) + (val << 1) + c - '0';
+ 	val = m == -1 ? -val : val;
 }
 }
 
