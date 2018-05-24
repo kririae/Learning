@@ -59,7 +59,7 @@ inline void dp(int k)
 
 inline void solve()
 {
-	memset(f, ~0x3f, sizeof(f));
+		memset(f, ~0x3f, sizeof(f));
 		
 	cin >> n >> m;
 	for (int i = 1; i <= (n - m); ++i)
@@ -75,8 +75,8 @@ inline void solve()
 		// for (int i = 1; i <= n; ++i)
 		// cin >> a[i];
 		
-	for (int i = (n - m + 1); i <= n; ++i)
-		cin >> a[i];
+		for (int i = (n - m + 1); i <= n; ++i)
+				cin >> a[i];
 				
 	dp(1);
 
@@ -153,6 +153,81 @@ int main()
 	ios::sync_with_stdio(false);
 
 	Coins::solve();
+}
+```
+## [BZOJ4300] 绝世好题
+### 说明
+真是好题...这个题解中的蜜汁方法...
+一开始跑不完。后来往题解里一看woc这是啥骚操作...
+### 代码
+```cpp
+// by kririae
+// 参考题解...这个"按位dp"还真是前所未有
+#include <bits/stdc++.h>
+
+using namespace std;
+
+namespace BZOJ4300
+{
+int n, val, ans, tmp, f[35];
+inline void solve()
+{
+	cin >> n;
+	while(n --> 0)
+	{
+		cin >> val; tmp = 1;
+		for (int i = 0; i <= 30; ++i)
+			if(val & (1 << i)) tmp = max(f[i] + 1, tmp);
+		for (int i = 0; i <= 30; ++i)
+			if(val & (1 << i)) f[i] = max(f[i], tmp);
+		ans = max(ans, tmp);
+	}
+	cout << ans << endl;
+}
+}
+
+int main()
+{
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	BZOJ4300::solve();
+	return 0;
+}
+```
+
+## [BZOJ3687] 简单题
+### 说明
+bitset的骚操作
+### 代码
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+namespace BZOJ3687
+{
+const int maxn = 2000005;
+
+bitset<maxn> a;
+int n, val, sum, ans;
+inline void solve()
+{
+	cin >> n;
+	a[0] = 1;
+	while(n --> 0)
+		cin >> val, sum += val, a ^= (a << val);
+	for (int i = 1; i <= sum; ++i)
+		if(a[i]) ans ^= i;
+	cout << ans << endl;
+}
+}
+
+int main()
+{
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	BZOJ3687::solve();
+	return 0;
 }
 ```
 
@@ -235,6 +310,78 @@ int main()
 	ios::sync_with_stdio(false);
 
 	ZJOI2005::solve();
+	return 0;
+}
+```
+
+## [POJ2390] [UVa10559] Blocks
+### 说明
+一个妙妙的区间dp...开始就知道是区间dp，然而发现完全无法转移。看了下别人的解题报告，真是妙妙啊qwq。
+首先对序列进行处理，我们设$c[i]$为$i$位置的颜色，$num[i]$为从$i$开始$num[i]$个位置的颜色都相同。
+设计状态如下，$f[i][j][k]$表示合并区间$[i, j]$，表示（有点绕）“在合并$[i, j]$的基础上，忽略$j$后的一系列不同色方块后，有$k$个与之合并$的最大值”。可能到这个时候还是一脸懵逼。先看决策：
+* 直接把后面和当前串的$r$位置合并的
+* 从当前串的$mid$处开始向后把$[mid + 1, r]$消去之后再和后面的合并。
+
+然后看状态转移方程：
+$$ f[i][j][k] = max(f[i][j - 1][0] + (num[r] + k) ^ 2, f[i][mid][num[r] + k] + f[mid + 1][r][0])$$
+请注意记忆化搜索的意义，搜索在这道题中能够保证$k$的存在性，即右边一定能够有$k$个和当前合并。放心大胆用记忆化好了（qwq）
+
+### 代码
+```cpp
+// by kririae
+// 细节很少，但是思路相当复杂...
+#define R register 
+#define ll long long
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+namespace Blocks
+{
+const int maxn = 205;
+
+int t, n, m, cnt, a[maxn], c[maxn], num[maxn], f[maxn][maxn][maxn];
+
+inline int dp(int l, int r, int k)
+{
+	if(f[l][r][k]) return f[l][r][k];
+	if(l == r) return (num[l] + k) * (num[l] + k);
+	f[l][r][k] = dp(l, r - 1, 0) + (num[r] + k) * (num[r] + k);
+	for (int i = l; i < r; ++i)
+		if(c[i] == c[r])
+			f[l][r][k] = max(f[l][r][k], dp(l, i, num[r] + k) + dp(i + 1, r - 1, 0));
+	return f[l][r][k];
+}
+
+inline void solve()
+{
+	cin >> t;
+	while(t --> 0)
+	{
+		cin >> n;
+		for (R int i = 1; i <= n; ++i)
+			cin >> a[i];
+			
+		for (R int i = 1; i <= n; ++i)
+		{
+			if(a[i] != a[i - 1]) c[++m] = a[i], num[m] = 1;
+			else ++num[m];
+		}
+
+		cout << "Case " << ++cnt << ": " << dp(1, m, 0) << endl;
+		memset(f, 0, sizeof(f));
+		memset(a, 0, sizeof(a));
+		m = 0;
+	}
+}
+}
+
+int main()
+{
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	Blocks::solve();
 	return 0;
 }
 ```
@@ -560,12 +707,17 @@ int main()
 ```cpp
 
 ```
+
 ## Prime 和 [NOI2015]寿司晚宴
+
 > 分组背包
+
 ### 统一解释
 这两道题利用一个共同的性质：
 对于任意一个数$n$，$\sqrt{n}$以上的素因子只有一个。
 首先对$\sqrt{n}$以下的数进行质因数分解，然后把剩下的一个数（一个素数）作为归类标准进行分组背包。
+分组背包的定义是“每个组内只能选择一个物品”，由因为本题分组背包归类的依据是素数，所以选择“组”本身一定是互质的。
+复制$f$数组求值是为了应对“只能选择一个物品”。和传统的分组背包不太一样
 #### Prime
 首先说Prime吧，Prime应该是由寿司晚宴改编的
 ### Prime
@@ -592,7 +744,7 @@ Shy有$n$个数，问这$n$个数里最多有几个数两两之间互质。
 ```
 ###### 数据范围
 对于$30\%$的数据，$1\leq n \leq10$;
-对于$100\%$的数据，$1\leq n \leq1000$，$1 \leq 数字 \leq 1000$;
+对于$100\%$的数据，$1\leq n \leq1000$，$1 \leq a_i \leq 1000$;
 ##### 数据
 https://pan.baidu.com/s/1B7FTs6mhBDaD1CUOxRaN1w
 vhkq
@@ -756,3 +908,6 @@ int main()
 	return 0;
 }
 ```
+#### 纸夜姐的题解
+（并不能看懂...）
+[纸夜姐的代码](https://paste.ubuntu.com/p/PCqJSvb2pf/)

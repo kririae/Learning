@@ -99,7 +99,6 @@ inline void dfs(int k, int fa)
 
 inline int query(int t1, int t2, int t3, int t4, int l, int r, int val)
 {
-	cout << l << " " << r << endl;
 	if(l >= r) return l;
 	int k = t[t[t1].son[0]].sum + t[t[t2].son[0]].sum - t[t[t3].son[0]].sum - t[t[t4].son[0]].sum;
 	if(k >= val) return query(t[t1].son[0], t[t2].son[0], t[t3].son[0], t[t4].son[0], l, mid, val);
