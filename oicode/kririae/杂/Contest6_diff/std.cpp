@@ -42,7 +42,6 @@ int main(){
     ll x;
     scanf("%d %lld",&n,&x);
     x = (long long)n * (n + 1) / 2 - x + 1;
-    cout << x << endl;
     for(i=1;i<=n;i++) scanf("%d",&a[i]),mx=max(mx,a[i]);
     lb=0;rb=mx;
     while(rb-lb>eps){
