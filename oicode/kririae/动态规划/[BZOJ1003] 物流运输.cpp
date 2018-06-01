@@ -49,7 +49,7 @@ inline void addedge(int from, int to, int val)
 	edges[to].push_back(Edge(to, from, val));
 }
 
-int n, m, k, e, dd;
+int n, m, K, e, dd;
 int d[maxm], f[maxn][maxn];
 bitset<maxn> vis[maxm];
 bitset<maxm> u;
@@ -65,27 +65,28 @@ inline bool avai(int a, int b, int c)
 inline int SPFA(int l, int r)
 {
 	memset(d, 0x3f, sizeof(d)), q.clear();
-	u.reset(), q.push_back(1), u[1] = 1;
+	u.reset(), q.push_back(1), u[1] = 1, d[1] = 0;
 	while(!q.empty())
 	{
 		int curr = q.front(); q.pop_front(), u[curr] = 0;
 		for (int i = 0; i < edges[curr].size(); ++i)
 		{
 			Edge &e = edges[curr][i];
-			if(avai(e.to, l, r) && d[e.from] + e.val < d[e.to])
+			if(avai(e.to, l, r) && d[e.from] + e.val <= d[e.to])
 			{
 				d[e.to] = d[e.from] + e.val;
 				if(!u[e.to]) u[e.to] = 1, q.push_back(e.to);
 			}
 		}
 	}
-	return d[m] == 0x3f3f3f ? 0 : d[m] * (r - l + 1);
+	return d[m] >= 1e9 ? 1e9 : d[m] * (r - l + 1);
 }
 
 inline void solve()
 {
+		// memset(f, 0x3f, sizeof(f));
 	using namespace IO;
-	read(n), read(m), read(k), read(e);
+	read(n), read(m), read(K), read(e);
 	for (int i = 1; i <= e; ++i)
 	{
 		R int a, b, c;
@@ -100,19 +101,28 @@ inline void solve()
 		for (int j = a; j <= b; ++j)
 			vis[p][j] = 1;
 	}
-
+		
 	for (int i = 1; i <= n; ++i)
 		for (int j = i; j <= n; ++j)
 			f[i][j] = SPFA(i, j);
-
+		
+		for (int i = 1; i <= n; ++i)
+		{
+				for (int j = 1; j <= n; ++j)
+						cout << f[i][j] << " ";
+				cout << endl;
+		}
+		
 	for (int k = 2; k <= n; ++k)
 		for (int l = 1; (l + k - 1) <= n; ++l)
 		{
 			int r = l + k - 1;
 			for (int p = l; p < r; ++p)
-				f[l][r] = min(f[l][r], f[l][p] + k + f[p + 1][r]);
+				f[l][r] = min(f[l][r], f[l][p] + K + f[p + 1][r]);
 		}
-
+		
+		
+		
 	cout << f[1][n] << endl;
 }
 }
