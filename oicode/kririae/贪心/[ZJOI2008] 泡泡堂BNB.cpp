@@ -41,7 +41,7 @@ inline int calc(int a[], int b[])
 
 inline void solve()
 {
-    using namespace IO;
+	using namespace IO;
 	n = read();
 	for (R int i = 1; i <= n; ++i) a[i] = read();
 	for (R int i = 1; i <= n; ++i) b[i] = read();

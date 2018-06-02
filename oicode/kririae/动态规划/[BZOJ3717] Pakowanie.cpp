@@ -1,5 +1,6 @@
 // by kririae
 // lowbit优化，不写了
+// 2018-6-1
 #define R register
 #include <bits/stdc++.h>
 
