@@ -40,7 +40,7 @@ inline void solve()
   for (R int i = 1; i <= n + 1; ++i) fa[i] = i;
   for (R int i = m; i >= 1; --i)
   {
-    int l = (i * p % n + q) % n + 1, r =(i * q % n + p) % n + 1;
+    int l = (i * p % n + q) % n + 1, r = (i * q % n + p) % n + 1;
     if(l > r) swap(l, r);
     for (int j = find(l); j <= r; j = find(j))
       a[j] = i, fa[j] = j + 1, ++tot;
