@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  console_helloworld:
-    image: console_helloworld
-    build:
-      context: .\Console_helloWorld
-      dockerfile: Dockerfile
