@@ -22,6 +22,6 @@ int main()
   ll len = strlen(s + 1), ans = 1ll * len * (len + 1) / 2;
   for (R int i = 1; i <= len; ++i) ++cnt[s[i] - 'a'];
   for (R int i = 0; i <= 'z' - 'a'; ++i)
-    ans -= (1ll * cnt[i] * (cnt[i] - 1) / 2);
+    ans -= (1ll * cnt[i] * (cnt[i] - 1) / 2); // C(cnt[i])
   printf("%lld", ans - len + 1);
 }
