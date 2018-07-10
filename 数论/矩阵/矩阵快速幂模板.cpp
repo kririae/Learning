@@ -48,13 +48,19 @@ Martrix a, b, c;
 
 int main()
 {
-  cin >> n;
+//  cin >> n;
   a.a = 2, a.b = 2, b.a = 2, b.b = 2;
   a.ma[1][1] = 1, a.ma[1][2] = 1;
   a.ma[2][1] = 1, a.ma[2][2] = 0;
-  b = a.pow(n - 1);
-  c.a = 1, c.b = 2;
-  c.ma[1][1] = 1, c.ma[1][2] = 1;
-  c = b * c;
-  cout << c.ma[1][2] << endl;
+  b = a.pow(1);
+  for (R int i = 1; i <= 2; ++i)
+  {
+  	for (R int j = 1; j <= 2; ++j)
+  		cout << b.ma[i][j] << " ";
+  	cout << endl;
+  }
+//  c.a = 1, c.b = 2;
+//  c.ma[1][1] = 1, c.ma[1][2] = 1;
+//  c = b * c;
+//  cout << c.ma[1][2] << endl;
 }
