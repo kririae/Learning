@@ -50,7 +50,7 @@ inline void addedge(int from, int to, int val)
 }
 
 int n, m, K, e, dd;
-int d[maxm], f[maxn][maxn];
+int d[maxm], f[maxn][maxn], g[maxn];
 bitset<maxn> vis[maxm];
 bitset<maxm> u;
 deque<int> q;
@@ -105,25 +105,14 @@ inline void solve()
 	for (int i = 1; i <= n; ++i)
 		for (int j = i; j <= n; ++j)
 			f[i][j] = SPFA(i, j);
-		
-		for (int i = 1; i <= n; ++i)
+	for (R int i = 1; i <= n; ++i)
+	{
+		for (R int j = 1; j <= i; ++j)
 		{
-				for (int j = 1; j <= n; ++j)
-						cout << f[i][j] << " ";
-				cout << endl;
+			g[i] = max(g[i], g[j] + f[i][j] + k);
 		}
-		
-	for (int k = 2; k <= n; ++k)
-		for (int l = 1; (l + k - 1) <= n; ++l)
-		{
-			int r = l + k - 1;
-			for (int p = l; p < r; ++p)
-				f[l][r] = min(f[l][r], f[l][p] + K + f[p + 1][r]);
-		}
-		
-		
-		
-	cout << f[1][n] << endl;
+	}
+	cout << g[n] << endl;
 }
 }
 
