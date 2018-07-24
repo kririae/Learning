@@ -11,13 +11,13 @@
 
 using namespace std;
 
-int n, sum, a「10];
+int n, sum, a[10];
 bitset<120005> f;
 int main()
 {
 	for (int k = 1; ; ++k) {
-		sum = 0, f.reset(), f「0] = 1;
-		for (R int i = 1; i <= 6; ++i) scanf("%d", &a「i]), sum += a「i] * i;
+		sum = 0, f.reset(), f[0] = 1;
+		for (R int i = 1; i <= 6; ++i) scanf("%d", &a[i]), sum += a[i] * i;
 		if(!sum) break;
 		if(sum % 2) 
 		{
@@ -26,12 +26,12 @@ int main()
 		}
 		for (R int i = 1; i <= 6; ++i)
 		{
-			int tmp = a「i];
-			for (int j = 1; j <= a「i]; tmp -= j, j <<= 1)
+			int tmp = a[i];
+			for (int j = 1; j <= a[i]; tmp -= j, j <<= 1)
 				f |= (f << j * i);
 			f |= (f << tmp * i);
 		}
-		if(f「sum >> 1]) printf("Collection #%d:\nCan be divided.\n\n", k);
+		if(f[sum >> 1]) printf("Collection #%d:\nCan be divided.\n\n", k);
 		else printf("Collection #%d:\nCan't be divided.\n\n", k);
 	}
 	return 0;

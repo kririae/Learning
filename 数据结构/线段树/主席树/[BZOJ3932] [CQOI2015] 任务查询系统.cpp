@@ -9,7 +9,7 @@ namespace IO
 inline char read()
 {
 	static const int IN_LEN = 1000000;
-	static char buf「IN_LEN], *s, *t;
+	static char buf[IN_LEN], *s, *t;
 	s == t ? t = (s = buf) + fread(buf, 1, IN_LEN, stdin) : 0;
 	return s == t ? -1 : *s++;
 }

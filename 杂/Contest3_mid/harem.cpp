@@ -9,8 +9,8 @@ namespace Harem
 const int maxn = 205;
 const int mod = 1e9 + 7;
 
-char s「maxn];
-int n, m, a「maxn]「maxn], f「maxn]「maxn];
+char s[maxn];
+int n, m, a[maxn][maxn], f[maxn][maxn];
 
 inline void solve()
 {
@@ -19,20 +19,20 @@ inline void solve()
 	{
 		cin >> s;
 		for (int j = 1; j <= m; ++j)
-			if(s「j - 1] == '0')
-				a「i]「j] = 1;
+			if(s[j - 1] == '0')
+				a[i][j] = 1;
 	}
 	
-	f「0]「0] = 1;
+	f[0][0] = 1;
 	for (int i = 1; i <= n; ++i)
 		for (int j = 0; j <= m; ++j)
 			for (int k = 0; k <= m; ++k)
-				if(a「j]「k] || !j || !k)
-					f「i]「j] = (f「i]「j] + f「i - 1]「k]) % mod;
+				if(a[j][k] || !j || !k)
+					f[i][j] = (f[i][j] + f[i - 1][k]) % mod;
 
 	int ans = 0;
 	for (int i = 0; i <= m; ++i)
-		ans = (ans + f「n]「i]) % mod;
+		ans = (ans + f[n][i]) % mod;
 	cout << ans << endl;
 }
 }

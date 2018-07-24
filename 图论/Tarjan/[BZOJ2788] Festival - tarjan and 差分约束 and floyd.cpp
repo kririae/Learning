@@ -35,7 +35,7 @@ namespace IO
 {
 inline char gc()
 {
-  static char buf「1 << 18], *fs, *ft;
+  static char buf[1 << 18], *fs, *ft;
   return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
 }
 inline int read()
@@ -50,39 +50,39 @@ inline int read()
 
 namespace BZOJ2788
 {
-vector<int> edges「maxn];
+vector<int> edges[maxn];
 stack<int> s;
 bitset<maxn> vis;
-int n, m1, m2, f「maxn]「maxn], cnt;
-int dfn「maxn], low「maxn], tot, cnt2;
-vector<int> belong「maxn];
+int n, m1, m2, f[maxn][maxn], cnt;
+int dfn[maxn], low[maxn], tot, cnt2;
+vector<int> belong[maxn];
 
 inline void addedge(R int from, R int to, R int val)
 {
-  edges「from].push_back(to);
-  f「from]「to] = min(f「from]「to], val);
+  edges[from].push_back(to);
+  f[from][to] = min(f[from][to], val);
 }
 
 inline void tarjan(R int x)
 {
   // 打板子~
-  dfn「x] = low「x] = ++cnt;
+  dfn[x] = low[x] = ++cnt;
   s.push(x);
-  vis「x] = 1;
-  for (R int i = 0; i < edges「x].size(); ++i)
+  vis[x] = 1;
+  for (R int i = 0; i < edges[x].size(); ++i)
   {
-    R int to = edges「x]「i];
-    if(!dfn「to]) 
-      tarjan(to), low「x] = min(low「x], low「to]);
-    else if (vis「to]) low「x] = min(low「x], dfn「to]);
+    R int to = edges[x][i];
+    if(!dfn[to]) 
+      tarjan(to), low[x] = min(low[x], low[to]);
+    else if (vis[to]) low[x] = min(low[x], dfn[to]);
   }
-  if(dfn「x] == low「x])
+  if(dfn[x] == low[x])
   {
     R int curr;
     ++tot;
     do {
-      curr = s.top(), s.pop(), vis「curr] = 0;
-      belong「tot].push_back(curr);
+      curr = s.top(), s.pop(), vis[curr] = 0;
+      belong[tot].push_back(curr);
     } while(curr != x);
   }
 }
@@ -106,21 +106,21 @@ inline void solve()
   // Po姐这个写法挺不错的，利用floyd避免后面的计算
   for (k = 1; k <= n; ++k)
     for (i = 1; i <= n; ++i)
-      if(f「i]「k] <= n)
+      if(f[i][k] <= n)
         for (j = 1; j <= n; ++j)
-          f「i]「j] = min(f「i]「j], f「i]「k] + f「k]「j]);
+          f[i][j] = min(f[i][j], f[i][k] + f[k][j]);
   for (R int i = 1; i <= n; ++i)
-    if(f「i]「i] < 0) return puts("NIE"), void();
+    if(f[i][i] < 0) return puts("NIE"), void();
   for (R int i = 1; i <= n; ++i)
-    if(!dfn「i]) tarjan(i); // 进行tarjan
+    if(!dfn[i]) tarjan(i); // 进行tarjan
   int ans = 0, res = 0;
   for (i = 1; i <= tot; ++i)
   {
     ans = 0;
-    for (j = 0; j < belong「i].size(); ++j)
-      for (k = 0; k < belong「i].size(); ++k)
-        if(f「belong「i]「j]]「belong「i]「k]] <= 1e9)
-          ans = max(ans, f「belong「i]「j]]「belong「i]「k]]);
+    for (j = 0; j < belong[i].size(); ++j)
+      for (k = 0; k < belong[i].size(); ++k)
+        if(f[belong[i][j]][belong[i][k]] <= 1e9)
+          ans = max(ans, f[belong[i][j]][belong[i][k]]);
     res += (ans + 1);
   }
   printf("%d\n", res);

@@ -3,8 +3,8 @@
 using namespace std;
 const int maxn = 1001005;
 
-char a「maxn]; 
-int n, nxt「maxn];
+char a[maxn]; 
+int n, nxt[maxn];
 
 int main()
 {
@@ -12,9 +12,9 @@ int main()
     scanf("%s", a + 1);
     for (int i = 2, j = 0; i <= n; ++i)
     {
-        while(j > 0 && a「i] != a「j + 1]) j = nxt「j];
-        if(a「i] == a「j + 1]) ++j;
-        nxt「i] = j;
+        while(j > 0 && a[i] != a[j + 1]) j = nxt[j];
+        if(a[i] == a[j + 1]) ++j;
+        nxt[i] = j;
     }
-    printf("%d\n", n - nxt「n]);
+    printf("%d\n", n - nxt[n]);
 }

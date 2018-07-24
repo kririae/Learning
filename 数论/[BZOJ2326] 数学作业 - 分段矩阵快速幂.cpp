@@ -12,22 +12,22 @@ ull n, l, MOD;
 
 struct Matrix
 {
-ull n, m, a「siz]「siz];
+ull n, m, a[siz][siz];
 
 Matrix()
 {
   memset(a, 0, sizeof(a));
-  for (R int i = 0; i < siz; ++i) a「i]「i] = 1;
+  for (R int i = 0; i < siz; ++i) a[i][i] = 1;
 }
 Matrix(int _n, int _m) : n(_n), m(_m) 
 {
   memset(a, 0, sizeof(a));
-  for (R int i = 0; i < siz; ++i) a「i]「i] = 1;
+  for (R int i = 0; i < siz; ++i) a[i][i] = 1;
 }
 
-ull* operator 「] (int x) 
+ull* operator [] (int x) 
 {
-  return a「x];
+  return a[x];
 }
 
 inline Matrix operator * (Matrix val)
@@ -39,8 +39,8 @@ inline Matrix operator * (Matrix val)
     {
       ull res = 0;
       for (k = 1; k <= this->n; ++k)
-        res += (a「i]「k] * val「k]「j] % MOD);
-      ans「i]「j] = res;
+        res += (a[i][k] * val[k][j] % MOD);
+      ans[i][j] = res;
     }
   return ans;
 }
@@ -78,19 +78,19 @@ inline int len(ull val)
 inline void trans(Matrix &val, ull _l, ull _r)
 {
   _r = (_l % 10 ? _r : _r + 1);
-  tmp「1]「1] = pow(10, len(_l));
+  tmp[1][1] = pow(10, len(_l));
   val = tmp.pow(_r - _l) * val;
 }
 
 inline void solve()
 {
   scanf("%lld%lld", &n, &MOD);
-  qwq「1]「1] = qwq「2]「1] = qwq「3]「1] = 1;
-  tmp「1]「2] = tmp「1]「3] = tmp「2]「2] = tmp「2]「3] = tmp「3]「3] = 1;
+  qwq[1][1] = qwq[2][1] = qwq[3][1] = 1;
+  tmp[1][2] = tmp[1][3] = tmp[2][2] = tmp[2][3] = tmp[3][3] = 1;
   R ull l = 1, r = 9;
   for (; r <= n; l *= 10, r = l * 10 - 1) trans(qwq, l, r);
     trans(qwq, l, n);
-  printf("%lld", qwq「1]「1] % MOD);
+  printf("%lld", qwq[1][1] % MOD);
 }
 }
 

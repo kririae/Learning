@@ -9,7 +9,7 @@ namespace IO
 {
 inline char gc()
 {
-  static char buf「1 << 18], *fs, *ft;
+  static char buf[1 << 18], *fs, *ft;
   return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
 }
 inline int read()
@@ -26,28 +26,28 @@ namespace BZOJ2054
 {
 const int maxn = 1e7 + 5;
 
-int n, m, p, q, tot, a「maxn], fa「maxn];
+int n, m, p, q, tot, a[maxn], fa[maxn];
 
 inline int find(int x)
 {
-  return x == fa「x] ? fa「x] : fa「x] = find(fa「x]);
+  return x == fa[x] ? fa[x] : fa[x] = find(fa[x]);
 }
 
 inline void solve()
 {
   using namespace IO;
   n = read(), m = read(), p = read(), q = read();
-  for (R int i = 1; i <= n + 1; ++i) fa「i] = i;
+  for (R int i = 1; i <= n + 1; ++i) fa[i] = i;
   for (R int i = m; i >= 1; --i)
   {
     int l = (i * p % n + q) % n + 1, r = (i * q % n + p) % n + 1;
     if(l > r) swap(l, r);
     for (int j = find(l); j <= r; j = find(j))
-      a「j] = i, fa「j] = j + 1, ++tot;
+      a[j] = i, fa[j] = j + 1, ++tot;
     if(tot == n) break;
   }
   for (R int i = 1; i <= n; ++i)
-    printf("%d\n", a「i]);
+    printf("%d\n", a[i]);
 }
 }
 

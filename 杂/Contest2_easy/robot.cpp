@@ -9,7 +9,7 @@ namespace Robot
 const int maxn = 5005;
 
 ll t, l, x, y;
-char s「maxn];
+char s[maxn];
 
 inline void solve()
 {
@@ -19,20 +19,20 @@ inline void solve()
 	int l = strlen(s);
 	for (int i = 0; i < l; ++i)
 	{
-		if(s「i] == 'E') ++x;
-		if(s「i] == 'S') --y;
-		if(s「i] == 'W') --x;
-		if(s「i] == 'N') ++y;
+		if(s[i] == 'E') ++x;
+		if(s[i] == 'S') --y;
+		if(s[i] == 'W') --x;
+		if(s[i] == 'N') ++y;
 	}
 
 	x *= (ll)(t / l), y *= (ll)(t / l);
 	
 	for (int i = 0; i < t % l; ++i)
 	{
-		if(s「i] == 'E') ++x;
-		if(s「i] == 'S') --y;
-		if(s「i] == 'W') --x;
-		if(s「i] == 'N') ++y;
+		if(s[i] == 'E') ++x;
+		if(s[i] == 'S') --y;
+		if(s[i] == 'W') --x;
+		if(s[i] == 'N') ++y;
 	}
 
 	cout << x << " " << y << endl;

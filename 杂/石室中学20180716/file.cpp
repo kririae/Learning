@@ -27,23 +27,23 @@ inline void add_node(int index)
 {
   son_index.push_back(index);
 }
-} t「maxn];
+} t[maxn];
 
 inline int find_son_index(int index, string a)
 {
-  for (R int i = 0; i < t「index].son_index.size(); ++i)
-    if(t「t「index].son_index「i]].name == a) return t「index].son_index「i];
+  for (R int i = 0; i < t[index].son_index.size(); ++i)
+    if(t[t[index].son_index[i]].name == a) return t[index].son_index[i];
   return -1;
 }
 
 bool cmp(int a, int b)
 {
-  return t「a].name < t「b].name;
+  return t[a].name < t[b].name;
 }
 
 inline void sort_son(int index)
 {
-  sort(t「index].son_index.begin(), t「index].son_index.end(), cmp);
+  sort(t[index].son_index.begin(), t[index].son_index.end(), cmp);
 }
 
 inline void split(string a, vector<string>& ret)
@@ -52,9 +52,9 @@ inline void split(string a, vector<string>& ret)
   string tmp;
   for (R int i = 0; i < a.length(); ++i)
   {
-    if(i == a.length() - 1) tmp += a「i], ret.push_back(tmp);
-    if(a「i] == '/') ret.push_back(tmp), tmp.clear();
-    else tmp += a「i];
+    if(i == a.length() - 1) tmp += a[i], ret.push_back(tmp);
+    if(a[i] == '/') ret.push_back(tmp), tmp.clear();
+    else tmp += a[i];
   }
 }
 
@@ -63,9 +63,9 @@ inline void add_node(vector<string> &a)
   int curr = 1;
   for (R int i = 1; i < a.size(); ++i)
   {
-    int next = find_son_index(curr, a「i]);
+    int next = find_son_index(curr, a[i]);
     if(next == -1) 
-      t「++cnt].name = a「i], t「curr].add_node(cnt), curr = cnt;
+      t[++cnt].name = a[i], t[curr].add_node(cnt), curr = cnt;
     else curr = next;
   }
 }
@@ -78,11 +78,11 @@ inline void print(int k, int lay)
     if(i != lay) cout << "|    ";
     else cout << "|";
   }
-  if(k == 1) cout << t「k].name << endl;
-  else cout << "----" << t「k].name << endl;
+  if(k == 1) cout << t[k].name << endl;
+  else cout << "----" << t[k].name << endl;
   sort_son(k);
-  for (R int i = 0; i < t「k].son_index.size(); ++i)
-    print(t「k].son_index「i], lay + 1);
+  for (R int i = 0; i < t[k].son_index.size(); ++i)
+    print(t[k].son_index[i], lay + 1);
 }
 
 inline void solve()
@@ -95,7 +95,7 @@ inline void solve()
   {
     cin >> tmp;
     split(tmp, qwq);
-    if(i == 1) t「1].name = qwq「0];
+    if(i == 1) t[1].name = qwq[0];
     add_node(qwq);
   }
   print(1, 0);

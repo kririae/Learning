@@ -68,13 +68,13 @@ inline void prime()
 
 尝试一下，并不好实现的思维题   
 
-#### 「ep1」 质因数分解$N!$。   
+#### [ep1」 质因数分解$N!$。   
 
 这样看~   
 利用线性筛的思路，我们每个合数只被其最小质因子筛一次。   
 我们知道一个数的质因数分解形式后，用这个数乘上一个质数，能够知道计算结果的质因数分解形式。我们对结果的形式累乘，就是答案~不优化的话，时间复杂度和空间复杂度都是$O(n\log{n})$，实现也会很复杂。仅练习思维。   
 
-#### 「ep2」 求$[L, R]$的质数个数。$L, R \leq 2^{31}, R - L \leq 10^{6}$。   
+#### [ep2」 求$[L, R]$的质数个数。$L, R \leq 2^{31}, R - L \leq 10^{6}$。   
 
 可以筛$R - L$的，那么我们先把$[2, \sqrt{R}]$之间的数筛出来，这里的数一定可以组合出$[L, R]$的所有数。然后对于所有质数，我们进行$[L, R]$的标记。$vis[i \times p] = 1, i \in [\frac{L}{p}, \frac{R}{p}]$。   
 
@@ -97,7 +97,7 @@ $N$的正整数约数集合是试除法，这里不再赘述...
 $a \; mod \; b = c$，称$c$是$a$除以$b$的余数。余数的定义式如下   $a \; mod \; b = a - \lfloor \frac{a}{b} \rfloor \cdot b$
 看一个例题：$BZOJ1257$。   
 
-#### 「ep3」求$\sum_{i = 1}^{n}{k \; mod \; i}$。   
+#### [ep3」求$\sum_{i = 1}^{n}{k \; mod \; i}$。   
 
 转化题目，求$\sum_{i = 1}^{n}{(k - \lfloor \frac{k}{i} \rfloor \cdot i)} \Rightarrow k \times n -\sum_{i = 1}^{n}{(\lfloor \frac{k}{i} \rfloor \cdot i)}$。由于复杂度的问题，我们从$\frac{k}{i}$入手，因为会有一段区间，使得其不变。我们设$\lfloor\frac{k}{i}\rfloor = x$。这段区间的值是$\frac{(i_{first} + i_{end}) \times (end - first + 1)}{2} \times x$。所以问题来了，我们需要快速获取什么区间内，$\lfloor\frac{k}{i}\rfloor$不变。   
 结论如下，我也不知道怎么推的。$i \in [x, \lfloor \frac{k}{\lfloor \frac{k}{x} \rfloor} \rfloor]$时，$\lfloor\frac{k}{i}\rfloor$不变。$x$是上一个的右端点 + 1，即这次的左端点，这是数论分块的经典写法。具体请见代码，lyd的代码如下：   
@@ -122,7 +122,7 @@ int main()
   printf("%lld", ans);   
 }   
 ```
-#### 「ep4」求$\sum_{i = 1}^{n}{\sum_{d | i}{d^2}} \; mod \; p$，$n \leq 10^{12}, p \leq 10^9$
+#### [ep4」求$\sum_{i = 1}^{n}{\sum_{d | i}{d^2}} \; mod \; p$，$n \leq 10^{12}, p \leq 10^9$
 
 首先，$\sum{i ^ 2} = \frac{n(n + 1)(2n + 1)}{6}$，是公式，至于怎么用，下面通过这道题来解释。   
 

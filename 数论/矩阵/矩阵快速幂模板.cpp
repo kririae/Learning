@@ -9,7 +9,7 @@ const int mod = 1000000007;
 
 struct Martrix
 {
-  ll a, b, ma「size]「size];
+  ll a, b, ma[size][size];
   // a -> 行数 b -> 列数
   Martrix operator * (const Martrix &val) {
     Martrix ret;
@@ -19,8 +19,8 @@ struct Martrix
       {
         ll ans = 0;
         for (int k = 1; k <= a; ++k)
-          ans += (ma「i]「k] * val.ma「k]「j] % mod);
-        ret.ma「i]「j] = ans;
+          ans += (ma[i][k] * val.ma[k][j] % mod);
+        ret.ma[i][j] = ans;
       }
     return ret;
   }
@@ -29,7 +29,7 @@ struct Martrix
   {
     Martrix ans, b = *this;
     ans.a = 2, ans.b = 2;
-    ans.ma「1]「1] = 1, ans.ma「2]「2] = 1;
+    ans.ma[1][1] = 1, ans.ma[2][2] = 1;
     for (int i = 0; i <= 62; ++i)
     {
       if((val >> i) & 1)
@@ -50,17 +50,17 @@ int main()
 {
 //  cin >> n;
   a.a = 2, a.b = 2, b.a = 2, b.b = 2;
-  a.ma「1]「1] = 1, a.ma「1]「2] = 1;
-  a.ma「2]「1] = 1, a.ma「2]「2] = 0;
+  a.ma[1][1] = 1, a.ma[1][2] = 1;
+  a.ma[2][1] = 1, a.ma[2][2] = 0;
   b = a.pow(1);
   for (R int i = 1; i <= 2; ++i)
   {
   	for (R int j = 1; j <= 2; ++j)
-  		cout << b.ma「i]「j] << " ";
+  		cout << b.ma[i][j] << " ";
   	cout << endl;
   }
 //  c.a = 1, c.b = 2;
-//  c.ma「1]「1] = 1, c.ma「1]「2] = 1;
+//  c.ma[1][1] = 1, c.ma[1][2] = 1;
 //  c = b * c;
-//  cout << c.ma「1]「2] << endl;
+//  cout << c.ma[1][2] << endl;
 }

@@ -4,7 +4,7 @@ using namespace std;
 
 const int maxn = 305;
 int n, k, ans;
-char s「maxn], t「maxn];
+char s[maxn], t[maxn];
 int main()
 {
 	freopen("master1.in", "r", stdin);
@@ -18,7 +18,7 @@ int main()
 		for (int j = 0; j < n; ++j)
 			for (int x = i, y = j, m = 0; x < n && y < n; ++x, ++y)
 			{
-				if(s「x] != t「y])
+				if(s[x] != t[y])
 				{ 
 					++m; 
 					if(m > k) break; 
