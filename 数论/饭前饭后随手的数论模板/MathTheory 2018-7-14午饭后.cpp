@@ -18,22 +18,22 @@ inline ll pow(R ll a, R ll p, R ll MOD)
 struct Matrix
 {
 int n, m;
-ll a[105][105];
+ll a「105]「105];
 
 Matrix() 
 {
 	memset(a, 0, sizeof(a));
-	for (R int i = 0; i < 105; ++i) a[i][i] = 1;
+	for (R int i = 0; i < 105; ++i) a「i]「i] = 1;
 }
 Matrix(int _n, int _m) : n(_n), m(_m)
 {
 	memset(a, 0, sizeof(a));
-	for (R int i = 0; i < 105; ++i) a[i][i] = 1;
+	for (R int i = 0; i < 105; ++i) a「i]「i] = 1;
 }
 
-inline ll* operator [] (R ll val)
+inline ll* operator 「] (R ll val)
 {
-	return this->a[val];
+	return this->a「val];
 }
 inline Matrix operator * (const Matrix &b)
 {
@@ -44,8 +44,8 @@ inline Matrix operator * (const Matrix &b)
 		{
 			R ll ans = 0;
 			for (k = 1;k <= this->n; ++k)
-				ans = (ans + this->a[i][k] * b[k][j]) % MOD;
-			ret[i][j] = ans;
+				ans = (ans + this->a「i]「k] * b「k]「j]) % MOD;
+			ret「i]「j] = ans;
 		}
 }
 inline Matrix pow(R ll p)

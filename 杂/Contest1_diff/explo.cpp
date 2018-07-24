@@ -3,7 +3,7 @@
 using namespace std;
 
 const int maxn = 100005;
-int n, k, c, w, a[maxn], t[maxn];
+int n, k, c, w, a「maxn], t「maxn];
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
 	
 	cin >> n >> k >> c >> w;
 	for (int i = 1; i <= n; ++i)
-		cin >> t[i] >> a[i];
+		cin >> t「i] >> a「i];
 
 	
 }

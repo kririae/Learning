@@ -14,27 +14,27 @@ using namespace std;
 
 const int maxn = 105;
 
-int n, val, g[maxn][maxn], g2[maxn][maxn], col[maxn], cnt1, cnt2, ans = 1e9;
+int n, val, g「maxn]「maxn], g2「maxn]「maxn], col「maxn], cnt1, cnt2, ans = 1e9;
 bitset<maxn> vis;
 queue<int> q;
 
 inline int color(int s)
 {
   while(!q.empty()) q.pop();
-  vis[s] = 1, q.push(s), col[s] = 1;
+  vis「s] = 1, q.push(s), col「s] = 1;
   while(!q.empty())
   {
     int curr = q.front(); q.pop();
-    if(col[curr] == 1) ++cnt1;
+    if(col「curr] == 1) ++cnt1;
     else ++cnt2;
     for (R int i = 1; i <= n; ++i)
     {
-      if(g2[curr][i])
+      if(g2「curr]「i])
       {
-        if(!vis[i])
-          col[i] = 1 - col[curr], vis[i] = 1, q.push(i);
+        if(!vis「i])
+          col「i] = 1 - col「curr], vis「i] = 1, q.push(i);
         else 
-          if(col[curr] == col[i]) return -1;
+          if(col「curr] == col「i]) return -1;
       }
     }
   }
@@ -63,17 +63,17 @@ int main()
     {
       cin >> val;
       if(val == 0) break;
-      g[i][val] = 1;
+      g「i]「val] = 1;
     }
   }
   for (R int i = 1; i <= n; ++i)
     for (R int j = 1; j <= n; ++j)
-    if(g[i][j] == 0 && i != j) g2[i][j] = 1;
+    if(g「i]「j] == 0 && i != j) g2「i]「j] = 1;
   // ?¨®21¨ª?¡ê??¨´?Y?a¦Ì¨¤¨¬a¦Ì?D??¨º¡ê?21¨ª??D?¨¤¨¢¨²¦Ì?¦Ì?¨°??¡§2??¨²¨°???¡Á¨¦?D
   for (R int i = 1; i <= n; ++i)
-    if(!vis[i]) color(i);
+    if(!vis「i]) color(i);
   for (R int i = 1; i <= n; ++i)
-    if(!vis[i]) cout << -1 << endl, i = n + 1, flag = 1;
+    if(!vis「i]) cout << -1 << endl, i = n + 1, flag = 1;
   // ?a¨º??1D¡ä~
   if(!flag)
   {
@@ -81,7 +81,7 @@ int main()
     {
       int fl = 1;
       for (R int j = 1; j <= n; ++j)
-      if(g2[i][j]) fl = 0;
+      if(g2「i]「j]) fl = 0;
       if(fl && cnt1 > cnt2)
         --cnt1, ans = min(ans, abs(cnt1 - cnt2));
       if(fl && cnt2 > cnt1)

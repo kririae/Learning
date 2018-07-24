@@ -11,30 +11,30 @@ const int maxn = 1e5 + 5;
 struct Door
 {
 	int t;
-	char op[4];
+	char op「4];
 	Door() {}
 };
 
 int n, m, ans;
-Door a[maxn];
+Door a「maxn];
 
 inline void solve()
 {
 	cin >> n >> m;
 	for (int i = 1; i <= n; ++i)
-		cin >> a[i].op >> a[i].t;
+		cin >> a「i].op >> a「i].t;
 	
 	for (int j = 30; j >= 0; --j)
 	{
 		int c1 = (1 << j), c0 = 0;
 		for (int i = 1; i <= n; ++i)
 		{
-			int qwq = (a[i].t & (1 << j));
-			if(a[i].op[0] == 'A') 
+			int qwq = (a「i].t & (1 << j));
+			if(a「i].op「0] == 'A') 
 				c1 &= qwq, c0 &= qwq;
-			if(a[i].op[0] == 'O') 
+			if(a「i].op「0] == 'O') 
 				c1 |= qwq, c0 |= qwq;
-			if(a[i].op[0] == 'X') 
+			if(a「i].op「0] == 'X') 
 				c1 ^= qwq, c0 ^= qwq;
 		}
 		c1 >>= j, c0 >>= j;

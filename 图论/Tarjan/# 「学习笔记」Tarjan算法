@@ -6,28 +6,28 @@
 尊从不咕咕咕的信念，我来补了
 Tarjan算法，求点双边双割点桥等等...
 然而这里我要说的是SCC...即`Strong Connected Component`。
-Tarjan算法定义了两个很关键的数组，`dfn[]`, `low[]`，一个很关键的栈`s`。
+Tarjan算法定义了两个很关键的数组，`dfn「]`, `low「]`，一个很关键的栈`s`。
 `dfn`的定义如下，dfs序的时间戳。对于每个节点，其父节点的dfn值小于其本身。
 `s`没有定义，指当前搜索树上走过的顺序。这个一会儿会细细解释。
-`low`的定义如下~追溯值，顾名思义，能够追溯到一个点。`low[x]`表示其`x`节点其本身加上其子节点，能够从一条有向边出发，到达之前的栈`s`中的某个节点的，且这个节点拥有最小时间戳。
-存在情况`dfn[x] == low[x]`。表示能够最早追溯到的点是`x`本身。感性理解一下，其本身以及子树不能通过任意一条边到其父亲节点，只能通过一条边到其本身，即构成一个环。那么，这个环上的节点一定处于一个`SCC`中。感性理解，这个环上的节点正在`s`中。  
-定义后向边`(x, y)`。表示搜索树之外的边。对于任意一个边`(x, y)`。如果`y`没被访问过，则这条边处于搜索树上，即可以`low[x] = min(low[x], low[y])`。如果`y`被访问过，且`vis[y]`（y在栈中）。根据刚才的定义`low`。（`low[x]`表示其`x`节点其本身加上其子节点，能够从一条有向边出发，到达之前的栈`s`中的某个节点的，且这个节点拥有最小时间戳。）`low[x] = min(low[x], dfn[x])`。
+`low`的定义如下~追溯值，顾名思义，能够追溯到一个点。`low「x]`表示其`x`节点其本身加上其子节点，能够从一条有向边出发，到达之前的栈`s`中的某个节点的，且这个节点拥有最小时间戳。
+存在情况`dfn「x] == low「x]`。表示能够最早追溯到的点是`x`本身。感性理解一下，其本身以及子树不能通过任意一条边到其父亲节点，只能通过一条边到其本身，即构成一个环。那么，这个环上的节点一定处于一个`SCC`中。感性理解，这个环上的节点正在`s`中。  
+定义后向边`(x, y)`。表示搜索树之外的边。对于任意一个边`(x, y)`。如果`y`没被访问过，则这条边处于搜索树上，即可以`low「x] = min(low「x], low「y])`。如果`y`被访问过，且`vis「y]`（y在栈中）。根据刚才的定义`low`。（`low「x]`表示其`x`节点其本身加上其子节点，能够从一条有向边出发，到达之前的栈`s`中的某个节点的，且这个节点拥有最小时间戳。）`low「x] = min(low「x], dfn「x])`。
 伪代码如下
 ```fake
 function Tarjan(x) 
-	dfn[x] = low[x] = ++dfs_times 
-	stack.push(x) in_stack[x] = true
+	dfn「x] = low「x] = ++dfs_times 
+	stack.push(x) in_stack「x] = true
 	for e in E
-		if !dfn[e.to]
+		if !dfn「e.to]
 			Tarjan(e.to)
-			low[x] = min(low[x], low[e.to])
-		else if in_stack[e.to]
-			low[x] = min(low[x], dfn[e.to])
-	if low[x] == dfn[x]
+			low「x] = min(low「x], low「e.to])
+		else if in_stack「e.to]
+			low「x] = min(low「x], dfn「e.to])
+	if low「x] == dfn「x]
 		do
 			top = stack.top()
 			stack.pop()
-			in_stack[top] = 0
+			in_stack「top] = 0
 			// ... TODO
 		while top != x			
 ```
@@ -45,37 +45,37 @@ using namespace std;
 
 const int maxn = 2e5 + 5;
 
-vector<int> edges[maxn];
-int n, dfn[maxn], low[maxn], cnt, ans = maxn, x;
+vector<int> edges「maxn];
+int n, dfn「maxn], low「maxn], cnt, ans = maxn, x;
 bitset<maxn> vis;
 stack<int> s;
 
 inline void tarjan(int x)
 {
   // 再打一次~
-  low[x] = dfn[x] = ++cnt;
-  s.push(x), vis[x] = 1;
-  for (R int i = 0; i < edges[x].size(); ++i)
+  low「x] = dfn「x] = ++cnt;
+  s.push(x), vis「x] = 1;
+  for (R int i = 0; i < edges「x].size(); ++i)
   {
-    int to = edges[x][i];
-    if(!dfn[to])
+    int to = edges「x]「i];
+    if(!dfn「to])
     {
       // 如果to在dfs树上
       tarjan(to);
-      low[x] = min(low[x], low[to]);
-    } else if(vis[to]) {
-      // 如果to不在dfs树上，用dfn更新low[x]
-      low[x] = min(low[x], dfn[to]);
+      low「x] = min(low「x], low「to]);
+    } else if(vis「to]) {
+      // 如果to不在dfs树上，用dfn更新low「x]
+      low「x] = min(low「x], dfn「to]);
     }
   }
-  if(low[x] == dfn[x]) 
+  if(low「x] == dfn「x]) 
   {
     // 又到了pop的季节
     int cnt = 0;
     for (; ;)
     {
       int curr = s.top();
-      s.pop(), ++cnt, vis[curr] = 0;
+      s.pop(), ++cnt, vis「curr] = 0;
       if(curr == x) break;
     } // 把需要pop的都pop出来
     if(cnt > 1) ans = min(ans, cnt); // 如果不光是这条边的话
@@ -88,10 +88,10 @@ int main()
   for (R int i = 1; i <= n; ++i)
   { 
     scanf("%d", &x);
-    edges[i].push_back(x);
+    edges「i].push_back(x);
   }
   for (R int i = 1; i <= n; ++i)
-    if(!dfn[i]) tarjan(i);
+    if(!dfn「i]) tarjan(i);
   printf("%d", ans);
 }
 ```
@@ -113,7 +113,7 @@ namespace IO
 {
 inline char gc()
 {
-  static char buf[1 << 18], *fs, *ft;
+  static char buf「1 << 18], *fs, *ft;
   return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
 }
 inline int read()
@@ -128,33 +128,33 @@ inline int read()
 
 namespace BZOJ1051
 {
-vector<int> edges[maxn];
+vector<int> edges「maxn];
 bitset<maxn> vis;
 stack<int> s;
-int n, m, x, y, dfn[maxn], low[maxn], cnt, bl[maxn], bcnt, out[maxn], siz[maxn];
+int n, m, x, y, dfn「maxn], low「maxn], cnt, bl「maxn], bcnt, out「maxn], siz「maxn];
 
 inline void tarjan(int x)
 {
-  dfn[x] = low[x] = ++cnt;
-  s.push(x), vis[x] = 1;
-  for (R int i = 0; i < edges[x].size(); ++i)
+  dfn「x] = low「x] = ++cnt;
+  s.push(x), vis「x] = 1;
+  for (R int i = 0; i < edges「x].size(); ++i)
   {
-    int to = edges[x][i];
-    if(!dfn[to])
+    int to = edges「x]「i];
+    if(!dfn「to])
     {
       tarjan(to);
-      low[x] = min(low[x], low[to]);
-    } else if(vis[to]) {
-      low[x] = min(low[x], dfn[to]);
+      low「x] = min(low「x], low「to]);
+    } else if(vis「to]) {
+      low「x] = min(low「x], dfn「to]);
     }
   }
-  if(low[x] == dfn[x]) 
+  if(low「x] == dfn「x]) 
   {
     ++bcnt;
     for (; ; ) {
       int now = s.top();
-      s.pop(), vis[now] = 0;
-      bl[now] = bcnt; ++siz[bcnt];
+      s.pop(), vis「now] = 0;
+      bl「now] = bcnt; ++siz「bcnt];
       if(now == x) break; 
     }
   }
@@ -167,20 +167,20 @@ inline void solve()
   for (R int i = 1; i <= m; ++i)
   { 
     x = read(), y = read();
-    edges[x].push_back(y);
+    edges「x].push_back(y);
   }
   for (R int i = 1; i <= n; ++i)
-    if(!dfn[i]) tarjan(i);
+    if(!dfn「i]) tarjan(i);
   for (R int i = 1; i <= n; ++i)
-    for (R int j = 0; j < edges[i].size(); ++j)
+    for (R int j = 0; j < edges「i].size(); ++j)
       // 遍历所有的边~
-      if(bl[i] != bl[edges[i][j]]) ++out[bl[i]];
+      if(bl「i] != bl「edges「i]「j]]) ++out「bl「i]];
   int pos = 0;
   for (R int i = 1; i <= bcnt; ++i)
-    if(out[i] == 0) 
+    if(out「i] == 0) 
       if(pos) return puts("0"), void();
       else pos = i;
-    printf("%d", siz[pos]);
+    printf("%d", siz「pos]);
 }
 }
 
@@ -207,7 +207,7 @@ namespace IO
 {
 inline char gc()
 {
-  static char buf[1 << 18], *fs, *ft;
+  static char buf「1 << 18], *fs, *ft;
   return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
 }
 inline int read()
@@ -222,30 +222,30 @@ inline int read()
 
 namespace BZOJ1179
 {
-vector<int> edges[maxn], dag[maxn];
+vector<int> edges「maxn], dag「maxn];
 stack<int> S;
 bitset<maxn> vis;
 queue<int> q;
 int n, m, x, y, s, p, cnt, tot;
-int a[maxn], b[maxn], dfn[maxn], low[maxn], belong[maxn], sum[maxn], f[maxn];
+int a「maxn], b「maxn], dfn「maxn], low「maxn], belong「maxn], sum「maxn], f「maxn];
 
 inline void tarjan(int x)
 {
-  dfn[x] = low[x] = ++cnt;
-  S.push(x), vis[x] = 1;
-  for (R int i = 0; i < edges[x].size(); ++i)
+  dfn「x] = low「x] = ++cnt;
+  S.push(x), vis「x] = 1;
+  for (R int i = 0; i < edges「x].size(); ++i)
   {
-    int to = edges[x][i];
-    if(!dfn[to])
-      tarjan(to), low[x] = min(low[x], low[to]);
-    else if(vis[to]) low[x] = min(low[x], dfn[to]);
+    int to = edges「x]「i];
+    if(!dfn「to])
+      tarjan(to), low「x] = min(low「x], low「to]);
+    else if(vis「to]) low「x] = min(low「x], dfn「to]);
   }
-  if(low[x] == dfn[x])
+  if(low「x] == dfn「x])
   {
     int curr; ++tot;
     do {
-      curr = S.top(); S.pop(), vis[curr] = 0;
-      belong[curr] = tot, sum[tot] += a[curr];
+      curr = S.top(); S.pop(), vis「curr] = 0;
+      belong「curr] = tot, sum「tot] += a「curr];
     } while(curr != x);
   }
 }
@@ -253,18 +253,18 @@ inline void tarjan(int x)
 inline void BFS(int s)
 {
   // DAG拓扑序转移，SPFA有点大材小用了...
-  vis.reset(), vis[s] = 1;
-  q.push(s), f[s] = sum[s];
+  vis.reset(), vis「s] = 1;
+  q.push(s), f「s] = sum「s];
   while(!q.empty())
   {
-    int curr = q.front(); q.pop(); vis[curr] = 0;
-    for (R int i = 0; i < dag[curr].size(); ++i)
+    int curr = q.front(); q.pop(); vis「curr] = 0;
+    for (R int i = 0; i < dag「curr].size(); ++i)
     {
-      int to = dag[curr][i];
-      if(f[curr] + sum[to] > f[to])
+      int to = dag「curr]「i];
+      if(f「curr] + sum「to] > f「to])
       {
-        f[to] = f[curr] + sum[to];
-        if(!vis[to]) vis[to], q.push(to);
+        f「to] = f「curr] + sum「to];
+        if(!vis「to]) vis「to], q.push(to);
       }
     }
   }
@@ -275,28 +275,28 @@ inline void solve()
   using namespace IO;
   n = read(), m = read();
   for (R int i = 1; i <= m; ++i)
-    x = read(), y = read(), edges[x].push_back(y);
+    x = read(), y = read(), edges「x].push_back(y);
   for (R int i = 1; i <= n; ++i)
-    a[i] = read();
+    a「i] = read();
   s = read(), p = read();
   for (R int i = 1; i <= p; ++i)
-    b[i] = read();
+    b「i] = read();
   // init
   // 其他的都不管了，我们先把点缩好~
   for (R int i = 1; i <= n; ++i)
-    if(!dfn[i]) tarjan(i);
+    if(!dfn「i]) tarjan(i);
   // 缩好之后建DAG...跑dp
   for (R int i = 1; i <= n; ++i)
-    for (R int j = 0; j < edges[i].size(); ++j)
+    for (R int j = 0; j < edges「i].size(); ++j)
     {
-      int to = edges[i][j];
-      if(belong[i] != belong[to]) 
-        dag[belong[i]].push_back(belong[to]);
+      int to = edges「i]「j];
+      if(belong「i] != belong「to]) 
+        dag「belong「i]].push_back(belong「to]);
     }
-  BFS(belong[s]);
+  BFS(belong「s]);
   int ans = 0;
   for (R int i = 1; i <= p; ++i)
-    ans = max(ans, f[belong[b[i]]]);
+    ans = max(ans, f「belong「b「i]]]);
   printf("%d", ans);
 }
 }
@@ -325,7 +325,7 @@ namespace IO
 {
 inline char gc()
 {
-  static char buf[1 << 18], *fs, *ft;
+  static char buf「1 << 18], *fs, *ft;
   return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
 }
 inline int read()
@@ -340,44 +340,44 @@ inline int read()
 
 namespace BZOJ2427
 {
-vector<int> edges[maxn], DAG[maxn];
+vector<int> edges「maxn], DAG「maxn];
 stack<int> s;
-int n, m, w[maxn], v[maxn], d[maxn], f[maxn][505];
-int dfn[maxn], low[maxn], vis[maxn], cnt;
-int belong[maxn], ws[maxn], vs[maxn], in[maxn], tot;
+int n, m, w「maxn], v「maxn], d「maxn], f「maxn]「505];
+int dfn「maxn], low「maxn], vis「maxn], cnt;
+int belong「maxn], ws「maxn], vs「maxn], in「maxn], tot;
 
 inline void tarjan(int x)
 {
-  dfn[x] = low[x] = ++cnt;
-  vis[x] = 1, s.push(x);
-  for (R int i = 0; i < edges[x].size(); ++i)
+  dfn「x] = low「x] = ++cnt;
+  vis「x] = 1, s.push(x);
+  for (R int i = 0; i < edges「x].size(); ++i)
   {
-    int to = edges[x][i];
-    if(!dfn[to])
-      tarjan(to), low[x] = min(low[x], low[to]);
-    else if(vis[to]) 
-      low[x] = min(low[x], dfn[to]);
+    int to = edges「x]「i];
+    if(!dfn「to])
+      tarjan(to), low「x] = min(low「x], low「to]);
+    else if(vis「to]) 
+      low「x] = min(low「x], dfn「to]);
   }
-  if(low[x] == dfn[x])
+  if(low「x] == dfn「x])
   {
     int curr; ++tot;
     do {
-      curr = s.top(), s.pop(), vis[curr] = 0;
-      belong[curr] = tot, ws[tot] += w[curr], vs[tot] += v[curr];
+      curr = s.top(), s.pop(), vis「curr] = 0;
+      belong「curr] = tot, ws「tot] += w「curr], vs「tot] += v「curr];
     } while(curr != x);
   }
 }
 
 inline void dp(int x)
 {
-  for (R int i = ws[x]; i <= m; ++i) f[x][i] = vs[x];
-  for (R int i = 0; i < DAG[x].size(); ++i)
+  for (R int i = ws「x]; i <= m; ++i) f「x]「i] = vs「x];
+  for (R int i = 0; i < DAG「x].size(); ++i)
   {
-    int to = DAG[x][i];
+    int to = DAG「x]「i];
     dp(to);
-    for (R int j = m - ws[x]; j >= 0; --j) // 树形背包的板子...用就对了...
+    for (R int j = m - ws「x]; j >= 0; --j) // 树形背包的板子...用就对了...
       for (R int k = 0; k <= j; ++k)
-        f[x][j + ws[x]] = max(f[x][j + ws[x]], f[x][j + ws[x] - k] + f[to][k]);
+        f「x]「j + ws「x]] = max(f「x]「j + ws「x]], f「x]「j + ws「x] - k] + f「to]「k]);
   }
 }
 
@@ -385,23 +385,23 @@ inline void solve()
 {
   using namespace IO;
   n = read(), m = read();
-  for (R int i = 1; i <= n; ++i) w[i] = read();
-  for (R int i = 1; i <= n; ++i) v[i] = read();
-  for (R int i = 1; i <= n; ++i) if(d[i] = read()) edges[d[i]].push_back(i);
+  for (R int i = 1; i <= n; ++i) w「i] = read();
+  for (R int i = 1; i <= n; ++i) v「i] = read();
+  for (R int i = 1; i <= n; ++i) if(d「i] = read()) edges「d「i]].push_back(i);
   for (R int i = 1; i <= n; ++i)
-    if(!dfn[i]) tarjan(i);
+    if(!dfn「i]) tarjan(i);
   for (R int i = 1; i <= n; ++i)
-    for (R int j = 0; j < edges[i].size(); ++j)
+    for (R int j = 0; j < edges「i].size(); ++j)
     {
-      int to = edges[i][j];
-      if(belong[i] != belong[to]) ++in[belong[to]], DAG[belong[i]].push_back(belong[to]);
+      int to = edges「i]「j];
+      if(belong「i] != belong「to]) ++in「belong「to]], DAG「belong「i]].push_back(belong「to]);
     }
-  // for (R int i = 1; i <= tot; ++i) cout << ws[i] << " " << vs[i] << endl;
+  // for (R int i = 1; i <= tot; ++i) cout << ws「i] << " " << vs「i] << endl;
   for (R int i = 1; i <= tot; ++i)
-    if(in[i] == 0) DAG[tot + 1].push_back(i); // 建虚拟节点统一森林，方便树形dp...
+    if(in「i] == 0) DAG「tot + 1].push_back(i); // 建虚拟节点统一森林，方便树形dp...
   dp(tot + 1);
-  // cout << ws[tot + 1] << endl;
-  printf("%d", f[tot + 1][m]);
+  // cout << ws「tot + 1] << endl;
+  printf("%d", f「tot + 1]「m]);
 }
 }
 

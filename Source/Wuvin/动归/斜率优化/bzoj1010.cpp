@@ -1,4 +1,4 @@
-/*²Ö¿â½¨ÉèÈõ»¯°æ*/
+/*Â²Ã–Â¿Ã¢Â½Â¨Ã‰Ã¨ÃˆÃµÂ»Â¯Â°Ã¦*/
 #include<cstdio>
 #include<iostream>
 #define N 50005

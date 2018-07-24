@@ -12,7 +12,7 @@ namespace IO
 {
 inline char gc()
 {
-	static char buf[1 << 18], *fs, *ft;
+	static char buf「1 << 18], *fs, *ft;
 	return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
 }
 inline int read()
@@ -30,10 +30,10 @@ namespace IO
 {
 inline char gc()
 {
-	static char buf[1 << 18];
+	static char buf「1 << 18];
 	static int s = 0, t = 0;
 	s == t ? s = 0, t = fread(buf, 1, 1 << 18, stdin) : 0;
-	return s == t ? -1 : buf[s++];
+	return s == t ? -1 : buf「s++];
 }
 template<class T>
 inline void read(T &val)

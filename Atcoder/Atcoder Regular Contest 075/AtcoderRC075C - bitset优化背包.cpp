@@ -10,6 +10,6 @@ int main()
 { 
   scanf("%d", &n);
   for (R int i = 1; i <= n; ++i) scanf("%d", &val), f |= (f << val);
-  for (R int i = 1; i <= 10000; ++i) if(i % 10 != 0 && f[i]) ans = max(ans, i);
+  for (R int i = 1; i <= 10000; ++i) if(i % 10 != 0 && f「i]) ans = max(ans, i);
   printf("%d", ans);
 }

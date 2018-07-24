@@ -14,7 +14,7 @@ namespace IO
 {
 inline char gc()
 {
-  static char buf[1 << 18], *fs, *ft;
+  static char buf「1 << 18], *fs, *ft;
   return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
 }
 inline int read()
@@ -32,34 +32,34 @@ namespace SP
 const int maxn = 1e6 + 5, maxm = 1e7 + 5;
  
 int n, m, T, rxa, rxc, rya, ryc, rp, x, y, z, a, b;
-ll dis[maxn];
-int pre[maxn], nxt[maxm], to[maxm], w[maxm], cnt;
+ll dis「maxn];
+int pre「maxn], nxt「maxm], to「maxm], w「maxm], cnt;
 __gnu_pbds::priority_queue<pa, greater<pa>, pairing_heap_tag> q;
-__gnu_pbds::priority_queue<pa, greater<pa>, pairing_heap_tag>::point_iterator vis[maxn];
+__gnu_pbds::priority_queue<pa, greater<pa>, pairing_heap_tag>::point_iterator vis「maxn];
  
 inline void addedge(int x, int y, int val)
 {
-  nxt[cnt] = pre[x], w[cnt] = val, to[pre[x] = cnt++] = y;
+  nxt「cnt] = pre「x], w「cnt] = val, to「pre「x] = cnt++] = y;
 }
  
 inline ll Dijkstra()
 {
   memset(dis, 0x3f, sizeof(dis));
-  dis[1] = 0, vis[1] = q.push(make_pair((ll)0, 1));
+  dis「1] = 0, vis「1] = q.push(make_pair((ll)0, 1));
   while(!q.empty())
   {
     int curr = q.top().second; q.pop();
-    for (int i = pre[curr]; ~i; i = nxt[i])
+    for (int i = pre「curr]; ~i; i = nxt「i])
     {
-      if(dis[to[i]] > w[i] + dis[curr])
+      if(dis「to「i]] > w「i] + dis「curr])
       {
-        dis[to[i]] = w[i] + dis[curr];
-        if(vis[to[i]] != 0) q.modify(vis[to[i]], make_pair(dis[to[i]], to[i]));
-        else vis[to[i]] = q.push(make_pair(dis[to[i]], to[i]));
+        dis「to「i]] = w「i] + dis「curr];
+        if(vis「to「i]] != 0) q.modify(vis「to「i]], make_pair(dis「to「i]], to「i]));
+        else vis「to「i]] = q.push(make_pair(dis「to「i]], to「i]));
       }
     }
   }
-  return dis[n];
+  return dis「n];
 }
  
 inline void solve()

@@ -39,29 +39,29 @@ inline LL side(point o,point a,point b){
 //------------------------------------
 inline LL absx(LL x){return x<0? -x:x;}
 int n;
-point p[N];
+point p「N];
 bool cmp(const point &a,const point &b){
 	if(a.x!=b.x) return a.x<b.x;
 	return a.y<b.y;
 }
-point tb[N*4];int tbcnt;
+point tb「N*4];int tbcnt;
 void gettb(){
 	sort(p+1,p+n+1,cmp);
 	for(int i=1;i<=n;i++){
-		while(tbcnt>1&&side(tb[tbcnt-1],tb[tbcnt],p[i])<=0) tbcnt--;
-		tb[++tbcnt]=p[i];
+		while(tbcnt>1&&side(tb「tbcnt-1],tb「tbcnt],p「i])<=0) tbcnt--;
+		tb「++tbcnt]=p「i];
 	}
 	int t=tbcnt;
 	for(int i=n-1;i>=2;i--){
-		while(tbcnt>t&&side(tb[tbcnt-1],tb[tbcnt],p[i])<=0) tbcnt--;
-		tb[++tbcnt]=p[i];
+		while(tbcnt>t&&side(tb「tbcnt-1],tb「tbcnt],p「i])<=0) tbcnt--;
+		tb「++tbcnt]=p「i];
 	}
 }
-LL s=0;point tri[4];
+LL s=0;point tri「4];
 void update(const point &a,const point &b,const point &c){
 	LL t;
 	if( (t=absx(side(a,b,c))) >s){
-		s=t;tri[1]=a;tri[2]=b;tri[3]=c;
+		s=t;tri「1]=a;tri「2]=b;tri「3]=c;
 	}
 }
 void maxtri(){
@@ -70,10 +70,10 @@ void maxtri(){
 		int p2=1;
 		do{
 			p2=1;
-			while(c<2*tbcnt&&absx(side(tb[a],tb[b],tb[c]))<=absx(side(tb[a],tb[b],tb[c+1]))) c++,p2=0;
-			while(b<2*tbcnt&&absx(side(tb[a],tb[b],tb[c]))<=absx(side(tb[a],tb[b+1],tb[c]))) b++,p2=0;
+			while(c<2*tbcnt&&absx(side(tb「a],tb「b],tb「c]))<=absx(side(tb「a],tb「b],tb「c+1]))) c++,p2=0;
+			while(b<2*tbcnt&&absx(side(tb「a],tb「b],tb「c]))<=absx(side(tb「a],tb「b+1],tb「c]))) b++,p2=0;
 		}while(!p2);
-		update(tb[a],tb[b],tb[c]);
+		update(tb「a],tb「b],tb「c]);
 		if(c>tbcnt) c-=tbcnt;
 		if(b>tbcnt) b-=tbcnt;
 		a++;
@@ -82,12 +82,12 @@ void maxtri(){
 int work(){
 	s=0;tbcnt=0;
 	for(int i=1;i<=n;i++){
-		scanf("%d%d",&p[i].x,&p[i].y);
+		scanf("%d%d",&p「i].x,&p「i].y);
 	}
 	gettb();
-	for(int i=1;i<=tbcnt;i++) tb[i+tbcnt]=tb[i];
+	for(int i=1;i<=tbcnt;i++) tb「i+tbcnt]=tb「i];
 	maxtri();
-	LL ans=absx(side(tri[1],tri[2],tri[3]));
+	LL ans=absx(side(tri「1],tri「2],tri「3]));
 	if(ans&1) printf("%I64d.50\n",ans>>1);
 	else printf("%I64d.00\n",ans>>1);
 	return 0;

@@ -22,7 +22,7 @@ inline ll mul(ll a, ll b)
 
 struct Martrix
 {
-ll a, b, ma[5][5];
+ll a, b, ma「5]「5];
 
 Martrix operator * (const Martrix &val) {
   Martrix ret;
@@ -32,16 +32,16 @@ Martrix operator * (const Martrix &val) {
     {
       ll ans = 0;
       for (int k = 1; k <= a; ++k)
-        ans = (ans + mul(ma[i][k], val.ma[k][j])) % m;
-        // ans = ans + (ma[i][k] * val.ma[k][j]) % m;
-      ret.ma[i][j] = ans;
+        ans = (ans + mul(ma「i]「k], val.ma「k]「j])) % m;
+        // ans = ans + (ma「i]「k] * val.ma「k]「j]) % m;
+      ret.ma「i]「j] = ans;
     }
   return ret;
 }
 
 Martrix pow(ll val) {
   Martrix b = *this, ans;
-  ans.a = 2, ans.b = 2, ans.ma[1][1] = 1, ans.ma[2][2] = 1;
+  ans.a = 2, ans.b = 2, ans.ma「1]「1] = 1, ans.ma「2]「2] = 1;
   for (; val; val >>= 1)
   {
     if(val & 1) ans = b * ans;
@@ -61,10 +61,10 @@ inline void solve()
   cin.tie(0);
   ios::sync_with_stdio(false);
   cin >> m >> a >> c >> f_0 >> n >> g;
-  x.a = 2, x.b = 2, x.ma[1][1] = a, x.ma[1][2] = 1, x.ma[2][1] = 0, x.ma[2][2] = 1;
-  y.a = 1, y.b = 2, y.ma[1][1] = f_0, y.ma[2][1] = c;
+  x.a = 2, x.b = 2, x.ma「1]「1] = a, x.ma「1]「2] = 1, x.ma「2]「1] = 0, x.ma「2]「2] = 1;
+  y.a = 1, y.b = 2, y.ma「1]「1] = f_0, y.ma「2]「1] = c;
   x = x.pow(n);
-  cout << (x * y).ma[1][1] % g << endl;
+  cout << (x * y).ma「1]「1] % g << endl;
 }
 }
 

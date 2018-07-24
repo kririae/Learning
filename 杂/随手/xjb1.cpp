@@ -1,11 +1,11 @@
 for (R int i = 2; i <= n; ++i)
 {
-	if(!vis[i]) prm[++cnt] = i;
+	if(!vis「i]) prm「++cnt] = i;
 	for (R int j = 1; j <= cnt; ++j)
 	{
-		if(i * prm[j] > n) break;
-		vis[i * prm[j]] = 1;
-		if(i % prm[j] == 0) break;
+		if(i * prm「j] > n) break;
+		vis「i * prm「j]] = 1;
+		if(i % prm「j] == 0) break;
 	}
 }
 
@@ -22,23 +22,23 @@ inline ll pow(ll a, ll p)
 
 class Matrix
 {
-ll n, m, a[105][105];
+ll n, m, a「105]「105];
 inline Matrix() 
 {
 	memset(a, 0, sizeof(a));
 	for (R int i = 0; i < 105; ++i)
-		a[i][i] = 1;
+		a「i]「i] = 1;
 }
 inline Matrix(int _n, int _m) : n(_n), m(_m) 
 {
 	memset(a, 0, sizeof(a));
 	for (R int i = 0; i < 105; ++i)
-		a[i][i] = 1;
+		a「i]「i] = 1;
 }
 
-inline ll* operator [] (ll val)
+inline ll* operator 「] (ll val)
 {
-	return this->a[val];
+	return this->a「val];
 }
 
 inline Matrix operator * (const Matrix &x)
@@ -49,8 +49,8 @@ inline Matrix operator * (const Matrix &x)
 		{
 			ll ans = 0;
 			for (R int k = 1; k <= this->n; ++k)
-				ans = (ans + this->a[i][k] * x[k][j]) % mod;
-			ret[i][j] = ans;
+				ans = (ans + this->a「i]「k] * x「k]「j]) % mod;
+			ret「i]「j] = ans;
 		}
 	return ret;
 }
@@ -75,26 +75,26 @@ inline int exgcd(int &x, int &y, int a, int b)
 
 inline void tarjan(int x)
 {
-	low[x] = dfn[x] = ++cnt;
-	s.push(x), vis[x] = 1;
-	for (R int i = 0; i < edges[x].size(); ++i)
+	low「x] = dfn「x] = ++cnt;
+	s.push(x), vis「x] = 1;
+	for (R int i = 0; i < edges「x].size(); ++i)
 	{
-		int to = edges[x][i];
-		if(!dfn[i])
+		int to = edges「x]「i];
+		if(!dfn「i])
 		{
 			tarjan(to);
-			low[x] = min(low[x], low[to]);
-		} else if(vis[to]) {
-			low[x] = min(low[x], dfn[to]);
+			low「x] = min(low「x], low「to]);
+		} else if(vis「to]) {
+			low「x] = min(low「x], dfn「to]);
 		}
 	}
-	if(low[x] == dfn[x])
+	if(low「x] == dfn「x])
 	{
 		for (; ; )
 		{
 			int now = s.top();
 			s.pop();
-			vis[now] = 0;
+			vis「now] = 0;
 			if(now == x) break;
 		}
 	}

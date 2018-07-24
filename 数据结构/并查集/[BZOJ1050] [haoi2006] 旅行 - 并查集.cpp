@@ -10,10 +10,10 @@ namespace IO
 inline char gc()
 {
 		static const int LEN = 1e7;
-		static char buf[LEN];
+		static char buf「LEN];
 		static int s = 0, t = 0;
 		s == t ? s = 0, t = fread(buf, 1, LEN, stdin) : 0;
-		return s == t ? -1 : buf[s++];
+		return s == t ? -1 : buf「s++];
 }
 
 template<class T>
@@ -38,9 +38,9 @@ struct Edge
 {
 	int from, to, val;
 	bool operator < (const Edge &a) const { return val < a.val; }
-} edges[maxm];
+} edges「maxm];
 
-int n, m, S, T, flag, fa[maxn];
+int n, m, S, T, flag, fa「maxn];
 
 inline int gcd(int a, int b)
 {
@@ -49,17 +49,17 @@ inline int gcd(int a, int b)
 
 inline int find(int val)
 {
-	return val == fa[val] ? val : fa[val] = find(fa[val]);
+	return val == fa「val] ? val : fa「val] = find(fa「val]);
 }
 
 inline int kruskal(int s)
 {
-	for (int i = 1; i <= n; ++i) fa[i] = i;
+	for (int i = 1; i <= n; ++i) fa「i] = i;
 	for (int i = s; i <= m; ++i)
 	{
-		Edge &e = edges[i];
+		Edge &e = edges「i];
 		int a = find(e.from), b = find(e.to);
-		if(a != b) fa[a] = b;
+		if(a != b) fa「a] = b;
 		if(find(S) == find(T)) return e.val;
 	}
 	return -1;
@@ -70,7 +70,7 @@ inline void solve()
 	using namespace IO;
 	read(n), read(m);
 	for (R int i = 1; i <= m; ++i) 
-		read(edges[i].from), read(edges[i].to), read(edges[i].val);
+		read(edges「i].from), read(edges「i].to), read(edges「i].val);
 	read(S), read(T);
 	sort(edges + 1, edges + 1 + m);
 
@@ -78,11 +78,11 @@ inline void solve()
 	int ans1, ans2;
 	for (int i = 1; i < m; ++i)
 	{
-		if(edges[i].val == edges[i - 1].val) continue;
+		if(edges「i].val == edges「i - 1].val) continue;
 		int ret = kruskal(i);
 		if(ret == -1) continue;
 		flag = 1;
-		int tmp1 = edges[i].val, tmp2 = ret;
+		int tmp1 = edges「i].val, tmp2 = ret;
 		if((double)tmp2 / tmp1 < ans)
 			ans = (double)tmp2 / tmp1, ans1 = tmp1, ans2 = tmp2;
 	}

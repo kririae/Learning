@@ -3,7 +3,7 @@
 因为开始的带权路径压缩怎么都调不出来
 于是就启发式了
 比较板子的一个带权并查集，但是带权并查集的调试难度都不是很低
-这样，get(a)表示a到a的根节点的距离。d[a]表示a到fa[a]的距离。
+这样，get(a)表示a到a的根节点的距离。d「a]表示a到fa「a]的距离。
 然后get(r) - get(l)就表示，按照目前的限制来看，r_i和l_i的距离是多少
 如果不满足的话，直接gg
 但是满足的话，继续。
@@ -24,23 +24,23 @@
 using namespace std;
  
 const int maxn = 2e5 + 5;
-int n, m, l, r, dis, fa[maxn], d[maxn], h[maxn];
+int n, m, l, r, dis, fa「maxn], d「maxn], h「maxn];
  
 inline int get(int x, int ans = 0)
 {
-	if(x == fa[x]) return d[x];
-	return d[x] + get(fa[x]);
+	if(x == fa「x]) return d「x];
+	return d「x] + get(fa「x]);
 }
  
 inline int find(int x)
 {
-	if(x == fa[x]) return x;
-	 return find(fa[x]);
+	if(x == fa「x]) return x;
+	 return find(fa「x]);
 }
  
 int main()
 {
-	for (R int i = 0; i < maxn; ++i) fa[i] = i, h[i] = 1;
+	for (R int i = 0; i < maxn; ++i) fa「i] = i, h「i] = 1;
 	scanf("%d%d", &n, &m);
 	for (R int i = 1; i <= m; ++i)
 	{
@@ -48,9 +48,9 @@ int main()
 		int a = find(l), b = find(r);
 		if(a != b) 
 		{
-			if(h[a] > h[b]) fa[b] = a, d[b] = get(l) - get(r) + dis;
-			else if(h[a] < h[b]) fa[a] = b, d[a] = get(r) - get(l) - dis;
-			else fa[a] = b, d[a] = get(r) - get(l) - dis, ++h[b];
+			if(h「a] > h「b]) fa「b] = a, d「b] = get(l) - get(r) + dis;
+			else if(h「a] < h「b]) fa「a] = b, d「a] = get(r) - get(l) - dis;
+			else fa「a] = b, d「a] = get(r) - get(l) - dis, ++h「b];
 		}
 		else if(get(r) - get(l) != dis) 
 				return puts("No"), 0;

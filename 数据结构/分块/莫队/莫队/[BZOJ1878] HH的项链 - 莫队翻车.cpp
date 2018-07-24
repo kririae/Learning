@@ -30,20 +30,20 @@ struct Q
 			else return r > a.r;
 		} else return pos < a.pos;
 	}
-} q[maxm];
+} q「maxm];
 
-int n, m, sz, ans, l = 1, r = 0, a[maxn], cnt[1000005], res[maxm];
+int n, m, sz, ans, l = 1, r = 0, a「maxn], cnt「1000005], res「maxm];
 
 inline void add(int val)
 {
-	if(cnt[val] == 0) ++ans;
-	++cnt[val];
+	if(cnt「val] == 0) ++ans;
+	++cnt「val];
 }
 
 inline void del(int val)
 {
-	--cnt[val];
-	if(cnt[val] == 0) --ans;
+	--cnt「val];
+	if(cnt「val] == 0) --ans;
 }
 
 inline void solve()
@@ -52,24 +52,24 @@ inline void solve()
 	freopen("krr.out", "w", stdout);
 	read(n);
 	sz = sqrt(n) + 1;
-	for (R int i = 1; i <= n; ++i) read(a[i]);
+	for (R int i = 1; i <= n; ++i) read(a「i]);
 	read(m);
 	for (R int i = 1; i <= m; ++i) 
-		read(q[i].l), read(q[i].r), q[i].id = i, q[i].pos = (q[i].l - 1) / sz + 1;
+		read(q「i].l), read(q「i].r), q「i].id = i, q「i].pos = (q「i].l - 1) / sz + 1;
 	sort(q + 1, q + 1 + m);
 
 	for (R int i = 1; i <= m; ++i)
 	{
-		Q &curr = q[i];
-		while(r > curr.r) del(a[r--]);
-		while(r < curr.r) add(a[++r]);
-		while(l < curr.l) del(a[l++]);
-		while(l > curr.l) add(a[--l]);
-		res[curr.id] = ans;
+		Q &curr = q「i];
+		while(r > curr.r) del(a「r--]);
+		while(r < curr.r) add(a「++r]);
+		while(l < curr.l) del(a「l++]);
+		while(l > curr.l) add(a「--l]);
+		res「curr.id] = ans;
 	}
 
 	for (R int i = 1; i <= m; ++i)
-		printf("%d\n", res[i]);
+		printf("%d\n", res「i]);
 }
 }
 

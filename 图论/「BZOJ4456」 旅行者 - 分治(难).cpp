@@ -11,7 +11,7 @@ namespace IO
 {
 inline char gc()
 {
-  static char buf[1 << 18], *fs, *ft;
+  static char buf「1 << 18], *fs, *ft;
   return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
 }
 inline int read()
@@ -33,20 +33,20 @@ struct Edge
   int to, val;
   Edge(int t, int v) : to(t), val(v) {}
 };
-vector<Edge> edges[maxn];
+vector<Edge> edges「maxn];
 struct Query
 {
   int x, y, id;
-} q[maxq], tmp[maxq];
-int n, m, val, Q, dis[maxn], res[maxq];
-pii idx[maxn];
+} q「maxq], tmp「maxq];
+int n, m, val, Q, dis「maxn], res「maxq];
+pii idx「maxn];
 bitset<maxn> vis;
 queue<int> qwq;
 
 inline void addedge(int from, int to, int val)
 {
-  edges[from].push_back(Edge(to, val));
-  edges[to].push_back(Edge(from, val));
+  edges「from].push_back(Edge(to, val));
+  edges「to].push_back(Edge(from, val));
 }
 
 inline int calc(int x, int y)
@@ -57,24 +57,24 @@ inline int calc(int x, int y)
 inline void SPFA(int xs, int ys, int xl, int xr, int yl, int yr, bool flag)
 {
   // 一个骚优化, todo，没懂
-  int d = dis[calc(xs, ys)];
+  int d = dis「calc(xs, ys)];
   for (R int i = xl; i <= xr; ++i)
     for (R int j = yl; j <= yr; ++j)
-      dis[calc(i, j)] = flag ? dis[calc(i, j)] + d : inf;
+      dis「calc(i, j)] = flag ? dis「calc(i, j)] + d : inf;
   int s = calc(xs, ys);
-  dis[s] = 0, vis[s] = 1, qwq.push(s);
+  dis「s] = 0, vis「s] = 1, qwq.push(s);
   while(!qwq.empty()) 
   {
-    int curr = qwq.front(); qwq.pop(); vis[curr] = 0; 
-    for (int i = 0; i < edges[curr].size(); ++i)
+    int curr = qwq.front(); qwq.pop(); vis「curr] = 0; 
+    for (int i = 0; i < edges「curr].size(); ++i)
     {
-      Edge &e = edges[curr][i];
-      int tox = idx[e.to].first, toy = idx[e.to].second;
+      Edge &e = edges「curr]「i];
+      int tox = idx「e.to].first, toy = idx「e.to].second;
       if(tox >= xl && tox <= xr && toy >= yl && toy <= yr)
-        if(dis[e.to] > dis[curr] + e.val) 
+        if(dis「e.to] > dis「curr] + e.val) 
         {
-          dis[e.to] = dis[curr] + e.val;
-          if(!vis[calc(tox, toy)]) qwq.push(calc(tox, toy)), vis[calc(tox, toy)] = 1;
+          dis「e.to] = dis「curr] + e.val;
+          if(!vis「calc(tox, toy)]) qwq.push(calc(tox, toy)), vis「calc(tox, toy)] = 1;
         }
     }
   }
@@ -90,17 +90,17 @@ inline void solve(int xl, int xr, int yl, int yr, int l, int r)
     {
       SPFA(i, mid, xl, xr, yl, yr, i != xl);
       for (R int j = l; j <= r; ++j)
-        res[q[j].id] = min(res[q[j].id], dis[q[j].x] + dis[q[j].y]);
+        res「q「j].id] = min(res「q「j].id], dis「q「j].x] + dis「q「j].y]);
     }
     int tl = l - 1, tr = r + 1;
     for (R int i = l; i <= r; ++i)
     {
-      int y1 = idx[q[i].x].second, y2 = idx[q[i].y].second;
-      if(y1 < mid && y2 < mid) tmp[++tl] = q[i];
-      else if(y1 > mid && y2 > mid) tmp[--tr] = q[i];
+      int y1 = idx「q「i].x].second, y2 = idx「q「i].y].second;
+      if(y1 < mid && y2 < mid) tmp「++tl] = q「i];
+      else if(y1 > mid && y2 > mid) tmp「--tr] = q「i];
     }
-    for (R int i = l; i <= tl; ++i) q[i] = tmp[i];
-    for (R int i = tr; i <= r; ++i) q[i] = tmp[i];
+    for (R int i = l; i <= tl; ++i) q「i] = tmp「i];
+    for (R int i = tr; i <= r; ++i) q「i] = tmp「i];
     solve(xl, xr, yl, mid - 1, l, tl);
     solve(xl, xr, mid + 1, yr, tr, r);
   } else {
@@ -109,17 +109,17 @@ inline void solve(int xl, int xr, int yl, int yr, int l, int r)
     {
       SPFA(mid, i, xl, xr, yl, yr, i != yl);
       for (R int j = l; j <= r; ++j)
-        res[q[j].id] = min(res[q[j].id], dis[q[j].x] + dis[q[j].y]);
+        res「q「j].id] = min(res「q「j].id], dis「q「j].x] + dis「q「j].y]);
     }
     int tl = l - 1, tr = r + 1;
     for (R int i = l; i <= r; ++i)
     {
-      int x1 = idx[q[i].x].first, x2 = idx[q[i].y].first;
-      if(x1 < mid && x2 < mid) tmp[++tl] = q[i];
-      else if(x1 > mid && x2 > mid) tmp[--tr] = q[i];
+      int x1 = idx「q「i].x].first, x2 = idx「q「i].y].first;
+      if(x1 < mid && x2 < mid) tmp「++tl] = q「i];
+      else if(x1 > mid && x2 > mid) tmp「--tr] = q「i];
     }
-    for (R int i = l; i <= tl; ++i) q[i] = tmp[i];
-    for (R int i = tr; i <= r; ++i) q[i] = tmp[i];
+    for (R int i = l; i <= tl; ++i) q「i] = tmp「i];
+    for (R int i = tr; i <= r; ++i) q「i] = tmp「i];
     solve(xl, mid - 1, yl, yr, l, tl);
     solve(mid + 1, xr, yl, yr, tr, r);
   }
@@ -133,7 +133,7 @@ inline void solve()
   n = read(), m = read();
   for (R int i = 1; i <= n; ++i)
     for (R int j = 1; j <= m; ++j)
-      idx[calc(i, j)] = make_pair(i, j);
+      idx「calc(i, j)] = make_pair(i, j);
   for (R int i = 1; i <= n; ++i)
     for (R int j = 1; j < m; ++j) 
       addedge(calc(i, j), calc(i, j + 1), read());
@@ -144,11 +144,11 @@ inline void solve()
   for (R int i = 1; i <= Q; ++i)
   {
     int a = read(), b = read(), c = read(), d = read();
-    q[i].x = calc(a, b), q[i].y = calc(c, d), q[i].id = i;
+    q「i].x = calc(a, b), q「i].y = calc(c, d), q「i].id = i;
   }
   solve(1, n, 1, m, 1, Q);
   for (R int i = 1; i <= Q; ++i) 
-    printf("%d\n", res[i]);
+    printf("%d\n", res「i]);
 }
 }
 

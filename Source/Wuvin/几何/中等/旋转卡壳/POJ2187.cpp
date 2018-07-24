@@ -43,7 +43,7 @@ void init(){
 		scanf("%d%d",&p[i].x,&p[i].y);
 	}
 }
-void add_point(int a,int limit){//加入一点
+void add_point(int a,int limit){//åŠ å…¥ä¸€ç‚¹
 	if(cnt>0){
 		if(p[tb[cnt-1]].x==p[a].x&&p[tb[cnt-1]].y==p[a].y) return;
 	}
@@ -56,7 +56,7 @@ void add_point(int a,int limit){//加入一点
 		cnt--;add_point(a,limit);
 	}
 }
-void get_tb(){//求凸包
+void get_tb(){//æ±‚å‡¸åŒ…
 	sort(p+1,p+n+1);cnt=0;
 	for(int i=1;i<=n;i++){
 		add_point(i,2);
@@ -70,9 +70,9 @@ void get_tb(){//求凸包
 db ans=0;
 void kq(){
 	int q=1;cnt--;
-	for(int i=0;i<cnt;i++){//ö�ٱ�(i,i+1) ���������㵽�߾��� 
-		if(q==cnt) q=0;//����break 
-		db dis=getS(p[tb[q]],p[tb[i]],p[tb[i+1]]);//Ӧ�ÿ��Բ���abs 
+	for(int i=0;i<cnt;i++){//Ã¶¾Ù±ß(i,i+1) ÓÃÃæ»ý´úÌæµãµ½Ïß¾àÀë 
+		if(q==cnt) q=0;//²»ÄÜbreak 
+		db dis=getS(p[tb[q]],p[tb[i]],p[tb[i+1]]);//Ó¦¸Ã¿ÉÒÔ²»ÓÃabs 
 		while(q<cnt){
 			int newans=max(sqr_dis(p[tb[q]],p[tb[i]]),sqr_dis(p[tb[q]],p[tb[i+1]]));
 			if(newans>ans) ans=newans;
@@ -87,7 +87,7 @@ void kq(){
 int main(){
 	init();
 	get_tb();
-	kq();//旋转卡壳
+	kq();//æ—‹è½¬å¡å£³
 	printf("%d",ans);
 	return 0;
 } 

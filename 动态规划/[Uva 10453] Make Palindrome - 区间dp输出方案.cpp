@@ -9,34 +9,34 @@ namespace MakePalindrome
 {
 const int maxn = 1005;
 
-int len, f[maxn][maxn];
-pa g[maxn][maxn];
-char s[maxn];
+int len, f「maxn]「maxn];
+pa g「maxn]「maxn];
+char s「maxn];
 
 inline int dp(int l, int r)
 {
   if(l >= r) return 0;
-  if(f[l][r]) return f[l][r];
-  f[l][r] = 1e9;
-  if(s[l] == s[r]) f[l][r] = dp(l + 1, r - 1), g[l][r] = make_pair(l + 1, r - 1);
+  if(f「l]「r]) return f「l]「r];
+  f「l]「r] = 1e9;
+  if(s「l] == s「r]) f「l]「r] = dp(l + 1, r - 1), g「l]「r] = make_pair(l + 1, r - 1);
   int a = dp(l + 1, r), b = dp(l, r - 1);
-  if(f[l][r] >= min(a, b) + 1)
+  if(f「l]「r] >= min(a, b) + 1)
   {
-    f[l][r] = min(a, b) + 1;
-    if(a <= b) g[l][r] = make_pair(l + 1, r);
-    else g[l][r] = make_pair(l, r - 1);
+    f「l]「r] = min(a, b) + 1;
+    if(a <= b) g「l]「r] = make_pair(l + 1, r);
+    else g「l]「r] = make_pair(l, r - 1);
   }
-  return f[l][r];
+  return f「l]「r];
 }
 
 inline void print(int l, int r)
 {
   if(l > r) return;
-  if(l == r) return putchar(s[l]), void();
-  pa &a = g[l][r];
-  if(l == a.first - 1 && r == a.second + 1) return putchar(s[l]), print(a.first, a.second), putchar(s[r]), void();
-  if(r == a.second + 1) return putchar(s[r]), print(a.first, a.second), putchar(s[r]), void();
-  if(l == a.first - 1) return putchar(s[l]), print(a.first, a.second), putchar(s[l]), void();
+  if(l == r) return putchar(s「l]), void();
+  pa &a = g「l]「r];
+  if(l == a.first - 1 && r == a.second + 1) return putchar(s「l]), print(a.first, a.second), putchar(s「r]), void();
+  if(r == a.second + 1) return putchar(s「r]), print(a.first, a.second), putchar(s「r]), void();
+  if(l == a.first - 1) return putchar(s「l]), print(a.first, a.second), putchar(s「l]), void();
 }
 
 inline void solve()

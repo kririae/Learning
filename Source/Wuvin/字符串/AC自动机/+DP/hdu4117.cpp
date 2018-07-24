@@ -8,8 +8,8 @@ struct words{
 	int st,en,dp;//[] 
 }w[N];
 struct group{
-	int st,en,root;//??б┴ижж╠?б┴?бд???ж╠??eи║?ж╠?oик?Dж╠? 
-}fenz[16];//2^k бд?б┴иж ????????бд?б┴ижж╠?root
+	int st,en,root;//??┬б├Б┬и┬ж┬ж├М?┬б├Б?┬б┬д???┬ж├М??e┬и┬║?┬ж├М?o┬и┬к?D┬ж├М? 
+}fenz[16];//2^k ┬б┬д?┬б├Б┬и┬ж ????????┬б┬д?┬б├Б┬и┬ж┬ж├М?root
 int word[M+30000];
 int n,ans;
 const int lim=(1<<18)-1;
@@ -20,7 +20,7 @@ struct AC{
     int ne[27];
 }a[M];
 int cnt;
-//------?и▓??бд???--------
+//------?┬и┬▓??┬б┬д???--------
 int free_wkl[M];int free_top;
 void push(const int &k){
     free_wkl[++free_top]=k;
@@ -93,8 +93,8 @@ void pickup(int u){//destroy
         if(a[a[u].ne[i]].picked!=1) pickup(a[u].ne[i]);
     }
 }
-//-------бд?б┴иж-----------
-inline int query(int x){//??xж╠??и┤иоDб┴ио????DD?гд?? ??иоD?и░бдж╠??0
+//-------┬б┬д?┬б├Б┬и┬ж-----------
+inline int query(int x){//??x┬ж├М??┬и┬┤┬и┬оD┬б├Б┬и┬о????DD?┬г┬д?? ??┬и┬оD?┬и┬░┬б┬д┬ж├М??0
     int ret=0;
     for(int i=0;i<15;i++){
         if(fenz[i].root!=0){
@@ -103,7 +103,7 @@ inline int query(int x){//??xж╠??и┤иоDб┴ио????DD?гд?? ??иоD?и░бдж╠??0
     }
     return ret;
 }
-inline void insert_(int x){//2?ии?б┴?бд???x
+inline void insert_(int x){//2?┬и┬и?┬б├Б?┬б┬д???x
     int p=0;
     while(fenz[p].root!=0) p++;
     if(p!=0){
@@ -115,7 +115,7 @@ inline void insert_(int x){//2?ии?б┴?бд???x
         fenz[i].st=fenz[i].en=fenz[i].root=0;
     }
     /*if(free_top<=w[x].en-w[x].st+3){
-    	for(int i=w[x].st-1;i<=w[x].en;i++)//ижи║??????
+    	for(int i=w[x].st-1;i<=w[x].en;i++)//┬и┬ж┬и┬║??????
         	push(++cnt);
 	}*/
     fenz[p].root=pop();
