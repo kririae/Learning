@@ -1,6 +1,6 @@
 # 数论   
 
-> krr数论全笔记   
+> krr数论全笔记
 
 [TOC]
 
@@ -12,6 +12,8 @@
 - 约数   
 - 调和级数   
 - 余数   
+- 最大公约数和最小公倍数
+- 欧拉函数
   
 ### 唯一分解定理   
 每个数，都可以唯一被分解成$p_1^{c_1}p_2^{c_2}...p_n^{c_n}$的形式，其中$p_i$是素数。   
@@ -21,14 +23,23 @@ $a$, $b$互质，即没有公共的质因子。即在唯一分解后，所有的
 
 ### 整除   
 通常有两种写法...这份笔记中，所有的都依照后面一种。   
-若$a \; mod \; b = 0$，则$a$能被$b$整除，或$b$能整除$a$，写作$a | b$   
-若$b = ka$，记为$b$被$a$整除，$a$整除于$b$。写作$a | b$。   
+
+- 若$a \; mod \; b = 0$，则$a$能被$b$整除，或$b$能整除$a$，写作$a | b$
+- 若$b = ka$，记为$b$被$a$整除，$a$整除于$b$。写作$a | b$。
+
 绕一绕的话...$n = km$，读作$m$整除$n$，$n$被$m$整除，$m | n$，$|$的前后顺序依照$x$整除$y$的形式...绕一绕...过一会儿就绕好了~总之记住，小的放前面，大的放后面。   
+
+整除的性质是一切证明的关键，这里给出：
+
+- $a | b, a | c$，则有$a | (b \pm c)$。
 
 ### 素数判定   
 若一个数$N$是合数，一定存在$T \leq \sqrt{n}$，且$T$能整除$N$。   
+
 反证法，假设命题不成立，那么一定存在$T > \sqrt{n}$且$T | N$。那么一定存在$\frac{N}{T} \leq \sqrt{n}$且$\frac{N}{T} | N$。则命题成立~   
+
 代码为试除法   
+
 ```cpp   
 inline bool prime(ll val)   
 {   
@@ -40,15 +51,17 @@ inline bool prime(ll val)
 
 ### 线性筛   
 普通筛法略过了，我们讲讲线性筛。   
-线性筛$O(n)$的原理是，使每个数只被自己最小的质因子筛一次。   
-都知道$a \in N$，$b$是质数，那么$a \cdot b$一定不是质数。   
-我们令每个合数只被自己最小的质因子$p$筛出来，那么每个合数只会被筛一次。   
-我们对于每一个数$a$，用$a$去乘上$\leq a$的所有质数。   
-接下来给出，到每个数的时候，它一定被筛过的证明。   
-这里是我万年理解不到的...别的教程也不提这个...so郁闷   
-请把这一段认真看完...我尽量保证了语言没问题。   
+
+线性筛$O(n)$的原理是，使每个数只被自己最小的质因子筛一次。  
+
+都知道$a \in N$，$b$是质数，那么$a \cdot b$一定不是质数。我们令每个合数只被自己最小的质因子$p$筛出来，那么每个合数只会被筛一次.我们对于每一个数$a$，用$a$去乘上$\leq a$的所有质数。接下来给出，到每个数的时候，它一定被筛过的证明。   
+
+这里是我万年理解不到的...别的教程也不提这个...so郁闷,请把这一段认真看完...我尽量保证了语言没问题。   
+
 我们的筛法是，标记某个小于其本身质数 $\times$ 某个小于其本身的合数。那么，假设，在进行那个“小于其本身的素数”的处理的时候，我们枚举了所有小于其本身的合数，而那时的$break$规则是$prm[j] * val > n$，这个数一定是$\leq n$的，所以其一定被筛过。这种反向思考很赞，但是别人为啥都不提这一点呢。但是啊，普通筛的时候，这么看吧！假如说当前的数可以被分解成$p_1^{c_1}...$，那么它会被所有的$p$筛一次，而某个数的素因子的个数是$\log{n}$级别的，那么复杂度$n\log{n}$。线性筛保证每个数一定只会被其最小的质因子筛过一次，根据上面的描述，已经足够了，所以线性筛的复杂度是$O(n)$。   
+
 代码如下   
+
 ```cpp   
 inline void prime()   
 {   
@@ -68,13 +81,15 @@ inline void prime()
 
 尝试一下，并不好实现的思维题   
 
-#### [ep1」 质因数分解$N!$。   
+#### 「ep1」 质因数分解$N!$。   
 
 这样看~   
+
 利用线性筛的思路，我们每个合数只被其最小质因子筛一次。   
+
 我们知道一个数的质因数分解形式后，用这个数乘上一个质数，能够知道计算结果的质因数分解形式。我们对结果的形式累乘，就是答案~不优化的话，时间复杂度和空间复杂度都是$O(n\log{n})$，实现也会很复杂。仅练习思维。   
 
-#### [ep2」 求$[L, R]$的质数个数。$L, R \leq 2^{31}, R - L \leq 10^{6}$。   
+#### 「ep2」 求$[L, R]$的质数个数。$L, R \leq 2^{31}, R - L \leq 10^{6}$。   
 
 可以筛$R - L$的，那么我们先把$[2, \sqrt{R}]$之间的数筛出来，这里的数一定可以组合出$[L, R]$的所有数。然后对于所有质数，我们进行$[L, R]$的标记。$vis[i \times p] = 1, i \in [\frac{L}{p}, \frac{R}{p}]$。   
 
@@ -83,21 +98,26 @@ inline void prime()
 
 ### 约数   
 下面介绍一点约数常用定理。   
+
 定义$N$。   
+
 约数的定义为$d | N$，d为约数。   
+
 可以简单发现，$p_i$是$N$的约数，也就是说，$p_1^{c_1}p_2^{c_2}...p_n^{c_n}$的子集都是其一个约数。   
+
 假设$N$进行唯一分解后的数是$p_1^{c_1}p_2^{c_2}...p_n^{c_n}$。   
-$N$的正约数的个数 $=\prod_{i = 1}^{m}{(c_i + 1)}$。乘法原理   
-$N$的正约数和为$\prod_{i = 1}^{m}{(\sum_{j = 0}^{c_i}{(p_i)}^j)}$。手玩~   
-$N$的正整数约数集合是试除法，这里不再赘述...   
+
+- $N$的正约数的个数 $=\prod_{i = 1}^{m}{(c_i + 1)}$。乘法原理   
+- $N$的正约数和为$\prod_{i = 1}^{m}{(\sum_{j = 0}^{c_i}{(p_i)}^j)}$。手玩~   
+- $N$的正整数约数集合是试除法，这里不再赘述...   
 还有一个求法。   
-对于数字$d$，$d$一定是$d \cdot k$的约数。这样筛下来，复杂度是$O(\sum_{i = 1}^{n}{\frac{n}{i}})$。利用调和级数，$O(n\log{n})$。比$O(n\sqrt{n})$要好得多。   
+- 对于数字$d$，$d$一定是$d \cdot k$的约数。这样筛下来，复杂度是$O(\sum_{i = 1}^{n}{\frac{n}{i}})$。利用调和级数，$O(n\log{n})$。比$O(n\sqrt{n})$要好得多。   
 
 ### 余数   
 $a \; mod \; b = c$，称$c$是$a$除以$b$的余数。余数的定义式如下   $a \; mod \; b = a - \lfloor \frac{a}{b} \rfloor \cdot b$
 看一个例题：$BZOJ1257$。   
 
-#### [ep3」求$\sum_{i = 1}^{n}{k \; mod \; i}$。   
+#### 「ep3」求$\sum_{i = 1}^{n}{k \; mod \; i}$。   
 
 转化题目，求$\sum_{i = 1}^{n}{(k - \lfloor \frac{k}{i} \rfloor \cdot i)} \Rightarrow k \times n -\sum_{i = 1}^{n}{(\lfloor \frac{k}{i} \rfloor \cdot i)}$。由于复杂度的问题，我们从$\frac{k}{i}$入手，因为会有一段区间，使得其不变。我们设$\lfloor\frac{k}{i}\rfloor = x$。这段区间的值是$\frac{(i_{first} + i_{end}) \times (end - first + 1)}{2} \times x$。所以问题来了，我们需要快速获取什么区间内，$\lfloor\frac{k}{i}\rfloor$不变。   
 结论如下，我也不知道怎么推的。$i \in [x, \lfloor \frac{k}{\lfloor \frac{k}{x} \rfloor} \rfloor]$时，$\lfloor\frac{k}{i}\rfloor$不变。$x$是上一个的右端点 + 1，即这次的左端点，这是数论分块的经典写法。具体请见代码，lyd的代码如下：   
@@ -122,7 +142,7 @@ int main()
   printf("%lld", ans);   
 }   
 ```
-#### [ep4」求$\sum_{i = 1}^{n}{\sum_{d | i}{d^2}} \; mod \; p$，$n \leq 10^{12}, p \leq 10^9$
+#### 「ep4」求$\sum_{i = 1}^{n}{\sum_{d | i}{d^2}} \; mod \; p$，$n \leq 10^{12}, p \leq 10^9$
 
 首先，$\sum{i ^ 2} = \frac{n(n + 1)(2n + 1)}{6}$，是公式，至于怎么用，下面通过这道题来解释。   
 
@@ -185,14 +205,124 @@ int main()
 
 ### 最大公约数和最小公倍数
 
-定义：若存在$d$，$d | a$且$d | b$，$d$中最大的一个就是$gcd(a, b)$，$(a, b)$的最大公约数。若存在$m | a$且$m | b$。$m$取值最小的一个被称作$lcm(a, b)$，$(a, b)$的最小公倍数。
+定义：若存在$d$，$d | a$且$d | b$，$d$中最大的一个就是$gcd(a, b)$，$(a, b)$的最大公约数。若存在$a | m$且$b | m$。$m$取值最小的一个被称作$lcm(a, b)$，$(a, b)$的最小公倍数。
 
-特别的，给出另一种$gcd$的理解方式。将$a, b$进行质因数分解，这俩重叠的部分就是$gcd(a, b)$。下面的证明将会用到。
+特别的，给出另一种$gcd$的理解方式。将$a, b$进行质因数分解，这俩重叠的部分就是$gcd(a, b)$。下面的证明将会用到。这种理解方式会被用到大量的证明中去。
 
 最大公约数性质如下，$gcd(a, b) = gcd(b, a)$，$gcd(a, 0) = a$，$gcd(a, 1) = 1$, $gcd(ak, bk) = k \cdot gcd(a, b)$，$gcd(a + kb, b) = gcd(a, b)$，若$gcd(a, b) = 1$, $gcd(ab, k) = gcd(a, k) \cdot gcd(b, k)$。
 
-给出最后一条的证明，这里会用到$gcd$的另一种理解方式~。证明：$k = \prod{k_i^{f_i}}$,$a = \prod a_i^{q_i}$,$b = \prod b_i^{s_i}$  ,则根据定义：$gcd(a, k) = \prod a_i^{min(q_i, f_i)}$  ，$gcd(b, k) = \prod b_i^{min(s_i, f_i)}$  ，又$a$, $b$互质，所以不存在$a_i = b_i$,则$ab = \prod a_i^{q_i} \cdot \prod b_i^{s_i}$，得出$从而$$gcd(ab, k) = \prod a_i^{min(q_i, f_i)} \cdot \prod b_i^{min(s_i, f_i)}  =gcd(a, k) \cdot gcd(b, k)$。$Q.E.D$
+给出最后一条的证明，这里会用到$gcd$的另一种理解方式~。
+
+证明：$k = \prod{k_i^{f_i}}$,$a = \prod a_i^{q_i}$,$b = \prod b_i^{s_i}$  ,则根据定义：$gcd(a, k) = \prod a_i^{min(q_i, f_i)}$  ，$gcd(b, k) = \prod b_i^{min(s_i, f_i)}$  ，又$a$, $b$互质，所以不存在$a_i = b_i$,则$ab = \prod a_i^{q_i} \cdot \prod b_i^{s_i}$，得出$从而$$gcd(ab, k) = \prod a_i^{min(q_i, f_i)} \cdot \prod b_i^{min(s_i, f_i)}  =gcd(a, k) \cdot gcd(b, k)$。$Q.E.D$
 
 倒数第二条的证明我将在更相减损术处提到。
 
 有定理，$gcd(a, b) \times lcm(a, b) = a \cdot b$。令$d = gcd(a, b)$，$x = \frac{a}{d}, y = \frac{b}{d}$。则$gcd(x, y) = 1, lcm(x, y) = x \cdot y$。则$lcm(x, y) \cdot d = \frac{a \cdot b}{d}$。
+
+更相损减术，定理如下，$gcd(a, b) = gcd(b, a - b) = gcd(a, a - b)$。欧几里得算法，$gcd(a, b) = gcd(b, a \; mod \; b)$。由于更相损减术是欧几里得算法的特例，这里给出欧几里得算法的证明。若$a < b$，易得$gcd(a, b) = gcd(b, a)$。若$a \geq b$，不妨设$gcd(b, a \; mod \; b) = gcd(a - nb, b)$，$n$为任意整数。设$a = nb + k$，根据定义，有$k = a \; mod \; b$。对于公约数$d$，有$d | a$，$d | nb$。则$d | (a - nb)$。$d | k$，所以$d | b, d | a \; mod \; b$.，公约数集合相同，所以最大公约数相同。备注一句，因为$d$对于所有公约数都成立，所以说公约数集合成立，这是证明中的常见手段。
+
+代码如下：
+
+```cpp
+int gcd(int a, int b)
+{
+  return b ? gcd(b, a % b) : a;
+}
+```
+
+#### 「ep5」给出$a_0, b_0, a_1, b_1$，求满足$gcd(x, a_0) = a_1, lcm(x, b_0) = b_1$的$x$的个数，$a, b \leq 10^9 $
+
+朴素算法如下，我们知道，$x | b_1, b0 | b1$，$a_1 | x, a0 | a_1$,某个数的约数个数大约$2 \sqrt{n}$，我们枚举$b_1$的约数$x$，然后$check$是否满足$gcd(x, a_0) = a_1, lcm(x, b_0) = b_1$。具体来说，我们用搜索算法组合出$b_1$所有的约数，然后判断条件是否满足，可过，代码懒得给了qwq颓颓颓
+
+机智的算法先咕咕咕着...
+
+###  欧拉函数
+
+之前提到过，对于$gcd(a, b) = 1$的情况，我们称$a, b$互质，互质的另一种解释方法是：$a = \prod{a_i^{q_i}}$，$b = \prod{b_i^{e_i}}$，所有的$a_i != b_i$。也就是$\{a\} \cap \{b\} = \emptyset$。对于三个及更多，互质称作“两两互质”，即所有的数没有公共质因子。
+
+欧拉函数，定义为$[1, n]$中和$n$互质的数的个数，记作$\varphi(n)$。
+
+$\varphi(n)$有以下公式：
+$$
+\varphi(n) = n \cdot \prod_{(prime\;p) | n}{(1 - \frac{1}{p})}
+$$
+证明：
+
+设$p$为$n$的质因子，则$p | n$，而$kp \leq n$的所有$kp$都不与$n$互质。而$kp$有$\lfloor \frac{n}{p} \rfloor$个，而$q$为$n$质因子，$kq$有$\lfloor \frac{n}{q} \rfloor$个，而$pq$的倍数又被重复计算，所以$n$中含有$\lfloor \frac{n}{pq}\rfloor$个重复计算的，需要剔除。$[1, n]$中不含$p, q$为质因子的数的个数是$n - \frac{n}{p} - \frac{n}{q} + \frac{n}{pq} = n(1 - \frac{1}{p})(1 - \frac{1}{q})$。同理可得。代码如下：注意精度问题，需要特殊处理。
+
+```cpp
+inline int phi(int n)
+{
+  int ans = n;
+  for (int i = 2; i <= sqrt(n); ++i)
+    if(n % i == 0)
+    {
+      ans = (ans - ans / i);
+      while(n % i == 0) n /= i;
+    }
+  if(n > 1) ans = ans - ans / n;
+  return ans;
+}
+```
+
+$\varphi$函数的性质有： 
+
+- $[1, n]$的数中和$n$互质的数的和是$\frac{n \cdot \varphi(n)}{2}$。就是$gcd(a, n) = 1$，$a$的和。由九章算术，$gcd(n, a) = gcd(n, n - a)$。所以我们要求出$(n, n - a)$的平均数，手玩可得，平均数为$\frac{n}{2}$。
+- 若$a, b$互质，则$\varphi(ab) = \varphi(a) \cdot \varphi(b)$。这是积性函数的性质，积性函数我将会在后面进行讨论。设$a = \prod{a_i^{c_i}}$,$b = \prod{b_i^{d_i}}$。则$\varphi(a) = a \cdot  \prod_{i \in \{a_i\}}{(1 - \frac{1}{i})}$，$\varphi(b) = b \cdot  \prod_{i \in \{b_i\}}{(1 - \frac{1}{i})}$。又$\{a_i\} \cap \{b_i\} = \emptyset$，则$\varphi(a) \cdot \varphi(b) = ab \cdot \prod_{i \in \{a_i\}}{(1 - \frac{1}{i})} \cdot \prod_{i \in \{b_i\}}{(1 - \frac{1}{i})}$，且$\varphi(ab) = ab \cdot \prod_{i \in (\{a_i\} \cup \{b_i\})}{(1 - \frac{1}{i})}$，得证。写公式好累。通过这个性质，可以$O(n)$预处理$\varphi$值。这个先不忙。
+- $n$为质数时，$\varphi(n) = n - 1$。这个没必要解释吧QwQ
+- $\sum_{d | n}{\varphi(d)} = n$。这条的证明已经折磨了我一个小时了...可以用狄利克雷卷积来证明。有一个初等证明，但还是不简单。对逻辑要求极高。
+证明：
+首先，对于分母为$b$，分子为$a$，$a < b$的既约分数，假如说固定$b$的取值，那么$a$的取值有$\varphi(b)$种。关于这道题，我们考虑所有的$\frac{i}{n}, i \in [1, n]$，将其约分，对于约分后的分数$\frac{a}{b}$，一定有$gcd(a, b) = 1, b | n, a | i$且$a < b$。假定一个$d | n$，那么在之前的分数集合中，以$d$为分母的既约分数个数就有$\varphi(d)$个。而$|$分数集合$| = n$，所以$\sum_{d | n}{\varphi(d) = n}$
+$Q.E.D.$
+举个例子来演示一下吧
+对于$6$，我们构造出了$\frac{1}{6}, \frac{1}{3}, \frac{1}{2}, \frac{2}{3},\frac{5}{6}, \frac{1}{1}$。这其中，以$1 | 6$为分母的有$\varphi(1)$个，也就是$\frac{1}{1}$。以$2 | 6$为分母的有$\varphi(2)$个，也就是$\frac{1}{2}$。以此类推，我们可以发现，分母$d$的取值只有$d | n$，而$\varphi(i)$的和正是前面分数集合的大小。
+真是妙极了
+- $n = \prod{p_i^{c_i}}$，则$f(n) = \prod{f(p_i^{c_i})}$。首先，易得，$gcd(p_i^{c_i}, p_j^{c_j}) = 1$，满足积性函数，则易证。
+- 若$p | n$，则有$\varphi(p \cdot n) = \varphi(n) \cdot p$
+- 反之，$\varphi(p \cdot n) = \varphi(n) \cdot (p - 1)$。
+因为$p$是质数，且$p \nmid n$(?)，所以$gcd(p, n) = 1$。有$\varphi(p) = p - 1$，由积性函数性质可证明。对于$p | n$，带入定义式，$\varphi(n) = n \cdot \prod_{(prime\;p) | n}{(1 - \frac{1}{p})}$，因为$p | n$，所以直接在前面的$n \cdot p$，得证。（好方法啊
+
+#### 欧拉函数拓展
+
+##### $O(n)$递推
+
+证明参见刚才的最后俩条
+
+```cpp
+inline void phi(int n)
+{
+	for (int i = 2; i <= n; ++i)
+	{
+		if(!vis[i]) prm[++cnt] = i;
+		for (int j = 1; j <= cnt; ++j)
+		{
+			if(i * prm[j] > n) break;
+			vis[i * prm[j]] = 1;
+			if(i % prm[j] == 0)
+			{
+				phi[i * prm[j]] = phi[i] * prm[j];
+				break;
+			} else phi[i * prm[j]] = phi[i] * (prm[j] - 1);
+		}
+	}
+}
+```
+
+
+
+##### 狄利克雷卷积和莫比乌斯反演初步  
+
+$Dirichlet$定义如下：$qwq(n) = \sum_{d | n}{f(n)g(\frac{n}{d})}$ 。简化记为$qwq(n) = f(n) * g(n)$。我只会这点（逃
+
+### 同余
+
+同余的定义如下，$a \; mod \; m = b \; mod \; m$，则称$a, b$同余，写作$a \equiv b \; (mod \; m)$ ，`a \equiv v \ (mod \ m)`.
+
+对于$i \in [0, m - 1], \{a + km\}$，$i \; mod \; m = a$。这是$\; mod \; m$下的**同余类**。模数$x$的同余类有$x - 1$个，构成**完全剩余系**。
+
+$[1, m]$中$gcd(i, m)$，$i$组成的集合叫做简化剩余系$S$。设$a \in S, b, \in S$，由欧几里得算法可得$gcd(a \cdot b, m) = 1 \Rightarrow gcd(a \cdot b \; mod \; m, m) = 1$。则$a \cdot b \ mod \ m \in S$。
+
+#### 欧拉定理
+
+欧拉定理的定义如下：如果$gcd(a, n) = 1​$，则$a^{\varphi(n)} \equiv 1 \ (mod \ n)​$。根据定义，设$n​$的完全剩余系为$S_1​$，则有$| S_1|  = \varphi(n)​$。$S_1 = \{\overline{a_1}, \overline{a_2}, \overline{a_3}, ... \overline{a_{\varphi{n}}}\}​$。
+
