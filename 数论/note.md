@@ -40,13 +40,13 @@ $a$, $b$互质，即没有公共的质因子。即在唯一分解后，所有的
 
 代码为试除法   
 
-```cpp   
-inline bool prime(ll val)   
-{   
-  for (int i = 2; i <= sqrt(val); ++i)   
-    if(val % i == 0) return false;   
-  return true;   
-}   
+```cpp
+inline bool prime(ll val)
+{
+  for (int i = 2; i <= sqrt(val); ++i)
+    if(val % i == 0) return false;
+  return true;
+}
 ```
 
 ### 线性筛   
@@ -320,7 +320,7 @@ $Dirichlet$定义如下：$qwq(n) = \sum_{d | n}{f(n)g(\frac{n}{d})}$ 。简化�
 
 对于$i \in [0, m - 1], \{a + km\}$，$i \; mod \; m = a$。这是$\; mod \; m$下的**同余类**。模数$x$的同余类有$x - 1$个，构成**完全剩余系**。
 
-$[1, m]$中$gcd(i, m)$，$i$组成的集合叫做简化剩余系$S$。设$a \in S, b, \in S$，由欧几里得算法可得$gcd(a \cdot b, m) = 1 \Rightarrow gcd(a \cdot b \; mod \; m, m) = 1$。则$a \cdot b \ mod \ m \in S$。
+$[1, m]$中$gcd(i, m)$，$i$组成的集合叫做简化剩余系$S$。设$a \in S, b \in S$，由欧几里得算法可得$gcd(a \cdot b, m) = 1 \Rightarrow gcd(a \cdot b \; mod \; m, m) = 1$。则$a \cdot b \ mod \ m \in S$。
 
 #### 欧拉定理
 
