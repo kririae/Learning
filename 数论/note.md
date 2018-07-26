@@ -308,8 +308,6 @@ inline void phi(int n)
 }
 ```
 
-
-
 ##### 狄利克雷卷积和莫比乌斯反演初步  
 
 $Dirichlet$定义如下：$qwq(n) = \sum_{d | n}{f(n)g(\frac{n}{d})}$ 。简化记为$qwq(n) = f(n) * g(n)$。我只会这点（逃
@@ -322,7 +320,95 @@ $Dirichlet$定义如下：$qwq(n) = \sum_{d | n}{f(n)g(\frac{n}{d})}$ 。简化�
 
 $[1, m]$中$gcd(i, m)$，$i$组成的集合叫做简化剩余系$S$。设$a \in S, b \in S$，由欧几里得算法可得$gcd(a \cdot b, m) = 1 \Rightarrow gcd(a \cdot b \; mod \; m, m) = 1$。则$a \cdot b \ mod \ m \in S$。
 
-#### 欧拉定理
+### 欧拉定理
 
-欧拉定理的定义如下：如果$gcd(a, n) = 1​$，则$a^{\varphi(n)} \equiv 1 \ (mod \ n)​$。根据定义，设$n​$的完全剩余系为$S_1​$，则有$| S_1|  = \varphi(n)​$。$S_1 = \{\overline{a_1}, \overline{a_2}, \overline{a_3}, ... \overline{a_{\varphi{n}}}\}​$。
+欧拉定理的定义如下：如果$gcd(a, n) = 1$，则$a^{\varphi(n)} \equiv 1 \ (mod \ n)$。我并不会证明。欧拉定理可以推导出费马小定理。费马小定理如下：若$p$是质数，则$a^p \equiv a \ (mod \ p)$。我也不会证。
 
+欧拉定理有重要推论，$a^b \equiv a^{b \ mod \ \varphi(n)} \ (mod \ n)$。若$a, n$互质。
+
+#### 关于欧拉定理的本质
+
+这里又要提到一个别人不常提到的东西了。这样测试：$a^{i} \ mod \ p$。循环节的长度一定是$\varphi(p)$。但不一定是最小的。$5^i \ mod \ 13$的循环节是$5 \ 12 \ 8 \ 1$，长度为$4$，$\varphi(13) = 12$。$4 |12$。然后，之后会在拓欧降幂处提到。
+
+#### 「ep6」求$a^{b^{b^{b...}}} \ mod \ (10^{9} + 7)$，$b$有$n$个。$a, b \leq 10^{16}$。
+
+首先需要知道，后面挂着的那一坨该怎么处理。我们看$b^b$的本质是什么？$b^b = \underbrace{b \times b \times \cdot\cdot\cdot \times b}_{b}$。转化为$a^{a^{b - 1}} \ mod \ (10^9 + 7)$。根据费马小定理$a^{p - 1} \equiv 1 \ (mod \ p)$。所以$a^{a^{b - 1}} \equiv a^{(a^{b - 1}) \ mod \ (p - 1)} \ (mod \ p)$。不懂这一步的话可以考虑$1$哪去了。然后用快速幂解决。
+
+### 拓展欧几里得算法
+
+拓欧的定理如下$ax + by = gcd(a, b)$。而我们就是要解这个不定方程。
+
+问题来了，如何解?根据欧几里得算法，有$ax + by = bx' + (a \ mod \ b)y' = gcd(a, b) = gcd(b, a \ mod \ b)$。而根据之前提到过的模数的定义，$a \ mod \ b = a - \lfloor \frac{a}{b} \rfloor \cdot b$，得出$ax + by = bx' + (a - \lfloor \frac{a}{b} \rfloor \cdot b)y'$。化简得到$ax + by = ay' -  b \cdot (x' - \lfloor \frac{a}{b} \rfloor \cdot y')$。我们令$x = y', y = x' - \lfloor \frac{a}{b} \rfloor \cdot y'$。当$b = 0$时，$x = 1, y = 0$。因为$ax = gcd(a, 0)$。
+
+代码如下
+
+```cpp
+inline void exgcd(int &x, int &y, int a, int b)
+{
+  if(b == 0) return x = 1, y = 0, void();
+  else return exgcd(y, x, b, a % b), y -= (a / b) * x;
+}
+```
+
+注意，由$bezout$定理可得，$exgcd$必定有整数解。简单解释一下代码，由于写成递归形式，某一层和上一层的$x, y$是反过来的。就有$y -= (a / b)*x$，对应原本的算式是$y = x' - \lfloor \frac{a}{b} \rfloor \cdot y'$。
+
+#### 「ep7」BZOJ1407 Savage
+
+推完公式后...出了各种各样的问题...干脆面向题解。
+
+公式如下：$c_i + xp_i \equiv (c_j + xp_j) \pmod{M}$.如果存在解，那么可以有两个同一时刻在同一位置。转换为$x(p_i - p_j) - km = c_i - c_j$。首先判定有无整数解，如果有的话，$x \leq min(l[i], l[j])$。因为在死亡之后碰面不做数~
+
+代码如下
+
+```cpp
+// by kririae
+#include <bits/stdc++.h>
+
+using namespace std;
+
+inline void exgcd(int &x, int &y, int a, int b)
+{
+  if(b) exgcd(y, x, b, a % b), y -= (a / b) * x;
+  else x = 1, y = 0;
+}
+
+inline int gcd(int a, int b)
+{
+  return b ? gcd(b, a % b) : a;
+}
+
+int n, c[20], p[20], l[20];
+
+inline bool judge(int M)
+{
+  for (int i = 1; i <= n; ++i)
+    for (int j = i + 1; j <= n; ++j)
+    {
+      int a = p[i] - p[j], b = c[j] - c[i];
+      a = (a % M + M) % M;
+      int g = gcd(a, M);
+      if(b % g == 0)
+      {
+        // 有解
+        int x = 0, y = 0;
+        exgcd(x, y, a, M);
+        x = ((x * (b / g)) % (M / g) + (M / g)) % (M / g);
+        if(x <= min(l[i], l[j])) return false;
+      }
+    }
+  return true;
+}
+
+int main()
+{
+  scanf("%d", &n);
+  int mx = 0;
+  for (int i = 1; i <= n; ++i) scanf("%d%d%d", &c[i], &p[i], &l[i]), mx = max(mx, c[i]);
+  for (int M = mx; M <= 1e6; ++M)
+    if(judge(M)) return printf("%d", M), 0;
+}
+```
+
+###  乘法逆元
+
+多数时候用于处理除法带$mod$的情况，$\frac{a}{b} \equiv a \cdot \mathrm{inv}(b) \pmod{m}$。$\mathrm{inv}(b)$就是$b$的逆元。逆元存在的前提是：...先不说这个，我们用丢番图方程的整数解来证明。
