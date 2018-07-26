@@ -334,11 +334,11 @@ $[1, m]$中$gcd(i, m)$，$i$组成的集合叫做简化剩余系$S$。设$a \in 
 
 首先需要知道，后面挂着的那一坨该怎么处理。我们看$b^b$的本质是什么？$b^b = \underbrace{b \times b \times \cdot\cdot\cdot \times b}_{b}$。转化为$a^{a^{b - 1}} \ mod \ (10^9 + 7)$。根据费马小定理$a^{p - 1} \equiv 1 \ (mod \ p)$。所以$a^{a^{b - 1}} \equiv a^{(a^{b - 1}) \ mod \ (p - 1)} \ (mod \ p)$。不懂这一步的话可以考虑$1$哪去了。然后用快速幂解决。
 
-### 拓展欧几里得算法
+### 拓(扩)展欧几里得算法
 
 拓欧的定理如下$ax + by = gcd(a, b)$。而我们就是要解这个不定方程。
 
-问题来了，如何解?根据欧几里得算法，有$ax + by = bx' + (a \ mod \ b)y' = gcd(a, b) = gcd(b, a \ mod \ b)$。而根据之前提到过的模数的定义，$a \ mod \ b = a - \lfloor \frac{a}{b} \rfloor \cdot b$，得出$ax + by = bx' + (a - \lfloor \frac{a}{b} \rfloor \cdot b)y'$。化简得到$ax + by = ay' -  b \cdot (x' - \lfloor \frac{a}{b} \rfloor \cdot y')$。我们令$x = y', y = x' - \lfloor \frac{a}{b} \rfloor \cdot y'$。当$b = 0$时，$x = 1, y = 0$。因为$ax = gcd(a, 0)$。
+问题来了，如何解?根据欧几里得算法，有$ax + by = bx' + (a \ mod \ b)y' = gcd(a, b) = gcd(b, a \ mod \ b)$。而根据之前提到过的模数的定义，$a \ mod \ b = a - \lfloor \frac{a}{b} \rfloor \cdot b$，得出$ax + by = bx' + (a - \lfloor \frac{a}{b} \rfloor \cdot b)y'$。化简得到$ax + by = ay' -  b \cdot (x' - \lfloor \frac{a}{b} \rfloor \cdot y')$。我们令$x = y', y = x' - \lfloor \frac{a}{b} \rfloor \cdot y'$。当$b = 0$时，$x = 1, y = 0$。因为$ax = gcd(a, 0) = 1$。
 
 代码如下
 
@@ -411,4 +411,39 @@ int main()
 
 ###  乘法逆元
 
-多数时候用于处理除法带$mod$的情况，$\frac{a}{b} \equiv a \cdot \mathrm{inv}(b) \pmod{m}$。$\mathrm{inv}(b)$就是$b$的逆元。逆元存在的前提是：...先不说这个，我们用丢番图方程的整数解来证明。
+多数时候用于处理除法带$mod$的情况，$\frac{a}{b} \equiv a \cdot \mathrm{inv}(b) \pmod{m}$。$\mathrm{inv}(b)$就是$b$的逆元。逆元存在的前提是：...先不说这个，我们用丢番图方程的整数解来证明。上式可以化为$a \equiv ab \cdot \mathrm{inv}(b) \pmod{m}$。再次化简得到$b \cdot \mathrm{inv}(b) \equiv 1 \pmod{m}$。$b \cdot \mathrm{inv}(b) - km = 1$。此方程当且仅当$gcd(b, m) = 1$时有解，进而推导$b$在$mod \ p$意义下的乘法逆元当且仅当$gcd(b, m) = 1$时存在。第一种方法，对于逆元存在的时候，可以求$exgcd$。从而得出逆元。
+
+还有一种解法，当$p$为质数时，利用费马小定理：$b^p \equiv b \pmod{m}$。$b \cdot b^{p - 2} \equiv \pmod{m}$。所以$b^{p - 2}$是$b$在模$p$意义下的乘法逆元。代码分别是`exgcd(x, y, a, p), return (x % p + p) % p`。`return fpow(a, p - 2, p)`。
+
+但是，还有一种球法！$inv[1] = 1, inv[i] = (p - \lfloor\frac{p}{i}\rfloor) \cdot inv[p \ mod \ i] \ mod \ p$。
+
+写成代码是这样
+
+```cpp
+for (int i = 2; i <= n; ++i)
+    inv[i] = (p - p / i) * inv[p % i] % p;
+```
+
+前两种复杂度是$O(log{n})$,最后一种是$O(n)$，不常用。
+
+### 线性同余方程
+
+给定$ax \equiv b \pmod{m}$。可以得到$ax + my = b$，有解当且仅当$gcd(a, m) | b$。方程的所有解是$\ mod \ \frac{m}{gcd(a, m)}$和$x$同余的整数。
+
+#### 中国单身狗定理
+
+中国单身狗定理要求以下方程组的解
+$$
+\begin{equation}
+\left\{
+  \begin{array}{lr}
+    x \equiv a_1 \pmod{m_1} \\
+    x \equiv a_2 \pmod{m_2} \\
+    \cdots \\
+    x \equiv a_n \pmod{m_n}
+    \end{array}
+  \right.
+\end{equation}
+$$
+其中，$gcd(m_1, m_2, \cdots, m_n) = 1$。我被这玩意儿折腾半个月了，这里重新来认真搞一搞。
+
