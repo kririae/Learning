@@ -432,6 +432,8 @@ for (int i = 2; i <= n; ++i)
 
 #### 中国单身狗定理
 
+有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？
+
 中国单身狗定理要求以下方程组的解
 $$
 \begin{equation}
@@ -447,3 +449,95 @@ $$
 $$
 其中，$gcd(m_1, m_2, \cdots, m_n) = 1$。我被这玩意儿折腾半个月了，这里重新来认真搞一搞。
 
+令$M = \prod{m_i}$，$M_i = \frac{M}{m_i}$。令$t_i$是$M_it_i \equiv 1 \pmod{m_i}$的一个解，（也就是$M_i$关于模$m_i$意义下的一个逆元。则$x$的唯一一组解是$x = (\sum_{i = 1}^{n}{a_it_iM_i}) \ mod \ M$。
+
+证明：
+因为$gcd(m_i, m_j) = 1$，所以$gcd(m_i, M_i) = 1$。所以，存在$t_i$，是$M_i$在$\ mod \ m_i$意义下的乘法逆元。即$t_iM_i \equiv 1 \pmod{m_i}$，可以得到$a_it_iM_i \equiv a_i \pmod{m_i}$，又$m_j | M_i$，所以$a_it_iM_i \equiv 0 \pmod{m_j}$。构造$x = \sum{a_it_iM_i}$，所以满足$x = a_it_iM_i  + 0 \equiv a_i \pmod{m_i}$。$Q.E.D.$
+
+#### $EXCRT$ 中国EX单身狗定理（大雾
+
+相比$CRT$，$EXCRT$有个区别，$m_i, m_j$不一定互质。重新看方程：
+$$
+\begin{equation}
+\left\{
+  \begin{array}{lr}
+    x \equiv a_1 \pmod{m_1} \\
+    x \equiv a_2 \pmod{m_2} \\
+    \cdots \\
+    x \equiv a_n \pmod{m_n}
+    \end{array}
+  \right.
+\end{equation}
+$$
+
+既然无法一次合并，那就考虑两两合并。
+
+我们考虑前俩方程：$x \equiv a_1 \pmod{m_1}, x \equiv a_2 \pmod{m_2}$。转换成以下形式，$x = a_1 + k_1m_1, x = a_2 + k_2m_2$，减一下变成$k_1m_1 - k_2m_2  = a_2 - a_1$，根据某打起来太麻烦的定理，这里存在整数解的前提是$gcd(m_1, m_2) | a_2 - a_2$。然后解啊！用扩欧解出特解$k_1, k_2$。令$g = gcd(m_1, m_2), k_1', k_2'$为俩特解，则$k_1 = \frac{m_2}{g}t + k_1', k_2 = \frac{m_1}{g}t + k_2'$，带回原式：令$x_0 = a_1 + m_1k_1'$，$x \equiv x_0 \pmod{lcm(m_1, m_2)}$。
+
+代码如下
+
+```cpp
+// by kririae
+// 题解ver
+#define ll long long
+#include <bits/stdc++.h>
+
+using namespace std;
+
+inline void exgcd(ll &x, ll &y, ll &g, ll a, ll b)
+{
+  if(b) exgcd(y, x, g, b, a % b), y -= (a / b) * x;
+  else x = 1, y = 0, g = a;
+}
+
+inline ll EXCRT(ll *_a, ll *_m, ll n)
+{
+  ll a = _a[1], m = _m[1], g, x, y, mod;
+  for (int i = 2; i <= n; ++i)
+  {
+    exgcd(x, y, g, m, _m[i]);
+    if((_a[i] - a) % g) return -1;
+    x *= (_a[i] - a) / g, mod = _m[i] / g, x = (x % mod + mod) % mod;
+    a = m * x + a, m = m / g * _m[i], a %= m;
+  }
+  return (a % m + m) % m;
+}
+
+const int maxn = 1e5 + 5;
+ll n, m[maxn], a[maxn];
+
+int main()
+{
+  cin.tie(0);
+  ios::sync_with_stdio(false);
+  cin >> n;
+  for (int i = 1; i <= n; ++i)
+    cin >> m[i] >> a[i];
+  cout << EXCRT(a, m, n) << endl;
+}
+```
+
+
+### 数论函数补充
+
+以下公式都基于唯一分解定理。假设我们已经分解了$n$。
+除了莫比乌斯函数，之前的都提到过:
+
+- $\varphi(n)$，欧拉函数，$[1, n]$中和$n$互质的数的个数。
+- $\sigma(n)$，$n$的正约数之和$\prod_{i = 1}^{m}{\sum_{j = 0}^{c_i}{p_i^{j}}}$。
+- $\mathrm{d}(n)$，$n$的正约数个数。$\prod{c_i + 1}$。
+
+这几个的计算原理都很简单，就不给予证明了~。
+然后，如题，补充的是莫比乌斯函数和莫比乌斯反演，我们直接进入下一个版块。
+
+### 莫比乌斯反演
+咕咕咕，之后会完成的.jpg
+
+### 数学期望
+
+
+#  一些题目备选
+
+概率：BZOJ2318，BZOJ4720，BZOJ2720，BZOJ3720，收集邮票
+
+各种：NOI2010能量采集
