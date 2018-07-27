@@ -125,7 +125,7 @@ int main() {
 ## 一类递归问题
 
 ### 汉诺塔
- 
+
 $H_n = 2H_{n - 1} + 1$
 
 手动模拟一下可以发现。
@@ -1271,13 +1271,15 @@ int main() {
 
 dp[i][j]表示现在修出来i种分属j种，则
 
-$$dp[i][j] =\left\{\begin{matrix} 
+$$
+dp[i][j] =\left\{\begin{matrix} 
 dp[i][j] \cdot \frac{i}{s}\frac{j}{n}\\
 dp[i - 1][j] \cdot \frac{s - i + 1}{s}\frac{j}{n}\\
 dp[i][j - 1] \cdot \frac{i}{s}\frac{n - j + 1}{n}\\
 dp[i - 1][j - 1] \cdot \frac{s - i + 1}{s}\frac{n - j + 1}{n}\\
 1
-\end{matrix}\right.$$
+\end{matrix}\right.
+$$
 
 这玩意看上去不可求，但是我们加起来移项就可做了。
 
@@ -3294,5 +3296,5 @@ size a.exe：输出空间，比如开个很大的数组之后会变成![](http:/
 
 入门困难
 
-  [1]: http://static.zybuluo.com/LittleRewriter/o1efys0akjlsjyy4jnfc0xej/image_1cfaa8ngt1hridfq2lpg2o1e629.png
-  [2]: http://static.zybuluo.com/LittleRewriter/ty7oaq9ji5v5gh16prja35q9/image_1cfhk4n7ob1rpc2dg6f7f15sfm.png
+[1]: http://static.zybuluo.com/LittleRewriter/o1efys0akjlsjyy4jnfc0xej/image_1cfaa8ngt1hridfq2lpg2o1e629.png
+[2]: http://static.zybuluo.com/LittleRewriter/ty7oaq9ji5v5gh16prja35q9/image_1cfhk4n7ob1rpc2dg6f7f15sfm.png

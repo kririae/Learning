@@ -334,11 +334,11 @@ $[1, m]$中$gcd(i, m)$，$i$组成的集合叫做简化剩余系$S$。设$a \in 
 
 首先需要知道，后面挂着的那一坨该怎么处理。我们看$b^b$的本质是什么？$b^b = \underbrace{b \times b \times \cdot\cdot\cdot \times b}_{b}$。转化为$a^{a^{b - 1}} \ mod \ (10^9 + 7)$。根据费马小定理$a^{p - 1} \equiv 1 \ (mod \ p)$。所以$a^{a^{b - 1}} \equiv a^{(a^{b - 1}) \ mod \ (p - 1)} \ (mod \ p)$。不懂这一步的话可以考虑$1$哪去了。然后用快速幂解决。
 
-### 拓展欧几里得算法
+### 拓(扩)展欧几里得算法
 
 拓欧的定理如下$ax + by = gcd(a, b)$。而我们就是要解这个不定方程。
 
-问题来了，如何解?根据欧几里得算法，有$ax + by = bx' + (a \ mod \ b)y' = gcd(a, b) = gcd(b, a \ mod \ b)$。而根据之前提到过的模数的定义，$a \ mod \ b = a - \lfloor \frac{a}{b} \rfloor \cdot b$，得出$ax + by = bx' + (a - \lfloor \frac{a}{b} \rfloor \cdot b)y'$。化简得到$ax + by = ay' -  b \cdot (x' - \lfloor \frac{a}{b} \rfloor \cdot y')$。我们令$x = y', y = x' - \lfloor \frac{a}{b} \rfloor \cdot y'$。当$b = 0$时，$x = 1, y = 0$。因为$ax = gcd(a, 0)$。
+问题来了，如何解?根据欧几里得算法，有$ax + by = bx' + (a \ mod \ b)y' = gcd(a, b) = gcd(b, a \ mod \ b)$。而根据之前提到过的模数的定义，$a \ mod \ b = a - \lfloor \frac{a}{b} \rfloor \cdot b$，得出$ax + by = bx' + (a - \lfloor \frac{a}{b} \rfloor \cdot b)y'$。化简得到$ax + by = ay' -  b \cdot (x' - \lfloor \frac{a}{b} \rfloor \cdot y')$。我们令$x = y', y = x' - \lfloor \frac{a}{b} \rfloor \cdot y'$。当$b = 0$时，$x = 1, y = 0$。因为$ax = gcd(a, 0) = 1$。
 
 代码如下
 
@@ -411,4 +411,201 @@ int main()
 
 ###  乘法逆元
 
-多数时候用于处理除法带$mod$的情况，$\frac{a}{b} \equiv a \cdot \mathrm{inv}(b) \pmod{m}$。$\mathrm{inv}(b)$就是$b$的逆元。逆元存在的前提是：...先不说这个，我们用丢番图方程的整数解来证明。
+多数时候用于处理除法带$mod$的情况，$\frac{a}{b} \equiv a \cdot \mathrm{inv}(b) \pmod{m}$。$\mathrm{inv}(b)$就是$b$的逆元。逆元存在的前提是：...先不说这个，我们用丢番图方程的整数解来证明。上式可以化为$a \equiv ab \cdot \mathrm{inv}(b) \pmod{m}$。再次化简得到$b \cdot \mathrm{inv}(b) \equiv 1 \pmod{m}$。$b \cdot \mathrm{inv}(b) - km = 1$。此方程当且仅当$gcd(b, m) = 1$时有解，进而推导$b$在$mod \ p$意义下的乘法逆元当且仅当$gcd(b, m) = 1$时存在。第一种方法，对于逆元存在的时候，可以求$exgcd$。从而得出逆元。
+
+还有一种解法，当$p$为质数时，利用费马小定理：$b^p \equiv b \pmod{m}$。$b \cdot b^{p - 2} \equiv \pmod{m}$。所以$b^{p - 2}$是$b$在模$p$意义下的乘法逆元。代码分别是`exgcd(x, y, a, p), return (x % p + p) % p`。`return fpow(a, p - 2, p)`。
+
+但是，还有一种球法！$inv[1] = 1, inv[i] = (p - \lfloor\frac{p}{i}\rfloor) \cdot inv[p \ mod \ i] \ mod \ p$。
+
+写成代码是这样
+
+```cpp
+for (int i = 2; i <= n; ++i)
+    inv[i] = (p - p / i) * inv[p % i] % p;
+```
+
+前两种复杂度是$O(log{n})$,最后一种是$O(n)$，不常用。
+
+### 线性同余方程
+
+给定$ax \equiv b \pmod{m}$。可以得到$ax + my = b$，有解当且仅当$gcd(a, m) | b$。方程的所有解是$\ mod \ \frac{m}{gcd(a, m)}$和$x$同余的整数。
+
+#### 中国单身狗定理
+
+有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？
+
+中国单身狗定理要求以下方程组的解
+$$
+\begin{equation}
+\left\{
+  \begin{array}{lr}
+    x \equiv a_1 \pmod{m_1} \\
+    x \equiv a_2 \pmod{m_2} \\
+    \cdots \\
+    x \equiv a_n \pmod{m_n}
+    \end{array}
+  \right.
+\end{equation}
+$$
+其中，$gcd(m_1, m_2, \cdots, m_n) = 1$。我被这玩意儿折腾半个月了，这里重新来认真搞一搞。
+
+令$M = \prod{m_i}$，$M_i = \frac{M}{m_i}$。令$t_i$是$M_it_i \equiv 1 \pmod{m_i}$的一个解，（也就是$M_i$关于模$m_i$意义下的一个逆元。则$x$的唯一一组解是$x = (\sum_{i = 1}^{n}{a_it_iM_i}) \ mod \ M$。
+
+证明：
+因为$gcd(m_i, m_j) = 1$，所以$gcd(m_i, M_i) = 1$。所以，存在$t_i$，是$M_i$在$\ mod \ m_i$意义下的乘法逆元。即$t_iM_i \equiv 1 \pmod{m_i}$，可以得到$a_it_iM_i \equiv a_i \pmod{m_i}$，又$m_j | M_i$，所以$a_it_iM_i \equiv 0 \pmod{m_j}$。构造$x = \sum{a_it_iM_i}$，所以满足$x = a_it_iM_i  + 0 \equiv a_i \pmod{m_i}$。$Q.E.D.$
+
+#### $EXCRT$ 中国EX单身狗定理（大雾
+
+相比$CRT$，$EXCRT$有个区别，$m_i, m_j$不一定互质。重新看方程：
+$$
+\begin{equation}
+\left\{
+  \begin{array}{lr}
+    x \equiv a_1 \pmod{m_1} \\
+    x \equiv a_2 \pmod{m_2} \\
+    \cdots \\
+    x \equiv a_n \pmod{m_n}
+    \end{array}
+  \right.
+\end{equation}
+$$
+
+既然无法一次合并，那就考虑两两合并。
+
+我们考虑前俩方程：$x \equiv a_1 \pmod{m_1}, x \equiv a_2 \pmod{m_2}$。转换成以下形式，$x = a_1 + k_1m_1, x = a_2 + k_2m_2$，减一下变成$k_1m_1 - k_2m_2  = a_2 - a_1$，根据某打起来太麻烦的定理，这里存在整数解的前提是$gcd(m_1, m_2) | a_2 - a_2$。然后解啊！用扩欧解出特解$k_1, k_2$。令$g = gcd(m_1, m_2), k_1', k_2'$为俩特解，则$k_1 = \frac{m_2}{g}t + k_1', k_2 = \frac{m_1}{g}t + k_2'$，带回原式：令$x_0 = a_1 + m_1k_1'$，$x \equiv x_0 \pmod{lcm(m_1, m_2)}$。
+
+代码如下
+
+```cpp
+// by kririae
+// 题解ver
+#define ll long long
+#include <bits/stdc++.h>
+
+using namespace std;
+
+inline void exgcd(ll &x, ll &y, ll &g, ll a, ll b)
+{
+  if(b) exgcd(y, x, g, b, a % b), y -= (a / b) * x;
+  else x = 1, y = 0, g = a;
+}
+
+inline ll EXCRT(ll *_a, ll *_m, ll n)
+{
+  ll a = _a[1], m = _m[1], g, x, y, mod;
+  for (int i = 2; i <= n; ++i)
+  {
+    exgcd(x, y, g, m, _m[i]);
+    if((_a[i] - a) % g) return -1;
+    x *= (_a[i] - a) / g, mod = _m[i] / g, x = (x % mod + mod) % mod;
+    a = m * x + a, m = m / g * _m[i], a %= m;
+  }
+  return (a % m + m) % m;
+}
+
+const int maxn = 1e5 + 5;
+ll n, m[maxn], a[maxn];
+
+int main()
+{
+  cin.tie(0);
+  ios::sync_with_stdio(false);
+  cin >> n;
+  for (int i = 1; i <= n; ++i)
+    cin >> m[i] >> a[i];
+  cout << EXCRT(a, m, n) << endl;
+}
+```
+
+
+### 数论函数补充
+
+以下公式都基于唯一分解定理。假设我们已经分解了$n$。
+除了莫比乌斯函数，之前的都提到过:
+
+- $\varphi(n)$，欧拉函数，$[1, n]$中和$n$互质的数的个数。
+- $\sigma(n)$，$n$的正约数之和$\prod_{i = 1}^{m}{\sum_{j = 0}^{c_i}{p_i^{j}}}$。
+- $\mathrm{d}(n)$，$n$的正约数个数。$\prod{c_i + 1}$。
+
+这几个的计算原理都很简单，就不给予证明了~。
+然后，如题，补充的是莫比乌斯函数和莫比乌斯反演，我们直接进入下一个版块。
+
+### 莫比乌斯反演
+咕咕咕，之后会完成的.jpg
+
+### 数学期望
+
+因为明天要考期望，紧急添加...
+
+妈耶我期望不要爆零。
+
+对于样本空间$A$，随机事件$a$发生的概率是$P(a)$，$P(\sum{a}) = 1$，$P(a) \in [0, 1]$。对于互斥事件$a_i, a_j$，$P(a_i) +P(a_j) = P(a_i \cup a_j)$。
+
+对于$X$的取值$x_i, x_j \cdots$，取到某一个值的概率是$p_i$，则取到这个值得数学期望是$E(x_ip_i)$d，对于随机变量$X$的期望是$\sum{x_ip_i}$。假如说掷骰子吧，取值有$[1, 6]$，而掷到每一个数值的概率是$\frac{1}{6}$，则掷一个骰子的值的数学期望是$\frac{1}{6} \cdot 1 + \frac{1}{6} \cdot 2 + \cdots + \frac{1}{6} \cdot 6 = \frac{21}{6}$。
+
+光说不练假把式。
+
+#### 「ep8」某个星球有$n$天，抽取$k$个人，问至少两个人生日在同一天的概率是。$1 \leq k \leq n \leq 10^{6}$。
+
+这种，一般都要转换问题，转换为“所有人生日都不同”的问题。第一天，某个人可以选择$\frac{n}{n}$天，第二个人可以选择的是$\frac{n - 1}{n}$，第$k$个人可以选择的是$\frac{n - k + 1}{n}$，所以答案就是$\prod_{i = 0}^{k - 1}{\frac{n - i}{n}}$。可以线性计算。
+
+#### 「ep9」毛玉问题，有$K$只毛玉，每只生存一天就会死亡，每只毛玉在死之前有可能生下一些毛玉，生$i$个毛玉的概率是$pi$，问$m$天后所有的毛玉都死亡的概率是多少？ 所有数据$\leq 1000$。（$UVA11021$
+
+代码如下...解释的话...会很复杂。设$f[i]$表示一开始有$1$只毛玉，并且在$i$天死光的概率。假如说$i - 1$天有$p$只，每一只死亡的概率都是$f[i - 1]$。所以全部死亡的概率就是$f[i - 1]^{k}$。我们枚举$i - 1$天的剩余，累加。（自己重看的时候发现很多问题，先咕咕咕着吧，等豁然开朗了。
+
+```cpp
+// by kririae
+#define R register
+#include <bits/stdc++.h>
+
+using namespace std;
+
+const int maxn = 1005;
+
+int t, n, k, m;
+double p[maxn], f[maxn];
+
+inline double fpow(R double a, R int p)
+{
+  double ans = 1;
+  for (; p; p >>= 1)
+  {
+    if(p & 1) ans = a * ans;
+    a = a * a;
+  }
+  return ans;
+}
+
+int main()
+{
+  scanf("%d", &t);
+  for (int qwq = 1; qwq <= t; ++qwq)
+  {
+    memset(f, 0, sizeof(f));
+    scanf("%d%d%d", &n, &k, &m);
+    for (int i = 0; i < n; ++i) scanf("%lf", &p[i]);
+    f[1] = p[0];
+    for (R int i = 2; i <= m; ++i)
+      for (R int j = 0; j < n; ++j)
+        f[i] += p[j] * fpow(f[i - 1], j);
+    printf("Case #%d: %.7lf\n", qwq, fpow(f[m], k));
+  }
+}
+```
+
+
+
+#### 「ep10」咕咕咕
+
+#### 「ep11」咕咕咕
+
+#### 「ep12」咕咕咕
+
+
+
+
+#  一些题目备选
+
+概率：BZOJ2318，BZOJ4720，BZOJ2720，BZOJ3720，收集邮票
+
+各种：NOI2010能量采集
