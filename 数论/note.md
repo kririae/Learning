@@ -540,7 +540,7 @@ int main()
 矩阵乘法的前提是行列必须对应另一个矩阵的行列。矩阵乘法满足结合律， 分配率，但是不满足交换律。注意，不满足交换律。
 
 举个例子吧，最经典的题：
-#### 「ep8」求斐波那契数列的第$n$项，$n \leq 10^18$。
+#### 「ep8」求斐波那契数列的第$n$项，$n \leq 10^{18}$。
 $f[i] = f[i - 1] +f[i - 2]$。所以，可以构造矩阵如下：
 $$
 \begin{bmatrix}
@@ -578,6 +578,148 @@ $$
 
 #### 「ep9」求斐波那契数列前$n$项和，$n \leq 10^{18}$。
 
+其实是差不多的，构造如下：
+$$
+\begin{bmatrix}
+	1 & 1 & 0 \\
+	0 & 1 & 1 \\
+	0 & 1 & 0
+\end{bmatrix}
+\times
+\begin{bmatrix}
+	S[n] \\
+	f[n + 1] \\
+	f[n]
+\end{bmatrix}=
+\begin{bmatrix}
+	S[n + 1] \\
+	f[n + 2] \\
+	f[n + 1]
+\end{bmatrix}
+$$
+
+后面会有更多的题涉及矩阵，所以这个基础知识一定要搞好。
+我们来看一个矩阵 + 概率的题。
+
+
+#### 矩阵中的图论建模
+
+矩阵通常可以和图论中的邻接矩阵联系起来，看到图论的时候不妨往矩阵这里想一想。
+
+##### 「ep10」工作 (by ihopenot)
+$Ambiguous$是居住在$byte$镇的量子居民，$byte$镇可以看成是$n$个点，$m$条单向边的联通图。每天清晨，$Ambiguous$都会以$P_i$的概率出现在$i$号节点，之后由于工作原因，$Ambiguous$每小时会有一定概率移动。具体而言，$Ambiguous$如果在$i$号节点并且存在一条编号为$j$的边从$i$出发，那么她就有$p_j$的概率走这条边。
+可以保证从每个节点出发的边概率和不超过$1$，但不保证为$1$，如果$Ambiguous$没有走任何一条边，那么她就会留在当前节点。
+今天清晨来临之前$Ambiguous$突然想知道，今天工作结束后自己在每个节点的概率是多少。
+$n \leq 300, m \leq 100000, t \leq 10^{18}$。
+
+这道题算是矩阵优化的基础题目，虽然原题暴力也可过，但是$t \leq 10^{18}$呢QAQ
+矩阵这么构造，最开始的矩阵
+
+$$
+\begin{bmatrix}
+	P_1 \\
+	P_2 \\
+	P_3 \\
+	\cdots \\
+	P_n 
+\end{bmatrix}
+$$
+
+每次转移的矩阵是题中构造的邻接矩阵，对于这个邻接矩阵$pow(t)$之后乘上原矩阵，这个矩阵中的每一个位置表示到达某个点的概率。因为$c_{i, j} = \sum_{i = 1}^{k}{a_{i, k} \times b_{k, j}$。所以最后的某个点的点权是 所以入边的概率之和，没问题qwq。
+
+##### 「ep11」给出一个满足对角线均为正数的非负矩阵，判断这个矩阵是否有某一次方为全正数矩阵。$n \leq 1000$ (by ihopenot)
+
+首先一看，莫名其妙...考场上写的矩阵快速幂验算，想苟50，结果只苟到了20...
+下来听到有人说“不是图论建模么”，我心里一惊，然后反应过来了。
+哇这道题吹爆！！！
+首先，我们把$A$矩阵看成一个邻接矩阵，可以发现，转化为01矩阵之后是没有影响的。而矩阵的某一个位置$i, j$表示$i \rightarrow j$有一条边。矩阵中所有全为正数，表示这个图全连通，而矩阵乘法之后，我们考虑乘法的意义是什么。
+写写就知道（其实我也是感性理解），乘出来的矩阵表示$i \rightarrow j$经过$k$条边就几种方案。（？
+如果$a[i][j] = 0$，代表$i$不能到$j$。也就是$i, j$不处于一个$SCC$。
+$SCC!$，启发我了...不处于一个$SCC$的点，无论怎么搞都不会处于一个$SCC$，所以，对最开始的图求一个$tarjan$，看全部是否都处于同一个联通快中。
+
+```cpp
+// 贼棒的图论建模
+// by kririae
+#include <bits/stdc++.h>
+
+using namespace std;
+
+namespace IO
+{
+inline char gc()
+{
+  static char buf[1 << 18], *fs, *ft;
+  return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
+}
+inline int read()
+{
+  register int k = 0, f = 1;
+  register char c = gc();
+  for (; !isdigit(c); c = gc()) if (c == '-') f = -1;
+  for (; isdigit(c); c = gc()) k = (k << 3) + (k << 1) + (c - '0');
+  return k * f;
+}
+}
+
+namespace Life
+{
+const int maxn = 1005;
+
+int n, t, a[maxn][maxn], dfn[maxn], low[maxn], cnt, tot;
+stack<int> s;
+bitset<maxn> vis;
+
+inline void tarjan(int x)
+{
+  dfn[x] = low[x] = ++cnt;
+  s.push(x), vis[x] = 1;
+  for (int i = 1; i <= n; ++i)
+  {
+    if(!a[x][i]) continue;
+    if(!dfn[i])
+    {
+      tarjan(i);
+      low[x] = min(low[x], low[i]);
+    } else if(vis[i]) low[x] = min(low[x], dfn[i]);
+  }
+  if(low[x] == dfn[x])
+  {
+    int curr; ++tot;
+    do {
+      curr = s.top(); s.pop(); vis[curr] = 0;
+    } while(curr != x);
+  }
+}
+inline void solve()
+{
+  using namespace IO;
+  t = read();
+  while(t--)
+  {
+    memset(dfn, 0, sizeof(dfn));
+    memset(low, 0, sizeof(low));
+    memset(a, 0, sizeof(a));
+    while(!s.empty()) s.pop();
+    vis.reset(); cnt = 0; tot = 0;
+    n = read();
+    int flag = 0;
+    for (int i = 1; i <= n; ++i)
+      for (int j = 1; j <= n; ++j)
+        a[i][j] = read();
+    for (int i = 1; i <= n; ++i)
+          if(!dfn[i]) tarjan(i);
+    if(tot == 1) puts("YES");
+    else puts("NO");
+  }
+}
+}
+
+int main()
+{
+  return Life::solve(), 0;
+}
+```
+
 ### 数学期望
 
 因为明天要考期望，紧急添加...
@@ -596,7 +738,8 @@ $$
 
 #### 「ep9」毛玉问题，有$K$只毛玉，每只生存一天就会死亡，每只毛玉在死之前有可能生下一些毛玉，生$i$个毛玉的概率是$pi$，问$m$天后所有的毛玉都死亡的概率是多少？ 所有数据$\leq 1000$。（$UVA11021$
 
-代码如下...解释的话...会很复杂。设$f[i]$表示一开始有$1$只毛玉，并且在$i$天死光的概率。假如说$i - 1$天有$p$只，每一只死亡的概率都是$f[i - 1]$。所以全部死亡的概率就是$f[i - 1]^{k}$。我们枚举$i - 1$天的剩余，累加。（自己重看的时候发现很多问题，先咕咕咕着吧，等豁然开朗了。
+代码如下...解释的话...会很复杂。好吧...我承认这道题搞了我俩天。
+设$f[i]$表示，对于一直毛玉，其子孙后代在$i$天“内”死亡的概率是。假设这一天死了这一只小毛玉死了，概率是$p_0$，如果生下一只的话，生下的小毛玉已经被限制了生命，在$i - 1$天内死的概率是$f[i - 1]$，其中$i - 1$的意思是它的寿命是$i - 1$。对于生下的所有小毛玉，可以独立考虑，则全部死光的概率需要$f[m]^k$。这道题的关键是搞清楚，$f[i]$到底是啥意思QAQ就是这玩意儿害了我俩天。
 
 ```cpp
 // by kririae
@@ -638,16 +781,105 @@ int main()
 }
 ```
 
-
-
 #### 「ep10」咕咕咕
 
 #### 「ep11」咕咕咕
 
 #### 「ep12」咕咕咕
 
+#### 「ep13」Va-11 Hall-a (by ihopenot)
 
+##### 「题目描述」
 
+$Jill$是在$Vallhalla$工作的调酒师。为客人送上美味的饮料是她的工作内容。但$Jill$是个有创造力和上进心的女孩，她并不满足于仅为客人调制菜单上的饮料，她想自己去创造属于自己的饮料。虽说如此，她并不知道怎么去创造一种受客人欢迎的饮料，于是她想出了一个绝妙的办法。$Jill$将$n$瓶酒摆成一列，每瓶酒初始评价值都为$1$，然后有$m$次操作。每次操作$Jill$会在$[l,r]$内的酒中随机选择任意瓶每瓶加入一个评价值随机（不一定相同）的配料，并重复这个操作$k_i$次。由于原料和配料会发生剧烈的化学反应，所以混合之后评价值并不是相加 那么简单。据$Jill$观察，一瓶评价值为$a$酒在加入评价值为整数$b(0 \leq b < c)$，的配料后评价值会变为$a\cdot b \ mod \ c$。现在$Jill$想知道她最终调制出的酒的评价值的和期望是多少。
+
+**一句话题意**：给你一个初始全为$1$的长度为$n$的序列，$m$次操作，每次操作重复$ki$次，对于$[l,r]$间的随机一些数$a$，再对每个数选择一个随机整数$b(0 \leq b < c)$，将这些数变成$a\cdot b \ mod \ c$。问最终所有数的和期望是多少。 为了方便保证精度，你需要输出答案对$10^9+7$取模后的结果。 提示：如果答案是$\frac{a}{b}$的形式，那么你需要输出$a \cdot b^{-1} \ mod \ (10^9 + 7)$的结果。由于费马小定理，你只需输出$a \cdot b^{10^9 + 5} \ mod \ (10^9 + 7)$就可以了。
+
+##### 「输入格式」
+第一行三个正整数$n, m, c$接下来每行三个数$l_i, r_i, k_i$表示操作的区间和重复次数。
+##### 「输出格式」
+ 一行一个整数表示答案对$10^9+7$取模后的整数。
+
+##### 「样例输入」 
+`3 1 3 1 2 1`
+##### 「样例输出」
+`500000007`
+##### 「数据规模及约定」
+对于$30\%$的数据$n=10, m \leq 10, k_i \leq 10, c \leq 5$
+对于$100\%$的数据$n \leq 100, m \leq 1e6, k_i \leq 100, c \leq 50$
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+#define MOD 1000000007
+#define LL long long
+
+int n,m,c,ans;
+int num[105];
+
+struct Matrix{
+	int x[55][55];
+	Matrix operator * (const Matrix &b) const {
+        Matrix ret;
+		memset(ret.x,0,sizeof(ret.x));
+        for(int i=0;i<c;i++) 
+            for(int j=0;j<c;j++)
+                for(int k=0;k<c;k++) 
+                    ret.x[i][k]=(ret.x[i][k]+(LL) x[i][j]*b.x[j][k])%MOD;
+        return ret;
+    }
+}pw[35],st;
+int now[55],t[55];
+
+void Merge(int k) {
+	memset(t,0,sizeof(t));
+	for(int i=0;i<c;i++) 
+		for(int j=0;j<c;j++) 
+			t[i]=(t[i]+(LL) now[j]*pw[k].x[i][j])%MOD;
+	for(int i=0;i<c;i++) now[i]=t[i];
+}
+
+int fpow(int a,int b) {
+	LL t=a,ret=1;
+	while(b) {
+		if(b&1) ret=ret*t%MOD;
+		b>>=1;t=t*t%MOD;
+	}
+	return ret;
+}
+
+int main() {
+	freopen("bar.in","r",stdin);
+	freopen("bar.out","w",stdout);
+	 
+	scanf("%d%d%d",&n,&m,&c);
+	for(int l,r,k,i=1;i<=m;i++) {
+		scanf("%d%d%d",&l,&r,&k);
+		num[r+1]-=k;num[l]+=k;
+	}
+	for(int i=1;i<=n;i++) num[i]+=num[i-1];
+	LL rev_2=fpow(2,MOD-2),rev_c=fpow(c,MOD-2);
+	for(int to,i=0;i<c;i++) {
+		for(int j=0;j<c;j++) {
+			to=i*j%c;
+			st.x[i][to]=(st.x[i][to]+rev_2*rev_c)%MOD;
+		}
+		st.x[i][i]=(st.x[i][i]+rev_2)%MOD;
+	}
+	pw[0]=st;
+	for(int i=1;i<=30;i++) pw[i]=pw[i-1]*pw[i-1];
+	for(int i=1;i<=n;i++) {
+		memset(now,0,sizeof(now));
+		now[1]=1;
+		for(int j=0;j<=30;j++) if(num[i]>>j&1) Merge(j);
+		for(int j=0;j<c;j++) 
+			ans=(ans+(LL)now[j]*j)%MOD;
+	}
+	printf("%d\n",ans);
+	return 0;
+}
+```
 
 #  一些题目备选
 
