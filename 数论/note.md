@@ -533,6 +533,51 @@ int main()
 ### 莫比乌斯反演
 咕咕咕，之后会完成的.jpg
 
+### 矩阵乘法
+
+定义我不详细解释了，大概来说，是这个样子的：$c_{i, j} = \sum_{k = 1}^{m}{a_{i, k} * b_{k, j}}$。
+
+矩阵乘法的前提是行列必须对应另一个矩阵的行列。矩阵乘法满足结合律， 分配率，但是不满足交换律。注意，不满足交换律。
+
+举个例子吧，最经典的题：
+#### 「ep8」求斐波那契数列的第$n$项，$n \leq 10^18$。
+$f[i] = f[i - 1] +f[i - 2]$。所以，可以构造矩阵如下：
+$$
+\begin{bmatrix}
+	1 & 1 \\
+	1 & 0 \\
+\end{bmatrix}
+\times
+\begin{bmatrix}
+	f[n] \\
+	f[n - 1]
+\end{bmatrix}
+=
+\begin{bmatrix}
+	f[n + 1] \\
+	f[n]
+\end{bmatrix}
+$$
+我也不知道咋证，反正矩阵可以求快速幂。
+于是
+$$
+\begin{bmatrix}
+	1 & 1 \\
+	1 & 0 \\
+\end{bmatrix}^n
+\times
+\begin{bmatrix}
+	1 \\
+	1
+\end{bmatrix}=
+\begin{bmatrix}
+	f[n + 1] \\
+	f[n]
+\end{bmatrix}
+$$
+
+#### 「ep9」求斐波那契数列前$n$项和，$n \leq 10^{18}$。
+
 ### 数学期望
 
 因为明天要考期望，紧急添加...
