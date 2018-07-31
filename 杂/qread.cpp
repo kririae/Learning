@@ -1,3 +1,49 @@
+// kririae
+struct IO
+{
+char ibuf[1 << 18], *s, *t, obuf[1 << 18], *o, vbuf[65];
+IO() : s(ibuf), t(ibuf), o(obuf) {}
+~IO() { fwrite(obuf, 1, o - obuf, stdout); }
+inline char gc() 
+{
+  (s == t) && 
+  (t = (s = ibuf) + fread(ibuf, 1, 1 << 18, stdin));
+  return s == t ? 0 : *s++;
+}
+inline void pc(char c)
+{
+  (o == obuf + (1 << 18)) &&
+  (fwrite(obuf, 1, 1 << 18, stdout), o = obuf);
+  *o++ = c;
+}
+template<typename T>
+operator T()
+{
+  register T ret = 0, f = 1; 
+  register char c = gc();
+  for (; !isdigit(c); c = gc())
+    f = c == '-' ? -1 : 1;
+  for (; isdigit(c); c = gc())
+    ret = (((ret << 2) + ret) << 1) + (c - '0');
+  return f == 1 ? ret : -ret;
+}
+void operator = (char x) { pc(x); }
+void operator = (const char *x) 
+{
+  register int curr = 0;
+  while(x[curr]) pc(x[curr++]);
+}
+template<typename T>
+void operator = (T x) 
+{
+  register int curr = 0;
+  if(x == 0) return pc('0'), void();
+  if(x < 0) x = -x, pc('-');
+  while(x) vbuf[++curr] = x % 10 + 48, x /= 10;
+  while(curr) pc(vbuf[curr--]);
+}
+} io;
+
 // lpa20020220
 template<typename T>
 inline void read(T &val)
@@ -46,6 +92,25 @@ inline void read(T &val)
 }
 }
 
+template<class T>
+struct IO
+{
+char buf[1 << 18], *s, *t;
+IO() : s(), t() {}
+inline char gc() {
+  s == t && t = (s = buf) + 
+  fread(buf, 1, 1 << 18, stdin);
+  return s == t ? 0 : *s++;
+}
+operator T() {
+  T ret = 0, T f = 1, char c = gc()
+  for (; !isdigit(c); c = gc()) 
+    f = c == '-' ? -1 : 1;
+  for (; isdigit(c); c = gc()) 
+    ret = (((ret << 2) + ret) << 1) + (c - '0');
+  return f == 1 ? ret : -ret;
+}
+}
 // HigHwind
 template<class T>
 struct IO
@@ -68,9 +133,9 @@ void print(T v)
   static T *q = a;
   if (!v) *t++ = 48;
   else {
-	if (v < 0) *t++ = 45, v *= -1;
-	while (v) *q++ = v % 10 + 48, v /= 10;
-	while (q != a) *t++ = *--q;
+  if (v < 0) *t++ = 45, v *= -1;
+  while (v) *q++ = v % 10 + 48, v /= 10;
+  while (q != a) *t++ = *--q;
   } *t++ = '\n';
 }
 };
@@ -89,45 +154,45 @@ char ibuf[SIZE], *s, *t, obuf[SIZE], *oh;
 InputOutputStream() : s(), t(), oh(obuf) {}
 ~InputOutputStream() { fwrite(obuf, 1, oh - obuf, stdout); }
 inline char read() {
-	if (s == t) t = (s = ibuf) + fread(ibuf, 1, SIZE, stdin);
-	return s == t ? -1 : *s++;
+  if (s == t) t = (s = ibuf) + fread(ibuf, 1, SIZE, stdin);
+  return s == t ? -1 : *s++;
 }
 template <typename T>
 inline InputOutputStream &operator>>(T &x) {
-	static char c;
-	static bool iosig;
-	for (c = read(), iosig = false; !isdigit(c); c = read()) {
-		if (c == -1) return *this;
-		iosig |= c == '-';
-	}
-	for (x = 0; isdigit(c); c = read()) x = x * 10 + (c ^ '0');
-	if (iosig) x = -x;
-	return *this;
+  static char c;
+  static bool iosig;
+  for (c = read(), iosig = false; !isdigit(c); c = read()) {
+    if (c == -1) return *this;
+    iosig |= c == '-';
+  }
+  for (x = 0; isdigit(c); c = read()) x = x * 10 + (c ^ '0');
+  if (iosig) x = -x;
+  return *this;
 }
 inline void print(char c) {
-	if (oh == obuf + SIZE) {
-		fwrite(obuf, 1, SIZE, stdout);
-		oh = obuf;
-	}
-	*oh++ = c;
+  if (oh == obuf + SIZE) {
+    fwrite(obuf, 1, SIZE, stdout);
+    oh = obuf;
+  }
+  *oh++ = c;
 }
 template <typename T>
 inline void print(T x) {
-	static int buf[21], cnt;
-	if (x != 0) {
-		if (x < 0) {
-			print('-');
-			x = -x;
-		}
-		for (cnt = 0; x; x /= 10) buf[++cnt] = x % 10 | 48;
-		while (cnt) print((char)buf[cnt--]);
-	} else {
-		print('0');
-	}
+  static int buf[21], cnt;
+  if (x != 0) {
+    if (x < 0) {
+      print('-');
+      x = -x;
+    }
+    for (cnt = 0; x; x /= 10) buf[++cnt] = x % 10 | 48;
+    while (cnt) print((char)buf[cnt--]);
+  } else {
+    print('0');
+  }
 }
 template <typename T>
 inline InputOutputStream &operator<<(const T &x) {
-	print(x);
-	return *this;
+  print(x);
+  return *this;
 }
 } io;
