@@ -426,6 +426,8 @@ for (int i = 2; i <= n; ++i)
 
 前两种复杂度是$O(log{n})$,最后一种是$O(n)$，不常用。
 
+顺带一提，$inv(b, p) = inv(b \ mod \ p, p)$，不然用个锤。因为定义，$ax \equiv 1 \pmod{m}$。$ax \ mod \ m = a \ mod  \ m \cdot x \ mod \ m$。
+
 ### 线性同余方程
 
 给定$ax \equiv b \pmod{m}$。可以得到$ax + my = b$，有解当且仅当$gcd(a, m) | b$。方程的所有解是$\ mod \ \frac{m}{gcd(a, m)}$和$x$同余的整数。
@@ -530,8 +532,16 @@ int main()
 这几个的计算原理都很简单，就不给予证明了~。
 然后，如题，补充的是莫比乌斯函数和莫比乌斯反演，我们直接进入下一个版块。
 
+
 ### 莫比乌斯反演
-咕咕咕，之后会完成的.jpg
+
+#### 容斥原理
+
+某小学学的东西，$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$。其实就是，首先算每个集合的大小，发现算重了旁边的，就减去，结果发现又算少了，又加上，这个思想在欧拉函数的计算上用到过。我们不如换个写法：
+$$
+|\bigcup_{i = 1}^{n}{A_i}| = \sum_{i = 1}^{n}{|A_i|} - \sum_{1 \leq i < j \leq n}{|A_i \cap A_j|} + \sum_{1 \leq i < j < k \leq n}{|A_i \cap A_j \cap A_k|} - \cdots - (-1)^{n - 1}|A_1 \cap A_2 \cap \cdots \cap A_n|
+$$
+咕咕咕
 
 ### 矩阵乘法
 
@@ -539,9 +549,12 @@ int main()
 
 矩阵乘法的前提是行列必须对应另一个矩阵的行列。矩阵乘法满足结合律， 分配率，但是不满足交换律。注意，不满足交换律。
 
-举个例子吧，最经典的题：
+举个例子吧，最经典的题
+
 #### 「ep8」求斐波那契数列的第$n$项，$n \leq 10^{18}$。
+
 $f[i] = f[i - 1] +f[i - 2]$。所以，可以构造矩阵如下：
+
 $$
 \begin{bmatrix}
 	1 & 1 \\
@@ -627,7 +640,7 @@ $$
 
 每次转移的矩阵是题中构造的邻接矩阵，对于这个邻接矩阵$pow(t)$之后乘上原矩阵，这个矩阵中的每一个位置表示到达某个点的概率。因为$c_{i, j} = \sum_{i = 1}^{k}{a_{i, k} \times b_{k, j}$。所以最后的某个点的点权是 所以入边的概率之和，没问题qwq。
 
-##### 「ep11」给出一个满足对角线均为正数的非负矩阵，判断这个矩阵是否有某一次方为全正数矩阵。$n \leq 1000$ (by ihopenot)
+##### 「ep11」给出一个满足对角线均为正数的非负矩阵，判断这个矩阵是否有某一次方为全正数矩阵。$n \leq 1000$ (by ihopenot) 
 
 首先一看，莫名其妙...考场上写的矩阵快速幂验算，想苟50，结果只苟到了20...
 下来听到有人说“不是图论建模么”，我心里一惊，然后反应过来了。
@@ -719,6 +732,184 @@ int main()
   return Life::solve(), 0;
 }
 ```
+
+### 组合计数
+
+#### 加法原理和乘法原理
+
+可以简单想想成一张图，如果图是这样的：
+
+$1 \rightarrow 2, 1 \rightarrow 2, 1 \rightarrow 2 \cdots$
+
+那么$1 \rightarrow 2$的路径数就是所有边的总和，这就是加法原理。
+
+如果图是这样的
+
+$1 \rightarrow 2, 1 \rightarrow 2, 1 \rightarrow 2 \cdots$
+
+$2 \rightarrow 3, 2 \rightarrow 3, 2 \rightarrow 3 \cdots$
+
+$3 \rightarrow 4, 3 \rightarrow 4, 3 \rightarrow 4 \cdots$
+
+问$1 \rightarrow 4$的路径和，就是每个关键点的路径条数的乘积，这就是乘法原理。
+
+#### 排列和组合
+
+$\binom{n}{m} \Rightarrow \binom{n}{m}$。
+
+写作$P_n^{m}$，表示从$n$个物品中取出$m$个排成一排，产生的不同的排列的数量为。$P_n^{m} = \frac{n!}{(n - m)!}$，可以这么推导：第一次选，有$n$个，第二次选，有$n - 1$个，第三次选...以此类推，最后可以选的有$n - m +1$个。
+
+写作$\binom{n}{m}$，表示从$n$个物品中选取$m$个组成集合，产生的不同的集合的数量为。$\binom{n}{m} = \frac{n!}{m!(n - m)!}$。这么考虑，对于一个长度为$m$的序列，排列方式有$P_m^{m} = m!$。总数量除以排列数就是组合数。
+
+#### 组合数的性质
+
+- $\binom{n}{m} = \binom{n}{n - m}$。$\binom{n}{m} = \frac{n!}{(n - m)!}$，$\binom{n}{n - m} = \frac{n!}{(n - m)!}$。当然，对于组合数来说，硬核证明是不好的。从$n$个钟选取$m$个，剩下的组成一个补集。补集的取值情况和原集合是一一对应的。
+- $\binom{n}{m} = \binom{n - 1}{m} + \binom{n - 1}{m - 1}$。硬核证明免了，谁都会带公式。我们考虑第$n$号元素选和不选，如果选了，剩下的情况是$\binom{n - 1}{m - 1}$，如果不选，剩下的情况是$\binom{n}{m - 1}$。
+- $\sum_{i = 0}{n}{\binom{n}{i}} = 2^n$。硬核证明也免了，谁都会带公式。公式等同于对$n$个数中选取任意多个数，也就是每个数有取或者不取，也就是$2^n$种情况。
+
+额...之后统一写法...
+
+#### 组合数的求解
+- 利用递推式求解，性质2。复杂度$O(n^2)$。
+- 利用定义求解，复杂度$O(n\log{n})$。其实可以用逆元递推到$O(n)$。
+```cpp
+#define ll long long
+#include <bits/stdc++.h>
+
+using namespace std;
+
+const int maxn = 10005;
+const int mod = 1e9 + 7;
+
+int fac[maxn];
+template<typename T>
+inline void exgcd(T &x, T &y, T a, T b) 
+{
+  if(b) exgcd(y, x, b, a % b), y -= (a / b) * x;
+  else x = 1, y = 0;
+}
+template<typename T>
+inline T inv(T a, T x = 0, T y = 0) 
+{
+  // ax \equiv 1 \pmod {p} -> ax = pk + 1 -> ax - pk = 1
+  exgcd(x, y, a, mod);
+  return (x % mod + mod) % mod;
+}
+
+inline void init()
+{
+	fac[0] = 1;
+	for (int i = 1; i < maxn; ++i)
+		fac[i] = (1ll * fac[i - 1] * i) % mod;
+}
+
+inline ll C(int n, int m) 
+{
+  return ((((1ll * inv(fac[m]) * fac[n]) % mod) * inv(fac[n - m])) % mod);
+}
+
+int main()
+{
+	init();
+	// code...
+}
+```
+
+#### 二项式定理
+$$
+(a + b)^n = \sum_{k = 0}^{n}{\binom{n}{k}a^kb^{n - k}}
+$$
+证明我不会。
+
+#### $Lucas$定理
+
+若$p$是质数，则有$\binom{n}{m} \equiv \binom{n \ mod \ p}{m \ mod \ p} \cdot \binom{\frac{n}{p}}{\frac{m}{p}}$。证明我也不会，貌似需要生成函数。
+
+##### 给定$n, g$，求$g^{\sum_{d | n}{\binom{n}{d}}} \mod{99911659}$。
+
+因为$99911659$是质数，$ex$欧拉定理可知，费马小定理也行，$a^b \equiv a^{b \mod{\varphi(n)}} \mod{n}$，所以$g^{\sum_{d | n}{\binom{n}{d}}} \mod{99911659} = g^{\sum_{d | n}{\binom{n}{d}} \mod{99911658}} \mod{99911659}$。目前的问题就是快速求$\sum_{d | n}{\binom{n}{d}} \mod{99911658}$。$n \leq 10^9$，所以$n$的约数个数不超过$2\sqrt{n}$。也就是说跑的过。那么问题来了，$Lucas$定理的适用范围仅仅是质数，怎么办怎么办（捧读）。分解$9911658 = 2 \cdot 3 \cdot 4679 \cdot 35617$。对于几个分解后的质数，我们带入中国剩余定理，求出正确的$\binom{n}{d} \mod{9911658}$。代码如下~
+```cpp
+#define ll long long
+#include <bits/stdc++.h>
+
+using namespace std;
+
+namespace BZOJ1951
+{
+const int mod = 999911658;
+const int prm[4] = {2, 3, 4679, 35617};
+
+inline ll fpow(ll a, ll p, ll mod)
+{
+  ll ans = 1;
+  for (; p; p >>= 1) {
+    if(p & 1) ans = (a * ans) % mod;
+    a = (a * a) % mod;
+  } return ans;
+}
+int g, n, factor[40000], cnt, fact[40000], a[4];
+inline void init()
+{
+  for (int i = 1; i * i <= n; ++i)
+    if(n % i == 0) {
+      factor[++cnt] = i;
+      if(i != n / i) factor[++cnt] = n / i;
+    }
+}
+inline int C(int n, int m, int p)
+{
+  if(m > n) return 0;
+  return fact[n] * fpow(fact[m] * fact[n - m], p - 2, p) % p;
+}
+inline int lucas(int n, int m, int p)
+{
+  if(m == 0) return 1;
+  return C(n % p, m % p, p) * lucas(n / p, m / p, p) % p;
+}
+inline int work(int p)
+{
+  memset(fact, 0, sizeof(fact));
+  fact[0] = 1;
+  for (int i = 1; i <= p; ++i)
+    fact[i] = fact[i - 1] * i % p;
+  ll ans = 0;
+  for (int i = 1; i <= cnt; ++i)
+    ans = (ans + lucas(n, factor[i], p)) % p;
+  return ans;
+}
+inline int CRT()
+{
+  ll ans = 0, M = 999911658;
+  for (int i = 0; i < 4; ++i)
+    ans = (ans + (a[i] * (M / prm[i]) % mod) * fpow(M / prm[i], prm[i] - 2, prm[i])) % mod;
+  return ans;
+}
+inline void solve()
+{
+  cin >> n >> g;
+  if(g == 999911659) return puts("0"), void();
+  init();
+  for (int i = 0; i < 4; ++i) a[i] = work(prm[i]);
+  printf("%lld\n", fpow(g, CRT(), 999911659));
+}
+}
+
+int main()
+{
+  return BZOJ1951::solve(), 0;
+}
+```
+
+#### $Catalan$数列
+
+定义如下：$Cat(n) = \frac{\binom{2n}{n}}{n +1}$。
+
+有以下问题：
+- $n$个左括号和右括号组成的合法序列的个数。
+- $[1, n]$形成的合法出栈序列的个数。
+- 在平面直角坐标系上，不越过$x - y = 0$一条直线，每次只能向上或者向右走，的路线的条数。
+
+$Catalan$数列通常采用朴素的组合数求法，也有递推版本的。
 
 ### 数学期望
 
