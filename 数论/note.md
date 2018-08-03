@@ -519,6 +519,17 @@ int main()
 }
 ```
 
+#### BSGS
+https://blog.csdn.net/doyouseeman/article/details/52084773
+问题如下：
+求解方程，$a^x \equiv b \pmod {p}$。其中$gcd(a, p) = 1$。
+考场写不来BSGS咋办！暴力啊！
+由费马小定理可得，$a^{p - 1} = 1$，所以只用从枚举$[0, p - 1]$。
+然后考虑，如何优化爆搜。这时候就要拉出我们可爱的分块妹子。
+我们考虑把$p - 1$分成$m = \sqrt{p - 1}$。变成了$a^{xm + y} \equiv b \pmod{p}$。
+我们只要枚举$x, y$，就等于分块啦~
+方程可以转化为$a^{y} \equiv b \cdot \frac{1}{a^{xm}} \pmod{p}$
+
 
 ### 数论函数补充
 

@@ -1,26 +1,24 @@
 // by kririae
 // 妙妙的图论建模
+// WA了？？？不知道为啥
+// ...N没开够，father没开够...
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
 
-const int maxn = 1e5 + 5;
-int n, ans, a[maxn], b[maxn], fa[maxn], all[maxn << 1], cnt;
+const int N = 2e5 + 5;
+int n, ans, a[N], b[N], fa[N], all[N], cnt;
 inline int find(int x)
 {
   return fa[x] == x ? x : fa[x] = find(fa[x]);
 }
 int main()
 {
-  freopen("sanae.in", "r", stdin);
-  freopen("sanae.out", "w", stdout);
   scanf("%d", &n);
-  for (int i = 0; i < maxn; ++i) fa[i] = i;
+  for (int i = 0; i < N; ++i) fa[i] = i;
   for (int i = 1; i <= n; ++i) {
     scanf("%d%d", &a[i], &b[i]);
-    // 对于a[i] == b[i]的情况，直接continue
-    if(a[i] == b[i]) ++ans;
-    else all[++cnt] = a[i], all[++cnt] = b[i];
+    all[++cnt] = a[i], all[++cnt] = b[i];
   }
   sort(all + 1, all + 1 + cnt);
   int siz = unique(all + 1, all + 1 + cnt) - all - 1;
