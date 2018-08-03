@@ -1,115 +1,79 @@
 // by kririae
-#define ll long long
+#pragma GCC optimize("Ofast")
 #include <bits/stdc++.h>
-
+#define ll long long
+#define ls t[k].son[0]
+#define rs t[k].son[1]
 using namespace std;
 
-namespace Seg
+const int N = 100005;
+struct Node
 {
-/*
-写不来正解，分块骗分好了~
- */
-inline char gc()
+	int l, r, son[2];
+	ll add, cnt[10];
+} t[N << 2];
+int n, q, cnt, root, a[N], tmp[10];
+inline void pushup(int k)
 {
-  static char buf[1 << 18], *fs, *ft;
-  return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
+	for (int i = 0; i <= 6; ++i)
+		t[k].cnt[i] = t[ls].cnt[i] + t[rs].cnt[i];
 }
-inline int read()
+inline void pushdown(int k)
 {
-  register int k = 0, f = 1;
-  register char c = gc();
-  for (; !isdigit(c); c = gc()) if (c == '-') f = -1;
-  for (; isdigit(c); c = gc()) k = (k << 3) + (k << 1) + (c - '0');
-  return k * f;
+	if(t[k].add == 0) return;
+	t[ls].add += t[k].add, t[rs].add += t[k].add;
+	for (int i = 0; i <= 6; ++i) tmp[i] = t[ls].cnt[i];
+	for (int i = 0; i <= 6; ++i) t[ls].cnt[(i + t[k].add) % 7] = tmp[i];
+	for (int i = 0; i <= 6; ++i) tmp[i] = t[rs].cnt[i];
+	for (int i = 0; i <= 6; ++i) t[rs].cnt[(i + t[k].add) % 7] = tmp[i];
+	t[k].add = 0;
 }
-inline char read_c()
+inline void build(int &k, int l, int r) 
 {
-  register char c;
-  for (c = gc(); isspace(c); c = gc());
-  return c;
+	k = ++cnt, t[k].l = l, t[k].r = r;
+	if(l == r) return ++t[k].cnt[a[l] % 7], void();
+	int mid = l + r >> 1;
+	build(ls, l, mid), build(rs, mid + 1, r);
+	pushup(k);
 }
-const int maxn = 100005;
-int n, bs, bc, belong[maxn], L[maxn], R[maxn], CNT[maxn];
-ll a[maxn], ADD[maxn];
-inline void pushdown(int x) 
+inline void add(int k, int l, int r, ll val)
 {
-  if(!ADD[x]) return;
-  for (int i = L[x]; i <= R[x]; ++i) {
-    if(a[i] % 7 == 0) --CNT[x];
-    a[i] += ADD[x];
-    if(a[i] % 7 == 0) ++CNT[x];
-  }
-  ADD[x] = 0;
+	if(t[k].l == l && t[k].r == r) {
+		t[k].add += val;
+		for (int i = 0; i <= 6; ++i) tmp[i] = t[k].cnt[i];
+		for (int i = 0; i <= 6; ++i) t[k].cnt[(i + val) % 7] = tmp[i];
+		return;
+	}
+	pushdown(k);
+	int mid = (t[k].l + t[k].r) >> 1;
+	if(r <= mid) add(ls, l, r, val);
+	else if(l > mid) add(rs, l, r, val);
+	else add(ls, l, mid, val), add(rs, mid + 1, r, val);
+	pushup(k);
 }
-inline void modify(int l, int r, int add) 
+inline int query(int k, int l, int r)
 {
-  pushdown(belong[l]), pushdown(belong[r]);
-  if(belong[l] == belong[r]) {
-    for (int i = l; i <= r; ++i) {
-      if(a[i] % 7 == 0) --CNT[belong[i]];
-      a[i] += add;
-      if(a[i] % 7 == 0) ++CNT[belong[i]];
-    } return;
-  }
-  for (int i = l; i < L[belong[l] + 1]; ++i) {
-    if(a[i] % 7 == 0) --CNT[belong[i]];
-    a[i] += add;
-    if(a[i] % 7 == 0) ++CNT[belong[i]];
-  }
-  for (int i = belong[l] + 1; i <= belong[r] - 1; ++i)
-    ADD[i] += add;
-  for (int i = L[belong[r]]; i <= r; ++i) {
-    if(a[i] % 7 == 0) --CNT[belong[i]];
-    a[i] += add;
-    if(a[i] % 7 == 0) ++CNT[belong[i]];
-  }
+	if(t[k].l == l && t[k].r == r)
+		return t[k].cnt[0];
+	pushdown(k);
+	int mid = t[k].l + t[k].r >> 1;
+	if(r <= mid) return query(ls, l, r);
+	else if(l > mid) return query(rs, l, r);
+	else return query(ls, l, mid) + query(rs, mid + 1, r);
 }
-inline int query(int l, int r) 
-{
-  int ans = 0;
-  pushdown(belong[l]), pushdown(belong[r]);
-  if(belong[l] == belong[r]) {
-    for (int i = l; i <= r; ++i) {
-      if(a[i] % 7 == 0) ++ans;
-    } return ans;
-  }
-  for (int i = l; i < L[belong[l] + 1]; ++i)
-    if(a[i] % 7 == 0) ++ans;
-  for (int i = belong[l] + 1; i <= belong[r] - 1; ++i)
-    pushdown(i), ans += CNT[i];
-  for (int i = L[belong[r]]; i <= r; ++i)
-    if(a[i] % 7 == 0) ++ans;
-  return ans;
-}
-inline void solve()
-{
-	freopen("seg.in", "r", stdin);
-	freopen("seg.out", "w", stdout);
-  n = read();
-  bs = sqrt(n);
-  bc = (n % bs == 0 ? n / bs : n / bs + 1);
-  for (int i = 1; i <= n; ++i) a[i] = read();
-  for (int i = 1; i <= bc; ++i)
-    L[i] = R[i - 1] + 1, R[i] = L[i] + bs - 1;
-  R[bc] = n;
-  for (int i = 1; i <= bc; ++i)
-    for (int j = L[i]; j <= R[i]; ++j)
-      belong[j] = i, CNT[i] += (a[j] % 7 == 0 ? 1 : 0);
-  // 初始化完毕
-  int q, a, b, c;
-  char op;
-  q = read();
-  while(q--) {
-    op = read_c();
-    switch(op) {
-      case 'a': a = read(), b = read(), c = read(), modify(a, b, c); break;
-      case 'c': a = read(), b = read(), printf("%d\n", query(a, b)); break;
-    }
-  }
-}
-}
-
 int main()
 {
-  return Seg::solve(), 0;
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+	cin >> n;
+	for (int i = 1; i <= n; ++i) cin >> a[i];
+	build(root, 1, n); ll a, b, c; char op[10];
+	cin >> q;
+	while(q--) {
+		cin >> op;
+		switch(op[0]) {
+			case 'a': cin >> a >> b >> c, add(root, a, b, c); break;
+			case 'c': cin >> a >> b, printf("%d\n", query(root, a, b)); break;
+		}
+	}
 }
