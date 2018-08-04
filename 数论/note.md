@@ -519,16 +519,78 @@ int main()
 }
 ```
 
+
 #### BSGS
-https://blog.csdn.net/doyouseeman/article/details/52084773
 问题如下：
+
 求解方程，$a^x \equiv b \pmod {p}$。其中$gcd(a, p) = 1$。
+
 考场写不来BSGS咋办！暴力啊！
+
 由费马小定理可得，$a^{p - 1} = 1$，所以只用从枚举$[0, p - 1]$。
+
 然后考虑，如何优化爆搜。这时候就要拉出我们可爱的分块妹子。
-我们考虑把$p - 1$分成$m = \sqrt{p - 1}$。变成了$a^{xm + y} \equiv b \pmod{p}$。
-我们只要枚举$x, y$，就等于分块啦~
-方程可以转化为$a^{y} \equiv b \cdot \frac{1}{a^{xm}} \pmod{p}$
+
+设$x = i \cdot t - j$，其中$t = \sqrt{p}$。$j \in [0, t - 1]$。分块成功~方程转化为$a^{it - j} \equiv b \pmod{p}$。也就是$a^{it} = b \cdot a^j \pmod{p}$。注意$t$是定值，然后枚举$b \cdot a^j$，插入$hash$方便查询。再枚举$a^{it}$，到$hash$表去查询。代码如下：（SDOI2011 计算器）
+```cpp
+// by kririae
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+inline void exgcd(ll &x, ll &y, ll &g, ll a, ll b)
+{
+  if(b) exgcd(y, x, g, b, a % b), y -= (a / b) * x;
+  else x = 1, y = 0, g = a;
+}
+inline ll fpow(ll a, ll p, ll mod)
+{
+  ll ans = 1;
+  for (; p; p >>= 1) {
+    if(p & 1) (ans *= a) %= mod;
+    (a *= a) %= mod;
+  } return ans;
+}
+inline ll BSGS(ll a, ll b, ll p)
+{
+  static map<ll, ll> fd;
+  fd.clear(); int t = sqrt(p) + 1; b %= p;
+  for (int j = 0; j < t; ++j)
+    fd[(b * fpow(a, j, p)) % p] = j;
+  if((a = fpow(a, t, p)) == 0) return b == 0 ? 1 : -1;
+  for (int i = 0; i <= t; ++i) {
+    ll val = fpow(a, i, p);
+    int j = fd.find(val) == fd.end() ? -1 : fd[val];
+    if(j >= 0 & i * t - j >= 0) return i * t - j;
+  } return -1;
+}
+ll t, k, a, b, p, g, x, y;
+int main()
+{
+  scanf("%lld%lld", &t, &k);
+  switch(k) {
+    case 1: 
+      while(t--) {
+        scanf("%lld%lld%lld", &a, &b, &p);
+        printf("%lld\n", fpow(a, b, p));
+      } break;
+    case 2:
+      while(t--) {
+        scanf("%lld%lld%lld", &a, &b, &p);
+        exgcd(x, y, g, a, p);
+        if(b % g) puts("Orz, I cannot find x!");
+        else printf("%lld\n", ((x * (b / g)) % p + p) % p);
+      } break;
+    case 3:
+      while(t--) {
+        scanf("%lld%lld%lld", &a, &b, &p);
+        ll ans = BSGS(a, b, p);
+        if(ans == -1) puts("Orz, I cannot find x!");
+        else printf("%lld\n", ans);
+      } break;
+  }
+}
+```
 
 
 ### 数论函数补充
@@ -1012,6 +1074,24 @@ $Jill$是在$Vallhalla$工作的调酒师。为客人送上美味的饮料是她
 对于$30\%$的数据$n=10, m \leq 10, k_i \leq 10, c \leq 5$
 对于$100\%$的数据$n \leq 100, m \leq 1e6, k_i \leq 100, c \leq 50$
 
+##### 题解
+由于期望的可加性，我们可以这么处理这道题。对于每个数，我们求出它最后为某一个数的期望，然后求和。因为它最后的值一定属于$[0, c)$。所以我们建立矩阵：
+$$
+\begin{bmatrix}
+	p_0 \\
+	p_1 \\
+	p_2 \\
+	\cdots \\
+	p_{c - 1} \\
+\end{bmatrix}
+$$
+$p_i$表示最后值为$i$的概率是。当然，现在的矩阵是初始的，我们考虑如何对这个矩阵进行转移。即转移到某一次操作后，某一个数变换成某一个数的概率是。转移矩阵的第$i$行第$j$列定义为，数值$i$变换到数值$j$的概率是。特别的，这个矩阵有第$0$行第$0$列。对于一次$[L, R]$的操作，选取到某个数的概率是$\frac{1}{2}$。而选取到这个数之后，进行的操作可能是乘上$[0, c)$中的任意一个数，乘这个数的概率就是$\frac{1}{c \cdot 2}$。所以我们在某个数$x$乘上$[0, c)$后的数$y$，$x \rightarrow y$之间的边加上概率$\frac{1}{c \cdot 2}$。
+
+对于这道题的矩阵乘法，我们这么考虑：$a_{1, 2}$的意思是经过一次操作后，$1$变到$2$的概率，则在乘上原矩阵第二列之后，最后的变为$2$的概率自然加上了某个值，这个值是$1$变为$2$的概率。
+
+按照套路，这个时候该进行矩阵快速幂了。但是，如果直接进行矩阵快速幂的话...我们看看复杂度：$O(nc^3log{km})$，$2.5 \cdot 10^8$有点玄乎啊。这个时候，考虑优化矩阵乘法。我们$n \times n$的矩阵乘法的复杂度是$O(n^3)$，如果是$n \times n$和$n \times 1$的矩阵乘法，不就是$O(n^2)$了。我们预处理出转移矩阵的$2^k$次方，复杂度是$O(n^3log{k})$，可以接受，然后，用预处理出的信息和$n \times 1$的矩阵一一结合，得出的就是最后的矩阵，然后对所有求和，得出期望。
+
+$std$代码如下
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -1085,6 +1165,35 @@ int main() {
 }
 ```
 
+# 骚操作补充、
+
+## 十进制快速幂
+
+首先，快速幂要求一下东东$a^b \ mod \ p$。但是，直接跑太慢啦，于是我们队$b$进行了二进制的拆分，拆分成了$2^0 + 2^j \cdots$，于是变成了$a^{2^0 + ...}$，化为$a^{2^{0}} \cdot a^{2^{j}} \cdots$。注意到只有$\log{n}$项，所以复杂度是$O(\log{n})$。但是，细心的人就会发现，关于$b$，还有一个拆分方法。$while(b)\ a[++curr] = b \% 10, b /= 10;$。这样，拆分成了$b = \sum_{i = 1}^{n}{c_i \cdot 10^{i - 1}}$。$a^b = a^{c_i \cdot 10^{i - 1}} \cdots$。因为带上了$c_i$，实现上还会有一些小问题，这些一会儿解决~这样，我们就可以写出十进制的快速幂！更快！更重要的是，可以部分代替高精度，不信请看。
+
+### 求$a^b \ mod \ p$，$b \leq 10^{10000}$。
+大概，只能用数组来存了，不过无所谓。看代码：
+```cpp
+const int N = 10005;
+char b[N];
+inline ll fpow2(ll a, ll p, ll mod)
+{
+  ll ans = 1;
+  for (; p; p >>= 1) {
+    if(p & 1) (ans *= a) %= mod;
+    (a *= a) %= mod;
+  } return ans;
+}
+inline ll fpow10(ll a, char p[], ll mod)
+{
+  ll ans = 1;
+  int l = strlen(p + 1);
+  for (int i = l; i >= 1; --i) {
+    (ans *= fpow2(a, p[i] - '0', mod)) %= mod;
+    a = fpow2(a, 10, mod);
+  } return ans;
+}
+```
 #  一些题目备选
 
 概率：BZOJ2318，BZOJ4720，BZOJ2720，BZOJ3720，收集邮票
