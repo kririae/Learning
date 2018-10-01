@@ -1,5 +1,5 @@
 {
   "editor.fontSize": 16,
-  "editor.fontFamily": "Consolas, 'Courier New', monospace, '思源黑体'",
+  "editor.fontFamily": "'Fira Code', 'Courier New', monospace, '思源黑体'",
   "editor.fontLigatures": true
 }
