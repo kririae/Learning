@@ -29,7 +29,7 @@ inline void dfs2(int x, int topf) {
 inline void dfs3(int x) {
   a[x] = w[x];
   for (int i = head[x], to; ~i; i = nxt[i]) 
-    if ((to = ver[i]) != fa[x]) dfs3(to), a[x] += w[to];
+    if ((to = ver[i]) != fa[x]) dfs3(to), a[x] += a[to];
 }
 inline int lca(int x, int y) {
   while (top[x] != top[y]) {
