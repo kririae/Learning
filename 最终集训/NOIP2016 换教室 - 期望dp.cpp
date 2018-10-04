@@ -8,8 +8,11 @@ int n, m, v, e, c[N], d[N], g[V][V];
 double k[N], f[N][2][N];
 int main() {
   memset(g, 0x3f, sizeof g);
-  memset(f, 0x3f, sizeof f);
+  // memset(f, 0x3f, sizeof f);
   scanf("%d%d%d%d", &n, &m, &v, &e);
+  for (int i = 1; i <= n; ++i)
+    for (int j = 0; j <= m; ++j)
+      f[i][j][0] = f[i][j][1] = 0x3f3f3f3f;
   for (int i = 1; i <= n; ++i) scanf("%d", &c[i]);
   for (int i = 1; i <= n; ++i) scanf("%d", &d[i]);
   for (int i = 1; i <= n; ++i) scanf("%lf", &k[i]);
@@ -29,7 +32,7 @@ int main() {
         k[i - 1] * g[d[i - 1]][c[i]] + 
         (1 - k[i - 1]) * g[c[i - 1]][c[i]], 
         f[i - 1][0][j] + g[c[i - 1]][c[i]]);
-      if (j)
+      if (j != 0)
         f[i][1][j] = min(f[i - 1][1][j - 1] + 
         k[i - 1] * k[i] * g[d[i - 1]][d[i]] +
         k[i - 1] * (1 - k[i]) * g[d[i - 1]][c[i]] +
@@ -40,9 +43,7 @@ int main() {
         (1 - k[i]) * g[c[i - 1]][c[i]]);
     }
   double ans = inf;
-  for (int i = 0; i <= m; ++i) {
-    cout << ans << endl;
+  for (int i = 0; i <= m; ++i)
     ans = min(ans, min(f[n][0][i], f[n][1][i]));
-  }
   printf("%.2lf", ans);
 }
