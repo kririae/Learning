@@ -2,9 +2,15 @@
 #define ll long long
 using namespace std;
 
+/*
+题目是这样的
+假设$A'$是对数组$A$求$k$次前缀和之后的数列。
+反向求出$A$。
+$n \le 1000, k \le 10^9$。
+ */
 const int N = 105, MOD = 1e9 + 7;
 struct Matrix {
-ll n, m, a[N][N];
+ll n, m, a[N][N];,
 Matrix() 
 { memset(a, 0, sizeof a); }
 Matrix(int _n, int _m) : n(_n), m(_m) 
