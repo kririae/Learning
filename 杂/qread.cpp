@@ -1,46 +1,40 @@
 // kririae
-struct IO
-{
+struct IO {
 char ibuf[1 << 18], *s, *t, obuf[1 << 18], *o, vbuf[65];
 IO() : s(ibuf), t(ibuf), o(obuf) {}
 ~IO() { fwrite(obuf, 1, o - obuf, stdout); }
-inline char gc() 
-{
+inline char gc() {
   (s == t) && 
   (t = (s = ibuf) + fread(ibuf, 1, 1 << 18, stdin));
   return s == t ? 0 : *s++;
 }
-inline void pc(char c)
-{
+inline void pc(char c) {
   (o == obuf + (1 << 18)) &&
   (fwrite(obuf, 1, 1 << 18, stdout), o = obuf);
   *o++ = c;
 }
 template<typename T>
-operator T()
-{
-  register T ret = 0, f = 1; 
+operator T() {
+  register T r = 0, f = 1; 
   register char c = gc();
   for (; !isdigit(c); c = gc())
     f = c == '-' ? -1 : 1;
   for (; isdigit(c); c = gc())
-    ret = (((ret << 2) + ret) << 1) + (c - '0');
-  return f == 1 ? ret : -ret;
+    r = (((r << 2) + r) << 1) + (c - '0');
+  return f == 1 ? r : -r;
 }
 void operator = (char x) { pc(x); }
-void operator = (const char *x) 
-{
-  register int curr = 0;
-  while(x[curr]) pc(x[curr++]);
+void operator = (const char *x) {
+  register int u = 0;
+  while(x[u]) pc(x[u++]);
 }
 template<typename T>
-void operator = (T x) 
-{
-  register int curr = 0;
+void operator = (T x) {
+  register int u = 0;
   if(x == 0) return pc('0'), void();
   if(x < 0) x = -x, pc('-');
-  while(x) vbuf[++curr] = x % 10 + 48, x /= 10;
-  while(curr) pc(vbuf[curr--]);
+  while(x) vbuf[++u] = x % 10 + 48, x /= 10;
+  while(u) pc(vbuf[u--]);
 }
 } io;
 
