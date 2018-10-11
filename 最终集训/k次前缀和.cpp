@@ -10,25 +10,23 @@ $n \le 1000, k \le 10^9$。
  */
 const int N = 105, MOD = 1e9 + 7;
 struct Matrix {
-ll n, m, a[N][N];,
-Matrix() 
-{ memset(a, 0, sizeof a); }
-Matrix(int _n, int _m) : n(_n), m(_m) 
-{ memset(a, 0, sizeof a); }
-ll* operator [] (int x) {
-  return a[x];
-}
-Matrix operator * (Matrix b) {
-  Matrix ret(this->n, b.m);
-  for (int i = 1; i <= ret.n; ++i)
-    for (int j = 1; j <= ret.m; ++j) {
-      ll ans = 0;
-      for (int k = 1; k <= ret.n; ++k)
-        (ans += this->a[i][k] * b[k][j]) %= MOD;
-      ret[i][j] = ans;
-    }
-  return ret;
-}
+  ll n, m, a[N][N];
+  Matrix() { memset(a, 0, sizeof a); }
+  Matrix(int _n, int _m) : n(_n), m(_m) { memset(a, 0, sizeof a); }
+  ll* operator[](int x) {
+    return a[x];
+  }
+  Matrix operator*(Matrix b) {
+    Matrix ret(this->n, b.m);
+    for (int i = 1; i <= ret.n; ++i)
+      for (int j = 1; j <= ret.m; ++j) {
+        ll ans = 0;
+        for (int k = 1; k <= ret.n; ++k)
+          (ans += this->a[i][k] * b[k][j]) %= MOD;
+        ret[i][j] = ans;
+      }
+    return ret;
+  }
 } a, b;
 inline ll fpow(ll a, ll p, ll mod) {
   a %= mod;
@@ -56,8 +54,10 @@ int main() {
   for (int i = 1; i <= min(k, n); ++i)
     t[i] = 1ll * t[i - 1] * (k + 1 - i) % MOD * inv(i, MOD) % MOD;
   for (int i = 1; i <= min(k, n); ++i) {
-    if (i & 1) b[i][1] = t[i - 1];
-    else b[i][1] = -t[i - 1];
+    if (i & 1)
+      b[i][1] = t[i - 1];
+    else
+      b[i][1] = -t[i - 1];
   }
   for (int i = 2; i <= n; ++i)
     for (int j = i - 1; j <= min(k, n); ++j)

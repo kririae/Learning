@@ -1,9 +1,11 @@
+#pragma GCC optimize("Ofast")
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
 
+const int N = 1e5 + 5;
 int id, t, c, m;
-ll n;
+ll n, f[N];
 inline ll fpow(ll a, ll p, ll mod) {
   ll ans = 1;
   for (; p; p >>= 1) {
