@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 :root {
 	--active-file-bg-color: #dadada;
@@ -28,7 +28,7 @@ html {
 	padding-right: 60px;
 	min-height: calc(100vh - 6em);
 	-webkit-font-smoothing: antialiased;
-	font-size: 16px;
+	font-size: 22px;
 }
 
 .typora-node #write {
@@ -282,7 +282,7 @@ mark {
 
 /* 代码片断 */
 pre, code, pre tt {
-	font-family: Courier, 'Courier New', monospace;
+	font-family: 'Fira Code', 'Courier New', monospace;
 }
 
 #write .md-fences {
