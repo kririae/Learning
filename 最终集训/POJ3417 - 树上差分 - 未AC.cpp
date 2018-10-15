@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstdio>
+#include <cstring>
 using namespace std;
 
 const int N = 1e5 + 5;
@@ -52,8 +54,8 @@ int main() {
     ++w[x], ++w[y], w[lca(x, y)] -= 2;
   dfs3(1);
   int ans = 0;
-  for (int i = 1; i <= n; ++i) {
-    if (a[i] == 0) ++ans;
+  for (int i = 2; i <= n; ++i) {
+    if (a[i] == 0) ans += m;
     if (a[i] == 1) ++ans;
   }
   cout << ans << endl;
