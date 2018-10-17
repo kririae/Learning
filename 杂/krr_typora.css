@@ -28,7 +28,7 @@ html {
 	padding-right: 60px;
 	min-height: calc(100vh - 6em);
 	-webkit-font-smoothing: antialiased;
-	font-size: 22px;
+	font-size: 16px;
 }
 
 .typora-node #write {
@@ -282,7 +282,7 @@ mark {
 
 /* 代码片断 */
 pre, code, pre tt {
-	font-family: 'Fira Code', 'Courier New', monospace;
+	font-family: Courier, 'Courier New', monospace;
 }
 
 #write .md-fences {
