@@ -1,19 +1,61 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// kririae
+// kririae 01
 struct IO {
   char ibuf[1 << 18], *s, *t, obuf[1 << 18], *o, vbuf[65];
   IO() : s(ibuf), t(ibuf), o(obuf) {}
   ~IO() { fwrite(obuf, 1, o - obuf, stdout); }
   inline char gc() {
-    (s == t) &&
-        (t = (s = ibuf) + fread(ibuf, 1, 1 << 18, stdin));
+    (s == t) && (t = (s = ibuf) + fread(ibuf, 1, 1 << 18, stdin));
     return s == t ? 0 : *s++;
   }
   inline void pc(char c) {
-    (o == obuf + (1 << 18)) &&
-        (fwrite(obuf, 1, 1 << 18, stdout), o = obuf);
+    (o == obuf + (1 << 18)) && (fwrite(obuf, 1, 1 << 18, stdout), o = obuf);
+    *o++ = c;
+  }
+  template <typename T>
+  inline IO &operator>>(T &x) {
+    register T f = 1;
+    register char c = gc();
+    for (x = 0; !isdigit(c); c = gc())
+      f = c == '-' ? -1 : 1;
+    for (; isdigit(c); c = gc())
+      x = (((x << 2) + x) << 1) + (c - '0');
+    if (f == -1) x = -x;
+    return *this;
+  }
+  inline IO &operator<<(char x) {
+    pc(x);
+    return *this;
+  }
+  inline IO &operator<<(const char *x) {
+    register int u = 0;
+    while (x[u]) pc(x[u++]);
+    return *this;
+  }
+  template <typename T>
+  inline IO &operator<<(T x) {
+    register int u = 0;
+    if (x == 0) return pc('0'), *this;
+    if (x < 0) x = -x, pc('-');
+    while (x) vbuf[++u] = x % 10 + 48, x /= 10;
+    while (u) pc(vbuf[u--]);
+    return *this;
+  }
+} io;
+
+// kririae 02
+struct IO {
+  char ibuf[1 << 18], *s, *t, obuf[1 << 18], *o, vbuf[65];
+  IO() : s(ibuf), t(ibuf), o(obuf) {}
+  ~IO() { fwrite(obuf, 1, o - obuf, stdout); }
+  inline char gc() {
+    (s == t) && (t = (s = ibuf) + fread(ibuf, 1, 1 << 18, stdin));
+    return s == t ? 0 : *s++;
+  }
+  inline void pc(char c) {
+    (o == obuf + (1 << 18)) && (fwrite(obuf, 1, 1 << 18, stdout), o = obuf);
     *o++ = c;
   }
   template <typename T>
