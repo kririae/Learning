@@ -13,9 +13,9 @@ $\text{ARC098E}$，还带加强的。
 
 第二种写法不再介绍，相当类似，只是从区间中抽出最小的$len - k + 1$个数，放入新的数组排序，然后取第$q$个。
 
-考虑$O(n\alpha(n))$的做法，考虑$\text{two pointers}$。
+考虑$O(n\alpha(n))$的做法，考虑$\text{two pointers}$，对原数组排序，将$tpt$的左右指针放在数组上，我们向右移动指针的时候，顺带维护区间的$0, 1, 2$性质。这样，会从$0 \rightarrow 1 \rightarrow 2$，
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyNDE5MzMyNl19
+eyJoaXN0b3J5IjpbLTIxMzg5NTg3MThdfQ==
 -->
