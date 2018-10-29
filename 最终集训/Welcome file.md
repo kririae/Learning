@@ -18,16 +18,17 @@ $\text{ARC098E}$，还带加强的。
 
 # $\text{T2}$
 
-$n$点$m$边无向带权图。$s$个加油站，有$q$次询问，给出起点，终点，起点终点都是加油站，给出一辆车，车有油量上限$k_i$，油量满的情况下能行驶$k_i$的距离，问能否从$s \rightarrow t$。$$
+$n$点$m$边无向带权图。$s$个加油站，有$q$次询问，给出起点，终点，起点终点都是加油站，给出一辆车，车有油量上限$k_i$，油量满的情况下能行驶$k_i$的距离，问能否从$s \rightarrow t$。$n, s, q \le 100000$。
 
-$BZOJ4144$
+$\text{BZOJ4144}$
 考场想到$50pts$，结果$4k$的代码写炸了...
 图上查询问题，离不了树上问题的处理。
 观察到，如果能安全从$s \rightarrow t$，必定会经过一些加油站。而且，对于经过的加油站，两两之间的距离必须$\le k$。暴力的话，考虑$s$两两之间的最短路建成完全图。在完全图上跑最小生成树，就能$s \rightarrow t$全部经过$\le k$的边。如果$s \rightarrow t$的最大边权$> k$，就不能从$s$到$t$。
 
 然后我写炸了，然后爆零了。
 瓶颈出来了，$s$的完全图的最小生成树怎么处理。
+考虑图中的这种路径，$s, k, t$都是加油站，并且存在$s \rightarrow k$，$k \rightarrow t$。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA3ODIwNTcyLC0xMDA5MzY2MTA4XX0=
+eyJoaXN0b3J5IjpbLTQ2NDAwNDU0NCwtMTAwOTM2NjEwOF19
 -->
