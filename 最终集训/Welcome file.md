@@ -16,6 +16,40 @@ $\text{ARC098E}$，还带加强的。
 
 考虑$O(n\alpha(n))$的做法，考虑$\text{two pointers}$，对原数组排序，将$tpt$的左右指针放在排序后的数组上，我们向右移动指针的时候，顺带维护原数组的$0, 1, 2$性质。这样，每个数都会从$2 \rightarrow 1 \rightarrow 0$，当一个数从$1 \rightarrow 0$的时候，会将左右两个区间分开，我们会发现分开区间并不好处理，考虑合并区间。我们$tpt$倒过来扫，每个数字都会$0 \rightarrow 1 \rightarrow 2$，这样，就从分裂变成了合并。每当一个数字从$0 \rightarrow 1$的时候，就会合并其左右的区间，并且用并查集维护区间$1, 2$的个数。
 
+$AC$代码懒得写了，给$70$的吧。
+```cpp
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+const int N = 2005;
+int n, q, k;
+ll a[N], b[N], c[N], cnt, tot;
+int main() {
+  scanf("%d%d%d", &n, &k, &q);
+  for (int i = 1; i <= n; ++i)
+    scanf("%lld", &a[i]);
+  ll ans = 1ll << 60;
+  for (int i = 1; i <= n; ++i) {
+    tot = 0;
+    a[n + 1] = -(1ll << 60);
+    for (int j = 1; j <= n + 1; ++j)
+      if (a[j] >= a[i])
+        b[++cnt] = a[j];
+      else {
+        sort(b + 1, b + 1 + cnt);
+        for (int i = 1; i <= cnt - k + 1; ++i)
+          c[++tot] = b[i];
+        cnt = 0;
+      }
+    sort(c + 1, c + 1 + tot);
+    if (tot >= q)
+      ans = min(ans, c[q] - a[i]);
+  }
+  cout << ans;
+}
+```
+
 # $\text{T2}$
 
 $n$点$m$边无向带权图。$s$个加油站，有$q$次询问，给出起点，终点，起点终点都是加油站，给出一辆车，车有油量上限$k_i$，油量满的情况下能行驶$k_i$的距离，问能否从$s \rightarrow t$。$n, s, q \le 100000$。
@@ -30,5 +64,5 @@ $\text{BZOJ4144}$
 考虑图中的这种路径，$s, k, t$都是加油站，并且存在$s \rightarrow k$，$k \rightarrow t$，那么$s \rightarrow t$一定没有存在的必要。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5ODQ2MDk0OSwtMTAwOTM2NjEwOF19
+eyJoaXN0b3J5IjpbMzUxMDQwNzA5LC0xMDA5MzY2MTA4XX0=
 -->
