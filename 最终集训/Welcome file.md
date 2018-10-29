@@ -50,6 +50,81 @@ int main() {
 }
 ```
 
+$\text{std}$:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1e5 + 10;
+int n, dk, q, vn, a[N], nmax;
+struct st {
+  int v, pos;
+} s[N];
+bool cmp1(st a, st b) { return a.v > b.v; }
+int v[N], fa[N], t[N], siz[N];
+int find(int x) { return fa[x] == x ? x : fa[x] = find(fa[x]); }
+void update(int k, int f) { nmax += f * max(0, min(v[k], siz[k] - dk + 1)); }
+void insert(int k) {
+  v[k] = t[k] = siz[k] = 1;
+  if (t[k - 1]) {
+    update(find(k - 1), -1);
+    siz[k] += siz[fa[k - 1]], v[k] += v[fa[k - 1]], fa[fa[k - 1]] = k;
+  }
+  if (t[k + 1]) {
+    update(find(k + 1), -1);
+    siz[k] += siz[fa[k + 1]], v[k] += v[fa[k + 1]], fa[fa[k + 1]] = k;
+  }
+  update(find(k), 1);
+}
+void erase(int k) {
+  update(find(k), -1);
+  v[fa[k]]--;
+  update(fa[k], 1);
+  t[k] = 2;
+}
+bool judge() {
+  int l, r = 0;
+  nmax = 0;
+  for (int i = 1; i <= n; i++) fa[i] = i, v[i] = t[i] = 0;
+  for (l = 1; l <= n; erase(s[l++].pos)) {
+    while (s[l].v - s[r + 1].v <= vn && r < n) {
+      insert(s[++r].pos);
+    }
+    if (nmax >= q) return 1;
+  }
+  return 0;
+}
+int main() {
+  scanf("%d%d%d", &n, &dk, &q);
+  int l = 0, r = 0;
+  for (int i = 1; i <= n; i++) {
+    scanf("%d", &a[i]);
+    r = max(r, a[i]);
+  }
+  for (int i = 1; i <= n; i++) s[i] = (st){a[i], i};
+  sort(s + 1, s + n + 1, cmp1);
+  while (l < r) {
+    vn = (l + r) >> 1;
+    if (judge())
+      r = vn;
+    else
+      l = vn + 1;
+  }
+  while (!judge()) {
+    vn++;
+  }
+  while (1 && vn > 1) {
+    vn--;
+    if (!judge()) {
+      vn++;
+      break;
+    }
+  }
+  printf("%d", vn);
+  return 0;
+}
+```
+
 # $\text{T2}$
 
 $n$点$m$边无向带权图。$s$个加油站，有$q$次询问，给出起点，终点，起点终点都是加油站，给出一辆车，车有油量上限$k_i$，油量满的情况下能行驶$k_i$的距离，问能否从$s \rightarrow t$。$n, s, q \le 100000$。
@@ -64,5 +139,5 @@ $\text{BZOJ4144}$
 考虑图中的这种路径，$s, k, t$都是加油站，并且存在$s \rightarrow k$，$k \rightarrow t$，那么$s \rightarrow t$一定没有存在的必要。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUxMDQwNzA5LC0xMDA5MzY2MTA4XX0=
+eyJoaXN0b3J5IjpbNzA2ODUxNDY1LC0xMDA5MzY2MTA4XX0=
 -->
