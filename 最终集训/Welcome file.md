@@ -1,5 +1,7 @@
 # $\text{Contest 2018 10 29}$
 
+> 解题报告
+
 # $\text{T1}$
 
 给出数列$A$，你需要自行选定$q$个长度为$k$的区间,每次删除区间内的最小值(当最小值有多个时任选一个),使得删除的$q$个数中最小值和最大值的差尽量小。$n \le 100000$。
@@ -139,5 +141,5 @@ $\text{BZOJ4144}$
 考虑图中的这种路径，$s, k, t$都是加油站，并且存在$s \rightarrow k$，$k \rightarrow t$，那么$s \rightarrow t$一定没有存在的必要。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA2ODUxNDY1LC0xMDA5MzY2MTA4XX0=
+eyJoaXN0b3J5IjpbNDEwMjY0MTY5LC0xMDA5MzY2MTA4XX0=
 -->
