@@ -17,8 +17,11 @@ $\text{ARC098E}$，还带加强的。
 
 # $\text{T2}$
 
-考场想到$50$，结果$4k$的代码写炸了
+考场想到$50pts$，结果$4k$的代码写炸了...
+图上查询问题，离不了树上问题的处理。
+观察到，如果能安全从$s \rightarrow t$，必定会经过一些加油站。而且，对于经过的加油站，两两之间的距离必须$\le k$。暴力的话，考虑co
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2NTc5Mzg1NywtMTAwOTM2NjEwOF19
+eyJoaXN0b3J5IjpbLTEzMzk4OTAwNDUsLTEwMDkzNjYxMDhdfQ
+==
 -->
