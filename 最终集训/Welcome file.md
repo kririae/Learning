@@ -19,9 +19,10 @@ $\text{ARC098E}$，还带加强的。
 
 考场想到$50pts$，结果$4k$的代码写炸了...
 图上查询问题，离不了树上问题的处理。
-观察到，如果能安全从$s \rightarrow t$，必定会经过一些加油站。而且，对于经过的加油站，两两之间的距离必须$\le k$。暴力的话，考虑co
+观察到，如果能安全从$s \rightarrow t$，必定会经过一些加油站。而且，对于经过的加油站，两两之间的距离必须$\le k$。暴力的话，考虑$s$两两之间的最短路建成完全图。在完全图上跑最小生成树，就能$s \rightarrow t$全部经过$\le k$的边。如果$s \rightarrow t$的最大边权$> k$，就不能从$s$到$t$。
+
+瓶颈出来了
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzk4OTAwNDUsLTEwMDkzNjYxMDhdfQ
-==
+eyJoaXN0b3J5IjpbMTA3MDM1OTQ5NywtMTAwOTM2NjEwOF19
 -->
