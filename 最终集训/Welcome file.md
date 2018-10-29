@@ -1,4 +1,14 @@
-#
+# $\text{Contest 2018-10-29}$
+
+# T1
+
+出来看毒瘤...
+$\text{ARC098E}$，还带加强的。
+你需要自行选定$q$个长度为$k$的区间,每次删除区间内的最小值(当最小值有多个时任选一个),使得删除的$q$个数中最小值和最大值的差尽量小。
+
+原题数据范围是$O(n^2)$的，我的解法是这样的。
+枚举删除数字的最小值，我们需要确定一个最小的最大值，
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjgzMTA1Nzk3XX0=
+eyJoaXN0b3J5IjpbMTAxODIzMTIxXX0=
 -->
