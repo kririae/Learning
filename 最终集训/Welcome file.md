@@ -17,7 +17,8 @@ $\text{ARC098E}$，还带加强的。
 
 # $\text{T2}$
 
+考场想到$50$，结果$4k$的代码写炸了
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzMTk4MTk5LC0xMDA5MzY2MTA4XX0=
+eyJoaXN0b3J5IjpbMTI2NTc5Mzg1NywtMTAwOTM2NjEwOF19
 -->
