@@ -1,4 +1,4 @@
-# $\text{Contest 2018-10-29}$
+# $\text{Contest 2018 10 29}$
 
 # $\text{T1}$
 
@@ -27,8 +27,8 @@ $\text{BZOJ4144}$
 
 然后我写炸了，然后爆零了。
 瓶颈出来了，$s$的完全图的最小生成树怎么处理。
-考虑图中的这种路径，$s, k, t$都是加油站，并且存在$s \rightarrow k$，$k \rightarrow t$。
+考虑图中的这种路径，$s, k, t$都是加油站，并且存在$s \rightarrow k$，$k \rightarrow t$，那么$s \rightarrow t$一定没有存在的必要。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2NDAwNDU0NCwtMTAwOTM2NjEwOF19
+eyJoaXN0b3J5IjpbLTM5ODQ2MDk0OSwtMTAwOTM2NjEwOF19
 -->
