@@ -4,6 +4,18 @@ using namespace std;
 const int N = 2e5 + 5;
 int n, k, t, head[N], ver[N << 1], nxt[N << 1], tot;
 int f[N], use;
+inline char gc() {
+  static char buf[1 << 18], *fs, *ft;
+  return (fs == ft && (ft = (fs = buf) + fread(buf, 1, 1 << 18, stdin)), fs == ft) ? EOF : *fs++;
+}
+inline int read() {
+  register int k = 0, f = 1;
+  register char c = gc();
+  for (; !isdigit(c); c = gc())
+    if (c == '-') f = -1;
+  for (; isdigit(c); c = gc()) k = (k << 3) + (k << 1) + (c - '0');
+  return k * f;
+}
 inline void addedge(int u, int v) {
   ver[tot] = v;
   nxt[tot] = head[u];
@@ -26,9 +38,9 @@ inline void dfs(int x, int fa) {
 }
 int main() {
   memset(head, -1, sizeof head);
-  scanf("%d%d%d", &n, &k, &t);
+  n = read(), k = read(), t = read();
   for (int i = 1, x, y; i < n; ++i) {
-    scanf("%d%d", &x, &y);
+    x = read(), y = read();
     addedge(x, y);
     addedge(y, x);
   }
