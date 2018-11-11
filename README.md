@@ -5,5 +5,5 @@ my process of learning
 
 ---
 
-2018 - 11 - 10
+2018 - 11 - 11
 AFO
