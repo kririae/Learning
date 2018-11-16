@@ -5,5 +5,6 @@ my process of learning
 
 ---
 
-2018 - 11 - 11
-AFO
+2018 - 11 - 11   
+AFO   
+NOIP 2018 404退役
