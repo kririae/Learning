@@ -1,0 +1,14 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens3:
+      dhcp4: no
+      addresses: [198.13.40.80/23,'2001:19f0:7001:1e86:5400:01ff:feca:5c02/64']
+      gateway4: 198.13.40.1
+      nameservers:
+        addresses: [108.61.10.10]
+      routes:
+      - to: 169.254.0.0/16
+        via: 198.13.40.1
+        metric: 100
