@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Animation</title>
+  <style type="text/css">
+    p {
+      width: 100px;
+      height: 100px;
+      background-color: aliceblue;
+    }
+
+    p:hover {
+      animation-duration: 1000ms;
+      /* animation-delay: 200ms; */
+      animation-iteration-count: 2;
+      /* animation-direction: alternate; */
+      animation-name: TraceBack;
+    }
+
+    @keyframes TraceBack {
+
+      /* 关键帧 */
+      from {
+        width: 150px;
+        height: 150px;
+      }
+
+      50% {
+        width: 175px;
+        height: 175px;
+      }
+
+      75% {
+        width: 130px;
+        height: 130px;
+      }
+
+      to {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p></p>
+</body>
+
+</html>

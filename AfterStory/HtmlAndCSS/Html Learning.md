@@ -1,3 +1,9 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
 # Html Learning
 
 大致格式如下
@@ -302,7 +308,91 @@ p {
 
 继承问题。
 
+表单问题
+
+表单 $\rightarrow$ 输入
+
+```html
+<form>
+  <input type="text">
+</form>
+```
+
+演示效果如下:
+
+<form>
+  <input type="text">
+</form>
+
+`value=""`表示默认属性
+
+<form>
+  <input type="text" value="TraceBack">
+  <!-- 占位 -->
+</form>
+
+`placeholder=""`表示占位
+
+<form>
+  <input type="text" placeholder="TraceBack">
+</form>
+
+不占实际位置。
+
+`maxlength=n`是最大长度
+
+<form>
+  <input type="text" placeholder="最大输入字符数10" maxlength="9">
+</form>
+
+那`size`又有啥用呢。
+
+<form>
+  <input type="text" size="50">
+</form>
+
+就是拓宽文本框的作用。
+
+组合用一用呢
+
+<form>
+  <input type="text" placeholder="最大输入长度50" size="50" maxlength="50">
+</form>
+
+还有一个`readonly`
+
+<form>
+  <input type="text" readonly> <!-- 只读 -->
+</form>
+
+也就是写不进去吧。
+
+还有一个
+
+<textarea>
+
+</textarea>
+
+这个就很爽了，`<textarea>`
+
+按钮，三种格式
+
+```html
+<input type="button" value="button"> <!-- 没啥具体作用，看着玩就行 -->
+<button>button</button> <!-- 和js合作，绑定事件 -->
+<input type="submit">
+```
+
+<button>button</button> 
+
+`number`类型也差不了多少///
+
+<input type="number">
+
+`checkbox`, `radio`
+
 ## 盒子模型
 
 margin -> border -> padding -> content...
 
+文本样式操作: `text-align`， 
