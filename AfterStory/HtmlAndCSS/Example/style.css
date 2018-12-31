@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url(https://i.loli.net/2018/12/31/5c2a2f3c307d1.jpg);
+  display: table;
+  top: 0;
+  background-size: cover;
+}
+
+.intro .inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+}
+
+.content {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 20%;
+  /* margin-left: 10%;
+  margin-right: 10%; */
+}
+
+.content h1 {
+  font-family: 'Yantramanav', sans-serif;
+  font-size: 600%;
+  letter-spacing: 80px;
+  font-weight: 100;
+  color: rgb(240, 156, 116);
+  line-height: 70%;
+  /* border: solid rgb(255, 207, 184); */
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 135%;
+  font-weight: 400;
+  color: #d5f4f7;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: solid #cee2e6;
+  padding: 10px 20px;
+  border-radius: 9px;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  color: #cBDFD6;
+  border: solid #CBDfd6;
+}
+/*--- Media Queries --*/
+@media screen and (max-width: 900px) {
+
+}
+@media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 480px) {
+
+}
