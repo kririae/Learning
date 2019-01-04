@@ -12,7 +12,7 @@ html, body {
   height: 100%;
   width: 100%;
   margin: auto;
-  background: url(https://i.loli.net/2018/12/31/5c2a2f3c307d1.jpg);
+  background: -webkit-filter(url(https://i.loli.net/2018/12/30/5c285f1b1d81f.jpg), -webkit-blur(5px));
   display: table;
   top: 0;
   background-size: cover;
