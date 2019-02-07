@@ -4,13 +4,15 @@ import os
 
 '''
 将PATH更改为需要rename的文件夹路径
-extract_integers可根据需要自定义，返回值为
+extract_integers可根据需要自定义，返回值为list
+自动完成数字提取与类型提取，有意者自己改
+自动补充0...
 '''
 
 PATH = ""
 
 def extract_integers(s: 'str') -> 'list':
-  if type(s) != 'str'
+  if type(s) != str:
     raise Exception('Input type error!')
   s += '#'
   ret, val = [], 0
@@ -24,7 +26,7 @@ def extract_integers(s: 'str') -> 'list':
   return ret;
 
 def add_zero_to_length(s: 'int', length: 'int') -> 'str':
-  if (type(s) != 'int' or type(length) != 'int'):
+  if (type(s) != int or type(length) != int):
     raise Exception('Input type error')
   return '0' * (length - len(str(s)) + 1) + str(s);
 
